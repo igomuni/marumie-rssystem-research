@@ -2,11 +2,17 @@
 
 ## Next
 
-- Bootstrap existing FY2024 Digital Agency / MOF / RS research artifacts
-- Import validated research invariants into RESEARCH_PROTOCOL.md
-- Import durable decisions into DECISIONS.md
-- Restore the existing request-ingestion PoC under scripts/
-- Define a reproducible phase manifest schema
-- Define handoff generation workflow
-- Add source acquisition / SHA-256 workflow
-- Add validation command
+- Restore existing request-ingestion PoC under scripts/request-ingestion/
+- Make the PoC reproducible from repository checkout
+- Define source manifest schema with SHA-256 verification
+- Add primary-PDF acquisition workflow
+- Define phase manifest schema
+- Define automated handoff workflow
+- Add repository validation command
+
+## Later
+
+- Restore Phase 3-15 evidence corpus incrementally
+- Convert manual transformation logic into scripts
+- Build golden tests for major research totals
+- Evaluate allocationMode golden cases
