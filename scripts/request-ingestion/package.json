@@ -1,0 +1,10 @@
+{
+  "name": "request-ingestion-poc",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "poc": "node src/ingest.mjs",
+    "test": "node src/ingest.mjs && node -e \"const v=require('./out/validation.json'); if(v.status!=='pass') process.exit(1); console.log('validation PASS')\""
+  }
+}

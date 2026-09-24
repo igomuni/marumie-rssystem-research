@@ -3,8 +3,9 @@
   "project": "marumie-rssystem research",
   "status": "active",
   "lastCompletedPhase": 15,
-  "currentTopic": "research reproducibility and allocation-mode generalization",
-  "nextAction": "restore request-ingestion PoC and reproducibility tooling",
+  "workspacePhase": "1B",
+  "currentTopic": "research reproducibility",
+  "nextAction": "implement primary-source acquisition and SHA-256 verification",
   "latestReport": "state/RESEARCH_SUMMARY.md",
   "latestSnapshot": null,
   "unresolved": [

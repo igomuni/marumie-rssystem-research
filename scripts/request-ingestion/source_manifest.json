@@ -1,0 +1,34 @@
+{
+  "pocVersion": 1,
+  "fiscalYear": 2024,
+  "requestPublishedYear": 2023,
+  "sources": [
+    {
+      "sourceDocumentId": "digital-r6-request-table-01",
+      "title": "令和6年度歳出概算要求書",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/0fab2c74/20230914_policies_budget_r6request_table_01.pdf",
+      "mimeType": "application/pdf",
+      "fetchedAt": null,
+      "sha256": null,
+      "provenanceStatus": "url_known_binary_not_preserved",
+      "adapter": "digital-r6-request",
+      "unit": "thousand_yen",
+      "targetBudgetItem": "情報通信技術調達等適正・効率化推進費",
+      "expectedItemRequestAmountThousandYen": 448267326,
+      "fixtureCoverage": "partial"
+    },
+    {
+      "sourceDocumentId": "digital-r6-important-policy",
+      "title": "重要政策推進枠 要望一覧",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/618da83d/20230914_policies_budget_r6request_table_03.pdf",
+      "mimeType": "application/pdf",
+      "fetchedAt": null,
+      "sha256": null,
+      "provenanceStatus": "url_known_binary_not_preserved",
+      "adapter": "digital-r6-policy",
+      "unit": "thousand_yen",
+      "expectedSystemRelatedRequestAmountThousandYen": 118772628,
+      "fixtureCoverage": "system_related_complete"
+    }
+  ]
+}

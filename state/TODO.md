@@ -2,13 +2,11 @@
 
 ## Next
 
-- Restore existing request-ingestion PoC under scripts/request-ingestion/
-- Make the PoC reproducible from repository checkout
-- Define source manifest schema with SHA-256 verification
-- Add primary-PDF acquisition workflow
+- Implement primary-source acquisition workflow (download + SHA-256 verification)
+- Extend source manifest schema as real fetch/hash metadata becomes available
 - Define phase manifest schema
 - Define automated handoff workflow
-- Add repository validation command
+- Add repository validation command (beyond `npm run validate`)
 
 ## Later
 

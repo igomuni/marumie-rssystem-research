@@ -1,0 +1,4 @@
+# Curated system-related rows from the Important Policy Promotion Framework list.
+L16@P0: デジタル庁システム等 17,245,103
+L17@P0: デジタル庁・各府省共同プロジェクト型システム 51,024,815
+L18@P0: 各府省システム 50,502,710

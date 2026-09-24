@@ -4,6 +4,15 @@
 
 This protocol defines how research for the `marumie-rssystem` project is conducted, recorded, and handed off between sessions so that work is reproducible and does not depend on chat history.
 
+### Research Phase vs. Workspace Phase
+
+Two separate phase-numbering systems exist in this repository, and they must not be conflated:
+
+- **Research Phase** — a substantive investigation phase in the FY2024 Digital Agency / MOF / RS study. Currently completed through Phase 15. See `state/RESEARCH_SUMMARY.md`. Historical research phases are not renumbered.
+- **Workspace Phase** — repository/reproducibility bootstrap work on this research workspace itself (e.g. `0`, `1A`, `1B`, ...). Tracked informally in `state/CHANGELOG.md` and, where useful, as a `workspacePhase` field in `state/CURRENT_STATE.json`.
+
+`state/CURRENT_STATE.json`'s `lastCompletedPhase` field refers to the Research Phase, not the Workspace Phase.
+
 ## Canonical State
 
 - Files committed to this repository are the canonical project state.

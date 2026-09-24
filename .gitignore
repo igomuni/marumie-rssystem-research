@@ -26,3 +26,6 @@ tmp/
 work/
 
 *.log
+
+scripts/request-ingestion/out/*
+!scripts/request-ingestion/out/.gitkeep

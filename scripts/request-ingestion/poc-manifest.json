@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "pocId": "digital-r6-request-ingestion",
+  "status": "restored",
+  "inputBoundary": "pre-extracted fixture text",
+  "entrypoint": "src/ingest.mjs",
+  "validationCommand": "npm test",
+  "sources": [
+    "digital-r6-request-table-01",
+    "digital-r6-important-policy"
+  ],
+  "goldenAssertions": {
+    "normalRequestThousandYen": 448267326,
+    "importantPolicySystemRelatedThousandYen": 118772628,
+    "effectiveRequestThousandYen": 567039954
+  },
+  "knownLimitations": [
+    "Primary PDF acquisition is not automated",
+    "PDF extraction is not automated",
+    "Fixtures are historical extracted text",
+    "Phase 3-15 transformations are outside this PoC"
+  ]
+}
