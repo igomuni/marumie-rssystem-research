@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "workspace-phase-1d-historical-fixture-provenance-chat-observation",
+  "observedAt": "2026-09-25",
+  "evidenceMode": "manual_observation_from_public_pdf_parser",
+  "reproducibilityStatus": "requires_repo_extractor_confirmation",
+  "sources": [
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/0fab2c74/20230914_policies_budget_r6request_table_01.pdf",
+      "lockedSha256": "b77f25b26b5caf82b0b6617fb1af9b3bba9df059a8bf9a8ede63de8d1a8cfe89",
+      "publicParserPageCount": 32
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/618da83d/20230914_policies_budget_r6request_table_03.pdf",
+      "lockedSha256": "72fb06310b15cc9b1c5a95283a2c60fed567db06e5caefbe48d2f65f215cc070",
+      "publicParserPageCount": 1
+    }
+  ],
+  "finding": "All 25 historical fixture records align to the same public-PDF parser page indexes; 18 are exact parser-line matches, 6 are curated structured-row matches, and 1 reconstructs a logical row from four contiguous parser lines.",
+  "importantInterpretation": [
+    "Historical Lxxx@Pyy markers are not arbitrary: they align to current public-PDF parser line/page labels.",
+    "The fixtures are curated, not raw parser output: some rows restore a label character and remove trailing explanatory-column text.",
+    "The line starting at L988 reconstructs one logical row from L988-L991.",
+    "Legacy Lxxx values should remain historical metadata; canonical future provenance should use locked SHA-256 + PDF page + extractor version + coordinates/text."
+  ],
+  "stats": {
+    "digital-r6-request-table-01": {
+      "total": 22,
+      "exact": 15,
+      "page_match": 22,
+      "structured_row_match": 6,
+      "contiguous_reconstruction": 1
+    },
+    "digital-r6-important-policy": {
+      "total": 3,
+      "exact": 3,
+      "page_match": 3
+    }
+  },
+  "observations": [
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 858,
+      "legacySourceLineEnd": 858,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "020 財務第１・２係",
+      "observedPublicPdfParserText": "020 財務第１・２係",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 859,
+      "legacySourceLineEnd": 859,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "001 財務省システム 108,761,287 102,935,743 5,825,544",
+      "observedPublicPdfParserText": "001 財務省システム 108,761,287 102,935,743 5,825,544",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 860,
+      "legacySourceLineEnd": 860,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "01 通常分",
+      "observedPublicPdfParserText": "01 通常分",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 861,
+      "legacySourceLineEnd": 861,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 94,092,778 84,500,058 9,592,720",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 94,092,778 84,500,058 9,592,720 府省共通システム関連経費 84,500,058( 94,092,778)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 872,
+      "legacySourceLineEnd": 872,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "05 特殊要因分",
+      "observedPublicPdfParserText": "05 特殊要因分",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 873,
+      "legacySourceLineEnd": 873,
+      "legacyPageIndex": 22,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 14,668,509 18,435,685 3,767,176",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 14,668,509 18,435,685 3,767,176 府省共通システム関連経費 18,435,685( 14,668,509)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 951,
+      "legacySourceLineEnd": 951,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "026 厚生労働総括係",
+      "observedPublicPdfParserText": "026 厚生労働総括係",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 952,
+      "legacySourceLineEnd": 952,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "005 厚生労働省システム",
+      "observedPublicPdfParserText": "005 厚生労働省システム",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 953,
+      "legacySourceLineEnd": 953,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "01 通常分",
+      "observedPublicPdfParserText": "01 通常分",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 954,
+      "legacySourceLineEnd": 954,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 60,090 89,088 28,998",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 60,090 89,088 28,998 府省共通システム関連経費 89,088( 60,090)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 957,
+      "legacySourceLineEnd": 957,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "027 厚生労働第１係 305,014 272,163 32,851",
+      "observedPublicPdfParserText": "027 厚生労働第１係 305,014 272,163 32,851",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 958,
+      "legacySourceLineEnd": 958,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "001 総務省システム",
+      "observedPublicPdfParserText": "001 総務省システム",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 959,
+      "legacySourceLineEnd": 959,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "01 通常分",
+      "observedPublicPdfParserText": "01 通常分",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 960,
+      "legacySourceLineEnd": 960,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 224,957 200,112 24,845",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 224,957 200,112 24,845 府省共通システム関連経費 200,112( 224,957)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 964,
+      "legacySourceLineEnd": 964,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "095 厚生労働省システム",
+      "observedPublicPdfParserText": "095 厚生労働省システム",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 965,
+      "legacySourceLineEnd": 965,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "01 通常分",
+      "observedPublicPdfParserText": "01 通常分",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 966,
+      "legacySourceLineEnd": 966,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 80,057 72,051 8,006",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 80,057 72,051 8,006 府省共通システム関連経費 72,051( 80,057)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 970,
+      "legacySourceLineEnd": 970,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "028 厚生労働第２係",
+      "observedPublicPdfParserText": "028 厚生労働第２係",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 971,
+      "legacySourceLineEnd": 971,
+      "legacyPageIndex": 24,
+      "historicalFixtureText": "005 厚生労働省システム",
+      "observedPublicPdfParserText": "005 厚生労働省システム",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 982,
+      "legacySourceLineEnd": 982,
+      "legacyPageIndex": 25,
+      "historicalFixtureText": "01 通常分 8,723,415 7,738,305 985,110",
+      "observedPublicPdfParserText": "01 通常分 8,723,415 7,738,305 985,110",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 983,
+      "legacySourceLineEnd": 983,
+      "legacyPageIndex": 25,
+      "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 6,938,972 6,370,312 568,660",
+      "observedPublicPdfParserText": "95016-2123-09-1040 情報処理業務庁 6,938,972 6,370,312 568,660 府省共通システム関連経費 6,370,312( 6,938,972)",
+      "matchMethod": "structured_row_match",
+      "pageMatch": true,
+      "note": "Budget code and three amount columns align; historical fixture restores '費' in the expense label and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "legacySourceLineStart": 988,
+      "legacySourceLineEnd": 991,
+      "legacyPageIndex": 25,
+      "historicalFixtureText": "95016-2125-14-6420 情報通信技術調達等適正・効率化推進委託費 1,784,443 1,367,993 416,450",
+      "observedPublicPdfParserText": "95016-2125-14-6420 情報通信技術調 達等適正・効率 化推進委託費 1,784,443 1,367,993 416,450 府省共通システム関連経費 1,367,993( 1,784,443)",
+      "matchMethod": "contiguous_reconstruction",
+      "pageMatch": true,
+      "note": "Historical fixture reconstructs one logical expense row from four contiguous parser lines and omits the trailing explanatory column."
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "legacySourceLineStart": 16,
+      "legacySourceLineEnd": 16,
+      "legacyPageIndex": 0,
+      "historicalFixtureText": "デジタル庁システム等 17,245,103",
+      "observedPublicPdfParserText": "デジタル庁システム等 17,245,103",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "legacySourceLineStart": 17,
+      "legacySourceLineEnd": 17,
+      "legacyPageIndex": 0,
+      "historicalFixtureText": "デジタル庁・各府省共同プロジェクト型システム 51,024,815",
+      "observedPublicPdfParserText": "デジタル庁・各府省共同プロジェクト型システム 51,024,815",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "legacySourceLineStart": 18,
+      "legacySourceLineEnd": 18,
+      "legacyPageIndex": 0,
+      "historicalFixtureText": "各府省システム 50,502,710",
+      "observedPublicPdfParserText": "各府省システム 50,502,710",
+      "matchMethod": "exact",
+      "pageMatch": true,
+      "note": null
+    }
+  ]
+}

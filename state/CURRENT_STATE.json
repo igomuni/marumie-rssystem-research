@@ -3,14 +3,14 @@
   "project": "marumie-rssystem research",
   "status": "active",
   "lastCompletedPhase": 15,
-  "workspacePhase": "1C",
+  "workspacePhase": "1D",
   "currentTopic": "research reproducibility",
-  "nextAction": "implement deterministic PDF text extraction and compare it with historical fixtures",
-  "latestReport": "state/RESEARCH_SUMMARY.md",
+  "nextAction": "make curated fixture generation reproducible from deterministic PDF extraction while preserving historical golden equivalence",
+  "latestReport": "reports/workspace-phase-1d-pdf-extraction-analysis.md",
   "latestSnapshot": null,
   "unresolved": [
     "MHLW bucket 032 numeric allocation remains unresolved",
-    "PDF text/table extraction is not yet deterministic or automated",
+    "Historical fixture generation is still hand-curated, not mechanically derived from deterministic extraction",
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
     "allocationMode classification is not yet productionized"
   ]

@@ -2,7 +2,7 @@
 
 ## Next
 
-- Implement deterministic PDF text extraction and compare against the historical fixtures
+- Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema
 - Define automated handoff workflow

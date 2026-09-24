@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "comparisonVersion": "v1",
+  "note": "Historical fixture P values are compared as zero-based PDF page indexes; legacy L values are retained as metadata only.",
+  "sources": [
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "fixture": "scripts/request-ingestion/fixtures/digital_r6_normal_extract.txt",
+      "stats": {
+        "total": 22,
+        "contiguous_reconstruction": 12,
+        "contiguous_delta_glyph_normalized": 3,
+        "structured_row_match": 7
+      },
+      "observations": [
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 858,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "020 財務第１・２係",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "020 財 務 第 １ ・ ２ 係",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            20
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 859,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "001 財務省システム 108,761,287 102,935,743 5,825,544",
+          "matchMethod": "contiguous_delta_glyph_normalized",
+          "candidateCount": 1,
+          "matchedExtractedText": "001 財 務 省 シ ス テ ム 108,761,287 102,935,743 △ 5,825,544",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            21
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 860,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "01 通常分",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "01 通 常 分",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            22
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 861,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 94,092,778 84,500,058 9,592,720",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 94,092,778 84,500,058 △ 9,592,720 府省共通システム関連経費 84,500,058( 94,092,778)",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            23
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 872,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "05 特殊要因分",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "05 特 殊 要 因 分",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            35
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 873,
+          "expectedPageIndex": 22,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 14,668,509 18,435,685 3,767,176",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 14,668,509 18,435,685 3,767,176 府省共通システム関連経費 18,435,685( 14,668,509)",
+          "matchedPdfPageIndex": 22,
+          "matchedLineIndexes": [
+            36
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 951,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "026 厚生労働総括係",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "026 厚 生 労 働 総 括 係",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            21
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 952,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "005 厚生労働省システム",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 2,
+          "matchedExtractedText": "005 厚 生 労 働 省 シ ス テ ム",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            22
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 953,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "01 通常分",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 3,
+          "matchedExtractedText": "01 通 常 分",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            23
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 954,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 60,090 89,088 28,998",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 60,090 89,088 28,998 府省共通システム関連経費 89,088( 60,090)",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            24
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 957,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "027 厚生労働第１係 305,014 272,163 32,851",
+          "matchMethod": "contiguous_delta_glyph_normalized",
+          "candidateCount": 1,
+          "matchedExtractedText": "027 厚 生 労 働 第 １ 係 305,014 272,163 △ 32,851",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            28
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 958,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "001 総務省システム",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "001 総 務 省 シ ス テ ム",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            29
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 959,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "01 通常分",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 2,
+          "matchedExtractedText": "01 通 常 分",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            30
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 960,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 224,957 200,112 24,845",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 224,957 200,112 △ 24,845 府省共通システム関連経費 200,112( 224,957)",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            31
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 964,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "095 厚生労働省システム",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "095 厚 生 労 働 省 シ ス テ ム",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            36
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 965,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "01 通常分",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "01 通 常 分",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            37
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 966,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 80,057 72,051 8,006",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 80,057 72,051 △ 8,006 府省共通システム関連経費 72,051( 80,057)",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            38
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 970,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "028 厚生労働第２係",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "028 厚 生 労 働 第 ２ 係",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            43
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 971,
+          "expectedPageIndex": 24,
+          "historicalFixtureText": "005 厚生労働省システム",
+          "matchMethod": "contiguous_reconstruction",
+          "candidateCount": 1,
+          "matchedExtractedText": "005 厚 生 労 働 省 シ ス テ ム",
+          "matchedPdfPageIndex": 24,
+          "matchedLineIndexes": [
+            44
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 982,
+          "expectedPageIndex": 25,
+          "historicalFixtureText": "01 通常分 8,723,415 7,738,305 985,110",
+          "matchMethod": "contiguous_delta_glyph_normalized",
+          "candidateCount": 1,
+          "matchedExtractedText": "01 通 常 分 8,723,415 7,738,305 △ 985,110",
+          "matchedPdfPageIndex": 25,
+          "matchedLineIndexes": [
+            4
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 983,
+          "expectedPageIndex": 25,
+          "historicalFixtureText": "95016-2123-09-1040 情報処理業務庁費 6,938,972 6,370,312 568,660",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2123-09-1040 情報処理業務庁 6,938,972 6,370,312 △ 568,660 府省共通システム関連経費 6,370,312( 6,938,972)",
+          "matchedPdfPageIndex": 25,
+          "matchedLineIndexes": [
+            5
+          ]
+        },
+        {
+          "sourceId": "digital-r6-request-table-01",
+          "legacySourceLine": 988,
+          "expectedPageIndex": 25,
+          "historicalFixtureText": "95016-2125-14-6420 情報通信技術調達等適正・効率化推進委託費 1,784,443 1,367,993 416,450",
+          "matchMethod": "structured_row_match",
+          "candidateCount": 1,
+          "matchedExtractedText": "95016-2125-14-6420 情報通信技術調 1,784,443 1,367,993 △ 416,450 府省共通システム関連経費 1,367,993( 1,784,443)",
+          "matchedPdfPageIndex": 25,
+          "matchedLineIndexes": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "fixture": "scripts/request-ingestion/fixtures/digital_r6_policy_extract.txt",
+      "stats": {
+        "total": 3,
+        "exact": 3
+      },
+      "observations": [
+        {
+          "sourceId": "digital-r6-important-policy",
+          "legacySourceLine": 16,
+          "expectedPageIndex": 0,
+          "historicalFixtureText": "デジタル庁システム等 17,245,103",
+          "matchMethod": "exact",
+          "candidateCount": 1,
+          "matchedExtractedText": "デジタル庁システム等 17,245,103",
+          "matchedPdfPageIndex": 0,
+          "matchedLineIndexes": [
+            16
+          ]
+        },
+        {
+          "sourceId": "digital-r6-important-policy",
+          "legacySourceLine": 17,
+          "expectedPageIndex": 0,
+          "historicalFixtureText": "デジタル庁・各府省共同プロジェクト型システム 51,024,815",
+          "matchMethod": "exact",
+          "candidateCount": 1,
+          "matchedExtractedText": "デジタル庁・各府省共同プロジェクト型システム 51,024,815",
+          "matchedPdfPageIndex": 0,
+          "matchedLineIndexes": [
+            17
+          ]
+        },
+        {
+          "sourceId": "digital-r6-important-policy",
+          "legacySourceLine": 18,
+          "expectedPageIndex": 0,
+          "historicalFixtureText": "各府省システム 50,502,710",
+          "matchMethod": "exact",
+          "candidateCount": 1,
+          "matchedExtractedText": "各府省システム 50,502,710",
+          "matchedPdfPageIndex": 0,
+          "matchedLineIndexes": [
+            18
+          ]
+        }
+      ]
+    }
+  ]
+}

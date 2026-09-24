@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "extractor": "pdfjs-dist",
+  "extractorVersion": "4.10.38",
+  "orderingVersion": "v1",
+  "fixtureComparisonVersion": "v1",
+  "pageIndexing": {
+    "pdfPageIndex": "zero-based",
+    "pdfPageNumber": "one-based",
+    "legacyFixtureP": "treated as zero-based page index because current public PDF parser labels align exactly with historical fixture markers"
+  },
+  "supportedMimeTypes": [
+    "application/pdf"
+  ],
+  "notes": [
+    "Raw PDF text items are preserved separately from reconstructed lines.",
+    "Canonical extraction output contains no runtime timestamp.",
+    "Historical fixture Lxxx values are legacy extraction metadata, not canonical source identity."
+  ]
+}

@@ -33,3 +33,9 @@ scripts/request-ingestion/out/*
 !sources/raw/
 sources/raw/*
 !sources/raw/.gitkeep
+
+derived/pdf-extraction/*
+!derived/pdf-extraction/.gitkeep
+
+# ChatGPT -> local workspace handoff
+incoming/

@@ -3,6 +3,11 @@
   "scripts": {
     "validate": "npm --prefix scripts/request-ingestion test",
     "sources:lock": "npm --prefix scripts/source-acquisition run lock",
-    "sources:verify": "npm --prefix scripts/source-acquisition run verify"
+    "sources:verify": "npm --prefix scripts/source-acquisition run verify",
+    "sources:fetch": "npm --prefix scripts/source-acquisition run fetch",
+    "extract": "npm --prefix scripts/pdf-extraction run extract",
+    "extraction:compare": "npm --prefix scripts/pdf-extraction run compare",
+    "extraction:test": "npm --prefix scripts/pdf-extraction test",
+    "extraction:determinism": "npm --prefix scripts/pdf-extraction run determinism"
   }
 }
