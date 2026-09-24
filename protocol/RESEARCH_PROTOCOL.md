@@ -57,8 +57,11 @@ Two separate phase-numbering systems exist in this repository, and they must not
 
 ## Git / Commit Policy
 
-- AI sessions prepare changes; the user performs commit/push.
-- Do not commit or push unless the user explicitly performs/authorizes it.
+- AI sessions may prepare, validate, commit, and push workspace changes when the user has explicitly authorized commit/push for the task or workflow.
+- Before committing, validation and repository safety checks must pass.
+- Never force-push or rewrite validated history unless explicitly requested.
+- If validation fails or unexpected files/secrets are present, do not commit or push.
+- GitHub/main represents the canonical validated checkpoint after a successful push.
 
 ---
 
@@ -211,7 +214,13 @@ Each phase should preserve enough information to reconstruct this chain.
 - `/mnt/data` is scratch space.
 - Chat history is not canonical.
 - GitHub/main is the intended canonical validated state.
-- AI prepares changes; the user reviews and commits/pushes.
+- AI sessions may commit/push directly once authorized for the task, per the Git / Commit Policy above.
+
+```text
+same URL != same source binary
+```
+
+A government website may replace a document while keeping the same URL. Reproducible source identity requires the SHA-256 of the acquired binary, not the URL alone (see ADR-009 and `sources/source-lock.json`).
 
 ### Public repository policy
 

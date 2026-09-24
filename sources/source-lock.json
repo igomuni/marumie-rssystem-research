@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "sourceId": "digital-r6-request-table-01",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/0fab2c74/20230914_policies_budget_r6request_table_01.pdf",
+      "finalUrl": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/0fab2c74/20230914_policies_budget_r6request_table_01.pdf",
+      "fetchedAt": "2026-09-24T22:49:03.038Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 58430,
+      "sha256": "b77f25b26b5caf82b0b6617fb1af9b3bba9df059a8bf9a8ede63de8d1a8cfe89",
+      "etag": "W/\"e43e-605200a7dc578\"",
+      "lastModified": "Tue, 12 Sep 2023 02:17:13 GMT"
+    },
+    {
+      "sourceId": "digital-r6-important-policy",
+      "url": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/618da83d/20230914_policies_budget_r6request_table_03.pdf",
+      "finalUrl": "https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/e9b99425-437c-4750-b4e2-6cca3cd877a6/618da83d/20230914_policies_budget_r6request_table_03.pdf",
+      "fetchedAt": "2026-09-24T22:49:03.099Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 73922,
+      "sha256": "72fb06310b15cc9b1c5a95283a2c60fed567db06e5caefbe48d2f65f215cc070",
+      "etag": "W/\"120c2-605200a82b330\"",
+      "lastModified": "Tue, 12 Sep 2023 02:17:13 GMT"
+    }
+  ]
+}

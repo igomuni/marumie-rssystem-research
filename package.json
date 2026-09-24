@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "validate": "npm --prefix scripts/request-ingestion test"
+    "validate": "npm --prefix scripts/request-ingestion test",
+    "sources:lock": "npm --prefix scripts/source-acquisition run lock",
+    "sources:verify": "npm --prefix scripts/source-acquisition run verify"
   }
 }

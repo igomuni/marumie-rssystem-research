@@ -29,3 +29,7 @@ work/
 
 scripts/request-ingestion/out/*
 !scripts/request-ingestion/out/.gitkeep
+
+!sources/raw/
+sources/raw/*
+!sources/raw/.gitkeep

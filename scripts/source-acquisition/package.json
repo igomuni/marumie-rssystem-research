@@ -1,0 +1,10 @@
+{
+  "name": "source-acquisition",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "lock": "node src/acquire.mjs lock",
+    "verify": "node src/acquire.mjs verify"
+  }
+}

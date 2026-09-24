@@ -91,3 +91,13 @@ Decision: The canonical GitHub repository remains public and must contain only p
 Reason: The repository is publicly hosted; committing credentials, private business data, or personal information would be an unrecoverable disclosure.
 Rejected alternatives: Making the repository private to allow less careful review before commits.
 Implications: Every commit should be reviewed (`git diff`) for secrets/PII before it is made; large raw government files are referenced via URL/hash/manifest rather than committed directly.
+
+---
+
+### ADR-009: Source identity includes binary hash, not URL alone
+Status: Accepted
+Date: 2026-09-25
+Decision: A URL identifies the retrieval location, not immutable content. Reproducible source identity requires the SHA-256 of the acquired binary, committed in `sources/source-lock.json`.
+Reason: Government websites may replace a PDF while retaining the same URL (`same URL != same source binary`). Trusting the URL alone as a stable identifier would let a silent upstream content change invalidate prior research without detection.
+Rejected alternatives: Treating the URL as sufficient source identity; silently re-locking to whatever the server currently returns whenever verification runs.
+Implications: `npm run sources:verify` must fail loudly and exit non-zero on a hash mismatch rather than update the lock; updating a lock to a new binary requires an explicit, reviewable `npm run sources:lock` re-run, preserving the old hash in Git history.

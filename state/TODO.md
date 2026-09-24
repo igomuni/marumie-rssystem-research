@@ -2,8 +2,8 @@
 
 ## Next
 
-- Implement primary-source acquisition workflow (download + SHA-256 verification)
-- Extend source manifest schema as real fetch/hash metadata becomes available
+- Implement deterministic PDF text extraction and compare against the historical fixtures
+- Define adapter interface for extraction, per document type
 - Define phase manifest schema
 - Define automated handoff workflow
 - Add repository validation command (beyond `npm run validate`)

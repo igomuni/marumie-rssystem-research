@@ -3,14 +3,14 @@
   "project": "marumie-rssystem research",
   "status": "active",
   "lastCompletedPhase": 15,
-  "workspacePhase": "1B",
+  "workspacePhase": "1C",
   "currentTopic": "research reproducibility",
-  "nextAction": "implement primary-source acquisition and SHA-256 verification",
+  "nextAction": "implement deterministic PDF text extraction and compare it with historical fixtures",
   "latestReport": "state/RESEARCH_SUMMARY.md",
   "latestSnapshot": null,
   "unresolved": [
     "MHLW bucket 032 numeric allocation remains unresolved",
-    "PDF primary-source acquisition/extraction is not yet reproducible end-to-end",
+    "PDF text/table extraction is not yet deterministic or automated",
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
     "allocationMode classification is not yet productionized"
   ]

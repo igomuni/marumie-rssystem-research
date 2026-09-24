@@ -38,4 +38,4 @@ Large primary-source binaries (PDFs, spreadsheets, archives) should not normally
 
 ## Commits
 
-The user controls all commits and pushes to this repository. AI sessions prepare changes but do not commit or push unless explicitly authorized.
+AI sessions may commit and push directly once the user has explicitly authorized commit/push for the task, provided validation and repository safety checks pass first. See `protocol/RESEARCH_PROTOCOL.md` for the full Git / Commit Policy.
