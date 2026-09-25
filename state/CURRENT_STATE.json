@@ -14,6 +14,6 @@
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
     "allocationMode classification is not yet productionized",
     "Document Understanding benchmark (merged to main via PR #1) has three engines (pdfjs, PyMuPDF, Docling) on case-001; header-row hierarchy ambiguity and page-level unit recovery remain unresolved for all three",
-    "case-002 (METI FY2024 general-account request PDF) is now acquired and SHA-256-locked (via a new Playwright-based browser-fetch tool, since plain fetch() was blocked by an AWS WAF JS challenge); the frozen selection protocol (fixtures/document-understanding/case-002/) has not yet been applied, no row has been selected, and no Ground Truth exists yet"
+    "case-002 (METI FY2024 general-account request PDF) target row is now frozen via the pre-registered selection protocol (fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md: PDF page 9 / printed 経(本)5, request no. 1, expense code 01-95, the first eligible row in 明細表); Ground Truth has not been created and no benchmark engine has been run yet"
   ]
 }

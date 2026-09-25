@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### case-002 target row frozen (branch: research/case-002-meti-preregistration)
+
+- Applied the already-committed, unmodified `case-002` selection protocol to the locked METI PDF and froze the target row. Recorded in `fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md`.
+- Inspection method: the locked PDF was rasterized page-by-page with `pdftoppm` (poppler — a rasterizer with no text/layout reconstruction, not one of the three compared engines) and the resulting page images were viewed directly, exactly as a human would view the PDF in a viewer. No text-extraction or document-understanding tool was consulted.
+- Located the document's own table of contents (page 3) to identify that 令和6年度歳出概算要求額明細表 (the detail table, required by E1) starts at printed page 5, distinct from the preceding summary table (総表, printed 経1–経4).
+- Selected row: PDF page 9 (0-based index 8), printed page `経(本) 5` — the first row anywhere in 明細表 carrying an explicit 目-level expense code (要求番号 `①`, 事項 `01-95`), immediately under item header `010 経済産業本省共通費`. No earlier eligible row exists on any preceding page, so the earliest-eligible-row tie-break applied without needing to compare multiple candidates.
+- All five eligibility criteria (E1–E5) verified directly from the rendered page: correct table, native expense code, label wrapping across two printed lines, standard previous/current/delta amount triple present, and full sufficiency on one page. Observed (not selected-for) structural note: this page's unit label ("(単位:千円)") is present, unlike case-001's target page where it was only on an earlier summary page — a genuine cross-document difference worth revisiting when hypothesis 4 (unit recovery) is tested.
+- Confirmed: no benchmark engine (Docling, pdfjs-baseline, pymupdf-baseline), no `npm run docbench`, no MinerU/PaddleOCR, and no OCR/LLM/vision extraction was run or consulted against this METI PDF. No Ground Truth values (amounts, normalized names, unit) were transcribed — only the minimum row-locator information needed for unique identification (request number, expense code, page).
+- `case-001`'s Ground Truth, scores, and normalizers were not touched.
+
 ### case-002 preregistration (branch: research/case-002-meti-preregistration)
 
 - Attempted to acquire the METI FY2024 general-account expenditure request PDF (`https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf`) using the repository's existing plain-`fetch()`-based acquisition method. **Initial acquisition failed.** The server (CloudFront) returns HTTP 202 with `x-amzn-waf-action: challenge` and an AWS WAF Bot Control JavaScript-challenge page (a token-based `challenge.js` from `awswaf.com`) instead of the PDF, for both the PDF URL and the landing page. This requires executing JavaScript in a real browser; it is not solvable by a plain HTTP client. Confirmed persistent across repeated requests and with a browser-like `User-Agent` header; not a transient or simple-header issue.

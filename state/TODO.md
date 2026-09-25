@@ -24,7 +24,8 @@
 ## case-002 (branch: research/case-002-meti-preregistration)
 
 - Source acquired and SHA-256-locked: the METI FY2024 general-account request PDF (`https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf`, 106 pages) was blocked by an AWS WAF JS challenge under the plain-fetch tooling, then successfully acquired via a new Playwright-based tool (`scripts/source-acquisition/browser-fetch/`). See `sources/source-lock.json` (`sourceId: meti-fy2024-general-account-request`).
-- Next: apply the frozen selection protocol (`fixtures/document-understanding/case-002/20260926_0834_Case002_Selection_Protocol.md`) via direct visual inspection of the locked PDF (not via pdfjs/PyMuPDF/Docling, to avoid circularity) to select and freeze the exact row.
-- Only after the row is frozen: create `fixtures/document-understanding/case-002/ground-truth.json` by visual transcription, then run the three existing engines against it to test whether the case-001-derived findings (table-cell column separation, numeric-token reversal, CJK-space closing, header-hierarchy ambiguity) generalize.
+- Target row frozen via the pre-registered protocol: PDF page 9 (printed `経(本) 5`), the first eligible row in 令和6年度歳出概算要求額明細表 — request no. `①`, expense code `01-95`. See `fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md` for the full E1–E5 justification and inspection trail.
+- **Next action:** create `fixtures/document-understanding/case-002/ground-truth.json` by direct visual transcription of this already-frozen row (same method as case-001), still before running any engine.
+- Only after Ground Truth is created and frozen: run the three existing engines against it to test whether the case-001-derived findings (table-cell column separation, numeric-token reversal, CJK-space closing, header-hierarchy ambiguity) generalize.
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
-- Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during this acquisition) should be backported from `browser-fetch.mjs` for consistency.
+- Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
