@@ -14,6 +14,7 @@
 - Extended the generated report (`reports/document-understanding/case-001-evaluation.md`) with a compact cross-engine comparison matrix (one row per check, one column per engine).
 - Added 10 new unit tests for the Docling-specific normalizer (CJK-space closing, numeric-token reversal, sign-only-from-observed-glyph, no-glyph-means-never-negative, missing-request-number-is-null) — all with synthetic data using different numbers than any real case, to demonstrate the logic is general.
 - `npm run validate`, `npm run extraction:test`, and both existing baseline adapters are unaffected and re-verified passing.
+- PR #1 review fix: renamed the `raw_delta_glyph_preserved` evaluation check to `delta_glyph_observed_and_associated` and rewrote its note. The old name/description implied `deltaRaw` was always a single literal raw engine token; for Docling it can be a normalizer-constructed concatenation of a separate glyph-only cell and a magnitude cell. Verified by code inspection that for all three engines the `△` glyph in `deltaRaw`, when present, always originates from genuine engine raw output (never from ground truth or inference) — see `reports/document-understanding/case-001-evaluation.md`. No score changed (8/11, 8/11, 9/11 unchanged); evidence/report regenerated for consistency.
 
 ### Document Understanding Benchmark layer (branch: research/document-understanding-benchmark)
 

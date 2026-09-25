@@ -52,11 +52,11 @@ export function evaluate(caseId, engine) {
 
   const deltaRawHasGlyph = typeof r.deltaRaw === 'string' && r.deltaRaw.includes('△');
   checks.push({
-    id: 'raw_delta_glyph_preserved',
+    id: 'delta_glyph_observed_and_associated',
     pass: deltaRawHasGlyph,
     actual: r.deltaRaw,
     expected: 'contains △',
-    note: 'Checks the RAW extracted token, not the ground truth. A pass here means the engine itself retained the decrease glyph.',
+    note: 'Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine\'s own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token.',
   });
 
   const expenseRows = normalized.candidates.expenseRows;

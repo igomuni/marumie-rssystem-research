@@ -1,6 +1,6 @@
 # Document Understanding Benchmark — case-001
 
-Generated: 2026-09-25T23:03:45.094Z
+Generated: 2026-09-25T23:20:21.402Z
 
 | engine | passed | failed | total |
 |---|---|---|---|
@@ -22,7 +22,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | PASS | PASS | PASS |
 | unit_exact_match | FAIL | FAIL | FAIL |
 | page_identification | PASS | PASS | PASS |
-| raw_delta_glyph_preserved | PASS | PASS | PASS |
+| delta_glyph_observed_and_associated | PASS | PASS | PASS |
 | item_to_amount_relationship | PASS | PASS | PASS |
 | expense_to_amount_relationship | PASS | PASS | PASS |
 
@@ -38,7 +38,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | PASS | `-32920906` | `-32920906` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | FAIL | `null` | `"千円"` |  |
 | page_identification | PASS | `11` | `11` |  |
-| raw_delta_glyph_preserved | PASS | `"△ 32,920,906"` | `"contains △"` | Checks the RAW extracted token, not the ground truth. A pass here means the engine itself retained the decrease glyph. |
+| delta_glyph_observed_and_associated | PASS | `"△ 32,920,906"` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | PASS | `{"nearestPrecedingItemCode":"020","resultPreviousBudget":481188232}` | `{"itemCode":"020","previousBudget":481188232}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | PASS | `{"expenseCode":"01-95","hasTriple":true}` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 
@@ -54,7 +54,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | PASS | `-32920906` | `-32920906` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | FAIL | `null` | `"千円"` |  |
 | page_identification | PASS | `11` | `11` |  |
-| raw_delta_glyph_preserved | PASS | `"△     32,920,906"` | `"contains △"` | Checks the RAW extracted token, not the ground truth. A pass here means the engine itself retained the decrease glyph. |
+| delta_glyph_observed_and_associated | PASS | `"△     32,920,906"` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | PASS | `{"nearestPrecedingItemCode":"020","resultPreviousBudget":481188232}` | `{"itemCode":"020","previousBudget":481188232}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | PASS | `{"expenseCode":"01-95","hasTriple":true}` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 
@@ -70,7 +70,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | PASS | `-32920906` | `-32920906` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | FAIL | `null` | `"千円"` |  |
 | page_identification | PASS | `11` | `11` |  |
-| raw_delta_glyph_preserved | PASS | `"△ 906 920, 32,"` | `"contains △"` | Checks the RAW extracted token, not the ground truth. A pass here means the engine itself retained the decrease glyph. |
+| delta_glyph_observed_and_associated | PASS | `"△ 906 920, 32,"` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | PASS | `{"nearestPrecedingItemCode":"020","resultPreviousBudget":481188232}` | `{"itemCode":"020","previousBudget":481188232}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | PASS | `{"expenseCode":"01-95","hasTriple":true}` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 
