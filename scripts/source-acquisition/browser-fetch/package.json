@@ -1,0 +1,12 @@
+{
+  "name": "source-acquisition-browser-fetch",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "fetch": "node src/browser-fetch.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

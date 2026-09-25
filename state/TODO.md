@@ -23,7 +23,8 @@
 
 ## case-002 (branch: research/case-002-meti-preregistration)
 
-- **Blocked:** acquire the METI FY2024 general-account request PDF (`https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf`) — currently returns an AWS WAF JS challenge (HTTP 202, `x-amzn-waf-action: challenge`) to the repository's plain-fetch acquisition tooling. Needs either a manually-supplied copy (with independent SHA-256 verification against the same official URL once accessible) or an explicitly-authorized browser-capable acquisition method — do not substitute a mirror.
-- Once acquired and locked: apply the frozen selection protocol (`fixtures/document-understanding/case-002/20260926_0834_Case002_Selection_Protocol.md`) via direct visual inspection (not via pdfjs/PyMuPDF/Docling, to avoid circularity) to select and freeze the exact row.
+- Source acquired and SHA-256-locked: the METI FY2024 general-account request PDF (`https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf`, 106 pages) was blocked by an AWS WAF JS challenge under the plain-fetch tooling, then successfully acquired via a new Playwright-based tool (`scripts/source-acquisition/browser-fetch/`). See `sources/source-lock.json` (`sourceId: meti-fy2024-general-account-request`).
+- Next: apply the frozen selection protocol (`fixtures/document-understanding/case-002/20260926_0834_Case002_Selection_Protocol.md`) via direct visual inspection of the locked PDF (not via pdfjs/PyMuPDF/Docling, to avoid circularity) to select and freeze the exact row.
 - Only after the row is frozen: create `fixtures/document-understanding/case-002/ground-truth.json` by visual transcription, then run the three existing engines against it to test whether the case-001-derived findings (table-cell column separation, numeric-token reversal, CJK-space closing, header-hierarchy ambiguity) generalize.
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
+- Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during this acquisition) should be backported from `browser-fetch.mjs` for consistency.
