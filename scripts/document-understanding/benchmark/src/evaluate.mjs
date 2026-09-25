@@ -62,7 +62,7 @@ export function evaluate(caseId, engine) {
   const expenseRows = normalized.candidates.expenseRows;
   const matchedExpense = expenseRows.find(er => er.expenseCode === r.expenseCode) ?? expenseRows[0] ?? null;
   const precedingItemRow = matchedExpense
-    ? itemRows.filter(ir => ir.lineIndex < matchedExpense.lineIndex).sort((a, b) => b.lineIndex - a.lineIndex)[0] ?? null
+    ? itemRows.filter(ir => ir.order < matchedExpense.order).sort((a, b) => b.order - a.order)[0] ?? null
     : null;
   checks.push({
     id: 'item_to_amount_relationship',

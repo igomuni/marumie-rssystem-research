@@ -6,13 +6,29 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { ROOT, EVIDENCE_DIR, REPORTS_DIR, writeJson, ensureDir } from './common.mjs';
 import { normalize } from './normalize.mjs';
+import { normalizeDocling } from './normalize-docling.mjs';
 import { evaluate } from './evaluate.mjs';
 
 const ADAPTERS_DIR = path.join(ROOT, 'scripts', 'document-understanding', 'adapters');
 
+function venvPythonAdapter(dirName, scriptName, setupHint) {
+  return function run(caseId) {
+    const dir = path.join(ADAPTERS_DIR, dirName);
+    const venvPython = path.join(dir, '.venv', 'bin', 'python3');
+    if (!fs.existsSync(venvPython)) {
+      console.log(`SKIP ${dirName}: .venv not found. Set up with:\n${setupHint}`);
+      return false;
+    }
+    const r = spawnSync(venvPython, [scriptName, caseId], { cwd: dir, stdio: 'inherit' });
+    if (r.status !== 0) throw new Error(`${dirName} adapter failed (exit ${r.status})`);
+    return true;
+  };
+}
+
 const ENGINES = [
   {
     engine: 'pdfjs-baseline',
+    normalize,
     run(caseId) {
       const r = spawnSync('node', ['src/run.mjs', caseId], {
         cwd: path.join(ADAPTERS_DIR, 'pdfjs-baseline'),
@@ -23,22 +39,28 @@ const ENGINES = [
   },
   {
     engine: 'pymupdf-baseline',
-    run(caseId) {
-      const dir = path.join(ADAPTERS_DIR, 'pymupdf-baseline');
-      const venvPython = path.join(dir, '.venv', 'bin', 'python3');
-      const python = fs.existsSync(venvPython) ? venvPython : null;
-      if (!python) {
-        console.log(
-          'SKIP pymupdf-baseline: .venv not found. Set up with:\n' +
-          '  cd scripts/document-understanding/adapters/pymupdf-baseline\n' +
-          '  python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt'
-        );
-        return false;
-      }
-      const r = spawnSync(python, ['src/run.py', caseId], { cwd: dir, stdio: 'inherit' });
-      if (r.status !== 0) throw new Error(`pymupdf-baseline adapter failed (exit ${r.status})`);
-      return true;
-    },
+    normalize,
+    run: venvPythonAdapter(
+      'pymupdf-baseline',
+      'src/run.py',
+      '  cd scripts/document-understanding/adapters/pymupdf-baseline\n' +
+      '  python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt'
+    ),
+  },
+  {
+    engine: 'docling',
+    // Docling's raw artifact is table-cell structured, not flat text lines,
+    // so it uses its own normalizer (normalize-docling.mjs) rather than the
+    // shared regex-over-lines one. evaluate.mjs is unchanged either way: it
+    // only consumes the common { result, candidates } shape both normalizers
+    // produce.
+    normalize: (caseId) => normalizeDocling(caseId),
+    run: venvPythonAdapter(
+      'docling',
+      'src/run.py',
+      '  cd scripts/document-understanding/adapters/docling\n' +
+      '  python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt'
+    ),
   },
 ];
 
@@ -54,6 +76,28 @@ function renderReport(caseId, evaluations) {
     lines.push(`| ${e.engine} (${e.engineVersion}) | ${e.summary.passed} | ${e.summary.failed} | ${e.summary.total} |`);
   }
   lines.push('');
+  lines.push('The score alone is not the main result — see which *specific* checks differ below.');
+  lines.push('');
+
+  // Compact cross-engine comparison matrix: one row per check id (in the
+  // order the first engine reports them), one column per engine. This is
+  // meant to be scanned for *which capability* differs, not just tallied.
+  if (evaluations.length > 0) {
+    const checkIds = evaluations[0].checks.map(c => c.id);
+    lines.push('## Comparison matrix');
+    lines.push('');
+    lines.push(`| check | ${evaluations.map(e => e.engine).join(' | ')} |`);
+    lines.push(`|---|${evaluations.map(() => '---').join('|')}|`);
+    for (const id of checkIds) {
+      const cells = evaluations.map(e => {
+        const c = e.checks.find(x => x.id === id);
+        return c ? (c.pass ? 'PASS' : 'FAIL') : 'n/a';
+      });
+      lines.push(`| ${id} | ${cells.join(' | ')} |`);
+    }
+    lines.push('');
+  }
+
   for (const e of evaluations) {
     lines.push(`## ${e.engine}`);
     lines.push('');
@@ -73,13 +117,13 @@ function main(caseId) {
   const ran = [];
   for (const adapter of ENGINES) {
     const didRun = adapter.run(caseId);
-    if (didRun !== false) ran.push(adapter.engine);
+    if (didRun !== false) ran.push(adapter);
   }
 
   const evaluations = [];
-  for (const engine of ran) {
-    normalize(caseId, engine);
-    evaluations.push(evaluate(caseId, engine));
+  for (const adapter of ran) {
+    adapter.normalize(caseId, adapter.engine);
+    evaluations.push(evaluate(caseId, adapter.engine));
   }
 
   ensureDir(EVIDENCE_DIR);

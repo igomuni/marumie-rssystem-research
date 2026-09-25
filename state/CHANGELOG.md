@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### Docling adapter integration (branch: research/document-understanding-benchmark)
+
+- Added `scripts/document-understanding/adapters/docling/` (pinned `docling==2.130.0`, isolated venv), a third, structurally different engine that emits native table-cell objects (row/col/span/text) rather than flat text lines.
+- Empirically verified before implementation (not assumed): Docling detected a real, borderless (no visible gridlines) table on case-001's target page — 21 rows × 14 columns, 119 cells.
+- Preserved Docling's native structure in the raw artifact (`tables`/`texts`/`markdown`), not flattened to text lines, per task scope.
+- Added `scripts/document-understanding/benchmark/src/normalize-docling.mjs`, a Docling-specific normalizer (the minimal interface addition this integration required) producing the same `{ result, candidates }` shape `evaluate.mjs` already consumed — `evaluate.mjs` itself required only one small, engine-agnostic fix: an `order` field (added to both normalizers) replacing an assumption that every candidate row has a `lineIndex`, which table-cell candidates don't.
+- Documented and handled two genuine, general (not case-specific) Docling behaviors found via direct inspection of its cell output: (1) a wrap-induced ASCII space between two CJK characters where the printed line broke — closed deterministically; (2) multi-comma-group numeric cells assembled with their whitespace-separated groups in reversed order (verified consistent across every multi-group numeric cell checked on the page) — reversed deterministically to recover the value. Neither rule references case-001's expected values.
+- Found and fixed a related false-positive: numeric/annotation cells could incidentally match the "three digits + text" item-code shape; the guard now requires an actual CJK character in the matched name, not merely "any non-digit character."
+- Result: Docling scores 9/11 on `case-001` vs. 8/11 for each existing baseline. It resolves `expense_name_exact_match_after_line_join` via genuine table-cell column separation (the wrapped label and an unrelated annotation column land in different cells). It does not resolve `item_name_exact_match` (same header-row hierarchy ambiguity persists) or `unit_exact_match` (unit label absent from this page for every engine). The request-number column has no corresponding cell for the target row — recorded as `null`, not guessed.
+- Extended the generated report (`reports/document-understanding/case-001-evaluation.md`) with a compact cross-engine comparison matrix (one row per check, one column per engine).
+- Added 10 new unit tests for the Docling-specific normalizer (CJK-space closing, numeric-token reversal, sign-only-from-observed-glyph, no-glyph-means-never-negative, missing-request-number-is-null) — all with synthetic data using different numbers than any real case, to demonstrate the logic is general.
+- `npm run validate`, `npm run extraction:test`, and both existing baseline adapters are unaffected and re-verified passing.
+
 ### Document Understanding Benchmark layer (branch: research/document-understanding-benchmark)
 
 - Added `scripts/document-understanding/` as a new layer distinct from `scripts/pdf-extraction`: extraction answers "can we get text out," this layer measures "can an engine recover document structure" (reading order, multi-line cell reconstruction, row/column association).

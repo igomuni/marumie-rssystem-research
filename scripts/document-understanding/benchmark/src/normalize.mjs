@@ -25,6 +25,12 @@ function reconstructRow(row, nameField, lines) {
     ...row,
     [nameField]: joinedSuffix ? `${fragment}${joinedSuffix}` : fragment,
     joinedFromLineIndexes: [row.lineIndex, ...consumedLineIndexes],
+    // Engine-agnostic reading-order key so evaluate.mjs can compare "which
+    // row precedes which" across normalizers with different native row
+    // shapes (this one keyed by lineIndex; the Docling table-cell normalizer
+    // keyed by table row index) without needing to know which engine produced
+    // either candidate.
+    order: row.lineIndex,
   };
 }
 

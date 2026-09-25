@@ -13,6 +13,6 @@
     "Historical fixture generation is still hand-curated, not mechanically derived from deterministic extraction",
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
     "allocationMode classification is not yet productionized",
-    "Document Understanding benchmark (branch research/document-understanding-benchmark, not yet merged to main) has a harness + two baselines but has not resolved header-row ambiguity or added a table-structure-aware engine (Docling recommended next)"
+    "Document Understanding benchmark (branch research/document-understanding-benchmark, not yet merged to main) now has three engines (pdfjs, PyMuPDF, Docling); Docling resolved the expense-name two-column conflation but header-row hierarchy ambiguity and page-level unit recovery remain unresolved for all three"
   ]
 }

@@ -46,3 +46,6 @@ __pycache__/
 
 # ChatGPT -> local workspace handoff
 incoming/
+
+# Local Claude Code harness state (not project content)
+.claude/

@@ -10,6 +10,11 @@ import {
   findExpenseRows,
   joinWrappedLabel,
 } from './common.mjs';
+import {
+  closeCjkWrapSpaces,
+  reconstructNumericToken,
+  findRows,
+} from './normalize-docling.mjs';
 
 function t(name, fn) {
   try {
@@ -94,4 +99,92 @@ t('joinWrappedLabel: stops at a line that is itself a structural row', () => {
   ];
   const { joinedSuffix } = joinWrappedLabel(lines, 0);
   assert.equal(joinedSuffix, '', 'must not join a line that matches the item-code pattern itself');
+});
+
+// --- normalize-docling.mjs -------------------------------------------
+// These use synthetic table-cell data with DIFFERENT numbers than any real
+// case's ground truth, specifically to demonstrate the logic is general
+// (engine-behavior-driven) rather than fitted to a known expected answer.
+
+t('closeCjkWrapSpaces: removes a wrap-induced space between two CJK characters', () => {
+  assert.equal(closeCjkWrapSpaces('情報通信技術調達等適正 ・効率化推進費'), '情報通信技術調達等適正・効率化推進費');
+});
+
+t('closeCjkWrapSpaces: leaves the space between an item code and its CJK name', () => {
+  assert.equal(closeCjkWrapSpaces('020 情報通信技術調達等適正'), '020 情報通信技術調達等適正');
+});
+
+t('reconstructNumericToken: reverses Docling-style reversed comma-groups', () => {
+  const r = reconstructNumericToken('999 111, 555,');
+  assert.equal(r.magnitude, 555111999);
+  assert.equal(r.isDelta, false);
+});
+
+t('reconstructNumericToken: already-correct single-token cell is unaffected', () => {
+  const r = reconstructNumericToken('777');
+  assert.equal(r.magnitude, 777);
+});
+
+t('reconstructNumericToken: a glyph-only cell is reported distinctly, not as a magnitude of 0', () => {
+  const r = reconstructNumericToken('△');
+  assert.equal(r.deltaGlyphOnly, true);
+});
+
+t('reconstructNumericToken: non-numeric cell text returns null (not force-parsed)', () => {
+  assert.equal(reconstructNumericToken('（要求要旨）'), null);
+});
+
+t('findRows: sign comes only from an actually-observed separate glyph cell, never inferred', () => {
+  const cells = [
+    { row: 0, col: 1, text: '030 テスト項目名' },
+    { row: 1, col: 1, text: '02-99 テスト費目名' },
+    { row: 1, col: 3, text: '111 222,' },   // previous: reversed -> 222,111
+    { row: 1, col: 4, text: '333 444,' },   // current: reversed -> 444,333
+    { row: 1, col: 6, text: '△' },          // sign cell, observed separately
+    { row: 1, col: 7, text: '999 555,' },   // delta magnitude: reversed -> 555,999
+  ];
+  const { itemRows, expenseRows } = findRows([{ tableIndex: 0, cells }]);
+  assert.equal(itemRows.length, 1);
+  assert.equal(itemRows[0].itemCode, '030');
+  assert.equal(expenseRows.length, 1);
+  const e = expenseRows[0];
+  assert.equal(e.expenseCode, '02-99');
+  assert.equal(e.triple.previous.magnitude, 222111);
+  assert.equal(e.triple.current.magnitude, 444333);
+  assert.equal(e.triple.delta.magnitude, 555999);
+  assert.equal(e.triple.delta.isDelta, true);
+  assert.equal(e.triple.delta.signed, -555999);
+  assert.ok(itemRows[0].order < expenseRows[0].order, 'item row must be ordered before the expense row nested under it');
+});
+
+t('findRows: a triple with no glyph cell anywhere is never signed negative', () => {
+  const cells = [
+    { row: 0, col: 1, text: '02-99 テスト費目名' },
+    { row: 0, col: 3, text: '111,222' },
+    { row: 0, col: 4, text: '333,444' },
+    { row: 0, col: 7, text: '55,999' },
+  ];
+  const { expenseRows } = findRows([{ tableIndex: 0, cells }]);
+  assert.equal(expenseRows[0].triple.delta.isDelta, false);
+  assert.equal(expenseRows[0].triple.delta.signed, 55999, 'no glyph observed anywhere in the row means positive, never guessed negative');
+});
+
+t('findRows: missing request-number cell is recorded as null, not guessed', () => {
+  const cells = [
+    { row: 0, col: 1, text: '02-99 テスト費目名' },
+    { row: 0, col: 3, text: '111,222' },
+    { row: 0, col: 4, text: '333,444' },
+    { row: 0, col: 7, text: '55,999' },
+  ];
+  const { expenseRows } = findRows([{ tableIndex: 0, cells }]);
+  assert.equal(expenseRows[0].requestNo, null);
+});
+
+t('findRows: a present request-number cell to the left is used', () => {
+  const cells = [
+    { row: 0, col: 0, text: '7' },
+    { row: 0, col: 1, text: '02-99 テスト費目名' },
+  ];
+  const { expenseRows } = findRows([{ tableIndex: 0, cells }]);
+  assert.equal(expenseRows[0].requestNo, '7');
 });

@@ -45,3 +45,7 @@ MinerU and PaddleOCR remain documented, ready-to-revisit options — MinerU spec
 1. `pip install docling` in a dedicated venv under `scripts/document-understanding/adapters/docling/`, pinned via `requirements.txt` (matching the `pymupdf-baseline` pattern).
 2. Write `adapters/docling/src/run.py` per the plug-in point documented in `adapters/docling/README.md` — noting that Docling's table-cell-structured output will likely need either an extension to `benchmark/src/common.mjs`'s row-detection rules or a Docling-specific normalization path in `benchmark/src/normalize.mjs`, since it does not produce flat text lines the way the two current baselines do.
 3. Run `npm run docbench` against `case-001` and compare Docling's evaluation results directly against the two existing baselines already on record in `evidence/document-understanding/case-001-results.json`.
+
+## Update: Docling integrated
+
+Docling has since been integrated (see `scripts/document-understanding/adapters/docling/README.md` for what was empirically observed, and `reports/document-understanding/case-001-evaluation.md` for the full per-check comparison against both baselines). Summary: Docling scored 9/11 on `case-001` versus 8/11 for each flat-text baseline, resolving the two-column expense-name conflation via genuine table-cell separation, while the header-row hierarchy ambiguity and the missing page-level unit label remained unresolved for all three engines. MinerU and PaddleOCR remain not integrated, per plan.
