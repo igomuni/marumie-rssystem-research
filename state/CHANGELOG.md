@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Document Understanding Benchmark layer (branch: research/document-understanding-benchmark)
+
+- Added `scripts/document-understanding/` as a new layer distinct from `scripts/pdf-extraction`: extraction answers "can we get text out," this layer measures "can an engine recover document structure" (reading order, multi-line cell reconstruction, row/column association).
+- Added `case-001` (`fixtures/document-understanding/case-001/`): the item-020 (`情報通信技術調達等適正・効率化推進費`) detail row on PDF page index 11, with manually-verified ground truth stored separately from all engine output.
+- Implemented two independent baseline adapters: `pdfjs-baseline` (reuses `scripts/pdf-extraction`'s already-locked, already-verified output) and `pymupdf-baseline` (pinned `pymupdf==1.28.2`, isolated venv, independent re-verification of the source hash).
+- Implemented a generic, case-blind row parser (`benchmark/src/common.mjs`) and a strict normalize/evaluate separation: `normalize.mjs` never reads ground-truth *values* (only case config, e.g. which page), `evaluate.mjs` is the only step that reads them.
+- Added root commands `docbench` and `docbench:test`.
+- Ran the harness against both baselines: 8/11 checks pass for each. Both correctly fail `unit_exact_match` (the "千円" label is genuinely absent from this page) and `expense_name_exact_match_after_line_join` (both engines independently hit the same two-column-conflation artifact merging the wrapped label with an unrelated annotation heading) — failures are recorded verbatim, not repaired. `item_name_exact_match` fails because the page has four structurally-identical `NNN <name>` rows (`020`/`036`/`041`/`046`) at different hierarchy levels the harness does not yet disambiguate; a diagnostic check (`item_name_present_among_candidates`) confirms the correct row was nonetheless extracted and reconstructed correctly by both engines.
+- Surveyed three external engines (Docling, MinerU, PaddleOCR/PP-StructureV3) without installing any of them; verified package availability via `pip index versions`. Recommended Docling as the next engine to integrate (see `reports/document-understanding/external-engine-survey.md`).
+- `npm run validate`, `npm run extraction:test`, and the rest of the existing pipeline are unaffected and re-verified passing.
+
 ### Workspace Phase 1D — Deterministic page-aware PDF extraction
 
 - Imported a ChatGPT-produced research/handoff bundle (`incoming/workspace-phase-1d-chat-research-bundle.zip`, SHA-256 verified) via a new local-only `incoming/` handoff directory (git-ignored).

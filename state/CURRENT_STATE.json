@@ -12,6 +12,7 @@
     "MHLW bucket 032 numeric allocation remains unresolved",
     "Historical fixture generation is still hand-curated, not mechanically derived from deterministic extraction",
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
-    "allocationMode classification is not yet productionized"
+    "allocationMode classification is not yet productionized",
+    "Document Understanding benchmark (branch research/document-understanding-benchmark, not yet merged to main) has a harness + two baselines but has not resolved header-row ambiguity or added a table-structure-aware engine (Docling recommended next)"
   ]
 }

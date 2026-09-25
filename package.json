@@ -8,6 +8,8 @@
     "extract": "npm --prefix scripts/pdf-extraction run extract",
     "extraction:compare": "npm --prefix scripts/pdf-extraction run compare",
     "extraction:test": "npm --prefix scripts/pdf-extraction test",
-    "extraction:determinism": "npm --prefix scripts/pdf-extraction run determinism"
+    "extraction:determinism": "npm --prefix scripts/pdf-extraction run determinism",
+    "docbench": "npm --prefix scripts/document-understanding/benchmark run run --",
+    "docbench:test": "npm --prefix scripts/document-understanding/benchmark test"
   }
 }
