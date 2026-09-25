@@ -1,0 +1,9 @@
+{
+  "name": "document-understanding-pdfjs-baseline",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "run": "node src/run.mjs"
+  }
+}

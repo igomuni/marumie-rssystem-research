@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+### Docling adapter integration (branch: research/document-understanding-benchmark)
+
+- Added `scripts/document-understanding/adapters/docling/` (pinned `docling==2.130.0`, isolated venv), a third, structurally different engine that emits native table-cell objects (row/col/span/text) rather than flat text lines.
+- Empirically verified before implementation (not assumed): Docling detected a real, borderless (no visible gridlines) table on case-001's target page — 21 rows × 14 columns, 119 cells.
+- Preserved Docling's native structure in the raw artifact (`tables`/`texts`/`markdown`), not flattened to text lines, per task scope.
+- Added `scripts/document-understanding/benchmark/src/normalize-docling.mjs`, a Docling-specific normalizer (the minimal interface addition this integration required) producing the same `{ result, candidates }` shape `evaluate.mjs` already consumed — `evaluate.mjs` itself required only one small, engine-agnostic fix: an `order` field (added to both normalizers) replacing an assumption that every candidate row has a `lineIndex`, which table-cell candidates don't.
+- Documented and handled two genuine, general (not case-specific) Docling behaviors found via direct inspection of its cell output: (1) a wrap-induced ASCII space between two CJK characters where the printed line broke — closed deterministically; (2) multi-comma-group numeric cells assembled with their whitespace-separated groups in reversed order (verified consistent across every multi-group numeric cell checked on the page) — reversed deterministically to recover the value. Neither rule references case-001's expected values.
+- Found and fixed a related false-positive: numeric/annotation cells could incidentally match the "three digits + text" item-code shape; the guard now requires an actual CJK character in the matched name, not merely "any non-digit character."
+- Result: Docling scores 9/11 on `case-001` vs. 8/11 for each existing baseline. It resolves `expense_name_exact_match_after_line_join` via genuine table-cell column separation (the wrapped label and an unrelated annotation column land in different cells). It does not resolve `item_name_exact_match` (same header-row hierarchy ambiguity persists) or `unit_exact_match` (unit label absent from this page for every engine). The request-number column has no corresponding cell for the target row — recorded as `null`, not guessed.
+- Extended the generated report (`reports/document-understanding/case-001-evaluation.md`) with a compact cross-engine comparison matrix (one row per check, one column per engine).
+- Added 10 new unit tests for the Docling-specific normalizer (CJK-space closing, numeric-token reversal, sign-only-from-observed-glyph, no-glyph-means-never-negative, missing-request-number-is-null) — all with synthetic data using different numbers than any real case, to demonstrate the logic is general.
+- `npm run validate`, `npm run extraction:test`, and both existing baseline adapters are unaffected and re-verified passing.
+- PR #1 review fix: renamed the `raw_delta_glyph_preserved` evaluation check to `delta_glyph_observed_and_associated` and rewrote its note. The old name/description implied `deltaRaw` was always a single literal raw engine token; for Docling it can be a normalizer-constructed concatenation of a separate glyph-only cell and a magnitude cell. Verified by code inspection that for all three engines the `△` glyph in `deltaRaw`, when present, always originates from genuine engine raw output (never from ground truth or inference) — see `reports/document-understanding/case-001-evaluation.md`. No score changed (8/11, 8/11, 9/11 unchanged); evidence/report regenerated for consistency.
+
+### Document Understanding Benchmark layer (branch: research/document-understanding-benchmark)
+
+- Added `scripts/document-understanding/` as a new layer distinct from `scripts/pdf-extraction`: extraction answers "can we get text out," this layer measures "can an engine recover document structure" (reading order, multi-line cell reconstruction, row/column association).
+- Added `case-001` (`fixtures/document-understanding/case-001/`): the item-020 (`情報通信技術調達等適正・効率化推進費`) detail row on PDF page index 11, with manually-verified ground truth stored separately from all engine output.
+- Implemented two independent baseline adapters: `pdfjs-baseline` (reuses `scripts/pdf-extraction`'s already-locked, already-verified output) and `pymupdf-baseline` (pinned `pymupdf==1.28.2`, isolated venv, independent re-verification of the source hash).
+- Implemented a generic, case-blind row parser (`benchmark/src/common.mjs`) and a strict normalize/evaluate separation: `normalize.mjs` never reads ground-truth *values* (only case config, e.g. which page), `evaluate.mjs` is the only step that reads them.
+- Added root commands `docbench` and `docbench:test`.
+- Ran the harness against both baselines: 8/11 checks pass for each. Both correctly fail `unit_exact_match` (the "千円" label is genuinely absent from this page) and `expense_name_exact_match_after_line_join` (both engines independently hit the same two-column-conflation artifact merging the wrapped label with an unrelated annotation heading) — failures are recorded verbatim, not repaired. `item_name_exact_match` fails because the page has four structurally-identical `NNN <name>` rows (`020`/`036`/`041`/`046`) at different hierarchy levels the harness does not yet disambiguate; a diagnostic check (`item_name_present_among_candidates`) confirms the correct row was nonetheless extracted and reconstructed correctly by both engines.
+- Surveyed three external engines (Docling, MinerU, PaddleOCR/PP-StructureV3) without installing any of them; verified package availability via `pip index versions`. Recommended Docling as the next engine to integrate (see `reports/document-understanding/external-engine-survey.md`).
+- `npm run validate`, `npm run extraction:test`, and the rest of the existing pipeline are unaffected and re-verified passing.
+
 ### Workspace Phase 1D — Deterministic page-aware PDF extraction
 
 - Imported a ChatGPT-produced research/handoff bundle (`incoming/workspace-phase-1d-chat-research-bundle.zip`, SHA-256 verified) via a new local-only `incoming/` handoff directory (git-ignored).

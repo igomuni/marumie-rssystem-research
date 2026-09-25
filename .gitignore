@@ -37,5 +37,15 @@ sources/raw/*
 derived/pdf-extraction/*
 !derived/pdf-extraction/.gitkeep
 
+derived/document-understanding/*
+!derived/document-understanding/.gitkeep
+
+.venv/
+__pycache__/
+*.pyc
+
 # ChatGPT -> local workspace handoff
 incoming/
+
+# Local Claude Code harness state (not project content)
+.claude/
