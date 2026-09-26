@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### case-003 target row selected and frozen (branch: research/case-003-mic-preregistration)
+
+- **Protocol execution only. No Ground Truth, no benchmark engine run against MIC.**
+- Applied the frozen `20260926_1548_Case003_Selection_Protocol.md` (commit `8b65364`, confirmed byte-identical throughout) via direct visual inspection only, no compared engine.
+- First resolved a genuine open unknown the protocol had left unresolved: the mapping between PDF page index and the document's own printed page labels. Paged through the cover/TOC (PDF pages 1, 3–4) and the summary table `総表` (PDF pages 5–8, printed `総1`–`総4`) to confirm printed page `総(本) 5` (the first page of `明細表` for organization `010`) is PDF page 9 / `pdfPageIndex` 8.
+- Enumerated top-to-bottom from that page: `010 総務本省` (organization aggregate) and `010 総務省共通費` (item aggregate) both failed ME2 (no expense-level code); `① 01-95 総務本省一般行政に必要な経費` passed ME1–ME5 and was frozen as the selected row — structurally the same pattern as case-002's own first-eligible row (`①01-95 [ministry] 一般行政に必要な経費`), arrived at independently via the same deterministic rule, not chosen for the resemblance.
+- Amount-triple values were visually confirmed present (required for ME4) but deliberately **not transcribed, not normalized, and not arithmetic-checked** — no `ground-truth.json` was created. Incidental exposure to `総表`'s other-organization aggregate totals (unavoidable en route to organization 010's own detail table) is disclosed in the record and did not influence selection.
+- Files: `fixtures/document-understanding/case-003/20260926_1603_Case003_Selection_Record.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+
 ### case-003 row-selection protocol frozen (branch: research/case-003-mic-preregistration)
 
 - **Preregistration only. No candidate row enumerated/inspected, no target row selected, no Ground Truth, no benchmark engine run against MIC.**
