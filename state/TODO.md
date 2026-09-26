@@ -34,9 +34,8 @@
   3. Investigate Docling's coarser/misaligned table grid on case-002's page (wrong-row selection reported as unambiguous — arguably worse than the flat-text baselines' honest `null`s).
   4. Consider a `case-003`, selected via the same source-only protocol, to test whether the "annotation on the same line as the triple" pattern found on case-002 is common or rare across ministries.
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
-- Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
-- **`acquire.mjs` still has the pre-PR-#2-review unconditional lock-overwrite bug** that `browser-fetch.mjs` no longer has (fixed at `6db4f24`) — a real inconsistency between the repository's two acquisition tools, surfaced again during the case-003 MIC source survey. Not fixed yet.
 - PR #2 (case-002 + Case Package checkpoint, plus the browser-fetch immutability fix) was reviewed and **merged to `main` by the user** at `f8e32ef`.
+- **`acquire.mjs`'s missing PDF-magic-byte check and lock-overwrite bug: FIXED.** Both `acquire.mjs` (plain fetch) and `browser-fetch.mjs` (Playwright) now share one immutable lock-decision/mutation policy (`scripts/source-acquisition/src/lock-policy.mjs`): identical re-fetch is a no-op, mismatched re-fetch fails loudly without mutating the lock or raw file, and PDF-magic-byte validation runs before any write. Covered by 8 new tests (`scripts/source-acquisition/src/test.mjs`, injected/fixture-based, no live network). All existing locked sources (case-001 x2, METI case-002, MIC case-003 candidate) verified byte-identical before and after.
 
 ## case-003 (branch: research/case-003-mic-preregistration) — source survey only, no row selected
 

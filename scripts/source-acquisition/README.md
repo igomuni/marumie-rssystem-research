@@ -30,7 +30,7 @@ npm run verify
 
 ## Lock vs. verify
 
-- **`lock`** is an explicit, intentional operation. It downloads the currently registered source URLs, computes their SHA-256, records HTTP status/content-type/size/redirect target, saves the raw binary under `sources/raw/` (git-ignored, not committed), and writes `sources/source-lock.json` (committed — this is the reproducibility anchor).
+- **`lock`** is an explicit, intentional operation. For a `sourceId` not yet in the lock, it downloads the source, validates it looks like the expected PDF (rejecting an HTML bot-challenge/interstitial page even if the HTTP status is 2xx), computes its SHA-256, saves the raw binary under `sources/raw/` (git-ignored, not committed), and writes `sources/source-lock.json` (committed — this is the reproducibility anchor). **For a `sourceId` already in the lock, `lock` is immutable**: identical bytes report a no-op `VERIFIED` outcome (the existing entry and raw file are left completely unchanged), and different bytes cause `lock` to exit non-zero without writing anything — it never silently replaces an existing entry. This mutation-decision policy is shared with `browser-fetch/` (`src/lock-policy.mjs`), so it behaves the same way regardless of which acquisition method is used.
 - **`verify`** never writes or updates the lock file. It re-downloads each source listed in the committed lock, computes its SHA-256, and compares it against the locked hash. It exits non-zero and reports `FAIL <sourceId>` with the expected/actual hashes on any mismatch.
 
 ## Why binaries are not committed
@@ -43,4 +43,4 @@ Downloaded PDFs are saved under `sources/raw/`, which is git-ignored. The reposi
 same URL != same source binary
 ```
 
-A government site can replace the file behind an unchanged URL. `sources:verify` is designed to catch this: a mismatch is reported, not silently accepted, and the locked hash is never overwritten by `verify`. Updating the lock to a new binary requires explicitly re-running `sources:lock`, which is itself a reviewable Git change. See ADR-009 in `protocol/DECISIONS.md`.
+A government site can replace the file behind an unchanged URL. `sources:verify` is designed to catch this: a mismatch is reported, not silently accepted, and the locked hash is never overwritten by `verify`. `sources:lock` no longer silently updates an existing entry either — a genuinely different upstream binary makes `lock` fail loudly, naming the `sourceId` and both SHA-256 values, without writing anything. There is deliberately no `--force`/re-lock-to-new-binary shortcut yet; updating an existing lock entry to a knowingly-changed source is left as a future, explicitly reviewable workflow. See ADR-009 in `protocol/DECISIONS.md`.

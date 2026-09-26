@@ -5,6 +5,7 @@
     "sources:lock": "npm --prefix scripts/source-acquisition run lock",
     "sources:verify": "npm --prefix scripts/source-acquisition run verify",
     "sources:fetch": "npm --prefix scripts/source-acquisition run fetch",
+    "sources:test": "npm --prefix scripts/source-acquisition test",
     "extract": "npm --prefix scripts/pdf-extraction run extract",
     "extraction:compare": "npm --prefix scripts/pdf-extraction run compare",
     "extraction:test": "npm --prefix scripts/pdf-extraction test",
