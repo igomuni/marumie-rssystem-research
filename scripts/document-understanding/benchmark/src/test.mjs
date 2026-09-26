@@ -166,6 +166,59 @@ t('closeCjkWrapSpaces: re-exported from normalize-docling.mjs is the identical f
   assert.equal(closeCjkWrapSpacesReexportedFromDocling, closeCjkWrapSpaces);
 });
 
+// --- CJK Fullwidth-Punctuation Boundary Experiment: characterization tests
+// -------------------------------------------------------------------------
+// These document the *actual, current* boundary of closeCjkWrapSpaces --
+// including cases found by exhaustively searching case-001/002/003's raw
+// artifacts for every fullwidth-punctuation-adjacent whitespace instance --
+// not a proposed change. Where real-world intent is genuinely ambiguous and
+// no corpus evidence exists either way, the test documents current behavior
+// explicitly as a characterization, not a claim that the output is the only
+// correct one (see the experiment report for the corpus evidence and the
+// keep/narrow/defer reasoning this was built to support).
+
+t('closeCjkWrapSpaces: closes a space before an opening fullwidth paren (matches the real, exhaustively-found corpus pattern, e.g. case-002\'s "...必要な （要求要旨）")', () => {
+  assert.equal(closeCjkWrapSpaces('経済産業 （要求要旨）'), '経済産業（要求要旨）');
+});
+
+t('closeCjkWrapSpaces: closes spaces padded just inside fullwidth parens (this document family never pads inside brackets; not observed verbatim in the corpus but the same mechanism as the previous test)', () => {
+  assert.equal(closeCjkWrapSpaces('経済産業（ 要求要旨 ）'), '経済産業（要求要旨）');
+});
+
+t('closeCjkWrapSpaces: closes a space before an opening fullwidth quote mark (matches the real corpus pattern, e.g. case-002\'s "必要な経費 「経済産業省設置法」")', () => {
+  assert.equal(closeCjkWrapSpaces('必要な経費 「経済産業省設置法」に定める'), '必要な経費「経済産業省設置法」に定める');
+});
+
+t('closeCjkWrapSpaces: closes a space adjacent to a FULLWIDTH digit embedded in CJK text (real corpus pattern, e.g. every case\'s own header row "要求 前 年 度 ６ 年 度 対 前 年 度" -- fullwidth "６" is in CJK_RANGE, unlike an ASCII digit)', () => {
+  // This is the one genuinely new boundary this experiment's corpus search
+  // surfaced: fullwidth digits/Latin letters (Unicode Halfwidth/Fullwidth
+  // Forms block, FF00-FFEF) fall inside CJK_RANGE, so a space next to one is
+  // closed -- unlike a space next to an ASCII digit/letter (see the
+  // "leaves the space between an item code and its CJK name" test above),
+  // which is never closed. In every real occurrence found across all three
+  // cases, the fullwidth digit sits inside the same uniformly wide-spaced
+  // header/title run as the surrounding CJK text, so closing it is correct,
+  // not harmful -- confirmed by exhaustive corpus search, not assumed.
+  assert.equal(closeCjkWrapSpaces('度 ６ 年'), '度６年');
+});
+
+t('closeCjkWrapSpaces: also closes a space adjacent to a fullwidth Latin letter (synthetic only -- no fullwidth Latin letter was found anywhere in the case-001/002/003 corpus; documented as an untested boundary, not a validated real-world need)', () => {
+  assert.equal(closeCjkWrapSpaces('経済 Ａ 産業'), '経済Ａ産業');
+});
+
+t('closeCjkWrapSpaces: the △ delta glyph is never affected (U+25B3 is a math symbol, not in the Halfwidth/Fullwidth Forms Unicode block CJK_RANGE covers)', () => {
+  assert.equal(closeCjkWrapSpaces('経費 △ 100'), '経費 △ 100');
+});
+
+t('closeCjkWrapSpaces: AMBIGUOUS CASE, documented not certified -- a space after an ideographic comma between two short CJK phrases. No corpus evidence either way; this test locks in current behavior for regression-tracking, not as a claim it is the semantically correct choice', () => {
+  // If a future case's genuine source text turns out to use "、" followed by
+  // a deliberate spacing convention (uncommon in standard Japanese prose,
+  // but not impossible in a stylized document), this specific behavior
+  // should be revisited then, with real evidence -- not narrowed
+  // speculatively now.
+  assert.equal(closeCjkWrapSpaces('国、 地方'), '国、地方');
+});
+
 t('normalize.mjs pipeline (via findItemCodeRows + reconstructRow): a wide-letter-spaced pdfjs-baseline header line produces a clean itemNameFragment', () => {
   // End-to-end through the actual extraction regex (common.mjs's
   // findItemCodeRows), not just the closeCjkWrapSpaces unit in isolation --
