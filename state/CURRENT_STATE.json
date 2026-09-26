@@ -14,6 +14,6 @@
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
     "allocationMode classification is not yet productionized",
     "Document Understanding benchmark (merged to main via PR #1) has three engines (pdfjs, PyMuPDF, Docling) on case-001; header-row hierarchy ambiguity and page-level unit recovery remain unresolved for all three",
-    "case-002 (METI FY2024 general-account request PDF) target row is now frozen via the pre-registered selection protocol (fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md: PDF page 9 / printed 経(本)5, request no. 1, expense code 01-95, the first eligible row in 明細表); Ground Truth has not been created and no benchmark engine has been run yet"
+    "case-002 (METI FY2024 general-account request PDF) source locked, target row frozen, and Ground Truth now frozen (fixtures/document-understanding/case-002/ground-truth.json: PDF page 9 / printed 経(本)5, request no. 1, expense code 01-95, positive delta unlike case-001's negative one); no benchmark engine has been run yet — next step is first engine execution/evaluation using unchanged case-001-derived benchmark behavior"
   ]
 }

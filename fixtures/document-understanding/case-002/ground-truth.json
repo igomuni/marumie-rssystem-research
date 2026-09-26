@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-002",
+  "sourceId": "meti-fy2024-general-account-request",
+  "sourceSha256": "ba64c25df327161a33c293374a7255c203cc9a527130ece848574badefbf909a",
+  "pdfPageIndex": 8,
+  "pdfPageNumber": 9,
+  "printedPageLabel": "経(本) 5",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). Row selected under fixtures/document-understanding/case-002/20260926_0834_Case002_Selection_Protocol.md and frozen in fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md before this file was created. See fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md for the raw/visual transcription, rendering method, and arithmetic consistency check underlying every field below.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "経済産業本省共通費",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "経済産業本省一般行政に必要な経費",
+    "previousBudget": 42331005,
+    "fy2024Request": 46887829,
+    "deltaRaw": "4,556,824",
+    "delta": 4556824,
+    "unit": "千円",
+    "page": 8
+  }
+}

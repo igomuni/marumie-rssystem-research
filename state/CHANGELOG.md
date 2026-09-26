@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### case-002 Ground Truth frozen (branch: research/case-002-meti-preregistration)
+
+- Created and froze `fixtures/document-understanding/case-002/ground-truth.json` for the already-selected row (PDF page 9, printed `経(本) 5`, request no. `①`/`1`, expense code `01-95`), by direct visual transcription only — no benchmark engine, OCR, or LLM/vision extraction was consulted.
+- Re-verified the local `sources/raw/meti-fy2024-general-account-request.pdf` against `sources/source-lock.json`'s SHA-256 before transcription (`shasum -a 256`, exact match) — independent of the known-WAF-blocked `npm run sources:verify` remote check.
+- `ground-truth.json`'s `result` object reuses `case-001`'s exact schema/field set unchanged, so `evaluate.mjs` needs no modification to score `case-002`. Raw-vs-normalized separation and full provenance (rendering method/resolution, exact visual strings, normalization decisions, arithmetic consistency check) recorded in a companion evidence document, `fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md` — mirroring the precedent `case-001/README.md` already set (normalized values in the fixture, raw structural detail in a companion document).
+- Notable finding: this row's delta is `+4,556,824` with **no `△` glyph** anywhere in the cell (visually confirmed against six neighboring rows on the same page that do carry `△`, ruling out a misread) — the opposite sign case from `case-001`'s `-32,920,906`. The normalized `delta` was recorded positive strictly because no decrease glyph was observed, not inferred from arithmetic; the arithmetic check (`fy2024Request - previousBudget == delta`) was run only afterward, as a consistency check, and passed exactly.
+- Also independently re-verified (not assumed from the prior selection record): the page's unit label reads exactly `(単位: 千円)`, normalized to `"千円"` — confirmed via a dedicated high-resolution crop.
+- Confirmed: no benchmark engine (Docling, pdfjs-baseline, pymupdf-baseline), `npm run docbench`, MinerU, or PaddleOCR was run or consulted. `case-001`'s Ground Truth, evidence, results, normalizers, adapters, and evaluator were not modified.
+
 ### case-002 target row frozen (branch: research/case-002-meti-preregistration)
 
 - Applied the already-committed, unmodified `case-002` selection protocol to the locked METI PDF and froze the target row. Recorded in `fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md`.
