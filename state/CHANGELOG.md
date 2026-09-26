@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: survey MLIT source for case-005 (branch: research/case-005-mlit-source-survey)
+
+- **Source survey only. No row selected, no selection protocol, no Ground Truth, no benchmark engine run.**
+- Confirmed, via two independently agreeing routes (MLIT's own landing page `kanbo05_hy_003158.html` and MOF's official cross-ministry link table), that `https://www.mlit.go.jp/page/content/001630995.pdf` (令和6年度歳出概算要求書, 一般会計) is the authoritative candidate source.
+- Locked as `mlit-fy2024-general-account-expenditure-request` (SHA-256 `4eebb84cec72a4b3b11a2b89c41093550bef5a07095d5c7b178e238406b08217`, plain-fetch, no WAF observed on `mlit.go.jp`, immutability re-verified via an identical second run) reusing the existing shared `lock-policy.mjs` unchanged.
+- Structural findings: 1,097 pages, A4 landscape, PDF 1.3, Producer "List Creator", **not encrypted** (unlike case-004/MEXT), `CreationDate` 2023-09-14 — identical to MEXT's own files, suggesting a shared government-wide PDF-generation batch, not a documented relationship beyond that.
+- Packaging: a single combined PDF (総表+目次+明細表 together, like METI/MIC), unlike case-004's four-separate-file model — but with two genuinely new structural characteristics: an unusually granular, expense-line-level document-wide 目次 (index), and a 総表 (summary table) itself already itemized down to individual expense-code rows, carrying a two-part amount-column split and an explicit `明細書頁数` cross-reference column pointing into 明細表 — a representation-linkage mechanism not documented in cases 001–004.
+- 明細表 confirmed starting at printed page 19 (`pdfPageIndex` 28, PDF page 29), spanning **12** internal organizations per the document's own TOC (`010 国土交通本省` through `110 海上保安庁`) — the widest organizational span of any case surveyed so far.
+- Observed (not selected) the same `①/05-95/国土交通本省一般行政に必要な経費` first-item-header template already found in case-002/003/004's own first-eligible rows, explicitly disclosed as an observation only, per this task's own strict prohibition on selection-rule-shaping by prior-case resemblance.
+- Confirmed the literal phrase `...自動車安全特別会計へ繰入` present, verbatim, in the sampled 総表 region, with at least one populated non-zero amount — recorded as an existence-only source observation; no MOF-CSV correspondence, amount reconciliation, or reverse linkage was inferred or attempted.
+- **Suitability verdict: SUITABLE** for case-005, based solely on source properties (authoritative provenance, clean acquisition, confirmed row-level structure matching four prior cases, and genuinely new packaging/structural diversity).
+- Files: `sources/source-lock.json` (1 new entry), `sources/source-registry.csv` (1 new row), the survey report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. `sources/raw/mlit-fy2024-general-account-expenditure-request.pdf` acquired locally (git-ignored, not committed). No case-001–004 file, selection protocol, Ground Truth, benchmark/adapter/normalizer/evaluator, or source-acquisition code modified.
+- **Recommended next step**: freeze a case-005 row-selection protocol (modeled on case-002/003/004's own methodology, most likely starting with organization `010 国土交通本省`) before visually selecting any target row.
+
 ### research: package MEXT case-004 for review (branch: research/case-004-mext-preregistration)
 
 - **Packaging/audit task. No new research produced. No merge.**

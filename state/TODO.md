@@ -74,6 +74,15 @@
 - **Next action: review and, if satisfactory, merge the case-004 PR.** After that, decide between beginning case-005's source survey on a new ministry or pursuing one of the still-unresolved architecture proposals (structural-context-selection vs. table-metadata separation; multi-channel anomaly corroboration) — neither started.
 - Not done, by design: no Case Package created; no source-acquisition/benchmark code modified; no adaptation applied to any of the newly observed failure modes; no additional row selected or scored; no case-005 started; PR not merged.
 
+## case-005 (branch: research/case-005-mlit-source-survey) — source survey only, no row selected
+
+- MLIT (国土交通省) FY2024 source survey complete: `fixtures/document-understanding/case-005/20260927_0806_Case005_MLIT_Source_Survey.md`. Confirmed via two independently agreeing routes (MLIT's own landing page + MOF's official cross-ministry link table) that `https://www.mlit.go.jp/page/content/001630995.pdf` is the authoritative one-general-account-expenditure PDF. Locked as `mlit-fy2024-general-account-expenditure-request` (SHA-256 `4eebb84cec72a4b3b11a2b89c41093550bef5a07095d5c7b178e238406b08217`), 1,097 pages, A4 landscape, PDF 1.3, Producer "List Creator", **not encrypted**, `CreationDate` identical to MEXT's own files (same government-wide generation batch).
+- Packaging: single combined PDF (総表+目次+明細表 together, like METI/MIC), unlike case-004's four-file split — but with two genuinely new structural features: an unusually granular, expense-line-level document-wide 目次, and a 総表 already itemized to expense-code level with a two-part amount-column split plus an explicit `明細書頁数` cross-reference column into 明細表. 明細表 confirmed starting at printed page 19 (`pdfPageIndex` 28), spanning **12** internal organizations (`010 国土交通本省` through `110 海上保安庁`) — the widest organization count of any case surveyed so far.
+- The same `①/05-95/国土交通本省一般行政に必要な経費` first-item-header template already seen in case-002/003/004 was observed (not selected). Literal `...自動車安全特別会計へ繰入` phrases confirmed present in 総表 — existence-only, no MOF-CSV interpretation.
+- **Verdict: SUITABLE for case-005.**
+- **Next action (recommended, not started): freeze a case-005 row-selection protocol**, modeled on case-002/003/004's own methodology, before visually selecting any target row.
+- Not done, by design: no row selected; no selection protocol frozen; no Ground Truth; no benchmark engine run against MLIT; no Case Package created; no source-acquisition/benchmark code modified.
+
 ## Research architecture (design-only, not implemented — see ADR-010, ADR-011, ADR-012)
 
 - **Case Package Reconstruction Benchmark v0: DONE.** 33/35 checklist items correctly reconstructed across case-001/case-002, zero hallucinations, critical temporal test (evaluator-correction chronology) passed cleanly in both directions. See `reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_Report.md` and its 4 companion artifacts.
