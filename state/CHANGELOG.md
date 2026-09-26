@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: replicate MEXT context diagnostic in org 020 (branch: research/case-004-mext-preregistration)
+
+- **Read-only source-structure replication. No engine run, no `docbench`, no production change, no row selected.**
+- Replicated the organization-010 pagination/context diagnostic in MEXT organization `020 文部科学本省所轄機関` (printed pages 904–1052, 149 pages), which has only **3** valid item-header→first-expense-row boundaries in its entire population — all 3 were sampled, per the task's own instruction for an insufficient population, rather than a subset chosen to hit a target count.
+- **Result**: 1/3 same-page, 2/3 exactly one page back, 0/3 farther, zero repeated/carry-forward context on cross-page samples — the same categorical pattern already established for organization `010` (which was 4/8, 4/8, 0/8). Combined across both organizations: **11/11 samples never exceed a one-page header distance and never repeat context on a cross-page boundary.**
+- **Replication verdict: partially replicated.** The categorical mechanism is confirmed identically; the specific same-page/cross-page proportion differs (33%/67% vs. 50%/50%) but is treated as statistically inconclusive given organization `020`'s small sample size (n=3), not as a confirmed divergence.
+- Confirmed, by directly inspecting organization `020`'s own opening aggregate page, that **no new organization-level unit declaration is introduced at the organization boundary** — the document continues to rely solely on the single table-opening declaration (`pdfPageIndex` 0) established in the first diagnostic, now shown to hold across at least one internal organization boundary.
+- Recombined the four conceptual context models (A/B/C/D) across all 11 samples: `target_plus_previous` (B) and `nearest_governing_header` (C) both now reach 11/11 for item-header context (still 0/11 for unit, since no fixed or nearest-header page-window strategy represents a whole-table metadata declaration); only `table_metadata_plus_local_structural_context` (D) covers both, via two genuinely different mechanisms.
+- Two new, non-preregistered observations, explicitly not searched for: a pure item-aggregate header row (`030 日本学士院`) carrying populated remarks text — not seen in any organization-010 sample — classified as a remarks/layout observation, not a context-distance finding; and an organization-tied printed-page-label prefix change (`文（所）` for organization `020` vs. `文（本）` for organization `010`). Organization-010's own "blank inline triple, values in a nested sub-line" phenomenon was not encountered in organization `020`'s 3 samples.
+- No schema, adapter, normalizer, evaluator, selection protocol, selection record, or Ground Truth file was modified. No additional row was selected or scored.
+- Full report: `reports/document-understanding/20260927_0519_Case004_MEXT_Org020_Context_Replication.md`.
+- Files: the replication report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No rendered images staged (scratch directory only, removed after use).
+- **Recommended next step**: check organization `030 文化庁`'s own item-header boundaries to determine whether the same pattern generalizes to a third organization or whether organization `020`'s smaller, more cross-page-leaning sample was an early sign of organization-size-dependent variation — still read-only, no row selection, no engine run.
+
 ### research: diagnose MEXT pagination context (branch: research/case-004-mext-preregistration)
 
 - **Read-only source-structure diagnostic. No engine run, no `docbench`, no production change.**
