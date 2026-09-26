@@ -239,9 +239,25 @@ export function normalizeDocling(caseId) {
   return normalized;
 }
 
-const [, , caseIdArg] = process.argv;
-if (caseIdArg) {
-  const out = normalizeDocling(caseIdArg);
-  console.log(`NORMALIZED docling/${caseIdArg} -> ${normalizedArtifactPath(caseIdArg, 'docling')}`);
-  console.log(JSON.stringify(out.result, null, 2));
+// Standalone-execution convenience only (e.g. `node normalize-docling.mjs
+// case-002`, for manually inspecting one engine's normalized output without
+// running the full benchmark). This block must NOT fire merely because this
+// module is imported -- run.mjs imports normalizeDocling and calls it
+// explicitly at the correct point in its own pipeline (after the docling
+// adapter has written its raw artifact). Since run.mjs is invoked as
+// `node src/run.mjs <caseId>`, it shares the identical process.argv[2] this
+// block reads; without the direct-execution guard below, importing this
+// module reruns normalizeDocling as an import-time side effect, before the
+// adapter has necessarily produced a raw artifact yet -- see
+// protocol/DECISIONS.md for why this was treated as a harness-reliability
+// defect (docbench harness reliability investigation), not a Docling/torch
+// flakiness issue.
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  const [, , caseIdArg] = process.argv;
+  if (caseIdArg) {
+    const out = normalizeDocling(caseIdArg);
+    console.log(`NORMALIZED docling/${caseIdArg} -> ${normalizedArtifactPath(caseIdArg, 'docling')}`);
+    console.log(JSON.stringify(out.result, null, 2));
+  }
 }

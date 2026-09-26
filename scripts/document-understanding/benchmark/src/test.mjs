@@ -3,6 +3,9 @@
 // These test the parser in isolation from any adapter or ground truth, using
 // synthetic lines shaped like the real document's patterns.
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import {
   parseAmountToken,
   splitTrailingTriple,
@@ -16,6 +19,8 @@ import {
   findRows,
 } from './normalize-docling.mjs';
 import { deltaSignEvidenceMatches } from './evaluate.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function t(name, fn) {
   try {
@@ -235,4 +240,50 @@ t('deltaSignEvidenceMatches: expected glyph state comes from deltaRaw, not from 
   assert.equal(deltaSignEvidenceMatches('△100', '△100'), true);
   assert.equal(deltaSignEvidenceMatches('100', '△100'), false);
   assert.equal(deltaSignEvidenceMatches('△100', '100'), false);
+});
+
+// Regression tests for the docbench harness-reliability investigation:
+// normalize-docling.mjs (and normalize.mjs) each have a standalone-execution
+// convenience block at module scope (`node normalize-docling.mjs <caseId>`).
+// That block must run ONLY on direct execution, never as a side effect of
+// being imported -- run.mjs imports both modules and is itself invoked as
+// `node src/run.mjs <caseId>`, sharing the identical process.argv[2]. Before
+// the fix, importing normalize-docling.mjs under that argv shape re-ran
+// normalizeDocling() at import time, before any adapter had necessarily
+// written a raw artifact yet, throwing ENOENT for any case whose raw
+// artifact didn't already happen to exist from an earlier run -- this is
+// what run.mjs's own crash traced back to, not a Docling/Torch/child-process
+// reliability problem. These tests spawn a fresh `node` process (module
+// top-level side effects can only be observed on first evaluation, and the
+// module is already cached by this test file's own static imports above) and
+// assert that importing the module with a run.mjs-shaped argv, for a case
+// with no raw artifact on disk, does not throw.
+const NORMALIZE_DOCLING_PATH = path.join(__dirname, 'normalize-docling.mjs');
+const NORMALIZE_PATH = path.join(__dirname, 'normalize.mjs');
+
+function importDoesNotThrow(modulePath, argv) {
+  const script = `
+    process.argv = ${JSON.stringify(['node', 'run.mjs', ...argv])};
+    import(${JSON.stringify('file://' + modulePath)})
+      .then(() => { console.log('IMPORT_OK'); })
+      .catch((e) => { console.error('IMPORT_THREW: ' + e.message); process.exitCode = 1; });
+  `;
+  try {
+    const out = execFileSync(process.execPath, ['-e', script], { encoding: 'utf8' });
+    return { threw: false, output: out };
+  } catch (err) {
+    return { threw: true, output: (err.stdout || '') + (err.stderr || '') };
+  }
+}
+
+t('normalize-docling.mjs: importing with a run.mjs-shaped argv for a nonexistent case does not throw', () => {
+  const result = importDoesNotThrow(NORMALIZE_DOCLING_PATH, ['case-does-not-exist-xyz']);
+  assert.equal(result.threw, false, `import should not throw; output: ${result.output}`);
+  assert.match(result.output, /IMPORT_OK/);
+});
+
+t('normalize.mjs: importing with a run.mjs-shaped argv (single caseId arg only) does not throw', () => {
+  const result = importDoesNotThrow(NORMALIZE_PATH, ['case-does-not-exist-xyz']);
+  assert.equal(result.threw, false, `import should not throw; output: ${result.output}`);
+  assert.match(result.output, /IMPORT_OK/);
 });

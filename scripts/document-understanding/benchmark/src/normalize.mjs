@@ -81,9 +81,22 @@ export function normalize(caseId, engine) {
   return normalized;
 }
 
-const [, , caseIdArg, engineArg] = process.argv;
-if (caseIdArg && engineArg) {
-  const out = normalize(caseIdArg, engineArg);
-  console.log(`NORMALIZED ${caseIdArg}/${engineArg} -> ${normalizedArtifactPath(caseIdArg, engineArg)}`);
-  console.log(JSON.stringify(out.result, null, 2));
+// Standalone-execution convenience only (e.g. `node normalize.mjs case-002
+// pdfjs-baseline`). Guarded the same way as normalize-docling.mjs's
+// equivalent block (see there for why this matters): this module must not
+// re-run normalize() as an import-time side effect merely because run.mjs
+// imports it. This block currently requires two argv positions
+// (caseId + engine), which already does not collide with run.mjs's own
+// single-argument invocation (`node src/run.mjs <caseId>`) -- the explicit
+// guard is added anyway for defense-in-depth and consistency with
+// normalize-docling.mjs, so this safety property does not silently depend on
+// run.mjs's argv shape never changing.
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  const [, , caseIdArg, engineArg] = process.argv;
+  if (caseIdArg && engineArg) {
+    const out = normalize(caseIdArg, engineArg);
+    console.log(`NORMALIZED ${caseIdArg}/${engineArg} -> ${normalizedArtifactPath(caseIdArg, engineArg)}`);
+    console.log(JSON.stringify(out.result, null, 2));
+  }
 }

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### fix: harden docbench child-process reliability (branch: research/case-003-mic-preregistration)
+
+- **Root-caused the case-003 `docbench` harness-reliability finding.** Not a Docling/Torch/child-process problem as first suspected in the case-003 first-run report — no subprocess, spawn, timeout, or resource-contention mechanism is involved at all.
+- Root cause: `normalize-docling.mjs` had a standalone-execution convenience block at **module scope** (`if (caseIdArg) { normalizeDocling(caseIdArg); ... }`, reading `process.argv[2]`). Since `run.mjs` (which statically imports this module) is itself invoked as `node src/run.mjs <caseId>`, it shares the identical `process.argv[2]` — so merely `import`-ing the module re-ran `normalizeDocling()` **at import time**, before any adapter had produced a raw artifact, throwing `ENOENT` whenever `docling.raw.json` did not already exist on disk for that case. This was masked for `case-002` throughout the session because its stale raw artifact from earlier work was never deleted; `case-003`'s was repeatedly deleted while deliberately testing from a clean slate, which is exactly what exposed it. Confirmed with a single-line, zero-subprocess reproduction: `node -e "process.argv=['node','x','case-003']; import('./normalize-docling.mjs')"` throws the identical error on demand. `normalize.mjs` has the structurally identical pattern (latent, not currently triggered, since it requires two argv positions that `run.mjs`'s own single-argument invocation never supplies).
+- Fixed by guarding both blocks with the same "only run on direct execution, never as an import side effect" pattern already established in this repository (`scripts/source-acquisition/browser-fetch/src/browser-fetch.mjs`, `scripts/source-acquisition/src/acquire.mjs`, both guarded identically after the earlier acquisition-immutability work).
+- Verified no benchmark semantics changed: 5/5 clean-slate `npm run docbench -- case-003` runs succeeded post-fix; `case-001` (8/11, 8/11, 9/11), `case-002` (3/11, 4/11, 3/11), and `case-003` (9/11, 10/11, 3/11) all reproduce their historical scores byte-identically (modulo timestamps).
+- Added 2 regression tests targeting the actual confirmed mechanism (spawning a fresh `node` process with a `run.mjs`-shaped `argv` and asserting the import does not throw for a nonexistent case), not the full Docling pipeline. Full suite: 28/28 passing.
+- No ADR added — this is a bug fix already covered by existing engineering-quality expectations, not a new methodological/architectural decision.
+- Full investigation, including the diagnostic path that led from an initially-wrong "Docling/child-process" hypothesis to the actual module-import-time cause: `reports/document-understanding/20260926_1737_Docbench_Harness_Reliability_Investigation.md`.
+- Files: `scripts/document-understanding/benchmark/src/normalize-docling.mjs`, `scripts/document-understanding/benchmark/src/normalize.mjs`, `scripts/document-understanding/benchmark/src/test.mjs`, the investigation report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+
 ### case-003 first frozen benchmark run (branch: research/case-003-mic-preregistration)
 
 - **Observation/diagnosis only. No adaptation, no code change.**
