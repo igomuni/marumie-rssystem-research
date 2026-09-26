@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: freeze MLIT case-005 selection protocol (branch: research/case-005-mlit-source-survey)
+
+- **Protocol design and freeze only. No row selected, no Ground Truth, no benchmark engine run against MLIT.**
+- Critiqued case-002's E1–E5, case-003's ME1–ME5, and case-004's MX1–MX4 individually rather than copying. The single substantive re-derived judgment: unlike MEXT (a standalone 明細表-only file), MLIT packages 総表+目次+明細表 in **one** combined PDF like METI/MIC — but MLIT's own document-wide 目次 gives an exact, doubly source-confirmed page number for 明細表's own start (printed page 19), so this task reclassifies "correct table" as a **source/universe precondition** (case-004's pattern) rather than a per-row eligibility criterion (case-002/003's pattern) — a genuinely independent re-evaluation, not a copy of either precedent.
+- Froze the selection universe: organization `010 国土交通本省` (`pdfPageIndex` 28, confirmed exact lower bound, through approximately `pdfPageIndex` 509, an **extrapolated, explicitly-flagged-uncertain** upper bound — the underlying `pdfPageIndex = printedPage + 9` offset was only confirmed across a 10-printed-page sample, not independently re-verified across the further ~480 pages to organization `035`'s own start; pinning this exactly is deferred to the next task, per the same discipline already established in case-004's own protocol).
+- Froze row-level eligibility criteria C1–C4 (native request/expense identifier, multi-line wrap, standard amount triple, self-contained sufficiency) — newly named for this case, not literally copied from any prior case's own criterion labels, though testing the same underlying capabilities. C4 explicitly pre-decides handling for page-spanning amount triples, blank inline triples, and values apparently relocated into a separate embedded-matrix-like region — patterns already documented elsewhere in this research program (case-004's own selection record and anomaly surveys), even though none has yet been observed on MLIT's own pages.
+- Froze a comprehensive non-criteria list, explicitly including `繰入` (transfer-into) presence and any MOF-CSV correspondence — both are recorded as **separate, deferred future research questions**, never as selection inputs.
+- **Fully and honestly disclosed** the prior exposure the source survey already produced (`①`/`05-95`/`国土交通本省一般行政に必要な経費`), explicitly not claiming any technical or memory-based blindness, and explaining instead that every criterion was written in abstract, source-structural terms that would produce the same rule regardless of which row satisfies them first.
+- Recorded a methodological note distinguishing web/chat-level textual pre-observation (`要求番号 1`) from confirmed source visual fact (`①`) — a concrete instance of a general rule this protocol adopts: source-derived facts, never secondhand renderings, are authoritative.
+- No ADR added — this task's one reclassification is a case-specific application of the already-established selection-protocol methodology (critiquing, not copying, prior criteria), not a new cross-cutting decision.
+- Full protocol: `fixtures/document-understanding/case-005/20260927_0815_Case005_Selection_Protocol.md`.
+- Files: the protocol document, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, or evaluator file modified; no Case Package created; source survey/lock/registry unchanged.
+- **Recommended next step**: apply this frozen protocol by direct visual inspection of organization `010`'s own pages to select exactly one row, create a selection record, and stop before Ground Truth.
+
 ### research: survey MLIT source for case-005 (branch: research/case-005-mlit-source-survey)
 
 - **Source survey only. No row selected, no selection protocol, no Ground Truth, no benchmark engine run.**
