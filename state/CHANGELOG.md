@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: package MEXT case-004 for review (branch: research/case-004-mext-preregistration)
+
+- **Packaging/audit task. No new research produced. No merge.**
+- Audited the full 11-commit case-004 research line (`d4449dd`..`22d50df`) for PR review: confirmed `main` unchanged at `3b29ebd`, a clean linear branch history with all expected freeze checkpoints present in the correct dependency order, and every one of the 9 frozen artifacts (selection protocol, selection record, Ground Truth, first frozen benchmark, both context diagnostics, and the three anomaly surveys prior to this task) byte-identical between its own freeze commit and current `HEAD`.
+- Re-confirmed Ground Truth isolation by direct code inspection: **zero files under `scripts/` were modified anywhere on this branch**, so no adapter/normalizer/evaluator could have drifted from its already-audited behavior; explicitly documented that this isolation is methodological/audited, not technically sandboxed (no tool enforces it).
+- Checked the final, current text of every report on the branch against each specific stale/misleading-claim pattern flagged as a risk (Docling clean separation stated without its small-sample qualifier, unproven semantic labels for the special structures, encryption described as a failure, unit described as page-level rather than table-level, item-header absence attributed to packaging, p1327 described as rare after the broad survey found more instances, etc.) — **none was found**; every report was already written with the necessary qualifiers and self-corrections. No historical timestamped report was edited.
+- Ran the full validation suite (`npm run validate`, `extraction:test`, `docbench:test`, `sources:test`) — all pass; `git diff --check` shows only one pre-existing, harmless trailing-newline notice in an auto-generated report, byte-for-byte identical to the same pattern already present in the already-merged case-003 equivalent — not a defect introduced by this branch.
+- Confirmed repository hygiene: 19 changed files, all Markdown/JSON/CSV documentation and evidence artifacts, no binaries, PNGs, raw PDFs, secrets, or large files.
+- Wrote a packaging/audit report (explicitly not a new benchmark result) and opened a PR from `research/case-004-mext-preregistration` to `main`, left **OPEN**, not merged, per the task's own stop condition.
+- Full report: `reports/document-understanding/20260927_0732_Case004_MEXT_PR_Packaging_Review.md`.
+- Files: the packaging report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No production code, Ground Truth, selection artifact, or historical report modified.
+- **Recommended next step**: review and, if satisfactory, merge the PR; afterward, decide between starting case-005 on a new ministry or pursuing one of the still-unresolved architecture proposals — neither started here.
+
 ### research: validate MEXT Docling anomaly signal broadly (branch: research/case-004-mext-preregistration)
 
 - **Exploratory, read-only validation, explicitly designed to falsify the prior 16-page survey's clean separation. No production/schema change, no Ground Truth/benchmark change, no new benchmark target, no case-005 started.**
