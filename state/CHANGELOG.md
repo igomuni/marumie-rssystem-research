@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: select MLIT case-005 target row (branch: research/case-005-mlit-source-survey)
+
+- **Protocol application only. Row selected. No Ground Truth, no benchmark engine run against MLIT.**
+- Applied the frozen `9b292c0` protocol via direct visual inspection (`pdftoppm` rasterization at 200/400dpi + human-style reading, no compared engine, no OCR) starting at `pdfPageIndex` 28, the frozen universe's own confirmed first page.
+- Two candidates rejected before the winner, both on the same page: `010 国土交通本省` (organization-level aggregate) and `002 国土交通本省共通費` (item-level aggregate) — both FAIL C1 (no native request/expense identifier).
+- Selected and froze the first eligible row: request no. `①`, expense code `05-95`, `国土交通本省一般行政に必要な経費` (label wrapping across two printed lines) — PASS on all of C1 (native identifier), C2 (two-line wrap), C3 (standard amount triple present and associated), C4 (self-contained sufficiency). This is the same row already disclosed as prior exposure in the frozen protocol itself, reached purely through deterministic C1–C4 application in document order — both preceding aggregate rows structurally cannot pass C1 regardless of any prior knowledge.
+- Enumeration stopped immediately upon finding the winner, per the task's own explicit instruction not to inspect further candidates for comparison. The frozen universe's own unverified upper boundary (~`pdfPageIndex` 509) was left unresolved, since the winner was found on the universe's very first page, far short of it.
+- Amount values for the selected row (and both rejected aggregate rows) were necessarily visible while confirming C3, and are disclosed in the selection record as *having been seen*, but were deliberately **not transcribed, normalized, or used for any arithmetic check** — no `ground-truth.json` was created.
+- No ADR added — this task applies the already-frozen protocol exactly, with no ambiguity encountered that would require stopping to report a protocol defect.
+- Full record: `fixtures/document-understanding/case-005/20260927_0823_Case005_Selection_Record.md`.
+- Files: the selection record, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, or evaluator file modified; no Case Package created; no rendered image staged (scratch directory only).
+- **Recommended next step**: create and freeze Ground Truth for the already-selected row through direct visual source inspection, without running any benchmark engine.
+
 ### research: freeze MLIT case-005 selection protocol (branch: research/case-005-mlit-source-survey)
 
 - **Protocol design and freeze only. No row selected, no Ground Truth, no benchmark engine run against MLIT.**
