@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: select MEXT case-004 target row (branch: research/case-004-mext-preregistration)
+
+- **Protocol application only. Row selected. No Ground Truth, no benchmark engine run against MEXT.**
+- Applied the frozen `c2b2c28` protocol via direct visual inspection (`pdftoppm` rasterization + human-style reading, no compared engine, no OCR) starting at `pdfPageIndex` 0 of the frozen `010 文部科学本省` universe.
+- Two candidates rejected before the winner: `pdfPageIndex` 0 (`010 文部科学本省`, organization-level aggregate — the same row already incidentally disclosed in the source survey) and `pdfPageIndex` 1 (`010 文部科学本省共通費`, item-level aggregate) — both FAIL MX1 (no expense-level code).
+- Selected and froze the first eligible row: `pdfPageIndex` 2 (printed `文（本） 11`), request no. `①`, expense code `01-95`, `文部科学本省一般行政に必要な経費` — PASS on all of MX1 (native code), MX2 (two-line label wrap), MX3 (standard amount triple), MX4 (sufficiency). Structurally the same `①01-95 [ministry]一般行政に必要な経費` template already seen in case-002/003, reached by the deterministic rule without being sought or avoided, per the task's own explicit permission for that outcome.
+- The exact `010`→`020` organization-boundary uncertainty (left approximate in the frozen protocol) was **not** resolved, since the winner was found at `pdfPageIndex` 2 — far short of the ~895-page boundary — making further boundary navigation unnecessary per the task's own guidance not to scan pages merely to perfect unused metadata.
+- Amount values for the selected row (and both rejected aggregate rows) were necessarily visible while confirming MX3, and are disclosed in the selection record as *having been seen*, but were deliberately **not transcribed, normalized, or used for any arithmetic check** — no `ground-truth.json` was created.
+- One incidental structural observation disclosed, not used to influence eligibility: the selected row's own page shows an unusually extensive breakdown of numbered sub-line-items beneath its header line (e.g. `95016-2111-02-0000 職員基本給`), a level of internal detail not previously observed at this position in case-001/002/003.
+- No ADR added — this task applies the already-frozen protocol exactly, per its own instruction to stop and report rather than repair the protocol if anything proved ambiguous (nothing did).
+- Full record: `fixtures/document-understanding/case-004/20260926_2101_Case004_Selection_Record.md`.
+- Files: the selection record, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, or evaluator file modified; no Case Package created; no raw PDF or rendered page image staged (rasterized PNGs remained in this session's scratch directory, outside the repository).
+- **Recommended next step**: create and freeze Ground Truth for the already-selected row through direct visual source inspection, without running any benchmark engine.
+
 ### research: freeze MEXT case-004 selection protocol (branch: research/case-004-mext-preregistration)
 
 - **Protocol design and freeze only. No row selected, no Ground Truth, no benchmark engine run against MEXT.**
