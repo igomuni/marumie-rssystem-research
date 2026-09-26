@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### case-003 row-selection protocol frozen (branch: research/case-003-mic-preregistration)
+
+- **Preregistration only. No candidate row enumerated/inspected, no target row selected, no Ground Truth, no benchmark engine run against MIC.**
+- Created `fixtures/document-understanding/case-003/20260926_1548_Case003_Selection_Protocol.md`, applying case-002's methodological shape to MIC's already-locked source (`mic-fy2024-general-account-expenditure-request`, SHA-256 `cc54dbe5...`, verified unchanged before this task) without mechanically copying it.
+- Individually critiqued every case-002 E1–E5 concept: all retained (renamed ME1–ME5), none METI-specific or rejected. The multi-line-wrap requirement (E3/ME3) required explicit re-justification per the task's own caution about outcome-selection criteria — retained as a capability-comparability decision (keeping what is measured consistent across cases), not a difficulty-engineering one, since no engine has run against MIC to know what would or wouldn't break.
+- Made the key new decision case-002 never had to make explicit: MIC's 454-page document's `明細表` (detail table) is itself subdivided into 5 internal organizations of very different sizes (010 総務本省: 241 pages; 040/050/070/080: 18/16/11/160 pages, all structurally distinct regional bureaus/commissions). Compared three candidate selection universes (entire 明細表; first organization only; another source-defined universe) before any row was inspected, and froze the universe as **organization 010 総務本省, pages 5–245** — justified from the document's own table of contents (explicit demarcation, first-in-document-order, and the closest structural analog to case-001/case-002's own ministry-headquarters-level targets), not from convenience or any known parser behavior.
+- Added a new non-criterion beyond case-002's (`△` glyph, hierarchy ambiguity): annotation-column placement relative to the amount triple — explicitly excluded from influencing selection because it is the exact structural feature that broke `common.mjs`'s trailing-triple regex on case-002, and selecting for or against it on MIC would turn case-003 into a targeted regression test rather than genuine out-of-sample generalization.
+- No new PDF inspection was performed in this task — every structural fact cited (table of contents, page ranges, generic column headers) was already established and committed in the prior source-survey task.
+- Files: `fixtures/document-understanding/case-003/20260926_1548_Case003_Selection_Protocol.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+
 ### fix: enforce immutable source locks for HTTP acquisition (branch: research/case-003-mic-preregistration)
 
 - **Source-acquisition infrastructure only. No case-003 row selection, no Ground Truth, no benchmark engine run.**
