@@ -1,12 +1,12 @@
 # Document Understanding Benchmark — case-002
 
-Generated: 2026-09-26T00:20:42.158Z
+Generated: 2026-09-26T03:29:54.791Z
 
 | engine | passed | failed | total |
 |---|---|---|---|
-| pdfjs-baseline (4.10.38) | 2 | 9 | 11 |
-| pymupdf-baseline (1.28.2) | 3 | 8 | 11 |
-| docling (2.130.0) | 2 | 9 | 11 |
+| pdfjs-baseline (4.10.38) | 3 | 8 | 11 |
+| pymupdf-baseline (1.28.2) | 4 | 7 | 11 |
+| docling (2.130.0) | 3 | 8 | 11 |
 
 The score alone is not the main result — see which *specific* checks differ below.
 
@@ -22,7 +22,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | FAIL | FAIL | FAIL |
 | unit_exact_match | PASS | PASS | PASS |
 | page_identification | PASS | PASS | PASS |
-| delta_glyph_observed_and_associated | FAIL | FAIL | FAIL |
+| delta_sign_evidence_matches_source | PASS | PASS | PASS |
 | item_to_amount_relationship | FAIL | FAIL | FAIL |
 | expense_to_amount_relationship | FAIL | FAIL | FAIL |
 
@@ -38,7 +38,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | FAIL | `null` | `4556824` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | PASS | `"千円"` | `"千円"` |  |
 | page_identification | PASS | `8` | `8` |  |
-| delta_glyph_observed_and_associated | FAIL | `null` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
+| delta_sign_evidence_matches_source | PASS | `null` | `"does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)"` | Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only "glyph present". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | FAIL | `{"nearestPrecedingItemCode":"010","resultPreviousBudget":null}` | `{"itemCode":"010","previousBudget":42331005}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | FAIL | `{"expenseCode":"01-95","hasTriple":false}` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 
@@ -54,7 +54,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | FAIL | `null` | `4556824` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | PASS | `"千円"` | `"千円"` |  |
 | page_identification | PASS | `8` | `8` |  |
-| delta_glyph_observed_and_associated | FAIL | `null` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
+| delta_sign_evidence_matches_source | PASS | `null` | `"does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)"` | Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only "glyph present". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | FAIL | `{"nearestPrecedingItemCode":"010","resultPreviousBudget":null}` | `{"itemCode":"010","previousBudget":42331005}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | FAIL | `{"expenseCode":"01-95","hasTriple":false}` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 
@@ -70,7 +70,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | signed_delta_exact_match | FAIL | `null` | `4556824` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
 | unit_exact_match | PASS | `"千円"` | `"千円"` |  |
 | page_identification | PASS | `8` | `8` |  |
-| delta_glyph_observed_and_associated | FAIL | `null` | `"contains △"` | Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine's own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
+| delta_sign_evidence_matches_source | PASS | `null` | `"does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)"` | Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only "glyph present". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token. |
 | item_to_amount_relationship | FAIL | `{"nearestPrecedingItemCode":null,"resultPreviousBudget":null}` | `{"itemCode":"010","previousBudget":42331005}` | The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page. |
 | expense_to_amount_relationship | FAIL | `null` | `{"expenseCode":"01-95","hasTriple":true}` | The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row. |
 

@@ -21,6 +21,28 @@ function check(id, actual, expected, note = '') {
   return { id, pass, actual, expected, note };
 }
 
+const DELTA_GLYPH = '△';
+function hasDeltaGlyph(value) {
+  return typeof value === 'string' && value.includes(DELTA_GLYPH);
+}
+
+// Pure, unit-testable core of the `delta_sign_evidence_matches_source` check.
+// Exported so tests can exercise both directions (glyph-expected and
+// no-glyph-expected) without needing to construct on-disk ground-truth /
+// normalized-artifact fixtures for the full evaluate() pipeline.
+//
+// The expected glyph state is derived from `expectedDeltaRaw` — Ground
+// Truth's own raw/visual field — never from the sign of a normalized numeric
+// `delta`, so this never infers "the source expects a glyph" from an
+// unrelated derived value. `actualDeltaRaw` must come from the engine's own
+// (ground-truth-blind) normalized output; a glyph is only ever counted as
+// "observed" if it is genuinely present there.
+export function deltaSignEvidenceMatches(expectedDeltaRaw, actualDeltaRaw) {
+  const expectedHasGlyph = hasDeltaGlyph(expectedDeltaRaw);
+  const actualHasGlyph = hasDeltaGlyph(actualDeltaRaw);
+  return expectedHasGlyph ? actualHasGlyph : !actualHasGlyph;
+}
+
 export function evaluate(caseId, engine) {
   const gt = readGroundTruth(caseId);
   const normalized = readJson(normalizedArtifactPath(caseId, engine));
@@ -50,13 +72,33 @@ export function evaluate(caseId, engine) {
   checks.push(check('unit_exact_match', r.unit, expected.unit));
   checks.push(check('page_identification', r.page, expected.page));
 
-  const deltaRawHasGlyph = typeof r.deltaRaw === 'string' && r.deltaRaw.includes('△');
+  // The expected glyph state is derived from Ground Truth's own `deltaRaw` —
+  // the most direct source-derived raw/visual evidence available — never from
+  // the sign of `expected.delta` (that would be inferring source condition
+  // from a normalized/derived numeric value rather than the raw observation
+  // that produced it). Both of this repository's current cases (case-001:
+  // deltaRaw contains △; case-002: deltaRaw does not) express this
+  // unambiguously; there is currently no "unknown/unreadable glyph state" in
+  // any frozen Ground Truth (the Ground Truth creation process — see
+  // fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md
+  // — never freezes an ambiguous value in the first place), so this check
+  // does not yet need a third UNKNOWN outcome. If a future case's Ground
+  // Truth ever needs to express that, this check must be revisited rather
+  // than silently treating that unknown as "no glyph".
+  // `deltaSignEvidenceMatches` computes `actualHasGlyph` purely from the
+  // engine/normalizer's own `deltaRaw` — never from Ground Truth — preserving
+  // the existing provenance invariant: a △ counted as "observed" must
+  // originate from engine raw output / deterministic association, never be
+  // conjured from expected values.
+  const expectedHasGlyph = hasDeltaGlyph(expected.deltaRaw);
   checks.push({
-    id: 'delta_glyph_observed_and_associated',
-    pass: deltaRawHasGlyph,
+    id: 'delta_sign_evidence_matches_source',
+    pass: deltaSignEvidenceMatches(expected.deltaRaw, r.deltaRaw),
     actual: r.deltaRaw,
-    expected: 'contains △',
-    note: 'Checks the ground-truth-blind normalizer output, not the ground truth. A PASS means the △ glyph was genuinely present somewhere in the engine\'s own raw output and the deterministic normalizer associated it with this delta value. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token.',
+    expected: expectedHasGlyph
+      ? 'contains △ (source-derived Ground Truth deltaRaw carries the decrease glyph)'
+      : 'does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)',
+    note: 'Checks whether the ground-truth-blind normalizer output\'s observed sign evidence agrees with the source-derived Ground Truth\'s own deltaRaw glyph state — in either direction, not only "glyph present". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine\'s own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token.',
   });
 
   const expenseRows = normalized.candidates.expenseRows;
