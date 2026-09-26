@@ -101,3 +101,33 @@ Decision: A URL identifies the retrieval location, not immutable content. Reprod
 Reason: Government websites may replace a PDF while retaining the same URL (`same URL != same source binary`). Trusting the URL alone as a stable identifier would let a silent upstream content change invalidate prior research without detection.
 Rejected alternatives: Treating the URL as sufficient source identity; silently re-locking to whatever the server currently returns whenever verification runs.
 Implications: `npm run sources:verify` must fail loudly and exit non-zero on a hash mismatch rather than update the lock; updating a lock to a new binary requires an explicit, reviewable `npm run sources:lock` re-run, preserving the old hash in Git history.
+
+---
+
+### ADR-010: Layout-family adaptation is a distinct layer from generic/engine-specific normalization
+Status: Accepted
+Date: 2026-09-26
+Decision: A parsing/normalization rule must be classified as one of: engine behavior, raw representation, generic normalization, engine-specific normalization, document-family/layout-specific interpretation, semantic interpretation, or evaluation — and rules that are actually document-family-specific must not be written as if they were generic or engine-specific.
+Reason: Case-002 showed the same engine/normalizer code (`common.mjs`'s `splitTrailingTriple`) silently encoded a layout-specific assumption (amount triple anchored at line end) as if it were universal, while a genuinely engine-specific gap (missing CJK-wrap-space-closing) was conflated with it in the same file. Neither a single universal parser nor per-ministry parsers matches the observed failure boundary, which is layout/template family, not issuer identity.
+Rejected alternatives: One universal normalizer for all documents; one parser per ministry.
+Implications: Future normalization work must identify which layer a fix belongs to before writing it, and document-family-specific rules get their own extension point rather than being folded into generic or engine-specific code. Full design: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`.
+
+---
+
+### ADR-011: Document Profile features are classified by how they were actually discovered, not how they theoretically could be
+Status: Accepted
+Date: 2026-09-26
+Decision: A Document Profile feature is source-safe (A) only if this repository actually established it before running any compared engine. A feature this repository only established by inspecting engine output must be recorded as engine-derived (B), even if a human could plausibly have observed the same fact by looking at the page image directly.
+Reason: Backfilling `case-002`'s Case Package (`document-profile.json`) found a genuine boundary case: whether the annotation column sits on the same reconstructed line as the amount triple is plausibly a source-observable layout fact, but this repository's actual history only recorded it via the flat-text engines' raw output during the first frozen benchmark run (`reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md`). Classifying it as source-safe based on what was theoretically possible, rather than what was actually done, would silently misrepresent this Case Package's provenance and could leak an engine-informed fact into a future strategy-selection input believed to be pre-analysis.
+Rejected alternatives: Classifying a feature as source-safe whenever it is plausibly re-derivable from the source alone, regardless of how it was actually discovered in this repository's history.
+Implications: A Document Profile's `sourceSafeProfile` may only contain features with a `manually_observed` or `source_stated` provenance tag backed by evidence predating any engine run on that case; anything established via `derived_from_repository_analysis` of engine output stays in `engineDerivedProfile`, even where a future task could re-establish the same fact by source-only inspection and move it across.
+
+---
+
+### ADR-012: LLM reconstruction/strategy-selection experiments must disclose isolation as behavioral, not sandboxed, until stronger tooling exists
+Status: Accepted
+Date: 2026-09-26
+Decision: Any experiment that gives an LLM session only a subset of repository material (a Case Package, a Document Profile) and evaluates whether it can be misled or contaminated by the rest of the repository must explicitly state whether isolation was enforced by a sandbox (no filesystem/tool access to the excluded material) or only instructed (a prompt asking the model not to access it, while the surrounding execution environment retained the technical ability to). The two must never be reported as equivalent.
+Reason: The Case Package Reconstruction Benchmark v0 (`reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_Report.md`) found that this repository's available agent tooling cannot strip a spawned agent's tool access to zero; the best achievable isolation was an explicit "do not use tools" instruction plus post-hoc evidence (near-zero observed tool calls) that it was followed, not a technical guarantee. Reporting this as full isolation would overstate what the experiment actually controlled for.
+Rejected alternatives: Treating instructed-but-unenforced isolation as sufficient to claim a valid leakage-controlled benchmark without caveat; aborting any experiment that cannot achieve sandboxed isolation, even as an explicitly-caveated v0.
+Implications: Future strategy-selection or held-out evaluation experiments (per the case-based architecture report's leave-one-case-out protocol) must carry the same explicit disclosure, and should prefer a genuinely sandboxed execution path once one is available in this environment's tooling.

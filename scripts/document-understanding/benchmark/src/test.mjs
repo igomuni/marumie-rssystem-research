@@ -15,6 +15,7 @@ import {
   reconstructNumericToken,
   findRows,
 } from './normalize-docling.mjs';
+import { deltaSignEvidenceMatches } from './evaluate.mjs';
 
 function t(name, fn) {
   try {
@@ -187,4 +188,51 @@ t('findRows: a present request-number cell to the left is used', () => {
   ];
   const { expenseRows } = findRows([{ tableIndex: 0, cells }]);
   assert.equal(expenseRows[0].requestNo, '7');
+});
+
+// --- evaluate.mjs: deltaSignEvidenceMatches ----------------------------
+// Covers the delta_sign_evidence_matches_source check's core logic in
+// isolation, for both directions Ground Truth can express (decrease-glyph
+// case-001-style, no-glyph case-002-style), plus the provenance invariant
+// that a glyph must come from the engine's own output, never be inferred
+// from Ground Truth or from arithmetic.
+
+t('deltaSignEvidenceMatches: glyph expected + glyph observed -> PASS', () => {
+  assert.equal(deltaSignEvidenceMatches('△32,920,906', '△ 32,920,906'), true);
+});
+
+t('deltaSignEvidenceMatches: glyph expected + no glyph observed -> FAIL', () => {
+  assert.equal(deltaSignEvidenceMatches('△32,920,906', '32,920,906'), false);
+});
+
+t('deltaSignEvidenceMatches: glyph expected + nothing observed (null) -> FAIL', () => {
+  assert.equal(deltaSignEvidenceMatches('△32,920,906', null), false);
+});
+
+t('deltaSignEvidenceMatches: no glyph expected + no glyph observed -> PASS', () => {
+  assert.equal(deltaSignEvidenceMatches('4,556,824', '4,556,824'), true);
+});
+
+t('deltaSignEvidenceMatches: no glyph expected + glyph incorrectly fabricated -> FAIL', () => {
+  assert.equal(deltaSignEvidenceMatches('4,556,824', '△4,556,824'), false,
+    'a fabricated glyph must fail even though the magnitude would otherwise match');
+});
+
+t('deltaSignEvidenceMatches: no glyph expected + nothing observed (null) -> PASS', () => {
+  // A null deltaRaw means the engine extracted nothing at all — that is a
+  // real miss, already scored by signed_delta_exact_match /
+  // previous_budget_exact_match / fy2024_request_exact_match. This check is
+  // narrowly about glyph-fabrication avoidance: no glyph was expected, and
+  // none was invented, so it PASSes here even though overall extraction
+  // failed. It is not, by itself, evidence of successful delta recovery.
+  assert.equal(deltaSignEvidenceMatches('4,556,824', null), true);
+});
+
+t('deltaSignEvidenceMatches: expected glyph state comes from deltaRaw, not from case-001 assumptions baked into the function', () => {
+  // Symmetry check: swapping which side has the glyph swaps the answer,
+  // confirming the function has no hardcoded "glyph must be present" bias.
+  assert.equal(deltaSignEvidenceMatches('100', '100'), true);
+  assert.equal(deltaSignEvidenceMatches('△100', '△100'), true);
+  assert.equal(deltaSignEvidenceMatches('100', '△100'), false);
+  assert.equal(deltaSignEvidenceMatches('△100', '100'), false);
 });

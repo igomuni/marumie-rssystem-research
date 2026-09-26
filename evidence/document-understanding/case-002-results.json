@@ -1,122 +1,122 @@
 {
   "schemaVersion": 1,
-  "caseId": "case-001",
-  "generatedAt": "2026-09-26T03:29:22.552Z",
+  "caseId": "case-002",
+  "generatedAt": "2026-09-26T03:29:54.791Z",
   "evaluations": [
     {
       "schemaVersion": 1,
-      "caseId": "case-001",
+      "caseId": "case-002",
       "engine": "pdfjs-baseline",
       "engineVersion": "4.10.38",
-      "evaluatedAt": "2026-09-26T03:29:22.550Z",
+      "evaluatedAt": "2026-09-26T03:29:54.789Z",
       "summary": {
         "total": 11,
-        "passed": 8,
-        "failed": 3
+        "passed": 3,
+        "failed": 8
       },
       "checks": [
         {
           "id": "item_name_exact_match",
           "pass": false,
           "actual": null,
-          "expected": "情報通信技術調達等適正・効率化推進費",
+          "expected": "経済産業本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
           "id": "item_name_present_among_candidates",
-          "pass": true,
+          "pass": false,
           "actual": [
             {
-              "itemCode": "036",
-              "itemName": "公金受取口座登録業務支援経費"
+              "itemCode": "010",
+              "itemName": "経 済 産 業 本 省"
             },
             {
-              "itemCode": "041",
-              "itemName": "デジタル推進委員等環境整備事業費"
+              "itemCode": "010",
+              "itemName": "経 済 産 業 本 省 共 通 費"
             },
             {
-              "itemCode": "046",
-              "itemName": "デジタル臨時行政調査会事務局の運営等経費"
+              "itemCode": "001",
+              "itemName": "既 定 定 員 に 伴 う 経 費"
             },
             {
-              "itemCode": "020",
-              "itemName": "情報通信技術調達等適正・効率化推進費"
+              "itemCode": "001",
+              "itemName": "人 件 費"
             }
           ],
           "expected": {
-            "itemCode": "020",
-            "itemName": "情報通信技術調達等適正・効率化推進費"
+            "itemCode": "010",
+            "itemName": "経済産業本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "情報通信技術調達等適正・効率化の推進に必要な （要求要旨）",
-          "expected": "情報通信技術調達等適正・効率化の推進に必要な経費",
+          "actual": "経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費 「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
+          "expected": "経済産業本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
-          "pass": true,
-          "actual": 481188232,
-          "expected": 481188232,
+          "pass": false,
+          "actual": null,
+          "expected": 42331005,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
-          "pass": true,
-          "actual": 448267326,
-          "expected": 448267326,
+          "pass": false,
+          "actual": null,
+          "expected": 46887829,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
-          "pass": true,
-          "actual": -32920906,
-          "expected": -32920906,
+          "pass": false,
+          "actual": null,
+          "expected": 4556824,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
           "id": "unit_exact_match",
-          "pass": false,
-          "actual": null,
+          "pass": true,
+          "actual": "千円",
           "expected": "千円",
           "note": ""
         },
         {
           "id": "page_identification",
           "pass": true,
-          "actual": 11,
-          "expected": 11,
+          "actual": 8,
+          "expected": 8,
           "note": ""
         },
         {
           "id": "delta_sign_evidence_matches_source",
           "pass": true,
-          "actual": "△ 32,920,906",
-          "expected": "contains △ (source-derived Ground Truth deltaRaw carries the decrease glyph)",
+          "actual": null,
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
           "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
         },
         {
           "id": "item_to_amount_relationship",
-          "pass": true,
+          "pass": false,
           "actual": {
-            "nearestPrecedingItemCode": "020",
-            "resultPreviousBudget": 481188232
+            "nearestPrecedingItemCode": "010",
+            "resultPreviousBudget": null
           },
           "expected": {
-            "itemCode": "020",
-            "previousBudget": 481188232
+            "itemCode": "010",
+            "previousBudget": 42331005
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },
         {
           "id": "expense_to_amount_relationship",
-          "pass": true,
+          "pass": false,
           "actual": {
             "expenseCode": "01-95",
-            "hasTriple": true
+            "hasTriple": false
           },
           "expected": {
             "expenseCode": "01-95",
@@ -128,21 +128,21 @@
     },
     {
       "schemaVersion": 1,
-      "caseId": "case-001",
+      "caseId": "case-002",
       "engine": "pymupdf-baseline",
       "engineVersion": "1.28.2",
-      "evaluatedAt": "2026-09-26T03:29:22.552Z",
+      "evaluatedAt": "2026-09-26T03:29:54.790Z",
       "summary": {
         "total": 11,
-        "passed": 8,
-        "failed": 3
+        "passed": 4,
+        "failed": 7
       },
       "checks": [
         {
           "id": "item_name_exact_match",
           "pass": false,
           "actual": null,
-          "expected": "情報通信技術調達等適正・効率化推進費",
+          "expected": "経済産業本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
@@ -150,96 +150,96 @@
           "pass": true,
           "actual": [
             {
-              "itemCode": "036",
-              "itemName": "公金受取口座登録業務支援経費"
+              "itemCode": "010",
+              "itemName": "経 済 産 業 本 省"
             },
             {
-              "itemCode": "041",
-              "itemName": "デジタル推進委員等環境整備事業費"
+              "itemCode": "010",
+              "itemName": "経済産業本省共通費"
             },
             {
-              "itemCode": "046",
-              "itemName": "デジタル臨時行政調査会事務局の運営等経費"
+              "itemCode": "001",
+              "itemName": "既定定員に伴う経費"
             },
             {
-              "itemCode": "020",
-              "itemName": "情報通信技術調達等適正・効率化推進費"
+              "itemCode": "001",
+              "itemName": "人    件    費"
             }
           ],
           "expected": {
-            "itemCode": "020",
-            "itemName": "情報通信技術調達等適正・効率化推進費"
+            "itemCode": "010",
+            "itemName": "経済産業本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "情報通信技術調達等適正・効率化の推進に必要な                                            （要求要旨）",
-          "expected": "情報通信技術調達等適正・効率化の推進に必要な経費",
+          "actual": "経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費                                                  「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
+          "expected": "経済産業本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
-          "pass": true,
-          "actual": 481188232,
-          "expected": 481188232,
+          "pass": false,
+          "actual": null,
+          "expected": 42331005,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
-          "pass": true,
-          "actual": 448267326,
-          "expected": 448267326,
+          "pass": false,
+          "actual": null,
+          "expected": 46887829,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
-          "pass": true,
-          "actual": -32920906,
-          "expected": -32920906,
+          "pass": false,
+          "actual": null,
+          "expected": 4556824,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
           "id": "unit_exact_match",
-          "pass": false,
-          "actual": null,
+          "pass": true,
+          "actual": "千円",
           "expected": "千円",
           "note": ""
         },
         {
           "id": "page_identification",
           "pass": true,
-          "actual": 11,
-          "expected": 11,
+          "actual": 8,
+          "expected": 8,
           "note": ""
         },
         {
           "id": "delta_sign_evidence_matches_source",
           "pass": true,
-          "actual": "△     32,920,906",
-          "expected": "contains △ (source-derived Ground Truth deltaRaw carries the decrease glyph)",
+          "actual": null,
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
           "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
         },
         {
           "id": "item_to_amount_relationship",
-          "pass": true,
+          "pass": false,
           "actual": {
-            "nearestPrecedingItemCode": "020",
-            "resultPreviousBudget": 481188232
+            "nearestPrecedingItemCode": "010",
+            "resultPreviousBudget": null
           },
           "expected": {
-            "itemCode": "020",
-            "previousBudget": 481188232
+            "itemCode": "010",
+            "previousBudget": 42331005
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },
         {
           "id": "expense_to_amount_relationship",
-          "pass": true,
+          "pass": false,
           "actual": {
             "expenseCode": "01-95",
-            "hasTriple": true
+            "hasTriple": false
           },
           "expected": {
             "expenseCode": "01-95",
@@ -251,115 +251,104 @@
     },
     {
       "schemaVersion": 1,
-      "caseId": "case-001",
+      "caseId": "case-002",
       "engine": "docling",
       "engineVersion": "2.130.0",
-      "evaluatedAt": "2026-09-26T03:29:22.552Z",
+      "evaluatedAt": "2026-09-26T03:29:54.791Z",
       "summary": {
         "total": 11,
-        "passed": 9,
-        "failed": 2
+        "passed": 3,
+        "failed": 8
       },
       "checks": [
         {
           "id": "item_name_exact_match",
           "pass": false,
-          "actual": null,
-          "expected": "情報通信技術調達等適正・効率化推進費",
+          "actual": "人件費 95016-2111-02-0000 職員基本給 02-0100 職員俸給",
+          "expected": "経済産業本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
           "id": "item_name_present_among_candidates",
-          "pass": true,
+          "pass": false,
           "actual": [
             {
-              "itemCode": "036",
-              "itemName": "公金受取口座登録業務支援経費 95016-2123-09-1040 情報処理業務庁費 041 デジタル推進委員等環境"
-            },
-            {
-              "itemCode": "046",
-              "itemName": "デジタル臨時行政調査会事務局の運営等経費"
-            },
-            {
-              "itemCode": "020",
-              "itemName": "情報通信技術調達等適正・効率化推進費"
+              "itemCode": "001",
+              "itemName": "人件費 95016-2111-02-0000 職員基本給 02-0100 職員俸給"
             }
           ],
           "expected": {
-            "itemCode": "020",
-            "itemName": "情報通信技術調達等適正・効率化推進費"
+            "itemCode": "010",
+            "itemName": "経済産業本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
         {
           "id": "expense_name_exact_match_after_line_join",
-          "pass": true,
-          "actual": "情報通信技術調達等適正・効率化の推進に必要な経費",
-          "expected": "情報通信技術調達等適正・効率化の推進に必要な経費",
+          "pass": false,
+          "actual": null,
+          "expected": "経済産業本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
-          "pass": true,
-          "actual": 481188232,
-          "expected": 481188232,
+          "pass": false,
+          "actual": null,
+          "expected": 42331005,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
-          "pass": true,
-          "actual": 448267326,
-          "expected": 448267326,
+          "pass": false,
+          "actual": null,
+          "expected": 46887829,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
-          "pass": true,
-          "actual": -32920906,
-          "expected": -32920906,
+          "pass": false,
+          "actual": null,
+          "expected": 4556824,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
           "id": "unit_exact_match",
-          "pass": false,
-          "actual": null,
+          "pass": true,
+          "actual": "千円",
           "expected": "千円",
           "note": ""
         },
         {
           "id": "page_identification",
           "pass": true,
-          "actual": 11,
-          "expected": 11,
+          "actual": 8,
+          "expected": 8,
           "note": ""
         },
         {
           "id": "delta_sign_evidence_matches_source",
           "pass": true,
-          "actual": "△ 906 920, 32,",
-          "expected": "contains △ (source-derived Ground Truth deltaRaw carries the decrease glyph)",
+          "actual": null,
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
           "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
         },
         {
           "id": "item_to_amount_relationship",
-          "pass": true,
+          "pass": false,
           "actual": {
-            "nearestPrecedingItemCode": "020",
-            "resultPreviousBudget": 481188232
+            "nearestPrecedingItemCode": null,
+            "resultPreviousBudget": null
           },
           "expected": {
-            "itemCode": "020",
-            "previousBudget": 481188232
+            "itemCode": "010",
+            "previousBudget": 42331005
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },
         {
           "id": "expense_to_amount_relationship",
-          "pass": true,
-          "actual": {
-            "expenseCode": "01-95",
-            "hasTriple": true
-          },
+          "pass": false,
+          "actual": null,
           "expected": {
             "expenseCode": "01-95",
             "hasTriple": true

@@ -24,6 +24,21 @@
       "sha256": "72fb06310b15cc9b1c5a95283a2c60fed567db06e5caefbe48d2f65f215cc070",
       "etag": "W/\"120c2-605200a82b330\"",
       "lastModified": "Tue, 12 Sep 2023 02:17:13 GMT"
+    },
+    {
+      "sourceId": "meti-fy2024-general-account-request",
+      "url": "https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf",
+      "finalUrl": "https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf",
+      "fetchedAt": "2026-09-25T23:42:10.297Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 255946,
+      "sha256": "ba64c25df327161a33c293374a7255c203cc9a527130ece848574badefbf909a",
+      "etag": null,
+      "lastModified": null,
+      "acquisitionMethod": "playwright-chromium",
+      "playwrightVersion": "1.63.0",
+      "landingPageUrl": "https://www.meti.go.jp/main/yosangaisan/fy2024/index.html"
     }
   ]
 }

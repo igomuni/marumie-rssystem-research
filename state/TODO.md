@@ -15,12 +15,35 @@
 - Build golden tests for major research totals
 - Evaluate allocationMode golden cases
 
-## Document Understanding benchmark (branch: research/document-understanding-benchmark)
+## Document Understanding benchmark (merged to main via PR #1)
 
 - Resolve header-row (項 vs 目) ambiguity so `item_name_exact_match` can resolve on pages with multiple 3-digit-code rows, instead of only via the `item_name_present_among_candidates` diagnostic — still unresolved for all three engines (pdfjs, PyMuPDF, Docling) after Docling integration
 - Recover the request-number column for Docling (currently `null` for case-001's target row — Docling's table structure produced no cell for that column on that specific row)
 - Add a general per-page/document-level unit-label lookup (currently `unit_exact_match` correctly fails for all three engines because the "千円" label lives only on the document's earlier summary page, not on case-001's page)
-- Consider extending Docling's per-cell reading-order fix (`normalize-docling.mjs`'s numeric-token reversal) to a second case to confirm it generalizes beyond case-001's page before relying on it further
-- Add more benchmark cases beyond case-001 (e.g. a case exercising true multi-row table association, a case with no wrapping, a case testing whether Docling's table detection holds up on a differently-formatted page)
-- Recommended next experiment: add a second case on a *different* page of the same PDF (or the important-policy PDF) to see whether Docling's table detection and the two general Docling-specific rules (CJK wrap-space closing, numeric-token reversal) hold up outside the one page they were derived from
-- Merge this branch to `main` once reviewed
+
+## case-002 (branch: research/case-002-meti-preregistration)
+
+- Source acquired and SHA-256-locked: the METI FY2024 general-account request PDF (`https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf`, 106 pages) was blocked by an AWS WAF JS challenge under the plain-fetch tooling, then successfully acquired via a new Playwright-based tool (`scripts/source-acquisition/browser-fetch/`). See `sources/source-lock.json` (`sourceId: meti-fy2024-general-account-request`).
+- Target row frozen via the pre-registered protocol: PDF page 9 (printed `経(本) 5`), the first eligible row in 令和6年度歳出概算要求額明細表 — request no. `①`, expense code `01-95`. See `fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md` for the full E1–E5 justification and inspection trail.
+- Ground Truth frozen by direct visual transcription (same method as case-001): `fixtures/document-understanding/case-002/ground-truth.json`, evidence in `fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md`. Notably, this row's delta is **positive** (`4556824`, no `△` glyph observed) — unlike case-001's negative delta.
+- **First frozen out-of-sample benchmark run completed** (`379043d`, preserved unchanged in history): pdfjs-baseline 2/11, pymupdf-baseline 3/11, docling 2/11 — a severe regression from case-001's 8-9/11. Full analysis: `reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md`.
+- **Evaluator-overfit defect fixed and re-evaluated** (methodology correction, not engine tuning): `delta_glyph_observed_and_associated` hardcoded `expected: 'contains △'`, which could never pass for case-002's correctly-glyph-free Ground Truth. Corrected to `delta_sign_evidence_matches_source` (derives expected glyph state from Ground Truth's own `deltaRaw`, in `evaluate.mjs`). Re-evaluation: case-001 unchanged (8/11, 8/11, 9/11); case-002 up by exactly `+1` each (3/11, 4/11, 3/11). No extraction/normalization/Ground Truth changed (verified via diff). See `reports/document-understanding/20260926_1231_Case002_Evaluator_Corrected_Reevaluation.md`.
+- **Next action (follow-up, not yet started) — extraction/parser failures remain unfixed:**
+  1. Investigate generalizing `common.mjs`'s `splitTrailingTriple` trailing-anchor assumption so an annotation column following (not just wrapping after) the amount triple on the same reconstructed line doesn't break triple extraction — without reintroducing amount-similarity-as-selection-evidence risk. (Recommended single next experiment.)
+  2. Add a `closeCjkWrapSpaces`-equivalent step to `common.mjs`/`normalize.mjs`, verifying it doesn't regress case-001, to fix the asymmetry with `normalize-docling.mjs` (case-002's `item_name_present_among_candidates` diverged between pdfjs and pymupdf purely due to this gap).
+  3. Investigate Docling's coarser/misaligned table grid on case-002's page (wrong-row selection reported as unambiguous — arguably worse than the flat-text baselines' honest `null`s).
+  4. Consider a `case-003`, selected via the same source-only protocol, to test whether the "annotation on the same line as the triple" pattern found on case-002 is common or rare across ministries.
+- Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
+- Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
+
+## Research architecture (design-only, not implemented — see ADR-010, ADR-011, ADR-012)
+
+- **Case Package Reconstruction Benchmark v0: DONE.** 33/35 checklist items correctly reconstructed across case-001/case-002, zero hallucinations, critical temporal test (evaluator-correction chronology) passed cleanly in both directions. See `reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_Report.md` and its 4 companion artifacts.
+- **Next: v1 of the reconstruction benchmark with genuinely sandboxed isolation** (v0's isolation was instructed, not tool-access-enforced — see ADR-012). Not started.
+
+- Design document: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`. Proposes Case Package / Document Profile / Analysis Strategy concepts, a document-family/layout-specific-interpretation layer, a conservative LLM strategy-selection role, a 3-level benchmark, and a leave-one-case-out evaluation protocol.
+- **Phase 1 gate: DONE.** `document-profile.json` and `research-history.jsonl` backfilled for case-001 and case-002 from existing prose/commits (no new case, no strategy selection). See `fixtures/document-understanding/case-001/{document-profile.json,research-history.jsonl}` and the case-002 equivalents.
+- Do not build strategy selection, retrieval, or an LLM integration before at least 3 demonstrably distinct layout families exist in the corpus (Phase 2 gate, not started).
+- Schema follow-ups noted during Phase 1 backfill (not fixed, since this was backfill-only):
+  1. case-001's research-history events use a coarser `result` granularity than case-002's (which distinguishes `experiment` from `result`), because case-001's history was reconstructed after the fact at lower resolution than case-002's contemporaneously-written reports. A future case created with the schema in place from the start should use `experiment` consistently for a first frozen run.
+  2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
