@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Case Package Reconstruction Benchmark v0 (branch: research/case-002-meti-preregistration)
+
+- Tested whether `document-profile.json` + `research-history.jsonl` alone (commit `f7b0b75`, verified unchanged before execution) let a fresh, independent LLM session reconstruct a case's research state — identity, methods, results, temporal chronology of a real methodology correction, epistemic categories, open work — without seeing README/reports/Ground Truth/Git history/the other case.
+- Froze a reconstruction prompt + output schema + evaluation checklist *before* running either reconstruction, per the task's anti-tuning discipline; the checklist was not edited after seeing output, and no defect found afterward was silently patched into an improved rerun.
+- Two separate `Agent` (general-purpose) subagent calls, one per case, each a fresh context with no memory of this conversation or of the other case, given only that case's two files pasted into the frozen prompt. Both produced valid, schema-conforming JSON on the first attempt.
+- Result: 33/35 checklist items correctly reconstructed across both cases (1 partial: an epistemic-status distinction conveyed correctly in prose but not by literally citing the source's `status` field; 1 omitted: a meta-level discovery-provenance nuance the fixed schema never explicitly solicited), 0 contradicted, **0 hallucinated/unsupported claims in either run**. The critical temporal test (case-002's original first-frozen scores 2/11-3/11-2/11 vs. the evaluator-corrected 3/11-4/11-3/11) was preserved as two distinct, correctly-linked, correctly-labeled (superseded vs. current) entries — neither erased nor treated as still equally valid.
+- **Key limitation, disclosed rather than hidden:** isolation of the reconstruction sessions from the rest of the repository was *instructed* (an explicit "do not use tools" prompt), not *sandbox-enforced* — no tool in this session's toolset can zero out a spawned agent's technical tool access. Observed evidence of compliance (each run showed exactly 1 tool use, consistent with only the required hand-back call) is suggestive, not proof. Recorded as a durable methodology requirement, ADR-012: future LLM reconstruction/strategy-selection experiments must explicitly disclose whether isolation was sandboxed or only instructed, never conflate the two.
+- Files: `reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_{Frozen_Prompt_And_Schema,Frozen_Evaluation_Checklist,Raw_Outputs,Evaluation_Result,Report}.md`, `protocol/DECISIONS.md` (ADR-012).
+- Not done (explicitly out of scope for v0, per the task): case-003, strategy selection, embeddings/retrieval, any Case Package input modification, any parser/adapter/normalizer/evaluator/Ground Truth change.
+
 ### Case Package metadata backfill for case-001 and case-002 (structured-data only, branch: research/case-002-meti-preregistration)
 
 - **Backfill only — no parser, adapter, normalizer, evaluator, LLM, or case-003.** Created the first machine-readable Case Package metadata (`document-profile.json`, `research-history.jsonl`) for both existing cases, per Phase 1 of the roadmap in the architecture report (`20260926_1316_...`).

@@ -36,7 +36,10 @@
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
 - Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
 
-## Research architecture (design-only, not implemented — see ADR-010, ADR-011)
+## Research architecture (design-only, not implemented — see ADR-010, ADR-011, ADR-012)
+
+- **Case Package Reconstruction Benchmark v0: DONE.** 33/35 checklist items correctly reconstructed across case-001/case-002, zero hallucinations, critical temporal test (evaluator-correction chronology) passed cleanly in both directions. See `reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_Report.md` and its 4 companion artifacts.
+- **Next: v1 of the reconstruction benchmark with genuinely sandboxed isolation** (v0's isolation was instructed, not tool-access-enforced — see ADR-012). Not started.
 
 - Design document: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`. Proposes Case Package / Document Profile / Analysis Strategy concepts, a document-family/layout-specific-interpretation layer, a conservative LLM strategy-selection role, a 3-level benchmark, and a leave-one-case-out evaluation protocol.
 - **Phase 1 gate: DONE.** `document-profile.json` and `research-history.jsonl` backfilled for case-001 and case-002 from existing prose/commits (no new case, no strategy selection). See `fixtures/document-understanding/case-001/{document-profile.json,research-history.jsonl}` and the case-002 equivalents.
