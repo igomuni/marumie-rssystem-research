@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### research: survey MEXT case-004 source (branch: research/case-004-mext-preregistration)
+
+- **Source survey only. No row selected, no Ground Truth, no benchmark engine run against MEXT.**
+- Confirmed, via two independently agreeing routes (MEXT's own budget page and MOF's official cross-ministry link table), that MEXT's FY2024 general-account expenditure request is packaged as **four separate PDFs** by table type (`_01` cover/TOC, `_02` 総表, `_03` 明細表, `_04` 定員表) — the first case in this corpus where the detail table is not embedded in a single combined document with 総表/定員表, unlike METI (case-002) and MIC (case-003).
+- Locked the detail table as `mext-fy2024-general-account-expenditure-request-detail` (SHA-256 `6df221dfd22c48e0f32dd59bcf2dbcbaad19720083be43005ce700b984a6bf71`, plain-fetch, no WAF observed on `mext.go.jp`), reusing the existing shared `lock-policy.mjs` immutable-lock functions unchanged (no source-acquisition code modified). Re-ran the acquisition to confirm the `IDENTICAL` no-op path.
+- Structural findings: 1,339 pages, A4 landscape, document-wide owner-password encryption (permission-only, AES-256; print/copy allowed; `pdftoppm`/`pdfinfo` unaffected) — a new characteristic vs. METI/MIC (both unencrypted); no recorded PDF `Producer` for the detail file, while sibling files use "List Creator" (`_01`/`_02`) or a wholly different toolchain, "Acrobat Distiller"/PScript5.dll (`_04`) — toolchain heterogeneity within one logical document, also new.
+- Confirmed via the sibling TOC file and one page-1 rasterization of the detail file that it begins immediately at 明細表 content (no embedded front matter) and follows the same column structure and first-eligible-row template pattern (`①01-95 [ministry]一般行政に必要な経費`) already seen in case-002/003.
+- Disclosed one incidental exposure per the task's own disclosure requirement: rasterizing the detail file's own page 1 (a necessary structural check, not a row-eligibility inspection) incidentally showed the `010 文部科学本省` organization-total row's own amounts (`5,149,805,046` / `4,884,776,863` / `△265,028,183`) — an aggregate, not any specific future candidate row; not used to influence source selection.
+- Full report: `fixtures/document-understanding/case-004/20260926_2029_Case004_MEXT_Source_Survey.md`.
+- Files: `sources/source-lock.json` (1 new entry), `sources/source-registry.csv` (1 new row), the survey report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. `sources/raw/mext-fy2024-general-account-expenditure-request-detail.pdf` acquired locally (git-ignored, not committed).
+- **Recommended next step**: freeze a case-004 row-selection protocol (modeled on case-003's ME1–ME5 methodology) before visually selecting any target row.
+
 ### research: test CJK punctuation normalization boundary (branch: research/case-003-mic-preregistration)
 
 - **Safety experiment on the `closeCjkWrapSpaces` strategy established at `bac939b`. Decision: KEEP — no production code changed.**

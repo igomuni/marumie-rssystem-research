@@ -6,9 +6,10 @@
   "workspacePhase": "1D",
   "currentTopic": "research reproducibility",
   "nextAction": "make curated fixture generation reproducible from deterministic PDF extraction while preserving historical golden equivalence",
-  "latestReport": "reports/document-understanding/20260926_1935_CJK_Fullwidth_Punctuation_Boundary_Experiment.md",
+  "latestReport": "fixtures/document-understanding/case-004/20260926_2029_Case004_MEXT_Source_Survey.md",
   "latestSnapshot": null,
   "unresolved": [
+    "Started case-004 (branch research/case-004-mext-preregistration, from main@3b29ebd): a source-survey-only task for MEXT (文部科学省) FY2024 budget-request materials. Confirmed via two independently agreeing routes (MEXT's own navigation and MOF's official cross-ministry link table) that MEXT's FY2024 general-account expenditure request is packaged as FOUR SEPARATE PDFs by table type (cover/TOC, 総表, 明細表, 定員表), not one combined document like METI/MIC. Locked the detail table as mext-fy2024-general-account-expenditure-request-detail (SHA-256 6df221dfd22c48e0f32dd59bcf2dbcbaad19720083be43005ce700b984a6bf71, plain-fetch, no WAF observed, 1339 pages, encrypted permission-only AES-256, no recorded Producer, unlike its List-Creator-produced siblings). Confirmed via TOC and page-1 rasterization that the same first-eligible-row template pattern (①01-95 [ministry]一般行政に必要な経費) exists. No target row selected, no Ground Truth created, no benchmark engine run against MEXT, no Case Package created. See fixtures/document-understanding/case-004/20260926_2029_Case004_MEXT_Source_Survey.md.",
     "MHLW bucket 032 numeric allocation remains unresolved",
     "Historical fixture generation is still hand-curated, not mechanically derived from deterministic extraction",
     "Phase 3-15 transformations are not yet fully represented as executable scripts",
