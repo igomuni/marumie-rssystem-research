@@ -233,9 +233,9 @@ export function normalizeDocling(caseId) {
 // block reads; without the direct-execution guard below, importing this
 // module reruns normalizeDocling as an import-time side effect, before the
 // adapter has necessarily produced a raw artifact yet -- see
-// protocol/DECISIONS.md for why this was treated as a harness-reliability
-// defect (docbench harness reliability investigation), not a Docling/torch
-// flakiness issue.
+// reports/document-understanding/20260926_1737_Docbench_Harness_Reliability_Investigation.md
+// for why this was root-caused as a module-import-side-effect defect, not a
+// Docling/Torch/child-process flakiness issue.
 const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
 if (isDirectlyExecuted) {
   const [, , caseIdArg] = process.argv;
