@@ -16,14 +16,24 @@ import {
   findItemCodeRows,
   findExpenseRows,
   joinWrappedLabel,
+  closeCjkWrapSpaces,
 } from './common.mjs';
 
 function reconstructRow(row, nameField, lines) {
   const { joinedSuffix, consumedLineIndexes } = joinWrappedLabel(lines, row.lineIndex);
   const fragment = row[nameField];
+  const assembled = joinedSuffix ? `${fragment}${joinedSuffix}` : fragment;
   return {
     ...row,
-    [nameField]: joinedSuffix ? `${fragment}${joinedSuffix}` : fragment,
+    // See common.mjs's closeCjkWrapSpaces: pdfjs-dist's line reconstruction
+    // has been observed inserting a space between adjacent CJK characters
+    // specifically for header/total-style rows rendered with wide letter-
+    // spacing in the source (case-002, case-003); PyMuPDF's own
+    // reconstruction never does this, so applying the rule here is a no-op
+    // for its already-clean text. Applied to the fully-assembled name
+    // (after any wrap-join) so both single-line and wrapped labels are
+    // covered uniformly, matching normalize-docling.mjs's own scope.
+    [nameField]: closeCjkWrapSpaces(assembled),
     joinedFromLineIndexes: [row.lineIndex, ...consumedLineIndexes],
     // Engine-agnostic reading-order key so evaluate.mjs can compare "which
     // row precedes which" across normalizers with different native row

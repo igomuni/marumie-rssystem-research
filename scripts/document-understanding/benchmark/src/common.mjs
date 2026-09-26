@@ -50,6 +50,45 @@ export function normalizedArtifactPath(caseId, engine) {
 
 const DELTA_GLYPH = '△';
 
+// CJK/fullwidth-punctuation ranges. Both this benchmark's flat-line engines
+// (pdfjs-baseline, pymupdf-baseline) and Docling can each, independently and
+// for engine-specific reasons, reconstruct a wrap-induced or wide-letter-
+// -spacing-induced space between two CJK characters that the source text
+// never actually contains -- removing a space strictly *between* two such
+// characters reverses that artifact without touching spaces that are
+// genuinely meaningful (e.g. between a 3-digit code and the name that
+// follows it, which this rule leaves alone because the code side is ASCII
+// digits, not CJK; or between CJK text and an embedded Latin/ASCII word,
+// which this rule also leaves alone for the same reason).
+//
+// This was originally Docling-only code (normalize-docling.mjs), added when
+// Docling's own cell-text assembly was observed inserting exactly this kind
+// of space. The CJK Spacing Strategy Layer Experiment (see
+// reports/document-understanding/ for that report) found the identical
+// artifact recurring independently in pdfjs-dist's flat-line reconstruction,
+// specifically for header/total-style rows rendered with wide letter-spacing
+// in the source PDF (confirmed on case-002 and case-003, both absent from
+// case-001, which never renders such a row on its target page) -- PyMuPDF's
+// own reconstruction never exhibits it. Moved here so both normalize.mjs
+// (flat-line engines) and normalize-docling.mjs (Docling) share one
+// implementation instead of two independently-maintained copies of the same
+// rule; normalize-docling.mjs re-exports it unchanged for its existing
+// callers/tests.
+export const CJK_RANGE = '　-ヿ㐀-䶿一-鿿＀-￯';
+const CJK_INTERNAL_SPACE_RE = new RegExp(`([${CJK_RANGE}])\\s+([${CJK_RANGE}])`, 'gu');
+
+export function closeCjkWrapSpaces(text) {
+  let prev;
+  let out = text;
+  // Repeat: a three-character run A-space-B-space-C only has the middle gap
+  // closed on a single pass because the regex consumes B once per match.
+  do {
+    prev = out;
+    out = out.replace(CJK_INTERNAL_SPACE_RE, '$1$2');
+  } while (out !== prev);
+  return out;
+}
+
 export function parseAmountToken(token) {
   if (token == null) return null;
   const isDelta = token.includes(DELTA_GLYPH);

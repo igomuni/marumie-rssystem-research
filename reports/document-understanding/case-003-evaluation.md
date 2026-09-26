@@ -1,10 +1,10 @@
 # Document Understanding Benchmark — case-003
 
-Generated: 2026-09-26T07:37:22.816Z
+Generated: 2026-09-26T09:14:19.267Z
 
 | engine | passed | failed | total |
 |---|---|---|---|
-| pdfjs-baseline (4.10.38) | 9 | 2 | 11 |
+| pdfjs-baseline (4.10.38) | 10 | 1 | 11 |
 | pymupdf-baseline (1.28.2) | 10 | 1 | 11 |
 | docling (2.130.0) | 3 | 8 | 11 |
 
@@ -15,7 +15,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pdfjs-baseline | pymupdf-baseline | docling |
 |---|---|---|---|
 | item_name_exact_match | FAIL | FAIL | FAIL |
-| item_name_present_among_candidates | FAIL | PASS | FAIL |
+| item_name_present_among_candidates | PASS | PASS | FAIL |
 | expense_name_exact_match_after_line_join | PASS | PASS | FAIL |
 | previous_budget_exact_match | PASS | PASS | FAIL |
 | fy2024_request_exact_match | PASS | PASS | FAIL |
@@ -31,7 +31,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pass | actual | expected | note |
 |---|---|---|---|---|
 | item_name_exact_match | FAIL | `null` | `"総務本省共通費"` | Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages. |
-| item_name_present_among_candidates | FAIL | `[{"itemCode":"010","itemName":"総 務 本 省"},{"itemCode":"010","itemName":"総 務 本 省 共 通 費"},{"itemCode":"001","itemName":"既 定 定 員 に 伴 う 経 費"},{"itemCode":"001","itemName":"人 件 費 33,430,013 37,142,329 3,712,316 (令和4年度末定員)特 別 職 20人"}]` | `{"itemCode":"010","itemName":"総務本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
+| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"総務本省"},{"itemCode":"010","itemName":"総務本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人件費 33,430,013 37,142,329 3,712,316 (令和4年度末定員)特別職 20人"}]` | `{"itemCode":"010","itemName":"総務本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
 | expense_name_exact_match_after_line_join | PASS | `"総務本省一般行政に必要な経費"` | `"総務本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
 | previous_budget_exact_match | PASS | `38472070` | `38472070` |  |
 | fy2024_request_exact_match | PASS | `41763907` | `41763907` |  |
@@ -47,7 +47,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pass | actual | expected | note |
 |---|---|---|---|---|
 | item_name_exact_match | FAIL | `null` | `"総務本省共通費"` | Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages. |
-| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"総  務  本  省"},{"itemCode":"010","itemName":"総務本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人    件    費               33,430,013      37,142,329                                     3,712,316 (令和4年度末定員)特  別  職        20人"}]` | `{"itemCode":"010","itemName":"総務本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
+| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"総務本省"},{"itemCode":"010","itemName":"総務本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人件費               33,430,013      37,142,329                                     3,712,316 (令和4年度末定員)特別職        20人"}]` | `{"itemCode":"010","itemName":"総務本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
 | expense_name_exact_match_after_line_join | PASS | `"総務本省一般行政に必要な経費"` | `"総務本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
 | previous_budget_exact_match | PASS | `38472070` | `38472070` |  |
 | fy2024_request_exact_match | PASS | `41763907` | `41763907` |  |

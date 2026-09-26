@@ -12,12 +12,13 @@ import {
   findItemCodeRows,
   findExpenseRows,
   joinWrappedLabel,
+  closeCjkWrapSpaces,
 } from './common.mjs';
 import {
-  closeCjkWrapSpaces,
   reconstructNumericToken,
   findRows,
 } from './normalize-docling.mjs';
+import { closeCjkWrapSpaces as closeCjkWrapSpacesReexportedFromDocling } from './normalize-docling.mjs';
 import { deltaSignEvidenceMatches } from './evaluate.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -118,6 +119,72 @@ t('closeCjkWrapSpaces: removes a wrap-induced space between two CJK characters',
 
 t('closeCjkWrapSpaces: leaves the space between an item code and its CJK name', () => {
   assert.equal(closeCjkWrapSpaces('020 情報通信技術調達等適正'), '020 情報通信技術調達等適正');
+});
+
+// --- CJK Spacing Strategy Layer Experiment: negative cases and the real
+// case-002/case-003 header-row pattern -----------------------------------
+// These are frozen BEFORE re-running the case-001/002/003 benchmark, per the
+// experiment's pre-registration discipline: they encode the rule's intended
+// scope, not a rule reverse-engineered from a desired score.
+
+t('closeCjkWrapSpaces: the actual case-002/003 wide-letter-spacing header pattern closes correctly', () => {
+  // Verbatim shape of the raw pdfjs-baseline line observed on both case-002
+  // ("010 経 済 産 業 本 省 共 通 費 ...") and case-003
+  // ("010 総 務 本 省 共 通 費 ..."), reduced to just the code+name portion.
+  assert.equal(closeCjkWrapSpaces('総 務 本 省 共 通 費'), '総務本省共通費');
+});
+
+t('closeCjkWrapSpaces: does NOT close a space between CJK text and an embedded Latin/ASCII word (negative case)', () => {
+  // A space between CJK text and a Latin abbreviation/word is potentially a
+  // genuine, intentional word-boundary space (unlike CJK-to-CJK, where
+  // Japanese prose never uses inter-character spacing) -- this must survive
+  // unchanged. Neither side of an ASCII/CJK boundary is in CJK_RANGE, so the
+  // existing regex already leaves it alone; this test freezes that as an
+  // explicit, checked guarantee rather than an incidental side effect.
+  assert.equal(closeCjkWrapSpaces('政策 IT 推進費'), '政策 IT 推進費');
+});
+
+t('closeCjkWrapSpaces: does NOT close a space between CJK text and a digit (negative case, beyond the item-code prefix)', () => {
+  assert.equal(closeCjkWrapSpaces('経費 2024 年度'), '経費 2024 年度');
+});
+
+t('closeCjkWrapSpaces: closes a space adjacent to fullwidth punctuation, matching the existing single-case-002-glyph convention', () => {
+  // Fullwidth punctuation (｢｣（）、。 etc.) falls inside CJK_RANGE by design
+  // (see common.mjs) so that a wrap-induced space next to it is also closed;
+  // this was already true before this experiment (case-001's
+  // "情報通信技術調達等適正 ・効率化推進費" test above exercises the '・'
+  // punctuation mark), reconfirmed here as an explicit negative-adjacent case
+  // rather than left implicit.
+  assert.equal(closeCjkWrapSpaces('経済産業省 （本省）'), '経済産業省（本省）');
+});
+
+t('closeCjkWrapSpaces: already-clean text is unchanged (idempotent no-op)', () => {
+  assert.equal(closeCjkWrapSpaces('総務本省共通費'), '総務本省共通費');
+});
+
+t('closeCjkWrapSpaces: re-exported from normalize-docling.mjs is the identical function as common.mjs\'s (no behavioral drift from the refactor)', () => {
+  assert.equal(closeCjkWrapSpacesReexportedFromDocling, closeCjkWrapSpaces);
+});
+
+t('normalize.mjs pipeline (via findItemCodeRows + reconstructRow): a wide-letter-spaced pdfjs-baseline header line produces a clean itemNameFragment', () => {
+  // End-to-end through the actual extraction regex (common.mjs's
+  // findItemCodeRows), not just the closeCjkWrapSpaces unit in isolation --
+  // confirms the fix is wired into the real candidate-construction path pdfjs-
+  // baseline and pymupdf-baseline both use. Synthetic line, not copied from
+  // any case's raw artifact, with numbers unrelated to any real Ground Truth.
+  const lines = [{ lineIndex: 0, text: '010 総 務 本 省 共 通 費 9,999,999 8,888,888 1,111,111' }];
+  const rows = findItemCodeRows(lines);
+  assert.equal(rows.length, 1);
+  // findItemCodeRows itself does not apply closeCjkWrapSpaces (that happens
+  // in normalize.mjs's reconstructRow) -- the raw fragment still has spaces
+  // at this stage; this assertion documents that boundary explicitly.
+  assert.equal(rows[0].itemNameFragment, '総 務 本 省 共 通 費');
+});
+
+t('normalize.mjs pipeline: pymupdf-baseline-style already-clean text is unaffected (no-op confirmed through the real function)', () => {
+  assert.equal(closeCjkWrapSpaces('総務本省共通費'), findItemCodeRows([
+    { lineIndex: 0, text: '010 総務本省共通費 9,999,999 8,888,888 1,111,111' },
+  ])[0].itemNameFragment);
 });
 
 t('reconstructNumericToken: reverses Docling-style reversed comma-groups', () => {

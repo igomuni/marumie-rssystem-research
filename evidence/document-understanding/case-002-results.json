@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "caseId": "case-002",
-  "generatedAt": "2026-09-26T03:29:54.791Z",
+  "generatedAt": "2026-09-26T09:14:01.987Z",
   "evaluations": [
     {
       "schemaVersion": 1,
       "caseId": "case-002",
       "engine": "pdfjs-baseline",
       "engineVersion": "4.10.38",
-      "evaluatedAt": "2026-09-26T03:29:54.789Z",
+      "evaluatedAt": "2026-09-26T09:14:01.985Z",
       "summary": {
         "total": 11,
-        "passed": 3,
-        "failed": 8
+        "passed": 4,
+        "failed": 7
       },
       "checks": [
         {
@@ -24,23 +24,23 @@
         },
         {
           "id": "item_name_present_among_candidates",
-          "pass": false,
+          "pass": true,
           "actual": [
             {
               "itemCode": "010",
-              "itemName": "経 済 産 業 本 省"
+              "itemName": "経済産業本省"
             },
             {
               "itemCode": "010",
-              "itemName": "経 済 産 業 本 省 共 通 費"
+              "itemName": "経済産業本省共通費"
             },
             {
               "itemCode": "001",
-              "itemName": "既 定 定 員 に 伴 う 経 費"
+              "itemName": "既定定員に伴う経費"
             },
             {
               "itemCode": "001",
-              "itemName": "人 件 費"
+              "itemName": "人件費"
             }
           ],
           "expected": {
@@ -52,7 +52,7 @@
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費 「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
+          "actual": "経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
           "expected": "経済産業本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
@@ -131,7 +131,7 @@
       "caseId": "case-002",
       "engine": "pymupdf-baseline",
       "engineVersion": "1.28.2",
-      "evaluatedAt": "2026-09-26T03:29:54.790Z",
+      "evaluatedAt": "2026-09-26T09:14:01.986Z",
       "summary": {
         "total": 11,
         "passed": 4,
@@ -151,7 +151,7 @@
           "actual": [
             {
               "itemCode": "010",
-              "itemName": "経 済 産 業 本 省"
+              "itemName": "経済産業本省"
             },
             {
               "itemCode": "010",
@@ -163,7 +163,7 @@
             },
             {
               "itemCode": "001",
-              "itemName": "人    件    費"
+              "itemName": "人件費"
             }
           ],
           "expected": {
@@ -175,7 +175,7 @@
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費                                                  「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
+          "actual": "経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
           "expected": "経済産業本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
@@ -254,7 +254,7 @@
       "caseId": "case-002",
       "engine": "docling",
       "engineVersion": "2.130.0",
-      "evaluatedAt": "2026-09-26T03:29:54.791Z",
+      "evaluatedAt": "2026-09-26T09:14:01.987Z",
       "summary": {
         "total": 11,
         "passed": 3,

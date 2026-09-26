@@ -11,31 +11,15 @@
 // normalize.mjs: it only reads ground-truth.json's pdfPageIndex (case
 // configuration), never its `result` object.
 import path from 'node:path';
-import { readJson, writeJson, rawArtifactPath, normalizedArtifactPath } from './common.mjs';
+import { readJson, writeJson, rawArtifactPath, normalizedArtifactPath, closeCjkWrapSpaces, CJK_RANGE } from './common.mjs';
 
 const DELTA_GLYPH = '△';
 
-// CJK/fullwidth-punctuation ranges. Docling joins a wrapped cell's original
-// two printed lines with a single ASCII space; the source text itself never
-// has a space between two CJK characters, so removing a space strictly
-// *between* two such characters reverses that join artifact without touching
-// spaces that are genuinely meaningful (e.g. between a 3-digit code and the
-// name that follows it, which this rule leaves alone because the code side
-// is ASCII digits, not CJK).
-const CJK_RANGE = '　-ヿ㐀-䶿一-鿿＀-￯';
-const CJK_INTERNAL_SPACE_RE = new RegExp(`([${CJK_RANGE}])\\s+([${CJK_RANGE}])`, 'gu');
-
-export function closeCjkWrapSpaces(text) {
-  let prev;
-  let out = text;
-  // Repeat: a three-character run A-space-B-space-C only has the middle gap
-  // closed on a single pass because the regex consumes B once per match.
-  do {
-    prev = out;
-    out = out.replace(CJK_INTERNAL_SPACE_RE, '$1$2');
-  } while (out !== prev);
-  return out;
-}
+// closeCjkWrapSpaces moved to common.mjs (see there for the full rationale):
+// pdfjs-baseline was found to need the identical rule, so both normalizers
+// now share one implementation. Re-exported here, unchanged in behavior, so
+// existing callers/tests that import it from this file keep working.
+export { closeCjkWrapSpaces };
 
 // Docling has been observed (this page, multiple independent rows/values —
 // see reports/document-understanding/case-001-evaluation.md) to assemble a
