@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: freeze MEXT case-004 selection protocol (branch: research/case-004-mext-preregistration)
+
+- **Protocol design and freeze only. No row selected, no Ground Truth, no benchmark engine run against MEXT.**
+- Critiqued case-002's E1–E5 and case-003's ME1–ME5 individually rather than copying them. The single substantive change: **reclassified "correct table" (case-003's ME1) from a row-level eligibility test into a frozen source/universe precondition** — MEXT's locked source (`mext-fy2024-general-account-expenditure-request-detail`) is already, in its entirety, a standalone `第2表 概算要求額明細表` file (総表/定員表 live in separate sibling files never locked as this case's source), so no row inside it could ever fail a "is this 明細表, not 総表/定員表" test; testing it per-row would be vacuous. MX1–MX4 (native item/expense code, multi-line wrap, standard amount triple, sufficiency) retained unchanged in substance from ME2–ME5.
+- Froze the selection universe: organization `010 文部科学本省` (`pdfPageIndex` approximately 0–894, printed pages approximately 9–903, per the sibling `_01.pdf`'s already-transcribed table of contents), over the entire 1,339-page file (rejected — organization `020 文部科学本省所轄機関` and beyond are structurally distinct affiliated-institution bodies of unknown internal layout convention, the same document-family-homogeneity concern already raised for case-003) or any later organization (no TOC justification exists for any alternative). The universe's exact upper boundary is recorded as approximate, matching the source survey's own hedge; pinning it exactly (by reading boundary-page heading text only, never row content) is explicitly deferred to the next task as permitted structural navigation.
+- Froze non-criteria carried forward from case-002/003 (delta glyph/sign, hierarchy ambiguity, remarks/annotation placement, expected engine behavior, Docling grid geometry, similarity/difference to prior cases) plus one new, MEXT-specific non-criterion: **encryption compatibility with any engine must not be probed per-candidate before the row is frozen** — encryption is a document-wide property already established once for the entire locked file (permission-only AES-256, confirmed not to block `pdftoppm` rendering), not a row property.
+- Froze the deterministic tie-break (earliest eligible row by `pdfPageIndex`, then topmost on that page) and explicit continuation/page-boundary handling, mirroring case-002/003's convention.
+- Disclosed, carried forward from the source survey: the one incidental exposure already on record (the `010 文部科学本省` organization-aggregate row's own amounts, seen only while confirming packaging structure) fails MX1 outright (no expense-level code) and was not used to influence this protocol. No new PDF inspection was performed in this task — every structural fact cited was already committed in the prior source-survey task.
+- No ADR added — this task's one reclassification (§6, "correct table" moving from row-level test to source-level precondition) is a case-specific application of the already-established selection-protocol methodology (case-002/003's own precedent of critiquing rather than copying prior criteria), not a new cross-cutting decision.
+- Full protocol: `fixtures/document-understanding/case-004/20260926_2045_Case004_Selection_Protocol.md`.
+- Files: the protocol document, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, or evaluator file modified; no Case Package created.
+- **Recommended next step**: apply this frozen protocol by direct visual inspection of organization `010`'s pages to select exactly one row, create a selection record, and stop before Ground Truth.
+
 ### research: survey MEXT case-004 source (branch: research/case-004-mext-preregistration)
 
 - **Source survey only. No row selected, no Ground Truth, no benchmark engine run against MEXT.**
