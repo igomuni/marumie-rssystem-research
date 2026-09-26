@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+### research: diagnose MEXT pagination context (branch: research/case-004-mext-preregistration)
+
+- **Read-only source-structure diagnostic. No engine run, no `docbench`, no production change.**
+- Sampled 8 item-header → first-expense-row boundaries within organization `010 文部科学本省`, chosen from the sibling cover/TOC file's own page numbers (not engine outcomes), spanning printed pages 10 through 903 — the frozen target boundary plus 7 others deliberately varied across early/lower-middle/middle/mid-late/later/near-the-end positions.
+- **Result**: 4/8 boundaries same-page, 4/8 exactly one page back (never farther in this sample), with zero repeated/carry-forward item-header context on any cross-page expense row. **The frozen case-004 target's own "header on the preceding page" shape is typical — shared by half the sample — not an outlier.**
+- Unit label (`単位：千円`) was absent from all 16 sampled pages; confirmed as a **table-opening-only** convention, printed exactly once on the document's true first page (`pdfPageIndex` 0) and never repeated at any item/organization boundary sampled — a categorically more extreme distance pattern than item-header context, not merely a longer version of the same problem.
+- Incidentally confirmed (structural navigation only) the exact `010`→`020` organization boundary left approximate in the case-004 selection protocol: printed page 903/904.
+- **Prior-case comparison from already-committed evidence, no rerun**: case-001 shares the same unit-absent-from-target-page pattern (already documented in `state/TODO.md`'s own case-002 history section); case-002 and case-003 both had item-header context **and** unit context present directly on their own target pages (per their own Ground Truth evidence documents and current evaluation matrices). **case-004 is the first case in this research program where item-header context is absent from the target's own page.**
+- Compared 4 conceptual context models (`target_page_only` / `target_plus_previous` / `nearest_governing_header` / `table_metadata_plus_local_pages`) for source-context sufficiency only (not implemented, not run): only the last model's explicit separation of table-wide-once unit context from item-local header context would recover both kinds of context in this sample, because they have genuinely different scopes.
+- Explicitly kept the three failure layers separate, per the task's own instruction: context availability (this diagnostic's subject) vs. interpretation (not investigated, no engine run) vs. Docling's own table-grid column-fusion artifact from the first frozen run (explicitly **not** re-attributed to pagination).
+- Two new, non-preregistered observations disclosed: a first-expense row (sample 6) whose own inline amount triple is entirely blank, with real values several lines deeper in a nested sub-line-item — a self-containment failure distinct from anything seen in case-001/002/003 or the frozen target; and a same-page-header sample (sample 2) with a populated 備考 annotation, the first such instance noticed in this diagnostic.
+- No schema, adapter, normalizer, evaluator, selection protocol, selection record, or Ground Truth file was modified. No additional row was selected or scored.
+- Full report: `reports/document-understanding/20260927_0459_Case004_MEXT_Pagination_Context_Diagnostic.md`.
+- Files: the diagnostic report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No rendered images staged (scratch directory only, removed after use).
+- **Recommended next step**: extend the same boundary-sampling method to organization `020 文部科学本省所轄機関` to check whether the same patterns generalize across organizational boundaries — still read-only, no row selection, no engine run.
+
 ### research: record MEXT case-004 first frozen benchmark (branch: research/case-004-mext-preregistration)
 
 - **First frozen out-of-sample benchmark run. No adaptation applied.**
