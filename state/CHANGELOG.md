@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### research: freeze MEXT case-004 ground truth (branch: research/case-004-mext-preregistration)
+
+- **Ground Truth frozen. No benchmark engine run against MEXT.**
+- Transcribed `fixtures/document-understanding/case-004/ground-truth.json` for the already-selected row (`pdfPageIndex` 2, request no. `①`, expense code `01-95`) by direct visual inspection (400dpi `pdftoppm` renders and crops) only: itemCode `010`/`文部科学本省共通費`, requestNo `1`, expenseCode `01-95`/`文部科学本省一般行政に必要な経費`, previousBudget `95208241`, fy2024Request `95686830`, deltaRaw `"478,589"` (no `△`, positive), unit `千円`. Arithmetic check (`95,686,830 − 95,208,241 = 478,589`) run only after independent transcription — PASS.
+- **Disclosed a genuine, source-grounded difference from case-002/003's own Ground Truth**: no unit label is printed on the target row's own page (`pdfPageIndex` 2), unlike case-002/003's target pages, which both carried it directly. MEXT's `(単位：千円)` label is instead stated once, on the document's own first page (`pdfPageIndex` 0), applying to the whole table. Recorded `unit: "千円"` with an honestly weaker, **table-level (not page-level)** scope, explicitly distinguished in both `ground-truth.json`'s own `notes` field and the evidence document, rather than silently copying case-002/003's stronger same-page confirmation.
+- Delta-sign corroboration used a different, already-inspected page (`pdfPageIndex` 0's own organization-aggregate row, `△265,028,183`) solely to confirm the `△` glyph renders correctly somewhere in this document — not to infer the target row's own sign, which was determined solely from the absence of any mark in its own cell.
+- Delimited the target row from its own unusually extensive, deeply-nested numbered sub-line-item breakdown (flagged in the prior selection record) by position (unindented, directly under the column headers) and by uniquely-carried identifiers (request number, expense code) that no subordinate line carries — no ambiguity was found; subordinate lines were not aggregated into, or used to replace, any target value.
+- No ADR added, no schema incompatibility found — `ground-truth.json`'s `result` shape is identical to case-001/002/003's, so `evaluate.mjs` requires no change to score case-004.
+- Full evidence: `fixtures/document-understanding/case-004/20260926_2111_Case004_Ground_Truth_Evidence.md`.
+- Files: `fixtures/document-understanding/case-004/ground-truth.json` (new), the evidence document, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, evaluator, selection-protocol, or selection-record file modified; no Case Package created; no rendered images staged (scratch directory only).
+- **Recommended next step**: run the existing benchmark engines against case-004 for the first time using the frozen Ground Truth and unchanged benchmark semantics, preserving the first-run result before any adaptation.
+
 ### research: select MEXT case-004 target row (branch: research/case-004-mext-preregistration)
 
 - **Protocol application only. Row selected. No Ground Truth, no benchmark engine run against MEXT.**
