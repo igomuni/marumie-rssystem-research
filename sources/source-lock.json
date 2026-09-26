@@ -39,6 +39,19 @@
       "acquisitionMethod": "playwright-chromium",
       "playwrightVersion": "1.63.0",
       "landingPageUrl": "https://www.meti.go.jp/main/yosangaisan/fy2024/index.html"
+    },
+    {
+      "sourceId": "mic-fy2024-general-account-expenditure-request",
+      "url": "https://www.soumu.go.jp/main_content/000901372.pdf",
+      "finalUrl": "https://www.soumu.go.jp/main_content/000901372.pdf",
+      "fetchedAt": "2026-09-26T05:43:05.759Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 876768,
+      "sha256": "cc54dbe5f689116619a1f8453747d47bca5b960137f90869ead26954d651703b",
+      "etag": "\"d60e0-62c205525e585\"",
+      "lastModified": "Mon, 20 Jan 2025 10:00:39 GMT",
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }

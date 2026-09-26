@@ -11,98 +11,30 @@
 // "lock is explicit, reviewable, never silently overwritten" discipline (see
 // protocol/DECISIONS.md ADR-009), with two additions:
 //   - it also verifies the downloaded bytes start with the PDF magic number
-//     (%PDF-) before accepting them as a successful acquisition — plain
-//     acquire.mjs does not currently do this, and a WAF challenge page can
-//     return a 2xx/202-range status with an HTML body, which acquire.mjs would
-//     otherwise silently accept as if it were the real file (see
-//     state/CHANGELOG.md's case-002 preregistration entry for how this was
-//     found);
+//     (%PDF-) before accepting them as a successful acquisition — a WAF
+//     challenge page can return a 2xx/202-range status with an HTML body,
+//     which a plain status check would otherwise silently accept as if it
+//     were the real file (see state/CHANGELOG.md's case-002 preregistration
+//     entry for how this was found);
 //   - it records acquisitionMethod/playwrightVersion/landingPageUrl in the
 //     lock entry for provenance, since "how" this source had to be acquired
 //     is itself a fact worth preserving.
+//
+// The immutable lock-decision/mutation policy (decideLockAction/
+// applyAcquisition) is shared, acquisition-method-independent code -- see
+// ../../src/lock-policy.mjs. acquire.mjs (the plain-fetch path) uses the same
+// module, so "once a source identity is locked, different bytes never
+// silently replace it" holds regardless of which tool acquired the bytes.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import { chromium } from 'playwright';
+import { sha256, decideLockAction, applyAcquisition } from '../../src/lock-policy.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..', '..');
 const LOCK_PATH = path.join(ROOT, 'sources', 'source-lock.json');
 const RAW_DIR = path.join(ROOT, 'sources', 'raw');
 
-export function sha256(buffer) {
-  return crypto.createHash('sha256').update(buffer).digest('hex');
-}
-
-function ensureDir(p) {
-  fs.mkdirSync(p, { recursive: true });
-}
-
-function loadLock(lockPath) {
-  if (!fs.existsSync(lockPath)) return { schemaVersion: 1, sources: [] };
-  return JSON.parse(fs.readFileSync(lockPath, 'utf8'));
-}
-
-function writeLock(lockPath, lock) {
-  fs.writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n', 'utf8');
-}
-
-// Pure decision function: given the current lock and a freshly-fetched
-// sourceId/sha256 pair, decide what MAY be written, without touching the
-// filesystem. This is the policy this file's header comment promises
-// ("lock is explicit, reviewable, never silently overwritten") — kept as a
-// standalone, unit-testable function so the mutation policy can be verified
-// without a real browser/network fetch. See applyAcquisition() below for how
-// this decision is turned into (or deliberately withheld from) filesystem
-// writes.
-export function decideLockAction(lock, sourceId, newSha256) {
-  const existingIndex = lock.sources.findIndex((s) => s.sourceId === sourceId);
-  if (existingIndex < 0) return { action: 'new', existingIndex: -1, existing: null };
-  const existing = lock.sources[existingIndex];
-  if (existing.sha256 === newSha256) return { action: 'identical', existingIndex, existing };
-  return { action: 'mismatch', existingIndex, existing };
-}
-
-// Applies decideLockAction()'s decision to the filesystem. Mutation-safe
-// ordering: the caller must have already computed newSha256 (from an
-// already-validated, already-in-memory buffer) BEFORE this function is
-// called, so a mismatch is detected and reported without ever having written
-// the new bytes over the existing canonical raw file or lock entry.
-//   - 'new'       -> writes the raw file and appends a new lock entry.
-//   - 'identical' -> writes nothing; the existing lock entry and raw file are
-//                    left exactly as they were (no fetchedAt/finalUrl/
-//                    playwrightVersion refresh either — a re-fetch that
-//                    reproduces the same bytes is not new information).
-//   - 'mismatch'  -> writes nothing and throws; the existing lock entry and
-//                    raw file are left exactly as they were. The caller is
-//                    responsible for a non-zero process exit.
-export function applyAcquisition({ lockPath, rawDir, sourceId, buffer, isPdf, record }) {
-  const lock = loadLock(lockPath);
-  const newSha256 = record.sha256;
-  const decision = decideLockAction(lock, sourceId, newSha256);
-
-  if (decision.action === 'mismatch') {
-    throw new Error(
-      `Refusing to overwrite the existing lock entry for "${sourceId}": it is locked at ` +
-      `sha256=${decision.existing.sha256}, but this fetch retrieved a different binary ` +
-      `(sha256=${newSha256}). The existing lock entry and its raw source file were NOT modified. ` +
-      `If the upstream source has genuinely changed and the lock should be updated, that is a ` +
-      `deliberate, reviewable decision this tool does not make automatically — re-lock manually ` +
-      `after confirming the change is intentional.`
-    );
-  }
-
-  if (decision.action === 'identical') {
-    return { action: 'identical', record: decision.existing };
-  }
-
-  // action === 'new'
-  ensureDir(rawDir);
-  const rawPath = path.join(rawDir, `${sourceId}${isPdf ? '.pdf' : '.bin'}`);
-  fs.writeFileSync(rawPath, buffer);
-  lock.sources.push(record);
-  writeLock(lockPath, lock);
-  return { action: 'new', record };
-}
+export { sha256, decideLockAction, applyAcquisition };
 
 function parseArgs(argv) {
   const args = {};

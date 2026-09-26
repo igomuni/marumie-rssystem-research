@@ -16,14 +16,24 @@ import {
   findItemCodeRows,
   findExpenseRows,
   joinWrappedLabel,
+  closeCjkWrapSpaces,
 } from './common.mjs';
 
 function reconstructRow(row, nameField, lines) {
   const { joinedSuffix, consumedLineIndexes } = joinWrappedLabel(lines, row.lineIndex);
   const fragment = row[nameField];
+  const assembled = joinedSuffix ? `${fragment}${joinedSuffix}` : fragment;
   return {
     ...row,
-    [nameField]: joinedSuffix ? `${fragment}${joinedSuffix}` : fragment,
+    // See common.mjs's closeCjkWrapSpaces: pdfjs-dist's line reconstruction
+    // has been observed inserting a space between adjacent CJK characters
+    // specifically for header/total-style rows rendered with wide letter-
+    // spacing in the source (case-002, case-003); PyMuPDF's own
+    // reconstruction never does this, so applying the rule here is a no-op
+    // for its already-clean text. Applied to the fully-assembled name
+    // (after any wrap-join) so both single-line and wrapped labels are
+    // covered uniformly, matching normalize-docling.mjs's own scope.
+    [nameField]: closeCjkWrapSpaces(assembled),
     joinedFromLineIndexes: [row.lineIndex, ...consumedLineIndexes],
     // Engine-agnostic reading-order key so evaluate.mjs can compare "which
     // row precedes which" across normalizers with different native row
@@ -81,9 +91,22 @@ export function normalize(caseId, engine) {
   return normalized;
 }
 
-const [, , caseIdArg, engineArg] = process.argv;
-if (caseIdArg && engineArg) {
-  const out = normalize(caseIdArg, engineArg);
-  console.log(`NORMALIZED ${caseIdArg}/${engineArg} -> ${normalizedArtifactPath(caseIdArg, engineArg)}`);
-  console.log(JSON.stringify(out.result, null, 2));
+// Standalone-execution convenience only (e.g. `node normalize.mjs case-002
+// pdfjs-baseline`). Guarded the same way as normalize-docling.mjs's
+// equivalent block (see there for why this matters): this module must not
+// re-run normalize() as an import-time side effect merely because run.mjs
+// imports it. This block currently requires two argv positions
+// (caseId + engine), which already does not collide with run.mjs's own
+// single-argument invocation (`node src/run.mjs <caseId>`) -- the explicit
+// guard is added anyway for defense-in-depth and consistency with
+// normalize-docling.mjs, so this safety property does not silently depend on
+// run.mjs's argv shape never changing.
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  const [, , caseIdArg, engineArg] = process.argv;
+  if (caseIdArg && engineArg) {
+    const out = normalize(caseIdArg, engineArg);
+    console.log(`NORMALIZED ${caseIdArg}/${engineArg} -> ${normalizedArtifactPath(caseIdArg, engineArg)}`);
+    console.log(JSON.stringify(out.result, null, 2));
+  }
 }

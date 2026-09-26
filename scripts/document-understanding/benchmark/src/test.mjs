@@ -3,19 +3,25 @@
 // These test the parser in isolation from any adapter or ground truth, using
 // synthetic lines shaped like the real document's patterns.
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import {
   parseAmountToken,
   splitTrailingTriple,
   findItemCodeRows,
   findExpenseRows,
   joinWrappedLabel,
+  closeCjkWrapSpaces,
 } from './common.mjs';
 import {
-  closeCjkWrapSpaces,
   reconstructNumericToken,
   findRows,
 } from './normalize-docling.mjs';
+import { closeCjkWrapSpaces as closeCjkWrapSpacesReexportedFromDocling } from './normalize-docling.mjs';
 import { deltaSignEvidenceMatches } from './evaluate.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function t(name, fn) {
   try {
@@ -113,6 +119,125 @@ t('closeCjkWrapSpaces: removes a wrap-induced space between two CJK characters',
 
 t('closeCjkWrapSpaces: leaves the space between an item code and its CJK name', () => {
   assert.equal(closeCjkWrapSpaces('020 情報通信技術調達等適正'), '020 情報通信技術調達等適正');
+});
+
+// --- CJK Spacing Strategy Layer Experiment: negative cases and the real
+// case-002/case-003 header-row pattern -----------------------------------
+// These are frozen BEFORE re-running the case-001/002/003 benchmark, per the
+// experiment's pre-registration discipline: they encode the rule's intended
+// scope, not a rule reverse-engineered from a desired score.
+
+t('closeCjkWrapSpaces: the actual case-002/003 wide-letter-spacing header pattern closes correctly', () => {
+  // Verbatim shape of the raw pdfjs-baseline line observed on both case-002
+  // ("010 経 済 産 業 本 省 共 通 費 ...") and case-003
+  // ("010 総 務 本 省 共 通 費 ..."), reduced to just the code+name portion.
+  assert.equal(closeCjkWrapSpaces('総 務 本 省 共 通 費'), '総務本省共通費');
+});
+
+t('closeCjkWrapSpaces: does NOT close a space between CJK text and an embedded Latin/ASCII word (negative case)', () => {
+  // A space between CJK text and a Latin abbreviation/word is potentially a
+  // genuine, intentional word-boundary space (unlike CJK-to-CJK, where
+  // Japanese prose never uses inter-character spacing) -- this must survive
+  // unchanged. Neither side of an ASCII/CJK boundary is in CJK_RANGE, so the
+  // existing regex already leaves it alone; this test freezes that as an
+  // explicit, checked guarantee rather than an incidental side effect.
+  assert.equal(closeCjkWrapSpaces('政策 IT 推進費'), '政策 IT 推進費');
+});
+
+t('closeCjkWrapSpaces: does NOT close a space between CJK text and a digit (negative case, beyond the item-code prefix)', () => {
+  assert.equal(closeCjkWrapSpaces('経費 2024 年度'), '経費 2024 年度');
+});
+
+t('closeCjkWrapSpaces: closes a space adjacent to fullwidth punctuation, matching the existing single-case-002-glyph convention', () => {
+  // Fullwidth punctuation (｢｣（）、。 etc.) falls inside CJK_RANGE by design
+  // (see common.mjs) so that a wrap-induced space next to it is also closed;
+  // this was already true before this experiment (case-001's
+  // "情報通信技術調達等適正 ・効率化推進費" test above exercises the '・'
+  // punctuation mark), reconfirmed here as an explicit negative-adjacent case
+  // rather than left implicit.
+  assert.equal(closeCjkWrapSpaces('経済産業省 （本省）'), '経済産業省（本省）');
+});
+
+t('closeCjkWrapSpaces: already-clean text is unchanged (idempotent no-op)', () => {
+  assert.equal(closeCjkWrapSpaces('総務本省共通費'), '総務本省共通費');
+});
+
+t('closeCjkWrapSpaces: re-exported from normalize-docling.mjs is the identical function as common.mjs\'s (no behavioral drift from the refactor)', () => {
+  assert.equal(closeCjkWrapSpacesReexportedFromDocling, closeCjkWrapSpaces);
+});
+
+// --- CJK Fullwidth-Punctuation Boundary Experiment: characterization tests
+// -------------------------------------------------------------------------
+// These document the *actual, current* boundary of closeCjkWrapSpaces --
+// including cases found by exhaustively searching case-001/002/003's raw
+// artifacts for every fullwidth-punctuation-adjacent whitespace instance --
+// not a proposed change. Where real-world intent is genuinely ambiguous and
+// no corpus evidence exists either way, the test documents current behavior
+// explicitly as a characterization, not a claim that the output is the only
+// correct one (see the experiment report for the corpus evidence and the
+// keep/narrow/defer reasoning this was built to support).
+
+t('closeCjkWrapSpaces: closes a space before an opening fullwidth paren (matches the real, exhaustively-found corpus pattern, e.g. case-002\'s "...必要な （要求要旨）")', () => {
+  assert.equal(closeCjkWrapSpaces('経済産業 （要求要旨）'), '経済産業（要求要旨）');
+});
+
+t('closeCjkWrapSpaces: closes spaces padded just inside fullwidth parens (this document family never pads inside brackets; not observed verbatim in the corpus but the same mechanism as the previous test)', () => {
+  assert.equal(closeCjkWrapSpaces('経済産業（ 要求要旨 ）'), '経済産業（要求要旨）');
+});
+
+t('closeCjkWrapSpaces: closes a space before an opening fullwidth quote mark (matches the real corpus pattern, e.g. case-002\'s "必要な経費 「経済産業省設置法」")', () => {
+  assert.equal(closeCjkWrapSpaces('必要な経費 「経済産業省設置法」に定める'), '必要な経費「経済産業省設置法」に定める');
+});
+
+t('closeCjkWrapSpaces: closes a space adjacent to a FULLWIDTH digit embedded in CJK text (real corpus pattern, e.g. every case\'s own header row "要求 前 年 度 ６ 年 度 対 前 年 度" -- fullwidth "６" is in CJK_RANGE, unlike an ASCII digit)', () => {
+  // This is the one genuinely new boundary this experiment's corpus search
+  // surfaced: fullwidth digits/Latin letters (Unicode Halfwidth/Fullwidth
+  // Forms block, FF00-FFEF) fall inside CJK_RANGE, so a space next to one is
+  // closed -- unlike a space next to an ASCII digit/letter (see the
+  // "leaves the space between an item code and its CJK name" test above),
+  // which is never closed. In every real occurrence found across all three
+  // cases, the fullwidth digit sits inside the same uniformly wide-spaced
+  // header/title run as the surrounding CJK text, so closing it is correct,
+  // not harmful -- confirmed by exhaustive corpus search, not assumed.
+  assert.equal(closeCjkWrapSpaces('度 ６ 年'), '度６年');
+});
+
+t('closeCjkWrapSpaces: also closes a space adjacent to a fullwidth Latin letter (synthetic only -- no fullwidth Latin letter was found anywhere in the case-001/002/003 corpus; documented as an untested boundary, not a validated real-world need)', () => {
+  assert.equal(closeCjkWrapSpaces('経済 Ａ 産業'), '経済Ａ産業');
+});
+
+t('closeCjkWrapSpaces: the △ delta glyph is never affected (U+25B3 is a math symbol, not in the Halfwidth/Fullwidth Forms Unicode block CJK_RANGE covers)', () => {
+  assert.equal(closeCjkWrapSpaces('経費 △ 100'), '経費 △ 100');
+});
+
+t('closeCjkWrapSpaces: AMBIGUOUS CASE, documented not certified -- a space after an ideographic comma between two short CJK phrases. No corpus evidence either way; this test locks in current behavior for regression-tracking, not as a claim it is the semantically correct choice', () => {
+  // If a future case's genuine source text turns out to use "、" followed by
+  // a deliberate spacing convention (uncommon in standard Japanese prose,
+  // but not impossible in a stylized document), this specific behavior
+  // should be revisited then, with real evidence -- not narrowed
+  // speculatively now.
+  assert.equal(closeCjkWrapSpaces('国、 地方'), '国、地方');
+});
+
+t('normalize.mjs pipeline (via findItemCodeRows + reconstructRow): a wide-letter-spaced pdfjs-baseline header line produces a clean itemNameFragment', () => {
+  // End-to-end through the actual extraction regex (common.mjs's
+  // findItemCodeRows), not just the closeCjkWrapSpaces unit in isolation --
+  // confirms the fix is wired into the real candidate-construction path pdfjs-
+  // baseline and pymupdf-baseline both use. Synthetic line, not copied from
+  // any case's raw artifact, with numbers unrelated to any real Ground Truth.
+  const lines = [{ lineIndex: 0, text: '010 総 務 本 省 共 通 費 9,999,999 8,888,888 1,111,111' }];
+  const rows = findItemCodeRows(lines);
+  assert.equal(rows.length, 1);
+  // findItemCodeRows itself does not apply closeCjkWrapSpaces (that happens
+  // in normalize.mjs's reconstructRow) -- the raw fragment still has spaces
+  // at this stage; this assertion documents that boundary explicitly.
+  assert.equal(rows[0].itemNameFragment, '総 務 本 省 共 通 費');
+});
+
+t('normalize.mjs pipeline: pymupdf-baseline-style already-clean text is unaffected (no-op confirmed through the real function)', () => {
+  assert.equal(closeCjkWrapSpaces('総務本省共通費'), findItemCodeRows([
+    { lineIndex: 0, text: '010 総務本省共通費 9,999,999 8,888,888 1,111,111' },
+  ])[0].itemNameFragment);
 });
 
 t('reconstructNumericToken: reverses Docling-style reversed comma-groups', () => {
@@ -235,4 +360,50 @@ t('deltaSignEvidenceMatches: expected glyph state comes from deltaRaw, not from 
   assert.equal(deltaSignEvidenceMatches('△100', '△100'), true);
   assert.equal(deltaSignEvidenceMatches('100', '△100'), false);
   assert.equal(deltaSignEvidenceMatches('△100', '100'), false);
+});
+
+// Regression tests for the docbench harness-reliability investigation:
+// normalize-docling.mjs (and normalize.mjs) each have a standalone-execution
+// convenience block at module scope (`node normalize-docling.mjs <caseId>`).
+// That block must run ONLY on direct execution, never as a side effect of
+// being imported -- run.mjs imports both modules and is itself invoked as
+// `node src/run.mjs <caseId>`, sharing the identical process.argv[2]. Before
+// the fix, importing normalize-docling.mjs under that argv shape re-ran
+// normalizeDocling() at import time, before any adapter had necessarily
+// written a raw artifact yet, throwing ENOENT for any case whose raw
+// artifact didn't already happen to exist from an earlier run -- this is
+// what run.mjs's own crash traced back to, not a Docling/Torch/child-process
+// reliability problem. These tests spawn a fresh `node` process (module
+// top-level side effects can only be observed on first evaluation, and the
+// module is already cached by this test file's own static imports above) and
+// assert that importing the module with a run.mjs-shaped argv, for a case
+// with no raw artifact on disk, does not throw.
+const NORMALIZE_DOCLING_PATH = path.join(__dirname, 'normalize-docling.mjs');
+const NORMALIZE_PATH = path.join(__dirname, 'normalize.mjs');
+
+function importDoesNotThrow(modulePath, argv) {
+  const script = `
+    process.argv = ${JSON.stringify(['node', 'run.mjs', ...argv])};
+    import(${JSON.stringify('file://' + modulePath)})
+      .then(() => { console.log('IMPORT_OK'); })
+      .catch((e) => { console.error('IMPORT_THREW: ' + e.message); process.exitCode = 1; });
+  `;
+  try {
+    const out = execFileSync(process.execPath, ['-e', script], { encoding: 'utf8' });
+    return { threw: false, output: out };
+  } catch (err) {
+    return { threw: true, output: (err.stdout || '') + (err.stderr || '') };
+  }
+}
+
+t('normalize-docling.mjs: importing with a run.mjs-shaped argv for a nonexistent case does not throw', () => {
+  const result = importDoesNotThrow(NORMALIZE_DOCLING_PATH, ['case-does-not-exist-xyz']);
+  assert.equal(result.threw, false, `import should not throw; output: ${result.output}`);
+  assert.match(result.output, /IMPORT_OK/);
+});
+
+t('normalize.mjs: importing with a run.mjs-shaped argv (single caseId arg only) does not throw', () => {
+  const result = importDoesNotThrow(NORMALIZE_PATH, ['case-does-not-exist-xyz']);
+  assert.equal(result.threw, false, `import should not throw; output: ${result.output}`);
+  assert.match(result.output, /IMPORT_OK/);
 });

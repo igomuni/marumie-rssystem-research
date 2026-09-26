@@ -11,31 +11,15 @@
 // normalize.mjs: it only reads ground-truth.json's pdfPageIndex (case
 // configuration), never its `result` object.
 import path from 'node:path';
-import { readJson, writeJson, rawArtifactPath, normalizedArtifactPath } from './common.mjs';
+import { readJson, writeJson, rawArtifactPath, normalizedArtifactPath, closeCjkWrapSpaces, CJK_RANGE } from './common.mjs';
 
 const DELTA_GLYPH = '△';
 
-// CJK/fullwidth-punctuation ranges. Docling joins a wrapped cell's original
-// two printed lines with a single ASCII space; the source text itself never
-// has a space between two CJK characters, so removing a space strictly
-// *between* two such characters reverses that join artifact without touching
-// spaces that are genuinely meaningful (e.g. between a 3-digit code and the
-// name that follows it, which this rule leaves alone because the code side
-// is ASCII digits, not CJK).
-const CJK_RANGE = '　-ヿ㐀-䶿一-鿿＀-￯';
-const CJK_INTERNAL_SPACE_RE = new RegExp(`([${CJK_RANGE}])\\s+([${CJK_RANGE}])`, 'gu');
-
-export function closeCjkWrapSpaces(text) {
-  let prev;
-  let out = text;
-  // Repeat: a three-character run A-space-B-space-C only has the middle gap
-  // closed on a single pass because the regex consumes B once per match.
-  do {
-    prev = out;
-    out = out.replace(CJK_INTERNAL_SPACE_RE, '$1$2');
-  } while (out !== prev);
-  return out;
-}
+// closeCjkWrapSpaces moved to common.mjs (see there for the full rationale):
+// pdfjs-baseline was found to need the identical rule, so both normalizers
+// now share one implementation. Re-exported here, unchanged in behavior, so
+// existing callers/tests that import it from this file keep working.
+export { closeCjkWrapSpaces };
 
 // Docling has been observed (this page, multiple independent rows/values —
 // see reports/document-understanding/case-001-evaluation.md) to assemble a
@@ -239,9 +223,25 @@ export function normalizeDocling(caseId) {
   return normalized;
 }
 
-const [, , caseIdArg] = process.argv;
-if (caseIdArg) {
-  const out = normalizeDocling(caseIdArg);
-  console.log(`NORMALIZED docling/${caseIdArg} -> ${normalizedArtifactPath(caseIdArg, 'docling')}`);
-  console.log(JSON.stringify(out.result, null, 2));
+// Standalone-execution convenience only (e.g. `node normalize-docling.mjs
+// case-002`, for manually inspecting one engine's normalized output without
+// running the full benchmark). This block must NOT fire merely because this
+// module is imported -- run.mjs imports normalizeDocling and calls it
+// explicitly at the correct point in its own pipeline (after the docling
+// adapter has written its raw artifact). Since run.mjs is invoked as
+// `node src/run.mjs <caseId>`, it shares the identical process.argv[2] this
+// block reads; without the direct-execution guard below, importing this
+// module reruns normalizeDocling as an import-time side effect, before the
+// adapter has necessarily produced a raw artifact yet -- see
+// reports/document-understanding/20260926_1737_Docbench_Harness_Reliability_Investigation.md
+// for why this was root-caused as a module-import-side-effect defect, not a
+// Docling/Torch/child-process flakiness issue.
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  const [, , caseIdArg] = process.argv;
+  if (caseIdArg) {
+    const out = normalizeDocling(caseIdArg);
+    console.log(`NORMALIZED docling/${caseIdArg} -> ${normalizedArtifactPath(caseIdArg, 'docling')}`);
+    console.log(JSON.stringify(out.result, null, 2));
+  }
 }

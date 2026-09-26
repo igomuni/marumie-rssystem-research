@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "caseId": "case-002",
-  "generatedAt": "2026-09-26T09:14:01.987Z",
+  "caseId": "case-003",
+  "generatedAt": "2026-09-26T09:14:19.266Z",
   "evaluations": [
     {
       "schemaVersion": 1,
-      "caseId": "case-002",
+      "caseId": "case-003",
       "engine": "pdfjs-baseline",
       "engineVersion": "4.10.38",
-      "evaluatedAt": "2026-09-26T09:14:01.985Z",
+      "evaluatedAt": "2026-09-26T09:14:19.263Z",
       "summary": {
         "total": 11,
-        "passed": 4,
-        "failed": 7
+        "passed": 10,
+        "failed": 1
       },
       "checks": [
         {
           "id": "item_name_exact_match",
           "pass": false,
           "actual": null,
-          "expected": "経済産業本省共通費",
+          "expected": "総務本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
@@ -28,11 +28,11 @@
           "actual": [
             {
               "itemCode": "010",
-              "itemName": "経済産業本省"
+              "itemName": "総務本省"
             },
             {
               "itemCode": "010",
-              "itemName": "経済産業本省共通費"
+              "itemName": "総務本省共通費"
             },
             {
               "itemCode": "001",
@@ -40,41 +40,41 @@
             },
             {
               "itemCode": "001",
-              "itemName": "人件費"
+              "itemName": "人件費 33,430,013 37,142,329 3,712,316 (令和4年度末定員)特別職 20人"
             }
           ],
           "expected": {
             "itemCode": "010",
-            "itemName": "経済産業本省共通費"
+            "itemName": "総務本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
         {
           "id": "expense_name_exact_match_after_line_join",
-          "pass": false,
-          "actual": "経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
-          "expected": "経済産業本省一般行政に必要な経費",
+          "pass": true,
+          "actual": "総務本省一般行政に必要な経費",
+          "expected": "総務本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 42331005,
+          "pass": true,
+          "actual": 38472070,
+          "expected": 38472070,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 46887829,
+          "pass": true,
+          "actual": 41763907,
+          "expected": 41763907,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 4556824,
+          "pass": true,
+          "actual": 3291837,
+          "expected": 3291837,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
@@ -94,29 +94,29 @@
         {
           "id": "delta_sign_evidence_matches_source",
           "pass": true,
-          "actual": null,
+          "actual": "3,291,837",
           "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
           "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
         },
         {
           "id": "item_to_amount_relationship",
-          "pass": false,
+          "pass": true,
           "actual": {
             "nearestPrecedingItemCode": "010",
-            "resultPreviousBudget": null
+            "resultPreviousBudget": 38472070
           },
           "expected": {
             "itemCode": "010",
-            "previousBudget": 42331005
+            "previousBudget": 38472070
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },
         {
           "id": "expense_to_amount_relationship",
-          "pass": false,
+          "pass": true,
           "actual": {
             "expenseCode": "01-95",
-            "hasTriple": false
+            "hasTriple": true
           },
           "expected": {
             "expenseCode": "01-95",
@@ -128,21 +128,21 @@
     },
     {
       "schemaVersion": 1,
-      "caseId": "case-002",
+      "caseId": "case-003",
       "engine": "pymupdf-baseline",
       "engineVersion": "1.28.2",
-      "evaluatedAt": "2026-09-26T09:14:01.986Z",
+      "evaluatedAt": "2026-09-26T09:14:19.265Z",
       "summary": {
         "total": 11,
-        "passed": 4,
-        "failed": 7
+        "passed": 10,
+        "failed": 1
       },
       "checks": [
         {
           "id": "item_name_exact_match",
           "pass": false,
           "actual": null,
-          "expected": "経済産業本省共通費",
+          "expected": "総務本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
@@ -151,11 +151,11 @@
           "actual": [
             {
               "itemCode": "010",
-              "itemName": "経済産業本省"
+              "itemName": "総務本省"
             },
             {
               "itemCode": "010",
-              "itemName": "経済産業本省共通費"
+              "itemName": "総務本省共通費"
             },
             {
               "itemCode": "001",
@@ -163,41 +163,41 @@
             },
             {
               "itemCode": "001",
-              "itemName": "人件費"
+              "itemName": "人件費               33,430,013      37,142,329                                     3,712,316 (令和4年度末定員)特別職        20人"
             }
           ],
           "expected": {
             "itemCode": "010",
-            "itemName": "経済産業本省共通費"
+            "itemName": "総務本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
         {
           "id": "expense_name_exact_match_after_line_join",
-          "pass": false,
-          "actual": "経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等",
-          "expected": "経済産業本省一般行政に必要な経費",
+          "pass": true,
+          "actual": "総務本省一般行政に必要な経費",
+          "expected": "総務本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 42331005,
+          "pass": true,
+          "actual": 38472070,
+          "expected": 38472070,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 46887829,
+          "pass": true,
+          "actual": 41763907,
+          "expected": 41763907,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
-          "pass": false,
-          "actual": null,
-          "expected": 4556824,
+          "pass": true,
+          "actual": 3291837,
+          "expected": 3291837,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
@@ -217,29 +217,29 @@
         {
           "id": "delta_sign_evidence_matches_source",
           "pass": true,
-          "actual": null,
+          "actual": "3,291,837",
           "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
           "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
         },
         {
           "id": "item_to_amount_relationship",
-          "pass": false,
+          "pass": true,
           "actual": {
             "nearestPrecedingItemCode": "010",
-            "resultPreviousBudget": null
+            "resultPreviousBudget": 38472070
           },
           "expected": {
             "itemCode": "010",
-            "previousBudget": 42331005
+            "previousBudget": 38472070
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },
         {
           "id": "expense_to_amount_relationship",
-          "pass": false,
+          "pass": true,
           "actual": {
             "expenseCode": "01-95",
-            "hasTriple": false
+            "hasTriple": true
           },
           "expected": {
             "expenseCode": "01-95",
@@ -251,10 +251,10 @@
     },
     {
       "schemaVersion": 1,
-      "caseId": "case-002",
+      "caseId": "case-003",
       "engine": "docling",
       "engineVersion": "2.130.0",
-      "evaluatedAt": "2026-09-26T09:14:01.987Z",
+      "evaluatedAt": "2026-09-26T09:14:19.266Z",
       "summary": {
         "total": 11,
         "passed": 3,
@@ -264,8 +264,8 @@
         {
           "id": "item_name_exact_match",
           "pass": false,
-          "actual": "人件費 95016-2111-02-0000 職員基本給 02-0100 職員俸給",
-          "expected": "経済産業本省共通費",
+          "actual": null,
+          "expected": "総務本省共通費",
           "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
         },
         {
@@ -273,13 +273,17 @@
           "pass": false,
           "actual": [
             {
-              "itemCode": "001",
-              "itemName": "人件費 95016-2111-02-0000 職員基本給 02-0100 職員俸給"
+              "itemCode": "010",
+              "itemName": "総務本省 010 総務本省共通費 01-95 総務本省一般行政に必要な経費"
+            },
+            {
+              "itemCode": "316",
+              "itemName": "712, 3, 特"
             }
           ],
           "expected": {
             "itemCode": "010",
-            "itemName": "経済産業本省共通費"
+            "itemName": "総務本省共通費"
           },
           "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
         },
@@ -287,28 +291,28 @@
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
           "actual": null,
-          "expected": "経済産業本省一般行政に必要な経費",
+          "expected": "総務本省一般行政に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
         {
           "id": "previous_budget_exact_match",
           "pass": false,
           "actual": null,
-          "expected": 42331005,
+          "expected": 38472070,
           "note": ""
         },
         {
           "id": "fy2024_request_exact_match",
           "pass": false,
           "actual": null,
-          "expected": 46887829,
+          "expected": 41763907,
           "note": ""
         },
         {
           "id": "signed_delta_exact_match",
           "pass": false,
           "actual": null,
-          "expected": 4556824,
+          "expected": 3291837,
           "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
         },
         {
@@ -341,7 +345,7 @@
           },
           "expected": {
             "itemCode": "010",
-            "previousBudget": 42331005
+            "previousBudget": 38472070
           },
           "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
         },

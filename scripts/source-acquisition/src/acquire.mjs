@@ -1,7 +1,14 @@
 #!/usr/bin/env node
+// Plain-fetch() source acquisition/verification for sources that don't need
+// a browser (see scripts/source-acquisition/browser-fetch/ for sources
+// protected by a JS bot challenge). The immutable lock-decision/mutation
+// policy is shared, acquisition-method-independent code -- see
+// ./lock-policy.mjs -- so "once a source identity is locked, different
+// bytes never silently replace it" (protocol/DECISIONS.md ADR-009) holds the
+// same way here as it does for the Playwright-based tool.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
+import { sha256, applyAcquisition } from './lock-policy.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
 const MANIFEST_PATH = path.join(ROOT, 'scripts', 'request-ingestion', 'source_manifest.json');
@@ -9,7 +16,6 @@ const LOCK_PATH = path.join(ROOT, 'sources', 'source-lock.json');
 const RAW_DIR = path.join(ROOT, 'sources', 'raw');
 
 function ensureDir(p) { fs.mkdirSync(p, { recursive: true }); }
-function sha256(buffer) { return crypto.createHash('sha256').update(buffer).digest('hex'); }
 
 function loadManifestSources() {
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
@@ -21,10 +27,6 @@ function loadLock() {
   return JSON.parse(fs.readFileSync(LOCK_PATH, 'utf8'));
 }
 
-function writeLock(lock) {
-  fs.writeFileSync(LOCK_PATH, JSON.stringify(lock, null, 2) + '\n', 'utf8');
-}
-
 function extensionForMimeType(mimeType) {
   if (mimeType && mimeType.includes('pdf')) return '.pdf';
   return '.bin';
@@ -34,7 +36,17 @@ function rawFilePath(sourceId, mimeType) {
   return path.join(RAW_DIR, `${sourceId}${extensionForMimeType(mimeType)}`);
 }
 
-async function downloadSource(sourceId, url) {
+// Every current manifest source is a PDF; a WAF/bot-challenge interstitial
+// can return a 2xx (or 202-range) status with an HTML body in its place
+// (see state/CHANGELOG.md's case-002 preregistration entry for how this was
+// discovered for a different acquisition path). Checking the magic number
+// here closes that gap for the plain-fetch path too, mirroring
+// browser-fetch.mjs's existing check.
+export function isPdfBuffer(buffer) {
+  return buffer.subarray(0, 5).toString('latin1') === '%PDF-';
+}
+
+export async function downloadSource(sourceId, url) {
   const res = await fetch(url);
   const buffer = Buffer.from(await res.arrayBuffer());
   const mimeType = res.headers.get('content-type')?.split(';')[0]?.trim() ?? null;
@@ -53,30 +65,51 @@ async function downloadSource(sourceId, url) {
   };
 }
 
+// Mutation-safe per-source acquisition: download into memory -> validate
+// HTTP status -> validate PDF representation -> SHA-256 already computed by
+// downloadSource() -> applyAcquisition() looks up the existing lock and only
+// THEN decides whether to write anything. No raw file or lock write happens
+// before that comparison, so a mismatched re-fetch can never clobber the
+// existing canonical raw bytes or lock entry. `download` is injectable so
+// this can be unit-tested without a real network fetch (see test.mjs).
+export async function acquireAndLock({ sourceId, url, lockPath, rawDir, download = downloadSource }) {
+  const acquired = await download(sourceId, url);
+  if (acquired.httpStatus < 200 || acquired.httpStatus >= 300) {
+    throw new Error(`Acquisition failed for ${sourceId}: HTTP ${acquired.httpStatus}`);
+  }
+  const isPdf = isPdfBuffer(acquired.buffer);
+  if (!isPdf) {
+    throw new Error(
+      `Downloaded content for ${sourceId} does not start with the PDF magic number (%PDF-). ` +
+      `This usually means a bot-challenge/interstitial page was captured instead of the real file. ` +
+      `Refusing to lock it. First 200 bytes: ${acquired.buffer.subarray(0, 200).toString('utf8')}`
+    );
+  }
+  const { buffer, ...record } = acquired;
+  const result = applyAcquisition({ lockPath, rawDir, sourceId, buffer, isPdf, record });
+  return { sourceId, ...result };
+}
+
 async function lockCommand() {
-  ensureDir(RAW_DIR);
   const manifestSources = loadManifestSources();
-  const lock = loadLock();
   const results = [];
 
   for (const { sourceId, url } of manifestSources) {
-    const acquired = await downloadSource(sourceId, url);
-    if (acquired.httpStatus < 200 || acquired.httpStatus >= 300) {
-      throw new Error(`Acquisition failed for ${sourceId}: HTTP ${acquired.httpStatus}`);
-    }
-    fs.writeFileSync(rawFilePath(sourceId, acquired.mimeType), acquired.buffer);
-    const { buffer, ...record } = acquired;
-    const existingIndex = lock.sources.findIndex(s => s.sourceId === sourceId);
-    if (existingIndex >= 0) lock.sources[existingIndex] = record;
-    else lock.sources.push(record);
-    results.push(record);
+    const result = await acquireAndLock({ sourceId, url, lockPath: LOCK_PATH, rawDir: RAW_DIR });
+    results.push(result);
   }
 
-  writeLock(lock);
   for (const r of results) {
-    console.log(`LOCKED ${r.sourceId} sha256=${r.sha256} sizeBytes=${r.sizeBytes} httpStatus=${r.httpStatus}`);
+    if (r.action === 'identical') {
+      console.log(
+        `VERIFIED ${r.sourceId} sha256=${r.record.sha256}: freshly fetched bytes match the existing ` +
+        `locked entry exactly. Lock entry and raw source file were left unchanged.`
+      );
+    } else {
+      console.log(`LOCKED ${r.sourceId} sha256=${r.record.sha256} sizeBytes=${r.record.sizeBytes} httpStatus=${r.record.httpStatus}`);
+    }
   }
-  console.log(`${results.length}/${manifestSources.length} source binaries locked`);
+  console.log(`${results.length}/${manifestSources.length} source binaries locked/verified`);
 }
 
 async function verifyCommand({ materialize = false } = {}) {
@@ -119,14 +152,19 @@ async function verifyCommand({ materialize = false } = {}) {
   if (failures > 0) process.exitCode = 1;
 }
 
-const command = process.argv[2];
-if (command === 'lock') {
-  lockCommand().catch(err => { console.error(err.message); process.exitCode = 1; });
-} else if (command === 'verify') {
-  verifyCommand().catch(err => { console.error(err.message); process.exitCode = 1; });
-} else if (command === 'fetch') {
-  verifyCommand({ materialize: true }).catch(err => { console.error(err.message); process.exitCode = 1; });
-} else {
-  console.error('Usage: acquire.mjs <lock|verify|fetch>');
-  process.exitCode = 1;
+// Only run a CLI command when this file is executed directly, not when it is
+// imported for its exported functions (e.g. by test.mjs).
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  const command = process.argv[2];
+  if (command === 'lock') {
+    lockCommand().catch(err => { console.error(err.message); process.exitCode = 1; });
+  } else if (command === 'verify') {
+    verifyCommand().catch(err => { console.error(err.message); process.exitCode = 1; });
+  } else if (command === 'fetch') {
+    verifyCommand({ materialize: true }).catch(err => { console.error(err.message); process.exitCode = 1; });
+  } else {
+    console.error('Usage: acquire.mjs <lock|verify|fetch>');
+    process.exitCode = 1;
+  }
 }

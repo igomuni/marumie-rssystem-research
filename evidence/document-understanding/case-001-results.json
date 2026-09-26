@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "caseId": "case-001",
-  "generatedAt": "2026-09-26T03:29:22.552Z",
+  "generatedAt": "2026-09-26T09:13:48.622Z",
   "evaluations": [
     {
       "schemaVersion": 1,
       "caseId": "case-001",
       "engine": "pdfjs-baseline",
       "engineVersion": "4.10.38",
-      "evaluatedAt": "2026-09-26T03:29:22.550Z",
+      "evaluatedAt": "2026-09-26T09:13:48.620Z",
       "summary": {
         "total": 11,
         "passed": 8,
@@ -52,7 +52,7 @@
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "情報通信技術調達等適正・効率化の推進に必要な （要求要旨）",
+          "actual": "情報通信技術調達等適正・効率化の推進に必要な（要求要旨）",
           "expected": "情報通信技術調達等適正・効率化の推進に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
@@ -131,7 +131,7 @@
       "caseId": "case-001",
       "engine": "pymupdf-baseline",
       "engineVersion": "1.28.2",
-      "evaluatedAt": "2026-09-26T03:29:22.552Z",
+      "evaluatedAt": "2026-09-26T09:13:48.621Z",
       "summary": {
         "total": 11,
         "passed": 8,
@@ -175,7 +175,7 @@
         {
           "id": "expense_name_exact_match_after_line_join",
           "pass": false,
-          "actual": "情報通信技術調達等適正・効率化の推進に必要な                                            （要求要旨）",
+          "actual": "情報通信技術調達等適正・効率化の推進に必要な（要求要旨）",
           "expected": "情報通信技術調達等適正・効率化の推進に必要な経費",
           "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
         },
@@ -254,7 +254,7 @@
       "caseId": "case-001",
       "engine": "docling",
       "engineVersion": "2.130.0",
-      "evaluatedAt": "2026-09-26T03:29:22.552Z",
+      "evaluatedAt": "2026-09-26T09:13:48.622Z",
       "summary": {
         "total": 11,
         "passed": 9,

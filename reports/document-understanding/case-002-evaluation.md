@@ -1,10 +1,10 @@
 # Document Understanding Benchmark — case-002
 
-Generated: 2026-09-26T03:29:54.791Z
+Generated: 2026-09-26T09:14:01.987Z
 
 | engine | passed | failed | total |
 |---|---|---|---|
-| pdfjs-baseline (4.10.38) | 3 | 8 | 11 |
+| pdfjs-baseline (4.10.38) | 4 | 7 | 11 |
 | pymupdf-baseline (1.28.2) | 4 | 7 | 11 |
 | docling (2.130.0) | 3 | 8 | 11 |
 
@@ -15,7 +15,7 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pdfjs-baseline | pymupdf-baseline | docling |
 |---|---|---|---|
 | item_name_exact_match | FAIL | FAIL | FAIL |
-| item_name_present_among_candidates | FAIL | PASS | FAIL |
+| item_name_present_among_candidates | PASS | PASS | FAIL |
 | expense_name_exact_match_after_line_join | FAIL | FAIL | FAIL |
 | previous_budget_exact_match | FAIL | FAIL | FAIL |
 | fy2024_request_exact_match | FAIL | FAIL | FAIL |
@@ -31,8 +31,8 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pass | actual | expected | note |
 |---|---|---|---|---|
 | item_name_exact_match | FAIL | `null` | `"経済産業本省共通費"` | Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages. |
-| item_name_present_among_candidates | FAIL | `[{"itemCode":"010","itemName":"経 済 産 業 本 省"},{"itemCode":"010","itemName":"経 済 産 業 本 省 共 通 費"},{"itemCode":"001","itemName":"既 定 定 員 に 伴 う 経 費"},{"itemCode":"001","itemName":"人 件 費"}]` | `{"itemCode":"010","itemName":"経済産業本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
-| expense_name_exact_match_after_line_join | FAIL | `"経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費 「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等"` | `"経済産業本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
+| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"経済産業本省"},{"itemCode":"010","itemName":"経済産業本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人件費"}]` | `{"itemCode":"010","itemName":"経済産業本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
+| expense_name_exact_match_after_line_join | FAIL | `"経済産業本省一般行政に 42,331,005 46,887,829 4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等"` | `"経済産業本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
 | previous_budget_exact_match | FAIL | `null` | `42331005` |  |
 | fy2024_request_exact_match | FAIL | `null` | `46887829` |  |
 | signed_delta_exact_match | FAIL | `null` | `4556824` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
@@ -47,8 +47,8 @@ The score alone is not the main result — see which *specific* checks differ be
 | check | pass | actual | expected | note |
 |---|---|---|---|---|
 | item_name_exact_match | FAIL | `null` | `"経済産業本省共通費"` | Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages. |
-| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"経 済 産 業 本 省"},{"itemCode":"010","itemName":"経済産業本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人    件    費"}]` | `{"itemCode":"010","itemName":"経済産業本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
-| expense_name_exact_match_after_line_join | FAIL | `"経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費                                                  「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等"` | `"経済産業本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
+| item_name_present_among_candidates | PASS | `[{"itemCode":"010","itemName":"経済産業本省"},{"itemCode":"010","itemName":"経済産業本省共通費"},{"itemCode":"001","itemName":"既定定員に伴う経費"},{"itemCode":"001","itemName":"人件費"}]` | `{"itemCode":"010","itemName":"経済産業本省共通費"}` | Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`. |
+| expense_name_exact_match_after_line_join | FAIL | `"経済産業本省一般行政に                 42,331,005      46,887,829                                     4,556,824 （要求要旨）必要な経費「経済産業省設置法」に定める本省内部部局所掌の一般事務を処理するため必要な庁費等"` | `"経済産業本省一般行政に必要な経費"` | Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair. |
 | previous_budget_exact_match | FAIL | `null` | `42331005` |  |
 | fy2024_request_exact_match | FAIL | `null` | `46887829` |  |
 | signed_delta_exact_match | FAIL | `null` | `4556824` | FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign. |
