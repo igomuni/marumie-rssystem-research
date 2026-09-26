@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: freeze MLIT case-005 ground truth (branch: research/case-005-mlit-source-survey)
+
+- **Ground Truth frozen. No benchmark engine run against MLIT.**
+- Re-verified the frozen selection record's own locator against direct visual re-inspection of the source before any transcription began — zero discrepancy found; row selection was not repeated.
+- Transcribed `fixtures/document-understanding/case-005/ground-truth.json` for the already-selected row (`pdfPageIndex` 28, request no. `①`, expense code `05-95`) by direct visual inspection (400dpi `pdftoppm` renders and crops) only: itemCode `002`/`国土交通本省共通費`, requestNo `1`, expenseCode `05-95`/`国土交通本省一般行政に必要な経費`, previousBudget `118052728`, fy2024Request `136727866`, deltaRaw `"18,675,138"` (no `△`, positive), unit `千円`. Arithmetic check (`136,727,866 − 118,052,728 = 18,675,138`) run only after independent transcription and after the delta's sign was already determined from glyph evidence alone — PASS.
+- **Unit scope confirmed page-level**, directly on the target row's own page — a genuine, disclosed contrast with case-004/MEXT's table-wide-remote unit convention, and a return to case-002/003's own same-page pattern.
+- Delta-sign corroborated via the same page's own `010` organization-aggregate row (`△530,617,743`), confirming the `△` glyph renders correctly in this document — used only to confirm the glyph mechanism, never to infer the target row's own sign.
+- Delimited the target row from its own two preceding aggregate rows (organization `010`, item `002`) by structural level; their own amounts were read only as hierarchy context, never transcribed as the selected row's own values.
+- No ADR added, no schema incompatibility found — `ground-truth.json`'s `result` shape is identical to case-001–004's, so `evaluate.mjs` requires no change to score case-005.
+- Full evidence: `fixtures/document-understanding/case-005/20260927_0846_Case005_Ground_Truth_Evidence.md`.
+- Files: `fixtures/document-understanding/case-005/ground-truth.json` (new), the evidence document, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No source-acquisition, benchmark, normalization, evaluator, selection-protocol, or selection-record file modified; no Case Package created; no rendered images staged (scratch directory only).
+- **Recommended next step**: run the existing benchmark engines against case-005 for the first time using the frozen Ground Truth and unchanged benchmark semantics, preserving the first-run result before any adaptation.
+
 ### research: select MLIT case-005 target row (branch: research/case-005-mlit-source-survey)
 
 - **Protocol application only. Row selected. No Ground Truth, no benchmark engine run against MLIT.**
