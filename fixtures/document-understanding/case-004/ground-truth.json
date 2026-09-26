@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-004",
+  "sourceId": "mext-fy2024-general-account-expenditure-request-detail",
+  "sourceSha256": "6df221dfd22c48e0f32dd59bcf2dbcbaad19720083be43005ce700b984a6bf71",
+  "pdfPageIndex": 2,
+  "pdfPageNumber": 3,
+  "printedPageLabel": "文（本） 11",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). Row selected under fixtures/document-understanding/case-004/20260926_2045_Case004_Selection_Protocol.md and frozen in fixtures/document-understanding/case-004/20260926_2101_Case004_Selection_Record.md before this file was created. Unlike case-002/case-003, the page-level unit label is not repeated on this row's own page; it is established from the document's own first page (pdfPageIndex 0) instead -- see fixtures/document-understanding/case-004/20260926_2111_Case004_Ground_Truth_Evidence.md for this and every other field's full raw/visual transcription, rendering method, and arithmetic consistency check.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "文部科学本省共通費",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "文部科学本省一般行政に必要な経費",
+    "previousBudget": 95208241,
+    "fy2024Request": 95686830,
+    "deltaRaw": "478,589",
+    "delta": 478589,
+    "unit": "千円",
+    "page": 2
+  }
+}
