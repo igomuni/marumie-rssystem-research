@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 0,
+  "caseId": "case-002",
+  "backfilledAt": "2026-09-26T13:33:02+09:00",
+  "backfillNote": "This file was created retrospectively, after case-002 was selected, frozen, and run, per the Case Package schema proposed in reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md. Unlike case-001, case-002 had a pre-registered selection protocol (frozen before the source was even acquired), so more source-safe fields below carry a stronger, dated provenance record than case-001's.",
+  "identity": {
+    "sourceId": "meti-fy2024-general-account-request",
+    "sourceSha256": "ba64c25df327161a33c293374a7255c203cc9a527130ece848574badefbf909a",
+    "organization": "経済産業省",
+    "fiscalYear": 2024,
+    "documentStage": "request",
+    "documentTitle": "令和6年度歳出概算要求書（一般会計）",
+    "url": "https://www.meti.go.jp/main/yosangaisan/fy2024/pdf/ippan_o.pdf",
+    "pdfPageIndex": 8,
+    "pdfPageNumber": 9,
+    "printedPageLabel": "経(本) 5",
+    "evidence": ["sources/source-lock.json", "sources/source-registry.csv", "fixtures/document-understanding/case-002/ground-truth.json"]
+  },
+  "sourceSafeProfile": {
+    "description": "(A) Features obtainable without running pdfjs-baseline, pymupdf-baseline, or docling. Legitimate strategy-selection input for an unseen document, per the architecture report's Document Profile split.",
+    "features": [
+      {
+        "key": "acquisitionMethod",
+        "value": "playwright_chromium",
+        "provenance": "source_stated",
+        "note": "Plain fetch() failed first (HTTP 202, x-amzn-waf-action: challenge, AWS WAF Bot Control JS challenge); a real headless-Chromium session (Playwright 1.63.0) visiting the landing page first was required to acquire the binary.",
+        "evidence": ["sources/source-lock.json", "sources/source-registry.csv"]
+      },
+      {
+        "key": "pageCount",
+        "value": 106,
+        "provenance": "derived_from_repository_analysis",
+        "note": "From pdfinfo (poppler), which performs no text/layout reconstruction and is not one of the three compared engines, per the case-002 selection protocol's tooling rule.",
+        "evidence": ["sources/source-registry.csv"]
+      },
+      {
+        "key": "pdfProducer",
+        "value": "List Creator",
+        "provenance": "derived_from_repository_analysis",
+        "evidence": ["sources/source-registry.csv"]
+      },
+      {
+        "key": "pageOrientation",
+        "value": "A4_landscape",
+        "provenance": "derived_from_repository_analysis",
+        "evidence": ["sources/source-registry.csv"]
+      },
+      {
+        "key": "encrypted",
+        "value": false,
+        "provenance": "derived_from_repository_analysis",
+        "evidence": ["sources/source-registry.csv"]
+      },
+      {
+        "key": "textLayerPresence",
+        "value": "not_recorded",
+        "provenance": "not_recorded",
+        "note": "pdfinfo confirms basic PDF validity, but no explicit text-layer-presence check independent of running an engine is recorded.",
+        "evidence": []
+      },
+      {
+        "key": "tableRegion_multiLineWrap",
+        "value": true,
+        "provenance": "manually_observed",
+        "note": "E3 of the selection protocol (multi-line wrap) confirmed by direct visual inspection (pdftoppm render, 300dpi) before Ground Truth was created.",
+        "evidence": ["fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md"]
+      },
+      {
+        "key": "amountTripleStructure",
+        "value": "previous_budget_fy2024_request_delta_triple",
+        "provenance": "manually_observed",
+        "note": "E4 of the selection protocol confirmed the standard three-column relationship in its native layout before Ground Truth was created.",
+        "evidence": ["fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md"]
+      },
+      {
+        "key": "pageLevelUnitLabelPresentOnTargetPage",
+        "value": true,
+        "provenance": "manually_observed",
+        "note": "'(単位: 千円)' observed directly beneath the table title, confirmed at selection time (E5) and re-verified independently during Ground Truth creation via a dedicated high-resolution crop. A genuine structural difference from case-001's target page, observed before any engine was run.",
+        "evidence": ["fixtures/document-understanding/case-002/20260926_0852_Case002_Selection_Record.md", "fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md"]
+      },
+      {
+        "key": "deltaGlyphConventionObservedOnPage",
+        "value": true,
+        "provenance": "manually_observed",
+        "note": "Six neighboring rows on the same page visibly carry a △ (decrease) glyph, confirming the page uses this convention generally. This does NOT reveal the target row's own delta sign (that is a Ground Truth field, deltaRaw, intentionally not duplicated here) — it only records that the convention exists on the page, observable independent of the target row itself.",
+        "evidence": ["fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md"]
+      },
+      {
+        "key": "requestNumberGlyphConvention",
+        "value": "circled_numeral",
+        "provenance": "manually_observed",
+        "note": "Request numbers on this page use circled numerals (e.g. ①), unlike case-001's plain digit convention — observed and normalized during Ground Truth creation, not engine-derived.",
+        "evidence": ["fixtures/document-understanding/case-002/20260926_0908_Case002_Ground_Truth_Evidence.md"]
+      }
+    ]
+  },
+  "engineDerivedProfile": {
+    "description": "(B) Features only knowable after running at least one analysis engine. Never usable as strategy-selection input for this same document (would be circular); recorded here only as a logged outcome for future cross-case comparison, per the architecture report's leakage-avoidance rule.",
+    "features": [
+      {
+        "key": "rawExtractionSucceeded",
+        "value": { "pdfjs-baseline": true, "pymupdf-baseline": true, "docling": true },
+        "provenance": "derived_from_repository_analysis",
+        "note": "All three engines reconstructed the target line/cells; the failures are at the structure-recovery/normalization stage, not raw extraction.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "annotationColumnPlacementRelativeToAmountTriple",
+        "value": "same_reconstructed_line",
+        "provenance": "derived_from_repository_analysis",
+        "note": "This characterization ('（要求要旨）' follows the amount triple on the SAME reconstructed line, unlike case-001 where the equivalent annotation only ever appeared on continuation lines) was established via the flat-text engines' raw line-reconstruction output during the first frozen run, not via independent pre-engine visual layout inspection. It is plausibly a source-observable layout fact (adjacent-column annotation in the same table row), but this repository did not actually record it that way — flagged as an open Document Profile A/B boundary ambiguity in this backfill's architecture-feedback notes.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "splitTrailingTripleFailed_flatTextEngines",
+        "value": true,
+        "provenance": "derived_from_repository_analysis",
+        "note": "common.mjs's trailing-anchored regex requires the amount triple to be the literal end of the line; broke on both pdfjs-baseline and pymupdf-baseline for this row.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "cjkWrapSpaceArtifactPresent_pdfjs",
+        "value": true,
+        "provenance": "derived_from_repository_analysis",
+        "note": "pdfjs-dist inserted a literal space between every CJK character in header-style rows on this page; PyMuPDF's sort=True reconstruction did not. This flipped item_name_present_among_candidates between the two flat-text engines, exposing that common.mjs lacks an equivalent of normalize-docling.mjs's closeCjkWrapSpaces.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "doclingTableGridDimensions",
+        "value": "23x12",
+        "provenance": "derived_from_repository_analysis",
+        "note": "Coarser and misaligned relative to case-001's 21x14 grid for the same benchmark; 1 of 322 cells dropped.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "doclingSilentWrongRowSelection",
+        "value": true,
+        "provenance": "derived_from_repository_analysis",
+        "note": "Docling reported itemCandidateCount: 1 (implying no ambiguity) while actually matching an unrelated, deeper-hierarchy row ('001 人件費...'), because this page's expense code and its label landed in different, unpaired grid cells. A more concerning failure mode than the flat-text baselines' honest nulls.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "headerRowHierarchyAmbiguityPresent",
+        "value": true,
+        "provenance": "derived_from_repository_analysis",
+        "note": "Both flat-text engines found the same 4 item-code-shaped candidates (010, 010, 001, 001) with no disambiguation — mirroring case-001's finding, but discovered here via engine output, not via independent pre-engine visual inspection (the selection protocol explicitly excluded this as a selection criterion, to be observed afterward).",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md"]
+      },
+      {
+        "key": "evaluatorGlyphCheckOverfitDiscovered",
+        "value": true,
+        "provenance": "derived_from_repository_analysis",
+        "note": "This case's own Ground Truth (deltaRaw with no glyph) is what first exposed that delta_glyph_observed_and_associated hardcoded 'expected: contains △' regardless of Ground Truth — a benchmark-methodology defect, not an extraction/normalization one. See research-history.jsonl for the correction event.",
+        "evidence": ["reports/document-understanding/20260926_0923_Case002_First_Frozen_Benchmark_Run.md", "reports/document-understanding/20260926_1231_Case002_Evaluator_Corrected_Reevaluation.md"]
+      },
+      {
+        "key": "finalScores",
+        "value": { "pdfjs-baseline": "3/11", "pymupdf-baseline": "4/11", "docling": "3/11" },
+        "provenance": "derived_from_repository_analysis",
+        "note": "Current scores under the corrected evaluator (post-519ce28), up by exactly +1 per engine from the first frozen run's 2/11, 3/11, 2/11 (see research-history.jsonl for both, preserved separately).",
+        "evidence": ["evidence/document-understanding/case-002-results.json", "reports/document-understanding/20260926_1231_Case002_Evaluator_Corrected_Reevaluation.md"]
+      }
+    ]
+  }
+}

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Case Package metadata backfill for case-001 and case-002 (structured-data only, branch: research/case-002-meti-preregistration)
+
+- **Backfill only — no parser, adapter, normalizer, evaluator, LLM, or case-003.** Created the first machine-readable Case Package metadata (`document-profile.json`, `research-history.jsonl`) for both existing cases, per Phase 1 of the roadmap in the architecture report (`20260926_1316_...`).
+- Every populated field is traceable to existing repository evidence (fixture READMEs, selection protocol/record, Ground Truth evidence documents, benchmark reports, `sources/source-registry.csv`, and commit history). Fields with no repository-recorded fact (e.g. case-001's total page count, PDF producer) are explicitly `not_recorded`, never guessed or left silently absent.
+- `document-profile.json` splits `sourceSafeProfile` (A, pre-analysis) from `engineDerivedProfile` (B, only knowable after running an engine) for both cases. Ground Truth amount/delta/name values were verified absent from both files (only structural/case-identity facts, plus page-level *conventions* like "this page uses △ for decreases elsewhere," never the target row's own Ground Truth value).
+- `research-history.jsonl` uses a `kind` enum (observation/hypothesis/intervention/experiment/result/methodology_correction/conclusion/unresolved_question) plus `layers` tags from the architecture report's taxonomy, `status`, and `relatedEvents`/`sharedEventRef` links. Case-002's chronology preserves both the first frozen run (`379043d`, 2/11-3/11-2/11) and the evaluator-corrected re-evaluation (`519ce28`, 3/11-4/11-3/11) as two distinct, linked events — the original is not overwritten or reframed as wrong-then-fixed in place; both stand.
+- **Genuine architecture finding surfaced during backfill, recorded as ADR-011:** case-002's "annotation column follows the amount triple on the same line" fact is plausibly source-observable, but this repository's actual history only established it via engine output (the first frozen run's raw-text analysis) — filed as engine-derived (B), not source-safe (A), per a new rule that a feature's classification follows how it was actually discovered here, not how it theoretically could be.
+- 13 events recorded for case-001, 19 for case-002 (case-002's stronger contemporaneous documentation — pre-registered protocol, dated Ground Truth evidence doc — produced a denser, more granular history than case-001's retrospectively-reconstructed one).
+- Validated: all 4 new files parse as strict JSON/JSONL (Node `JSON.parse` per line/file), UTF-8 clean, all `relatedEvents` cross-references resolve to real event IDs within their own file, no Ground Truth amount value appears in either `document-profile.json`.
+- Files: `fixtures/document-understanding/case-001/document-profile.json`, `fixtures/document-understanding/case-001/research-history.jsonl`, `fixtures/document-understanding/case-002/document-profile.json`, `fixtures/document-understanding/case-002/research-history.jsonl`, `protocol/DECISIONS.md` (ADR-011).
+
 ### Case-based Document Understanding + LLM strategy-selection research architecture (design only, branch: research/case-002-meti-preregistration)
 
 - **Design/documentation only — no code, adapter, normalizer, evaluator, LLM, retrieval system, or new case was implemented.**

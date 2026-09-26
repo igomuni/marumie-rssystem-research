@@ -36,8 +36,11 @@
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
 - Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
 
-## Research architecture (design-only, not implemented — see ADR-010)
+## Research architecture (design-only, not implemented — see ADR-010, ADR-011)
 
 - Design document: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`. Proposes Case Package / Document Profile / Analysis Strategy concepts, a document-family/layout-specific-interpretation layer, a conservative LLM strategy-selection role, a 3-level benchmark, and a leave-one-case-out evaluation protocol.
-- Phase 1 gate (per the roadmap in that document): formalize the Case Package schema (`document-profile.json`, `research-history.jsonl`) using case-001/case-002 as the first two instances, backfilled from existing prose — no new case, no strategy selection yet.
-- Do not build strategy selection, retrieval, or an LLM integration before at least 3 demonstrably distinct layout families exist in the corpus (Phase 2 gate).
+- **Phase 1 gate: DONE.** `document-profile.json` and `research-history.jsonl` backfilled for case-001 and case-002 from existing prose/commits (no new case, no strategy selection). See `fixtures/document-understanding/case-001/{document-profile.json,research-history.jsonl}` and the case-002 equivalents.
+- Do not build strategy selection, retrieval, or an LLM integration before at least 3 demonstrably distinct layout families exist in the corpus (Phase 2 gate, not started).
+- Schema follow-ups noted during Phase 1 backfill (not fixed, since this was backfill-only):
+  1. case-001's research-history events use a coarser `result` granularity than case-002's (which distinguishes `experiment` from `result`), because case-001's history was reconstructed after the fact at lower resolution than case-002's contemporaneously-written reports. A future case created with the schema in place from the start should use `experiment` consistently for a first frozen run.
+  2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
