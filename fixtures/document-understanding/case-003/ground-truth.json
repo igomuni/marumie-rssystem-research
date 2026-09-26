@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-003",
+  "sourceId": "mic-fy2024-general-account-expenditure-request",
+  "sourceSha256": "cc54dbe5f689116619a1f8453747d47bca5b960137f90869ead26954d651703b",
+  "pdfPageIndex": 8,
+  "pdfPageNumber": 9,
+  "printedPageLabel": "総(本) 5",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). Row selected under fixtures/document-understanding/case-003/20260926_1548_Case003_Selection_Protocol.md and frozen in fixtures/document-understanding/case-003/20260926_1603_Case003_Selection_Record.md before this file was created. See fixtures/document-understanding/case-003/20260926_1618_Case003_Ground_Truth_Evidence.md for the raw/visual transcription, rendering method, and arithmetic consistency check underlying every field below.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "総務本省共通費",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "総務本省一般行政に必要な経費",
+    "previousBudget": 38472070,
+    "fy2024Request": 41763907,
+    "deltaRaw": "3,291,837",
+    "delta": 3291837,
+    "unit": "千円",
+    "page": 8
+  }
+}

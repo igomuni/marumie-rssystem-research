@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### case-003 Ground Truth frozen (branch: research/case-003-mic-preregistration)
+
+- **Ground Truth creation only. No benchmark engine run against MIC.**
+- Created `fixtures/document-understanding/case-003/ground-truth.json` and its evidence record for the already-selected row (`fixtures/document-understanding/case-003/20260926_1603_Case003_Selection_Record.md`, commit `31c4626`, confirmed unchanged), by direct visual inspection of the locked MIC PDF only.
+- Transcribed raw source values first, then applied only already-justified deterministic normalizations (comma removal, circled-numeral → digit, CJK line-join with no inserted space) — mirroring case-001/case-002's documented method exactly.
+- **Delta sign evidence**: the target row's own delta (`3,291,837`) carries no `△` glyph, confirmed via a dedicated high-resolution row-band crop. Unlike case-002, no other row on the *same page* carries `△` for cross-validation (every delta visible on page 9 is positive) — disclosed honestly as a weaker same-page check than case-002's. The glyph convention itself was independently confirmed as a real, actively-rendered feature of this document by reference to a *different* page within the same organization (PDF page 10, already viewed and committed during the prior source-survey task), ruling out a font/rendering artifact as the explanation for its absence here.
+- **Arithmetic check** (41,763,907 − 38,472,070 = 3,291,837) run only as a post-hoc consistency check after independent transcription of all three values — PASS, not used to derive or adjust any value.
+- **Unit**: `(単位: 千円)` confirmed page-level (applies to this page's table only; not generalized to any other page of the 454-page document).
+- Added a research-context comparison section (not new Ground Truth fields, does not affect any benchmark logic): notes the target row's structural parallel to case-002's own first-eligible row (same template position under the ministry's own headquarters item header — arrived at independently via the same deterministic rule, not by copying), the matching page-level unit-label convention, an empty 備考 (remarks) column on this specific row (unlike case-002's same-line annotation), and a genuinely new observation (case-003's row nests one additional intermediate breakdown level not seen in case-001/002's target rows).
+- Files: `fixtures/document-understanding/case-003/ground-truth.json` (new), `fixtures/document-understanding/case-003/20260926_1618_Case003_Ground_Truth_Evidence.md` (new), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+
 ### case-003 target row selected and frozen (branch: research/case-003-mic-preregistration)
 
 - **Protocol execution only. No Ground Truth, no benchmark engine run against MIC.**
