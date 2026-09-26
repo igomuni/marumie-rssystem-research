@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### PR #2 review fix: browser-fetch lock immutability (branch: research/case-002-meti-preregistration)
+
+- **Fix only, scoped to `scripts/source-acquisition/browser-fetch/`. No case-003, no evaluator/Ground Truth/Case Package change, no PR merge.**
+- Root cause: `browser-fetch.mjs` wrote the raw file and unconditionally replaced (`lock.sources[existingIndex] = record`) any existing lock entry for a re-fetched `sourceId`, contradicting the file's own header comment ("lock is explicit, reviewable, never silently overwritten") and ADR-009 — a same-`sourceId` re-fetch after an upstream PDF change would have silently replaced the old, reviewed lock entry with a new SHA-256, with no diff-worthy signal beyond the lock-file content itself.
+- Fixed with a mutation-safe order: compute the new SHA-256 and compare it against any existing lock entry entirely in memory, *before* touching the raw file or lock file. Extracted this as two testable, exported functions in `browser-fetch.mjs`: `decideLockAction(lock, sourceId, newSha256)` (pure) and `applyAcquisition(...)` (performs the writes/throw). New behavior: identical SHA-256 → success, lock entry and raw file left completely unchanged (no timestamp refresh either); different SHA-256 → throws (non-zero exit), naming the `sourceId` and both SHA-256 values, lock entry and raw file left completely unchanged; unknown `sourceId` → writes raw + lock exactly as before.
+- Added `scripts/source-acquisition/browser-fetch/src/test.mjs` (7 tests, fixture/temp-dir based, no browser/network dependency) covering: new source locks; identical-bytes re-fetch leaves the lock file byte-for-byte unchanged; mismatched-bytes re-fetch throws and leaves both the lock file and the existing canonical raw file byte-for-byte unchanged; the mismatch error message names the sourceId and both SHA-256 values. Added a `test` script to `browser-fetch/package.json`.
+- Also fixed a latent side effect this refactor exposed: `browser-fetch.mjs` ran `main()` unconditionally at module-load time, so importing it from `test.mjs` for its exported functions also triggered a real (argument-less) CLI invocation. Guarded with a standard `require.main`-equivalent ESM check so `main()` only runs when the file is executed directly.
+- README updated to describe the corrected immutability semantics (it previously said the tool "adds/updates the entry," which was the exact behavior being fixed).
+- The already-recorded METI source lock entry itself is untouched by this fix — this only changes the tool's behavior on a *future* re-fetch of an existing `sourceId`.
+
 ### Case Package Reconstruction Benchmark v0 (branch: research/case-002-meti-preregistration)
 
 - Tested whether `document-profile.json` + `research-history.jsonl` alone (commit `f7b0b75`, verified unchanged before execution) let a fresh, independent LLM session reconstruct a case's research state — identity, methods, results, temporal chronology of a real methodology correction, epistemic categories, open work — without seeing README/reports/Ground Truth/Git history/the other case.

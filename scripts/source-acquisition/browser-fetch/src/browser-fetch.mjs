@@ -29,7 +29,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const LOCK_PATH = path.join(ROOT, 'sources', 'source-lock.json');
 const RAW_DIR = path.join(ROOT, 'sources', 'raw');
 
-function sha256(buffer) {
+export function sha256(buffer) {
   return crypto.createHash('sha256').update(buffer).digest('hex');
 }
 
@@ -37,13 +37,71 @@ function ensureDir(p) {
   fs.mkdirSync(p, { recursive: true });
 }
 
-function loadLock() {
-  if (!fs.existsSync(LOCK_PATH)) return { schemaVersion: 1, sources: [] };
-  return JSON.parse(fs.readFileSync(LOCK_PATH, 'utf8'));
+function loadLock(lockPath) {
+  if (!fs.existsSync(lockPath)) return { schemaVersion: 1, sources: [] };
+  return JSON.parse(fs.readFileSync(lockPath, 'utf8'));
 }
 
-function writeLock(lock) {
-  fs.writeFileSync(LOCK_PATH, JSON.stringify(lock, null, 2) + '\n', 'utf8');
+function writeLock(lockPath, lock) {
+  fs.writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n', 'utf8');
+}
+
+// Pure decision function: given the current lock and a freshly-fetched
+// sourceId/sha256 pair, decide what MAY be written, without touching the
+// filesystem. This is the policy this file's header comment promises
+// ("lock is explicit, reviewable, never silently overwritten") — kept as a
+// standalone, unit-testable function so the mutation policy can be verified
+// without a real browser/network fetch. See applyAcquisition() below for how
+// this decision is turned into (or deliberately withheld from) filesystem
+// writes.
+export function decideLockAction(lock, sourceId, newSha256) {
+  const existingIndex = lock.sources.findIndex((s) => s.sourceId === sourceId);
+  if (existingIndex < 0) return { action: 'new', existingIndex: -1, existing: null };
+  const existing = lock.sources[existingIndex];
+  if (existing.sha256 === newSha256) return { action: 'identical', existingIndex, existing };
+  return { action: 'mismatch', existingIndex, existing };
+}
+
+// Applies decideLockAction()'s decision to the filesystem. Mutation-safe
+// ordering: the caller must have already computed newSha256 (from an
+// already-validated, already-in-memory buffer) BEFORE this function is
+// called, so a mismatch is detected and reported without ever having written
+// the new bytes over the existing canonical raw file or lock entry.
+//   - 'new'       -> writes the raw file and appends a new lock entry.
+//   - 'identical' -> writes nothing; the existing lock entry and raw file are
+//                    left exactly as they were (no fetchedAt/finalUrl/
+//                    playwrightVersion refresh either — a re-fetch that
+//                    reproduces the same bytes is not new information).
+//   - 'mismatch'  -> writes nothing and throws; the existing lock entry and
+//                    raw file are left exactly as they were. The caller is
+//                    responsible for a non-zero process exit.
+export function applyAcquisition({ lockPath, rawDir, sourceId, buffer, isPdf, record }) {
+  const lock = loadLock(lockPath);
+  const newSha256 = record.sha256;
+  const decision = decideLockAction(lock, sourceId, newSha256);
+
+  if (decision.action === 'mismatch') {
+    throw new Error(
+      `Refusing to overwrite the existing lock entry for "${sourceId}": it is locked at ` +
+      `sha256=${decision.existing.sha256}, but this fetch retrieved a different binary ` +
+      `(sha256=${newSha256}). The existing lock entry and its raw source file were NOT modified. ` +
+      `If the upstream source has genuinely changed and the lock should be updated, that is a ` +
+      `deliberate, reviewable decision this tool does not make automatically — re-lock manually ` +
+      `after confirming the change is intentional.`
+    );
+  }
+
+  if (decision.action === 'identical') {
+    return { action: 'identical', record: decision.existing };
+  }
+
+  // action === 'new'
+  ensureDir(rawDir);
+  const rawPath = path.join(rawDir, `${sourceId}${isPdf ? '.pdf' : '.bin'}`);
+  fs.writeFileSync(rawPath, buffer);
+  lock.sources.push(record);
+  writeLock(lockPath, lock);
+  return { action: 'new', record };
 }
 
 function parseArgs(argv) {
@@ -113,10 +171,12 @@ async function main() {
     );
   }
 
-  ensureDir(RAW_DIR);
-  const rawPath = path.join(RAW_DIR, `${sourceId}${isPdf ? '.pdf' : '.bin'}`);
-  fs.writeFileSync(rawPath, buffer);
-
+  // Mutation-safe order: the SHA-256 is computed, and compared against the
+  // existing lock, entirely in memory, before anything on disk (the raw file
+  // or the lock file) is touched. See applyAcquisition()/decideLockAction()
+  // above for why this ordering matters — it is what makes a same-sourceId
+  // re-fetch with a genuinely different upstream binary a loud, non-mutating
+  // failure instead of a silent lock replacement.
   const record = {
     sourceId,
     url,
@@ -133,16 +193,26 @@ async function main() {
     landingPageUrl: landingPageUrl ?? null,
   };
 
-  const lock = loadLock();
-  const existingIndex = lock.sources.findIndex(s => s.sourceId === sourceId);
-  if (existingIndex >= 0) lock.sources[existingIndex] = record;
-  else lock.sources.push(record);
-  writeLock(lock);
+  const result = applyAcquisition({ lockPath: LOCK_PATH, rawDir: RAW_DIR, sourceId, buffer, isPdf, record });
 
-  console.log(`LOCKED ${sourceId} sha256=${record.sha256} sizeBytes=${record.sizeBytes} method=playwright-chromium`);
+  if (result.action === 'identical') {
+    console.log(
+      `VERIFIED ${sourceId} sha256=${result.record.sha256}: freshly fetched bytes match the existing ` +
+      `locked entry exactly. Lock entry and raw source file were left unchanged (no mutation needed).`
+    );
+  } else {
+    console.log(`LOCKED ${sourceId} sha256=${result.record.sha256} sizeBytes=${result.record.sizeBytes} method=playwright-chromium`);
+  }
 }
 
-main().catch(err => {
-  console.error(err.message);
-  process.exitCode = 1;
-});
+// Only run main() when this file is executed directly (node src/browser-fetch.mjs),
+// not when it is imported for its exported functions (e.g. by test.mjs) --
+// otherwise importing this module for unit testing would itself trigger a
+// real CLI invocation with no arguments.
+const isDirectlyExecuted = process.argv[1] && import.meta.url === new URL(process.argv[1], 'file://').href;
+if (isDirectlyExecuted) {
+  main().catch(err => {
+    console.error(err.message);
+    process.exitCode = 1;
+  });
+}

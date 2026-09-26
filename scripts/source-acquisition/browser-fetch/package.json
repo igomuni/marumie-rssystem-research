@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "fetch": "node src/browser-fetch.mjs"
+    "fetch": "node src/browser-fetch.mjs",
+    "test": "node src/test.mjs"
   },
   "dependencies": {
     "playwright": "1.63.0"
