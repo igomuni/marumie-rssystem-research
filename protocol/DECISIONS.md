@@ -101,3 +101,13 @@ Decision: A URL identifies the retrieval location, not immutable content. Reprod
 Reason: Government websites may replace a PDF while retaining the same URL (`same URL != same source binary`). Trusting the URL alone as a stable identifier would let a silent upstream content change invalidate prior research without detection.
 Rejected alternatives: Treating the URL as sufficient source identity; silently re-locking to whatever the server currently returns whenever verification runs.
 Implications: `npm run sources:verify` must fail loudly and exit non-zero on a hash mismatch rather than update the lock; updating a lock to a new binary requires an explicit, reviewable `npm run sources:lock` re-run, preserving the old hash in Git history.
+
+---
+
+### ADR-010: Layout-family adaptation is a distinct layer from generic/engine-specific normalization
+Status: Accepted
+Date: 2026-09-26
+Decision: A parsing/normalization rule must be classified as one of: engine behavior, raw representation, generic normalization, engine-specific normalization, document-family/layout-specific interpretation, semantic interpretation, or evaluation — and rules that are actually document-family-specific must not be written as if they were generic or engine-specific.
+Reason: Case-002 showed the same engine/normalizer code (`common.mjs`'s `splitTrailingTriple`) silently encoded a layout-specific assumption (amount triple anchored at line end) as if it were universal, while a genuinely engine-specific gap (missing CJK-wrap-space-closing) was conflated with it in the same file. Neither a single universal parser nor per-ministry parsers matches the observed failure boundary, which is layout/template family, not issuer identity.
+Rejected alternatives: One universal normalizer for all documents; one parser per ministry.
+Implications: Future normalization work must identify which layer a fix belongs to before writing it, and document-family-specific rules get their own extension point rather than being folded into generic or engine-specific code. Full design: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`.

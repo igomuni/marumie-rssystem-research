@@ -35,3 +35,9 @@
   4. Consider a `case-003`, selected via the same source-only protocol, to test whether the "annotation on the same line as the triple" pattern found on case-002 is common or rare across ministries.
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
 - Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
+
+## Research architecture (design-only, not implemented — see ADR-010)
+
+- Design document: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`. Proposes Case Package / Document Profile / Analysis Strategy concepts, a document-family/layout-specific-interpretation layer, a conservative LLM strategy-selection role, a 3-level benchmark, and a leave-one-case-out evaluation protocol.
+- Phase 1 gate (per the roadmap in that document): formalize the Case Package schema (`document-profile.json`, `research-history.jsonl`) using case-001/case-002 as the first two instances, backfilled from existing prose — no new case, no strategy selection yet.
+- Do not build strategy selection, retrieval, or an LLM integration before at least 3 demonstrably distinct layout families exist in the corpus (Phase 2 gate).

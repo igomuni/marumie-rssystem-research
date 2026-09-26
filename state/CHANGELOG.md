@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Case-based Document Understanding + LLM strategy-selection research architecture (design only, branch: research/case-002-meti-preregistration)
+
+- **Design/documentation only — no code, adapter, normalizer, evaluator, LLM, retrieval system, or new case was implemented.**
+- Used case-001 and case-002 as evidence to formalize a research question broader than "which engine wins": separating extraction capability, document-understanding capability, document/layout-family adaptation, and strategy selection.
+- Proposed a layer taxonomy extending the existing 6-stage pipeline with a new, explicit **document-family/layout-specific interpretation** layer, sitting between engine-specific normalization and semantic interpretation — motivated directly by `common.mjs`'s `splitTrailingTriple`, which encoded a layout-specific assumption (amount triple anchored at line end) inside generic code, silently breaking on case-002's same-line annotation column. Recorded as `protocol/DECISIONS.md` ADR-010.
+- Defined (as design, not implementation): a **Case Package** schema extending existing fixture conventions with `document-profile.json` and `research-history.jsonl`; a **Document Profile** with an explicit split between source-safe features (safe for strategy selection on an unseen document) and engine-derived features (only usable as logged outcomes, never as selection input, to prevent leakage); a versioned **Analysis Strategy** identifier; a conservative **LLM role** restricted to Case Package retrieval, similarity reasoning, strategy ranking, and failure-mode prediction — explicitly never direct PDF-to-value extraction and never given Ground Truth access.
+- Proposed a 3-level benchmark (extraction / document understanding / strategy selection) and a leave-one-case-out (later leave-one-layout-family-out) evaluation protocol with explicit leakage controls, plus a phased, evidence-gated migration roadmap (schema formalization → corpus growth → strategy variants → profile similarity → LOCO experiment → held-out family evaluation).
+- Compared five alternatives (universal parser, ministry-specific parsers, layout-family adapters, case-based strategy selection, direct LLM extraction) against case-001/case-002 evidence; rejected direct LLM extraction as violating the repository's raw/normalized/semantic/Ground-Truth separation discipline, and rejected assuming ministry as the primary classifier.
+- Full document: `reports/document-understanding/20260926_1316_Case_Based_Document_Understanding_and_LLM_Strategy_Selection_Research_Architecture.md`.
+
 ### Evaluator overfit correction: delta_sign_evidence_matches_source (branch: research/case-002-meti-preregistration)
 
 - **Methodology correction, not engine tuning.** The first frozen `case-002` run (`379043d`) exposed that `evaluate.mjs`'s `delta_glyph_observed_and_associated` check hardcoded `expected: 'contains △'` — a constant baked in from `case-001`'s source condition, not derived from Ground Truth. Since `case-002`'s frozen Ground Truth `deltaRaw` (`"4,556,824"`) correctly has no glyph, no engine could ever have passed this check on `case-002`, regardless of correctness.
