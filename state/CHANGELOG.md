@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### case-003 MIC FY2024 source survey and preregistration (branch: research/case-003-mic-preregistration)
+
+- **Source survey/acquisition-preregistration only. No row selected, no Ground Truth, no benchmark engine run.**
+- Branch created from updated `main` (`f8e32ef`, the merged case-002/Case Package checkpoint, PR #2).
+- Independently verified, via two agreeing official routes, that the task's lead URL (`https://www.soumu.go.jp/main_content/000897932.pdf`) is a summary-only document: MIC's own budget navigation (`yosan.html` → `yosan_R06.html`) and MOF's official FY2024 cross-ministry request-document link table (`2024yokyuippan_link.html`, whose 総務省 row's 歳入/歳出 columns both point to `yosan_R06.html`) both agree. `000897932.pdf` is byte-identical (SHA-256 match) to `000898534.pdf`, the summary actually linked from MIC's site — 38 pages, A4 portrait, Adobe Acrobat Pro. Confirmed genuinely summary-only, not row-level, per `pdfinfo` and rasterization.
+- Found the correct detailed candidate: `mic-fy2024-general-account-expenditure-request` (`https://www.soumu.go.jp/main_content/000901372.pdf`) — 454 pages, A4 landscape, Producer "List Creator" (same toolchain fingerprint as case-002's METI source), containing an explicit table of contents with `令和6年度歳出概算要求額明細表` (the detail table) starting at page 5, and a page-10 rasterization showing the same column structure (request number / item+code / previous budget / FY2024 request / △-signed delta / remarks) as case-001/case-002.
+- Also surfaced a concrete illustration of `protocol/RESEARCH_PROTOCOL.md`'s budget-lifecycle invariant: MIC's top budget page lists request-stage, enacted-budget, supplementary-budget, and reserve-fund-use documents all under one `令和6年度` heading, some with similarly-shaped titles — recorded in the survey as an explicit lifecycle-stage-mixing observation, not conflated.
+- Locked the detailed candidate (SHA-256 `cc54dbe5f689116619a1f8453747d47bca5b960137f90869ead26954d651703b`, `acquisitionMethod: "plain-fetch"`) — `soumu.go.jp` returned a normal HTTP 200 with no WAF/JS challenge, so `scripts/source-acquisition/browser-fetch` (Playwright) was correctly not used. Acquisition reused the already-fixed, already-reviewed `applyAcquisition()`/`decideLockAction()` immutable-lock functions exported from `browser-fetch.mjs` (via a small, uncommitted scratch script), rather than duplicating that logic or using `acquire.mjs` (which is coupled to `scripts/request-ingestion/source_manifest.json` and would have required editing an unrelated subsystem's manifest). Immutability was verified by re-running the acquisition once more: result `IDENTICAL`, lock entry and raw file confirmed unchanged.
+- The summary document and four smaller MIC PDFs (revenue estimates, special-account requests) were downloaded to a temporary, non-repository location only for `pdfinfo`/hashing, per the task's instruction not to mass-acquire unrelated materials — not locked into `sources/source-lock.json`.
+- Surfaced (not fixed): `scripts/source-acquisition/src/acquire.mjs` still has the same unconditional lock-overwrite pattern that was fixed in `browser-fetch.mjs` after the PR #2 review — a real, pre-existing inconsistency between the repository's two acquisition tools.
+- No Case Package (`document-profile.json`/`research-history.jsonl`) was created for case-003, per the task's instruction not to backfill prematurely.
+- Files: `fixtures/document-understanding/case-003/20260926_1443_Case003_MIC_Source_Survey.md`, `sources/source-lock.json`, `sources/source-registry.csv`.
+
 ### PR #2 review fix: browser-fetch lock immutability (branch: research/case-002-meti-preregistration)
 
 - **Fix only, scoped to `scripts/source-acquisition/browser-fetch/`. No case-003, no evaluator/Ground Truth/Case Package change, no PR merge.**

@@ -35,6 +35,15 @@
   4. Consider a `case-003`, selected via the same source-only protocol, to test whether the "annotation on the same line as the triple" pattern found on case-002 is common or rare across ministries.
 - Do not modify case-001 Ground Truth, scores, or normalizers while doing this — case-002 tests generalization of frozen behavior.
 - Consider whether `scripts/source-acquisition/src/acquire.mjs`'s missing PDF-magic-byte check (flagged during acquisition) should be backported from `browser-fetch.mjs` for consistency.
+- **`acquire.mjs` still has the pre-PR-#2-review unconditional lock-overwrite bug** that `browser-fetch.mjs` no longer has (fixed at `6db4f24`) — a real inconsistency between the repository's two acquisition tools, surfaced again during the case-003 MIC source survey. Not fixed yet.
+- PR #2 (case-002 + Case Package checkpoint, plus the browser-fetch immutability fix) was reviewed and **merged to `main` by the user** at `f8e32ef`.
+
+## case-003 (branch: research/case-003-mic-preregistration) — source survey only, no row selected
+
+- MIC (総務省) FY2024 source survey complete: `fixtures/document-understanding/case-003/20260926_1443_Case003_MIC_Source_Survey.md`. Confirmed via two independently agreeing routes (MIC's own navigation + MOF's official cross-ministry link table) that the task's lead (`000897932.pdf`) is a 38-page summary-only document (byte-identical to `000898534.pdf`), and that the genuinely detailed, row-level candidate is `mic-fy2024-general-account-expenditure-request` (`https://www.soumu.go.jp/main_content/000901372.pdf`, 454 pages, A4 landscape, Producer "List Creator" — same toolchain fingerprint as case-002's METI source), containing an explicit `令和6年度歳出概算要求額明細表` starting at page 5.
+- Source locked (SHA-256 `cc54dbe5f689116619a1f8453747d47bca5b960137f90869ead26954d651703b`) via plain `fetch()` (no WAF observed on `soumu.go.jp`; Playwright/browser-fetch not used) reusing the already-fixed immutable-lock logic from `browser-fetch.mjs`.
+- **Next action (not yet started):** freeze a case-003 row-selection protocol for `mic-fy2024-general-account-expenditure-request` (its `令和6年度歳出概算要求額明細表` section, pages 5–245, `010 総務本省` organizational range), modeled on `fixtures/document-understanding/case-002/20260926_0834_Case002_Selection_Protocol.md`'s E1–E5 discipline, before visually selecting any row.
+- Not done, by design: no target row selected, no `ground-truth.json`, no benchmark engine run against MIC, no Case Package (`document-profile.json`/`research-history.jsonl`) created for case-003 yet.
 
 ## Research architecture (design-only, not implemented — see ADR-010, ADR-011, ADR-012)
 
