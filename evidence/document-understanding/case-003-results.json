@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-003",
+  "generatedAt": "2026-09-26T07:37:22.815Z",
+  "evaluations": [
+    {
+      "schemaVersion": 1,
+      "caseId": "case-003",
+      "engine": "pdfjs-baseline",
+      "engineVersion": "4.10.38",
+      "evaluatedAt": "2026-09-26T07:37:22.807Z",
+      "summary": {
+        "total": 11,
+        "passed": 9,
+        "failed": 2
+      },
+      "checks": [
+        {
+          "id": "item_name_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": "総務本省共通費",
+          "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
+        },
+        {
+          "id": "item_name_present_among_candidates",
+          "pass": false,
+          "actual": [
+            {
+              "itemCode": "010",
+              "itemName": "総 務 本 省"
+            },
+            {
+              "itemCode": "010",
+              "itemName": "総 務 本 省 共 通 費"
+            },
+            {
+              "itemCode": "001",
+              "itemName": "既 定 定 員 に 伴 う 経 費"
+            },
+            {
+              "itemCode": "001",
+              "itemName": "人 件 費 33,430,013 37,142,329 3,712,316 (令和4年度末定員)特 別 職 20人"
+            }
+          ],
+          "expected": {
+            "itemCode": "010",
+            "itemName": "総務本省共通費"
+          },
+          "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
+        },
+        {
+          "id": "expense_name_exact_match_after_line_join",
+          "pass": true,
+          "actual": "総務本省一般行政に必要な経費",
+          "expected": "総務本省一般行政に必要な経費",
+          "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
+        },
+        {
+          "id": "previous_budget_exact_match",
+          "pass": true,
+          "actual": 38472070,
+          "expected": 38472070,
+          "note": ""
+        },
+        {
+          "id": "fy2024_request_exact_match",
+          "pass": true,
+          "actual": 41763907,
+          "expected": 41763907,
+          "note": ""
+        },
+        {
+          "id": "signed_delta_exact_match",
+          "pass": true,
+          "actual": 3291837,
+          "expected": 3291837,
+          "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
+        },
+        {
+          "id": "unit_exact_match",
+          "pass": true,
+          "actual": "千円",
+          "expected": "千円",
+          "note": ""
+        },
+        {
+          "id": "page_identification",
+          "pass": true,
+          "actual": 8,
+          "expected": 8,
+          "note": ""
+        },
+        {
+          "id": "delta_sign_evidence_matches_source",
+          "pass": true,
+          "actual": "3,291,837",
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
+          "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
+        },
+        {
+          "id": "item_to_amount_relationship",
+          "pass": true,
+          "actual": {
+            "nearestPrecedingItemCode": "010",
+            "resultPreviousBudget": 38472070
+          },
+          "expected": {
+            "itemCode": "010",
+            "previousBudget": 38472070
+          },
+          "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
+        },
+        {
+          "id": "expense_to_amount_relationship",
+          "pass": true,
+          "actual": {
+            "expenseCode": "01-95",
+            "hasTriple": true
+          },
+          "expected": {
+            "expenseCode": "01-95",
+            "hasTriple": true
+          },
+          "note": "The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row."
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "caseId": "case-003",
+      "engine": "pymupdf-baseline",
+      "engineVersion": "1.28.2",
+      "evaluatedAt": "2026-09-26T07:37:22.814Z",
+      "summary": {
+        "total": 11,
+        "passed": 10,
+        "failed": 1
+      },
+      "checks": [
+        {
+          "id": "item_name_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": "総務本省共通費",
+          "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
+        },
+        {
+          "id": "item_name_present_among_candidates",
+          "pass": true,
+          "actual": [
+            {
+              "itemCode": "010",
+              "itemName": "総  務  本  省"
+            },
+            {
+              "itemCode": "010",
+              "itemName": "総務本省共通費"
+            },
+            {
+              "itemCode": "001",
+              "itemName": "既定定員に伴う経費"
+            },
+            {
+              "itemCode": "001",
+              "itemName": "人    件    費               33,430,013      37,142,329                                     3,712,316 (令和4年度末定員)特  別  職        20人"
+            }
+          ],
+          "expected": {
+            "itemCode": "010",
+            "itemName": "総務本省共通費"
+          },
+          "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
+        },
+        {
+          "id": "expense_name_exact_match_after_line_join",
+          "pass": true,
+          "actual": "総務本省一般行政に必要な経費",
+          "expected": "総務本省一般行政に必要な経費",
+          "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
+        },
+        {
+          "id": "previous_budget_exact_match",
+          "pass": true,
+          "actual": 38472070,
+          "expected": 38472070,
+          "note": ""
+        },
+        {
+          "id": "fy2024_request_exact_match",
+          "pass": true,
+          "actual": 41763907,
+          "expected": 41763907,
+          "note": ""
+        },
+        {
+          "id": "signed_delta_exact_match",
+          "pass": true,
+          "actual": 3291837,
+          "expected": 3291837,
+          "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
+        },
+        {
+          "id": "unit_exact_match",
+          "pass": true,
+          "actual": "千円",
+          "expected": "千円",
+          "note": ""
+        },
+        {
+          "id": "page_identification",
+          "pass": true,
+          "actual": 8,
+          "expected": 8,
+          "note": ""
+        },
+        {
+          "id": "delta_sign_evidence_matches_source",
+          "pass": true,
+          "actual": "3,291,837",
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
+          "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
+        },
+        {
+          "id": "item_to_amount_relationship",
+          "pass": true,
+          "actual": {
+            "nearestPrecedingItemCode": "010",
+            "resultPreviousBudget": 38472070
+          },
+          "expected": {
+            "itemCode": "010",
+            "previousBudget": 38472070
+          },
+          "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
+        },
+        {
+          "id": "expense_to_amount_relationship",
+          "pass": true,
+          "actual": {
+            "expenseCode": "01-95",
+            "hasTriple": true
+          },
+          "expected": {
+            "expenseCode": "01-95",
+            "hasTriple": true
+          },
+          "note": "The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row."
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "caseId": "case-003",
+      "engine": "docling",
+      "engineVersion": "2.130.0",
+      "evaluatedAt": "2026-09-26T07:37:22.815Z",
+      "summary": {
+        "total": 11,
+        "passed": 3,
+        "failed": 8
+      },
+      "checks": [
+        {
+          "id": "item_name_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": "総務本省共通費",
+          "note": "Only passes if the harness resolved a single unambiguous item-code row; see item_name_present_among_candidates for a diagnostic on ambiguous pages."
+        },
+        {
+          "id": "item_name_present_among_candidates",
+          "pass": false,
+          "actual": [
+            {
+              "itemCode": "010",
+              "itemName": "総務本省 010 総務本省共通費 01-95 総務本省一般行政に必要な経費"
+            },
+            {
+              "itemCode": "316",
+              "itemName": "712, 3, 特"
+            }
+          ],
+          "expected": {
+            "itemCode": "010",
+            "itemName": "総務本省共通費"
+          },
+          "note": "Diagnostic only: on a page with multiple item-code-shaped rows, this checks whether the correct row was extracted and reconstructed correctly at all, independent of whether the harness's single-match selection resolved it into `result`."
+        },
+        {
+          "id": "expense_name_exact_match_after_line_join",
+          "pass": false,
+          "actual": null,
+          "expected": "総務本省一般行政に必要な経費",
+          "note": "Deterministic line-join only (common.mjs joinWrappedLabel); no semantic repair."
+        },
+        {
+          "id": "previous_budget_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": 38472070,
+          "note": ""
+        },
+        {
+          "id": "fy2024_request_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": 41763907,
+          "note": ""
+        },
+        {
+          "id": "signed_delta_exact_match",
+          "pass": false,
+          "actual": null,
+          "expected": 3291837,
+          "note": "FAIL here must mean the engine failed to preserve/associate the sign, not that we substituted the ground-truth sign."
+        },
+        {
+          "id": "unit_exact_match",
+          "pass": true,
+          "actual": "千円",
+          "expected": "千円",
+          "note": ""
+        },
+        {
+          "id": "page_identification",
+          "pass": true,
+          "actual": 8,
+          "expected": 8,
+          "note": ""
+        },
+        {
+          "id": "delta_sign_evidence_matches_source",
+          "pass": true,
+          "actual": null,
+          "expected": "does not contain △ (source-derived Ground Truth deltaRaw carries no decrease glyph)",
+          "note": "Checks whether the ground-truth-blind normalizer output's observed sign evidence agrees with the source-derived Ground Truth's own deltaRaw glyph state — in either direction, not only \"glyph present\". This check is narrowly about glyph-fabrication avoidance, not overall delta-extraction completeness (see signed_delta_exact_match / previous_budget_exact_match / fy2024_request_exact_match for that): when Ground Truth expects no glyph, a null deltaRaw (nothing extracted, nothing fabricated) also PASSes this specific check, because no false decrease indicator was introduced — it is not evidence that the engine successfully recovered the delta value. A PASS when a glyph IS expected still requires the glyph to be genuinely present in the engine's own raw output and associated with this delta value by the deterministic normalizer, exactly as before. For a flat-line engine (pdfjs-baseline, pymupdf-baseline), a present deltaRaw is a single literal raw-line substring. For a table-cell engine (docling), a present deltaRaw may instead be a normalizer-constructed concatenation of two separate raw cells (a glyph-only cell and a magnitude cell) that the same table row placed together — still traceable to genuine raw engine output, never to the ground truth, but not necessarily one literal raw token."
+        },
+        {
+          "id": "item_to_amount_relationship",
+          "pass": false,
+          "actual": {
+            "nearestPrecedingItemCode": null,
+            "resultPreviousBudget": null
+          },
+          "expected": {
+            "itemCode": "010",
+            "previousBudget": 38472070
+          },
+          "note": "The amount triple must belong to the expense row nested under the correct item-code row, not merely appear somewhere on the page."
+        },
+        {
+          "id": "expense_to_amount_relationship",
+          "pass": false,
+          "actual": null,
+          "expected": {
+            "expenseCode": "01-95",
+            "hasTriple": true
+          },
+          "note": "The amount triple must be parsed from the same structural row as the expense code, not an adjacent/unrelated row."
+        }
+      ]
+    }
+  ]
+}

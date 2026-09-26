@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### case-003 first frozen benchmark run (branch: research/case-003-mic-preregistration)
+
+- **Observation/diagnosis only. No adaptation, no code change.**
+- Ran `npm run docbench -- case-003` (after the generic `npm run extract` prerequisite, which reprocessed all four locked sources and produced byte-identical hashes for the three already-processed ones) for the first time against the already-frozen Ground Truth (`1bc6c4e`), protocol (`8b65364`), and selection (`31c4626`), all reverified unchanged.
+- **Scores: pdfjs-baseline 9/11, pymupdf-baseline 10/11, docling 3/11** — higher on the flat-text engines than either case-001 (8/11, 8/11) or case-002 (3/11, 4/11), explained by one specific, source-observable fact (the target row's remarks/備考 column is visually empty, so `common.mjs`'s `splitTrailingTriple` succeeds unmodified on the raw reconstructed line), not by MIC being a generally easier document family.
+- Confirmed, on a second/third independent ministry: the header-row hierarchy ambiguity (now 3/3 cases), the `common.mjs` CJK-wrap-space-closing gap affecting pdfjs-baseline only (now 2/2 cases with the exact same pdfjs-FAIL/pymupdf-PASS split), and page-level unit-label recovery tracking page context rather than engine or ministry (now 2/2 cases with a label present).
+- Docling again scored 3/11, via a grid-misalignment failure whose specific mechanism differs from case-002's: case-002's grid *split* a paired code+label across unconnected cells; case-003's grid *over-merged* three rows' codes+labels into one cell. Notably, case-003's Docling failure is an **honest null** (two visibly wrong-shaped candidates, correctly not promoted to `result`), not case-002's confidently-wrong silent answer — a materially better failure mode on the same engine, recorded as a genuine difference, not glossed over.
+- New artifact: a false-positive item-code-shaped candidate (`316`, from a reversed numeric-token fragment plus a stray character) — not previously observed on case-001/002.
+- **Also surfaced, and explicitly disclosed as distinct from the above semantic findings: a `docbench` harness-reliability issue.** The Docling adapter's raw output intermittently failed to be written when invoked via Node's `spawnSync` in this session (no subprocess output at all reaching the parent on the failing attempts), while direct shell invocation of the identical, unmodified script succeeded every time. Two full `npm run docbench -- case-003` runs did complete successfully in the same session, reproducing byte-identical scores, and a `case-002` control run succeeded immediately with unchanged historical results — so this is not a `case-002` regression and not a benchmark-semantics defect, but an unresolved, unrooted-caused infrastructure question. No code was changed to investigate or work around it.
+- Full analysis: `reports/document-understanding/20260926_1637_Case003_First_Frozen_Benchmark_Run.md`.
+- Files: `evidence/document-understanding/case-003-results.json` (new), `reports/document-understanding/case-003-evaluation.md` (new), `reports/document-understanding/20260926_1637_Case003_First_Frozen_Benchmark_Run.md` (new), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+
 ### case-003 Ground Truth frozen (branch: research/case-003-mic-preregistration)
 
 - **Ground Truth creation only. No benchmark engine run against MIC.**
