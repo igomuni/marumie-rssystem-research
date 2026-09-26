@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### research: survey MEXT text grammar anomalies (branch: research/case-004-mext-preregistration)
+
+- **Exploratory, read-only survey, analytically separate from the geometry channel (`075474e`). No production/schema change, no Ground Truth/benchmark change, no new benchmark target.**
+- Defined a generic ledger grammar (code-shaped lines, trailing amount triples, dense-numeric-unmatched lines — the same generic shapes already validated across four cases' own rows, used here only as generic definitions) **before** running any analysis, and froze feature/threshold/ranking definitions before looking up any known page from the prior survey.
+- Computed 5 pure-text-only, coordinate-free per-page signals (`maxDenseNumericUnmatchedRun`/`transitionBounded`, `denseNumericUnmatchedCount`, `codeShapedRhythmRatio`, `numericRatioVariance`, `wordCountVariance`) from the already-existing `derived/pdf-extraction/*.lines.jsonl` across all 1,338 MEXT pages, via a scratch, **uncommitted** script.
+- **Honest headline result, not softened**: the known flagship anomaly page (`pdfPageIndex` 1326) never enters even a top-10% review set on any of the 4 scored signals (best rank 187/1338 ≈ top 14%) — materially weaker than the geometry channel's own ~top-4% showing for the same page. Only 2 of 7 known family pages (`pdfPageIndex` 84, 845) reach the top 10% on any text/grammar signal.
+- **Despite that weaker showing, the text channel independently surfaced two new, previously-unknown instances** the geometry survey's own small inspected sample had not included: `pdfPageIndex` 182 (a new instance of the same `事務事業別内訳表`-shaped matrix family) and `pdfPageIndex` 770 (a related, but distinct, per-region travel-cost itemization family). **Conclusion: the two channels are complementary, not redundant — neither alone is currently sufficient.**
+- Disclosed, without correcting or re-running, a genuine implementation flaw discovered via inspection: the unanchored `NN-NN`-shaped regex used for "code-shaped line" classification incidentally matches substrings inside ordinary long dash-segmented subordinate codes (e.g., `95016-2111-...` contains an accidental `16-21` match), contaminating `codeShapedRhythmRatio`'s low tail with false positives — confirmed directly via `pdfPageIndex` 4, an inspected page that turned out to be genuinely ordinary (a disclosed detector false positive, the first one found across both anomaly surveys).
+- Corrected an inaccuracy from the prior survey without retroactively editing its frozen report: `pdfPageIndex` 1326's leftmost column value `111` is the row's own request number (要求番号), not an item code as previously described.
+- Investigated (not implemented) the user's request-scope hypothesis: in the 2 instances actually checked (`pdfPageIndex` 1326, 1278), the request-number column does not reset or repeat across the internal representation change, source-supported but not exhaustively verified across the rest of the known family.
+- No ADR added — this task proposes future architecture directions without implementing any of them.
+- Full report: `reports/document-understanding/20260927_0637_MEXT_Text_Grammar_Transition_Anomaly_Survey.md`.
+- Files: the survey report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No experiment code committed (kept in this session's own scratch directory). No source-acquisition, benchmark, normalization, evaluator, selection-protocol, selection-record, or Ground Truth file modified; no rendered images staged.
+- **Recommended next step**: redefine `transitionBounded`'s "before" condition to accept a blank-triple code-shaped header line (matching the known family's own shape) and re-run the same frozen signals to see whether more of the family lands in a practical review set — still read-only, no new benchmark target.
+
 ### research: survey MEXT structural anomaly signals (branch: research/case-004-mext-preregistration)
 
 - **Exploratory, read-only survey. No production/schema change, no Ground Truth/benchmark change, p1327 not registered as a benchmark target.**
