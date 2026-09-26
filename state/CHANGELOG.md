@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### research: survey MEXT Docling table anomalies (branch: research/case-004-mext-preregistration)
+
+- **Exploratory, read-only survey, independent of both the geometry (`075474e`) and text/grammar (`a9c0092`) channels. No production/schema change, no Ground Truth/benchmark change, no new benchmark target.**
+- Confirmed, by direct inspection of the already-committed adapter and one existing raw artifact (not by assumption), Docling's actual raw schema: per-page `tables` (numRows/numCols/cells with row/col/rowSpan/colSpan/text), non-table `texts` (plain strings only, in this repository's current adapter), and a confirmed-but-unexploited `bbox` attribute on cell objects.
+- Ran a standalone, **uncommitted** research-only Python script that calls Docling's `DocumentConverter` directly — never reading case-004's Ground Truth and never reusing the production `normalize-docling.mjs` normalizer — against a **fixed, predeclared 16-page sample** (7 already-confirmed-ordinary baseline pages + the 9 known/reference anomaly pages from the prior two surveys). This is explicitly **not** a whole-document run: each Docling page conversion reloads the full layout+TableFormer model pipeline, judged computationally excessive for this task's scope. This scope decision, and its consequence that no whole-document percentile claim can be made, is the survey's central, disclosed limitation.
+- **Headline finding, within this small sample only**: `maxNumCols` (the largest table's own column count) cleanly separates the two groups with **zero overlap** — every baseline page ≤9, every known/reference page ≥11 — a cleaner small-sample separation than either prior channel's own whole-document-scale best signal achieved, but explicitly **not proven to generalize** beyond this specific 16-page sample.
+- **Critical honest finding**: Docling represents the visually two-layer p1327-type page as **one single merged table** (`tableCount=1`, `incompatibleGridsFlag` never fired across any of the 16 pages) — the "two-layer" structure observed by direct visual inspection in `075474e` is only indirectly visible via elevated spanning-cell counts within that one wide table (e.g. `pdfPageIndex` 1326: 16 spanning cells, 182: 29, 264: 12), not as two separate, independently-identifiable regions. This is disclosed as an **engine segmentation choice**, not new source evidence — conflating the two was explicitly avoided throughout.
+- Because the sample was fixed rather than whole-document, **no genuinely new blind candidate could be surfaced** in this task — a disclosed deliverable gap relative to the geometry and text/grammar surveys' own genuine blind discoveries.
+- All three channels (geometry, text/grammar, Docling-native) independently agree on `pdfPageIndex` 84 and 845 as anomalous — the clearest cross-channel confirmation found across all three surveys.
+- Flagged a concrete MOF-CSV provenance risk: Docling's own single-table merging removes the very seam a canonical-hierarchy mapping would need to split ledger cells from embedded-matrix cells within the same table object.
+- No ADR added — this task proposes future architecture directions without implementing any of them.
+- Full report: `reports/document-understanding/20260927_0656_MEXT_Docling_Table_Region_Anomaly_Survey.md`.
+- Files: the survey report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No experiment code committed (kept in this session's own scratch directory). No source-acquisition, benchmark, normalization, evaluator, selection-protocol, selection-record, or Ground Truth file modified; no rendered images staged.
+- **Recommended next step**: run the same frozen `maxNumCols`/`totalSpanningCellCount` extraction across a genuinely broad, machine-selected 100–150-page sample spanning the whole document, to test whether the clean small-sample separation survives a larger, more varied baseline — still read-only, no new benchmark target.
+
 ### research: survey MEXT text grammar anomalies (branch: research/case-004-mext-preregistration)
 
 - **Exploratory, read-only survey, analytically separate from the geometry channel (`075474e`). No production/schema change, no Ground Truth/benchmark change, no new benchmark target.**
