@@ -64,7 +64,12 @@ This axis is **completely independent of document/layout family** — fsa and mo
 
 This is where this pass's own mechanical multi-page scan (a coarse but exhaustive per-page signal check across all 31 in-scope documents, described in the accompanying scratch analysis, not committed as production code) produced genuinely new findings, deliberately testing rather than extending the case-004 "zero-or-one-page-back" hypothesis:
 
-**3.4.1 Column-header repeat behavior**: Confirmed **near-universal every-page repetition** — 30 of 31 authorities show the standard column header (要求番号/事項/前年度予算額/対前年度比較増△減/備考) on essentially every ledger page (header-presence ratio ≥ 0.97 across the full ledger page range in every case checked). This is now a *confirmed, population-wide* convention, not a single-case observation.
+**3.4.1 Column-header repeat behavior**: Confirmed **near-universal every-page repetition** — **exactly 30 of 31** in-scope authorities show the standard column header (要求番号/事項/前年度予算額/対前年度比較増△減/備考) on **literally every** ledger page (mechanical ratio = 1.0, checked across the document's own full ledger page range in each case). The remaining 2 authorities are not counter-examples but each has a directly-confirmed, benign explanation:
+
+- **文部科学省 (mext)**: ratio 0.999 (1,338 of 1,339 ledger pages). The one exception, page 1,044, is a genuinely **blank page** inserted immediately before organization `030 文化庁`'s own section begins on the next page — a print-layout convention (new organization starting on a fresh page), not a content gap.
+- **裁判所 (courts)**: ratio 0.967 (117 of 121 ledger pages). The four exceptions, pages 112–115, are **not gaps at all** but a different, self-contained table type embedded within the same combined file: page 113 is titled `令和６年度概算要求定員表` (a FY2024 staffing/personnel request table, unit `人` [people], columns 削減/振替/増△減 — a completely different grammar from the standard amount ledger), flanked by two blank separator pages (112, 114). This is the same *content type* (定員表) that case-004/MEXT ships as a **separate file** in its own 4-file split — 裁判所 instead **embeds** it inside the same combined document, a genuine packaging-model variation for the identical document type, confirmed by direct content inspection rather than inferred from the ratio alone.
+
+Both exceptions are therefore additional, disclosed instances of the "embedded self-contained sub-structure" pattern already established elsewhere in this census (MEXT's own 事務事業別内訳表 anomaly family, the 国庫債務負担行為 commitment boxes in §3.4.2) — not evidence against the population-wide header-repeat convention itself.
 
 **3.4.2 Unit-declaration scope — NOT binary, at least three distinct mechanisms, refining (not contradicting) case-004's own finding**:
 

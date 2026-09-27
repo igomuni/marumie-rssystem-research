@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- explain the 2 header-ratio exceptions (branch: research/fy2024-all-authority-format-census)
+
+- **Follow-up investigation, updating the checkpoint report in place. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- The user asked for the breakdown behind the checkpoint's own "30/31 authorities at ratio >=0.97" column-header finding. Investigation confirmed exactly 30/31 in-scope authorities sit at literally ratio=1.0 (every single ledger page shows the header), with the 2 non-1.0 authorities each traced to a specific, benign, directly-confirmed cause rather than a genuine content gap:
+  - **文部科学省 (mext, ratio 0.999)**: the sole exception page is a genuinely blank page inserted immediately before organization `030 文化庁`'s own section begins -- a print-layout convention (new organization starting on a fresh page).
+  - **裁判所 (courts, ratio 0.967)**: the 4 exception pages are not gaps at all -- one is a `令和６年度概算要求定員表` (a staffing/personnel request table, unit "人", entirely different columns from the standard amount ledger), flanked by 2 blank separator pages. This is the same content TYPE that case-004/MEXT ships as a separate file in its own 4-file split; courts instead embeds it inside the same combined document -- a genuine packaging-model variation for identical content, confirmed by direct page inspection.
+- Both exceptions are additional, disclosed instances of the "embedded self-contained sub-structure" pattern already established elsewhere in this census, not counter-evidence against the population-wide header-repeat convention.
+- Files: `reports/document-understanding/20260927_2110_FY2024_Census_Checkpoint_Overview.md` (revised in place, §3.4.1 expanded), `state/{TODO.md,CHANGELOG.md}`.
+
 ### research: FY2024 format census -- context sampling and checkpoint (branch: research/fy2024-all-authority-format-census)
 
 - **Multi-page/context-carry-over sampling across all 31 in-scope authorities, plus a checkpoint report. Stops before Case-006 per explicit instruction. No row selection, no Ground Truth, no benchmark engine run, no schema/production change, no case-006 started.**
