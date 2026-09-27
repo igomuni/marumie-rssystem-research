@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### research: freeze case-006 ground truth (branch: research/case-006-moj-source-survey)
+
+- **Ground Truth frozen from direct visual source evidence only. No benchmark engine or OCR system was run before or during the freeze.**
+- Re-verified pre-task HEAD (`e2253ee`, matching exactly), source SHA-256 (unchanged), and the frozen selection locator against a fresh 400 dpi render -- no mismatch found.
+- Transcribed via direct human visual inspection only (no OCR, no text extraction, no `pypdf`, no benchmark engine): itemCode `010`/`法務本省共通費`, requestNo `1` (from `①`), expenseCode `01-95`/`法務本省一般行政に必要な経費`, previousBudget `112183723`, fy2024Request `131650389`, deltaRaw `"19,466,666"` (no `△` glyph, confirmed positive from glyph evidence alone via an isolated zoomed crop, before any arithmetic check), unit `千円`.
+- **Unit scope freshly investigated on the target page itself, not assumed by analogy**: confirmed the unit is declared directly on the target page (page-level), a genuine, disclosed difference from case-004/MEXT's own table-wide-remote convention, matching case-002/003/005's own same-page pattern instead.
+- Expense-name wrap confirmed as 2 raw printed lines, joined with no inserted space (a layout-driven mid-word break). Remarks column confirmed empty for the target row.
+- Arithmetic validation performed only after independent transcription and sign determination: `131,650,389 − 112,183,723 = 19,466,666`, matching exactly. No ambiguity encountered.
+- **Recorded a Case-006-specific vector-outline provenance note**: the source's own internal vector-path/object geometry was never used to estimate or cross-check any character value in this Ground Truth, kept strictly separate as a document-level representation fact.
+- Files: `fixtures/document-understanding/case-006/ground-truth.json` (schema-compatible with case-001-005's own existing schema) + `20260928_0803_Case006_Ground_Truth_Evidence.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: selection protocol, selection record, source survey, evidence JSON, and the Case-006-010 Selection Freeze all byte-identical to their own freeze commits; case-001-005 unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: run the existing, unmodified benchmark pipeline against this Ground Truth for the first time, preserving whatever result occurs, per the Case-006-010 Selection Freeze's own frozen methodology note.
+
 ### research: freeze case-006 row selection (branch: research/case-006-moj-source-survey)
 
 - **Selection execution only, applying the already-frozen protocol without modification. No Ground Truth, no amount transcription, no benchmark engine or OCR run.**

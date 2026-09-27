@@ -97,7 +97,16 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-006 法務省 (MOJ) row selection (branch: research/case-006-moj-source-survey) — SELECTED, no Ground Truth yet
+## Case-006 法務省 (MOJ) Ground Truth (branch: research/case-006-moj-source-survey) — FROZEN, no benchmark run yet
+
+- **Frozen**: `fixtures/document-understanding/case-006/ground-truth.json` + `20260928_0803_Case006_Ground_Truth_Evidence.md`. Transcribed via direct 400dpi visual render only (no OCR, no text extraction, no benchmark engine). Result: itemCode `010`/`法務本省共通費`, requestNo `1` (from `①`), expenseCode `01-95`/`法務本省一般行政に必要な経費`, previousBudget `112183723`, fy2024Request `131650389`, deltaRaw `"19,466,666"` (no `△` glyph, positive), unit `千円` (page-level — confirmed directly on the target page itself, a genuine, disclosed difference from case-004/MEXT's own table-wide-remote convention, matching case-002/003/005's own same-page pattern).
+- Arithmetic check PASS (131,650,389 − 112,183,723 = 19,466,666), computed only after independent transcription and glyph-based sign determination.
+- Remarks column confirmed empty for the target row.
+- **Case-006-specific vector-outline provenance note recorded**: source has no extractable text layer; every value was human-transcribed from a rendered image; the PDF's own vector-path/object geometry was never used to estimate or cross-check any character value.
+- No ambiguity encountered.
+- **Next action (not started)**: run the existing, unmodified benchmark pipeline against this Ground Truth for the first time (Case-006's own first frozen benchmark run), preserving whatever result — including a null/empty one — occurs, per the Case-006–010 Selection Freeze's own frozen methodology note (analyze as a pipeline-applicability-boundary finding, not an ordinary document-understanding failure).
+
+## Case-006 法務省 (MOJ) row selection (branch: research/case-006-moj-source-survey) — SELECTED, Ground Truth now frozen (see above)
 
 - **Selected**: `fixtures/document-understanding/case-006/20260928_0742_Case006_Selection_Record.md`. Applied the frozen protocol via direct visual inspection only (no OCR, no text extraction) on `pdfPageIndex` 8 (the universe's own first page). Two organization/item aggregate rows rejected at C1 (no native identifier); the third row — request no. `①`, expense code `01-95`, `法務本省一般行政に必要な経費` (2-line visual wrap) — passed C1–C4 and was accepted as the winner immediately, per the protocol's own "stop at first full pass" rule.
 - **Universe upper boundary remains unresolved and unnecessary** — the winner was found on the universe's very first page, so no boundary investigation was needed or performed.

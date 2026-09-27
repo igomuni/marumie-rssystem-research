@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-006",
+  "sourceId": "moj-fy2024-general-account-expenditure-request",
+  "sourceSha256": "bd5ce9c5dee48b03407e9a8d4050f3992c8a515f510c0339364316448dd9cf8c",
+  "pdfPageIndex": 8,
+  "pdfPageNumber": 9,
+  "printedPageLabel": "法（本） 5",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). This source has NO extractable text layer (confirmed exhaustively across all 737 pages in the Case-006 source survey); every field below was transcribed by direct human visual inspection of a 400dpi render, never via OCR, text extraction, or any benchmark engine. Row selected under fixtures/document-understanding/case-006/20260928_0711_Case006_Selection_Protocol.md and frozen in fixtures/document-understanding/case-006/20260928_0742_Case006_Selection_Record.md before this file was created. Unit is confirmed page-level (declared directly on this target page itself, unlike case-004/MEXT's table-wide-remote convention) -- a genuine, disclosed difference from case-004, matching case-002/003/005's own same-page pattern. See fixtures/document-understanding/case-006/20260928_0803_Case006_Ground_Truth_Evidence.md for the raw/visual transcription, rendering method, delta-sign-from-glyph-evidence determination, unit evidence/scope, and post-hoc arithmetic consistency check underlying every field below.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "法務本省共通費",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "法務本省一般行政に必要な経費",
+    "previousBudget": 112183723,
+    "fy2024Request": 131650389,
+    "deltaRaw": "19,466,666",
+    "delta": 19466666,
+    "unit": "千円",
+    "page": 8
+  }
+}
