@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+### research: close case-005 five-ministry phase (branch: research/case-005-mlit-source-survey)
+
+- **Chronology/integrity audit and closeout documentation only. PR opened, left OPEN, not merged.**
+- Fresh-fetched and confirmed branch baseline exactly matched expectations: `HEAD` `7fe3ce9`, `origin/main` `34c9424`, merge-base = `origin/main` (clean linear branch), working tree clean.
+- Verified branch chronology directly from `git log`: source survey → protocol freeze → selection freeze → GT freeze → first benchmark → five-ministry synthesis → Case Package concept design, in that order, with zero `scripts/` changes anywhere on the branch (`git diff --stat origin/main...HEAD -- scripts/` empty) confirming no production adaptation is hidden between any of these checkpoints.
+- Diffed all four case-005 frozen artifacts (selection protocol `9b292c0`, selection record `bab422f`, Ground Truth `e1ed08e`, first frozen benchmark `6d16324`) against current `HEAD` — byte-identical in every case.
+- Re-verified MLIT source identity directly from `sources/source-lock.json`/`source-registry.csv` (SHA-256 `4eebb84c...`, 1,097 pages — matches expected exactly) and confirmed the raw PDF is git-ignored and untracked; confirmed no PDF file is tracked anywhere in the repository.
+- **Re-verified the five-ministry synthesis's own score claims directly against live `evidence/document-understanding/case-NNN-results.json` for all five cases**, not merely by re-reading the report: current scores (8/8/9, 4/4/3, 10/10/3, 7/7/5, 10/10/10) and first-frozen scores for case-002/003 (re-derived via `git show` at their own freeze commits: 2/3/2, 9/10/3) both matched the synthesis report's own tables exactly; `item_name_exact_match` reconfirmed FAIL in all 15 engine-runs directly from the JSON. **No factual correction was required in the synthesis report.**
+- Confirmed the Case Package v0 concept-design document explicitly self-identifies as a non-final "design candidate for review, not an ADR" with no schema/implementation, and retains every required invariant (GT isolation, source-safe/engine-derived provenance, raw/normalized separation, unknown/absent/ambiguous distinction, context-mechanism separation, first-frozen history preservation, Strategy Selection boundary, unresolved open questions). **The document's own body was not rewritten.**
+- Recorded, without resolving or schematizing, two pre-schema review issues raised in chat-side review: (A) treating `Context Requirement` uniformly as source-safe may be too strong — future schema should consider splitting `sourceContextRelation` from `interpretationContextRequirement`; (B) Evaluation's unrestricted read access to all lower layers may be too broad — future schema should consider per-check declared allowed-evidence-layers distinguishing ordinary semantic checks from representation/provenance diagnostics.
+- Ran `npm run validate` (PASS) and `git diff --check` (clean). Confirmed repository hygiene: no raw PDFs, render scratch, secrets, temporary scripts, generated schema, or migration artifacts among the changed files.
+- Wrote `reports/document-understanding/20260927_1011_Case005_Five_Ministry_Phase_Closeout.md` (concise, not a copy of any existing report) and opened a PR from `research/case-005-mlit-source-survey` to `main`, titled "research: add MLIT case-005 and five-ministry synthesis" — **left OPEN, not merged**, per this task's own stop condition.
+- Files: the closeout report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No `scripts/`, case-001–005 fixture/evidence/benchmark file, or source lock/registry file modified.
+- No schema prototype, PDF→MOF linkage experiment, case-006 work, benchmark rerun, Ground Truth change, or production adaptation was performed.
+- **Recommended next step**: review and, if satisfactory, merge the PR; the next research phase (sixth ministry, Case Package schema prototype, or PDF→MOF linkage feasibility) has not been selected.
+
 ### research: design Case Package v0 concept (branch: research/case-005-mlit-source-survey)
 
 - **Concept-design/architecture-review candidate only. Not an ADR. No schema, migration, production code, benchmark change, Ground Truth change, source inspection, or new experiment.**
