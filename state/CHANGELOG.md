@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: freeze case-006 selection protocol (branch: research/case-006-moj-source-survey)
+
+- **Protocol design and freeze only. No candidate row enumerated or selected. No Ground Truth. No benchmark engine or OCR run.**
+- Re-verified the source's own SHA-256 (unchanged) and re-rendered PDF page 9 directly in this task to re-confirm the 明細表's own opening page, rather than merely re-citing the source survey.
+- Froze the selection universe: organization `010 法務本省`, `pdfPageIndex` 8 (confirmed exact) through an explicitly **unresolved** upper bound -- organization `020`'s own exact PDF page was not confirmed or extrapolated with confidence, per explicit instruction not to extrapolate; recorded honestly as unresolved, matching the discipline already used in case-004/005's own protocols for analogous uncertain boundaries.
+- Independently re-derived eligibility criteria C1-C4 (native identifier, multi-line wrap, amount triple, self-contained sufficiency) via a full critique table against case-002 through case-005's own criteria -- not copied.
+- **Added a new precondition, P2 (multi-grammar exclusion)**: MOJ's own single combined file mixes three distinct grammars (総表, 明細表, 定員表) in one document -- the first Case-006-010 candidate needing this exclusion made fully explicit as its own precondition, separate from the "correct table" precondition that only ever addressed a two-grammar concern in case-005's own protocol.
+- **Explicitly excluded representation (vector-outline/raster status) as an eligibility criterion** -- added to the non-criteria list alongside vector path/object count, the already-known expected null benchmark result, OCR/vision-method feasibility, and the standard delta-sign/remarks/MOF-correspondence exclusions.
+- **Froze a navigation method specific to a textless source** (cover-page TOC -> organization locator -> printed-to-PDF-page mapping -> visual top-to-bottom scan), explicitly noting no text-search-based navigation is possible at all for this source -- a constraint no prior case's own protocol needed to state, since case-001-005 all retained at least the theoretical possibility of text-based page-finding.
+- Disclosed prior exposure to the same first-eligible-row-shaped template already disclosed in the source survey -- no amount transcribed, no row selected.
+- Files: `fixtures/document-understanding/case-006/20260928_0711_Case006_Selection_Protocol.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: source survey and evidence JSON byte-identical to their own freeze commit; Case-006-010 Selection Freeze byte-identical; case-001-005 unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: apply this frozen protocol via direct visual inspection to select exactly one row, create a selection record, and stop before Ground Truth.
+
 ### research: survey Case-006 MOJ raster source (branch: research/case-006-moj-source-survey)
 
 - **Source survey only. No selection protocol, no row selection, no Ground Truth, no benchmark run, no OCR experiment.**

@@ -97,7 +97,16 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-006 法務省 (MOJ) source survey (branch: research/case-006-moj-source-survey) — complete, no selection yet
+## Case-006 法務省 (MOJ) selection protocol (branch: research/case-006-moj-source-survey) — FROZEN, no row selected yet
+
+- **Frozen**: `fixtures/document-understanding/case-006/20260928_0711_Case006_Selection_Protocol.md`. Universe = organization `010 法務本省`, `pdfPageIndex` 8 (re-verified this task) through an **unresolved** upper bound (organization `020`'s own exact PDF page not confirmed, per explicit instruction not to extrapolate with confidence).
+- **Eligibility C1–C4** (native identifier, multi-line wrap, amount triple, self-contained sufficiency) independently re-derived for MOJ, not copied from case-005. **New precondition P2 (multi-grammar exclusion)** added — MOJ's own file mixes 3 grammars (総表/明細表/定員表) in one document, the first Case-006–010 candidate needing this exclusion made explicit rather than folded into a single "correct table" precondition.
+- **Representation (vector-outline, zero extractable text) is explicitly NOT an eligibility criterion** — listed in the non-criteria (§7) alongside vector-path/object count, expected null benchmark result, OCR feasibility, and the usual delta-sign/remarks/MOF-correspondence exclusions.
+- **Navigation method frozen for a textless source**: cover-page TOC → organization locator → printed-to-PDF-page mapping → visual top-to-bottom scan — explicitly noting no text-search-based navigation is possible at all (unlike every prior case, which retained at least the theoretical possibility).
+- Prior exposure disclosed (same first-eligible-row-shaped template as the source survey's own disclosure) — no amount transcribed, no row selected.
+- **Next action (not started)**: apply this protocol via direct visual inspection to select exactly one row, create a selection record, stop before Ground Truth.
+
+## Case-006 法務省 (MOJ) source survey (branch: research/case-006-moj-source-survey) — complete, protocol now frozen (see above)
 
 - **Report**: `reports/document-understanding/20260928_0703_Case006_MOJ_Source_Survey.md` + `evidence/document-understanding/case-006-source-representation.json`. Re-verified existing raw source SHA-256 (unchanged, no re-download).
 - **Central finding, refining (not contradicting) the frozen raster-only premise**: MOJ's own pages contain zero extractable text (exhaustively confirmed across all 737 pages via `pdftotext`) AND zero font/XObject/image resources (confirmed on 5 sampled pages via direct `pypdf` object inspection) — but the actual mechanism is **vector-outlined content** (thousands of filled Bézier-curve/line path operators per page), not an embedded raster/scanned bitmap image. This is a materially different technical category from a photographic scan, even though the symptom for a text-extraction pipeline is identical. No hidden/invisible OCR text layer found (zero `BT` text-object-begin operators anywhere sampled).
