@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-005",
+  "sourceId": "mlit-fy2024-general-account-expenditure-request",
+  "sourceSha256": "4eebb84cec72a4b3b11a2b89c41093550bef5a07095d5c7b178e238406b08217",
+  "pdfPageIndex": 28,
+  "pdfPageNumber": 29,
+  "printedPageLabel": "国（本） 19",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). Row selected under fixtures/document-understanding/case-005/20260927_0815_Case005_Selection_Protocol.md and frozen in fixtures/document-understanding/case-005/20260927_0823_Case005_Selection_Record.md before this file was created. See fixtures/document-understanding/case-005/20260927_0846_Case005_Ground_Truth_Evidence.md for the raw/visual transcription, rendering method, and arithmetic consistency check underlying every field below.",
+  "result": {
+    "itemCode": "002",
+    "itemName": "国土交通本省共通費",
+    "requestNo": "1",
+    "expenseCode": "05-95",
+    "expenseName": "国土交通本省一般行政に必要な経費",
+    "previousBudget": 118052728,
+    "fy2024Request": 136727866,
+    "deltaRaw": "18,675,138",
+    "delta": 18675138,
+    "unit": "千円",
+    "page": 28
+  }
+}

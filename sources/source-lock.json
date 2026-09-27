@@ -65,6 +65,19 @@
       "etag": "\"28acf2-6054a99f4e0a0\"",
       "lastModified": "Thu, 14 Sep 2023 05:03:48 GMT",
       "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "mlit-fy2024-general-account-expenditure-request",
+      "url": "https://www.mlit.go.jp/page/content/001630995.pdf",
+      "finalUrl": "https://www.mlit.go.jp/page/content/001630995.pdf",
+      "fetchedAt": "2026-09-26T23:03:27.167Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 2115896,
+      "sha256": "4eebb84cec72a4b3b11a2b89c41093550bef5a07095d5c7b178e238406b08217",
+      "etag": "W/\"55208c424cff22a15036224fa0afb5da\"",
+      "lastModified": "Wed, 11 Sep 2024 13:31:34 GMT",
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }
