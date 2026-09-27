@@ -97,7 +97,16 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-006–010 Selection Freeze (branch: research/fy2024-all-authority-format-census) — FROZEN, source survey not yet begun
+## Case-006 法務省 (MOJ) source survey (branch: research/case-006-moj-source-survey) — complete, no selection yet
+
+- **Report**: `reports/document-understanding/20260928_0703_Case006_MOJ_Source_Survey.md` + `evidence/document-understanding/case-006-source-representation.json`. Re-verified existing raw source SHA-256 (unchanged, no re-download).
+- **Central finding, refining (not contradicting) the frozen raster-only premise**: MOJ's own pages contain zero extractable text (exhaustively confirmed across all 737 pages via `pdftotext`) AND zero font/XObject/image resources (confirmed on 5 sampled pages via direct `pypdf` object inspection) — but the actual mechanism is **vector-outlined content** (thousands of filled Bézier-curve/line path operators per page), not an embedded raster/scanned bitmap image. This is a materially different technical category from a photographic scan, even though the symptom for a text-extraction pipeline is identical. No hidden/invisible OCR text layer found (zero `BT` text-object-begin operators anywhere sampled).
+- **Package model**: single combined 737-page file containing 3 internal sections (総表, 明細表 spanning 8 organizations, 定員表) — the same "multiple grammars in one file" pattern as 裁判所/Case-008, not previously recorded for MOJ.
+- Visual (non-OCR) inspection confirms the standard census ledger grammar throughout; layout is not new, only representation is.
+- Incidental exposure disclosed (a familiar first-eligible-row-shaped template seen while rendering the 明細表's own opening page) — no amounts transcribed, no row selected.
+- **Next action (not started)**: Case-006's own selection protocol freeze, per the frozen execution order.
+
+## Case-006–010 Selection Freeze (branch: research/fy2024-all-authority-format-census) — FROZEN, Case-006 source survey now complete (see above)
 
 - **Frozen**: `fixtures/document-understanding/fy2024-format-census/20260928_0642_Case006_010_Selection_Freeze.md`. After human review of the rationale review, the 5-case set is adopted unchanged in composition: 006 法務省 (raster-only), 007 内閣官房 (file-scoped context), 008 裁判所 (embedded multi-grammar), 009 内閣本府 (extreme split, exploratory), 010 厚生労働省 (large-scale stress).
 - **Execution order frozen as strictly one-case-at-a-time**: 006 → close out → 007 → close out → 008 → close out → 009 → close out → 010. Only the current case's own protocol is frozen at a time — later cases' protocols are NOT pre-frozen, since findings from earlier cases may change how later ones should be designed.

@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### research: survey Case-006 MOJ raster source (branch: research/case-006-moj-source-survey)
+
+- **Source survey only. No selection protocol, no row selection, no Ground Truth, no benchmark run, no OCR experiment.**
+- Re-verified the already-locked MOJ raw source's SHA-256 (unchanged, no re-download needed).
+- **Central finding, refining but not contradicting the frozen raster-only premise**: exhaustively confirmed (all 737 pages via `pdftotext`, not sampled) that MOJ's document has zero extractable text. Direct PDF object inspection (via `pypdf`, not a text-extraction library) on 5 sampled pages found zero font resources, zero image/XObject resources, and zero text-showing operators on every one -- but each page's substantial content stream (400KB-1.3MB) consists almost entirely of vector path-drawing operators (moveto/curveto/lineto, filled). MOJ's visible content, including everything that visually reads as Japanese text, is drawn as **filled vector path outlines**, not embedded raster images and not PDF text objects -- a materially different mechanism from a photographic scan, even though the symptom for a text-extraction pipeline is identical. No hidden/invisible OCR text layer was found (zero `BT` operators anywhere sampled).
+- Visual (non-OCR) rendering of 6 pages confirmed crisp, legible Japanese ledger text with no scan artifacts, consistent with vector-drawn content.
+- **Package model**: single combined 737-page file containing 3 internal sections (総表, 明細表 spanning 8 organizations, 定員表) -- the same multi-grammar-in-one-file pattern already found in 裁判所/Courts (Case-008), not previously recorded for MOJ; the 総表 itself is confirmed to carry the cross-reference-summary mechanism, also a new observation for this authority.
+- Confirmed the visual ledger grammar is identical to case-002-005's own standard grammar -- source *representation* is the only axis that differs from existing cases; layout does not differ.
+- Disclosed incidental exposure to a familiar first-eligible-row-shaped template seen while rendering the detail table's own opening page -- no amount transcribed, no row selected.
+- Files: `reports/document-understanding/20260928_0703_Case006_MOJ_Source_Survey.md` (22-section structure) + `evidence/document-understanding/case-006-source-representation.json` (explicitly a source-representation diagnostic, not a benchmark result). Re-verified: the Case-006-010 Selection Freeze document byte-identical to its own freeze commit; case-001-005 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged (no new source acquired).
+- **Recommended next step**: freeze Case-006's own selection protocol, per the frozen execution order, informed by this survey's own handoff facts without re-opening the raster-only premise.
+
 ### research: freeze Case-006-010 selection (branch: research/fy2024-all-authority-format-census)
 
 - **Selection freeze, following human review of the prior rationale review. Does not begin Case-006's own source survey, row selection, or Ground Truth.**
