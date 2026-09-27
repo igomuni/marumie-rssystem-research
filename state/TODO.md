@@ -97,7 +97,15 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-006 法務省 (MOJ) selection protocol (branch: research/case-006-moj-source-survey) — FROZEN, no row selected yet
+## Case-006 法務省 (MOJ) row selection (branch: research/case-006-moj-source-survey) — SELECTED, no Ground Truth yet
+
+- **Selected**: `fixtures/document-understanding/case-006/20260928_0742_Case006_Selection_Record.md`. Applied the frozen protocol via direct visual inspection only (no OCR, no text extraction) on `pdfPageIndex` 8 (the universe's own first page). Two organization/item aggregate rows rejected at C1 (no native identifier); the third row — request no. `①`, expense code `01-95`, `法務本省一般行政に必要な経費` (2-line visual wrap) — passed C1–C4 and was accepted as the winner immediately, per the protocol's own "stop at first full pass" rule.
+- **Universe upper boundary remains unresolved and unnecessary** — the winner was found on the universe's very first page, so no boundary investigation was needed or performed.
+- This is the same row already disclosed as prior exposure in both the source survey and the protocol — disclosed again honestly in the selection record, not treated as a surprise or a blind-selection claim.
+- No amount value, delta sign, or 備考 content was transcribed; incidental visual exposure to those values while confirming C3 is disclosed but not recorded.
+- **Next action (not started)**: create Ground Truth for this row via direct visual transcription, then stop before any benchmark/OCR run.
+
+## Case-006 法務省 (MOJ) selection protocol (branch: research/case-006-moj-source-survey) — FROZEN, row now selected (see above)
 
 - **Frozen**: `fixtures/document-understanding/case-006/20260928_0711_Case006_Selection_Protocol.md`. Universe = organization `010 法務本省`, `pdfPageIndex` 8 (re-verified this task) through an **unresolved** upper bound (organization `020`'s own exact PDF page not confirmed, per explicit instruction not to extrapolate with confidence).
 - **Eligibility C1–C4** (native identifier, multi-line wrap, amount triple, self-contained sufficiency) independently re-derived for MOJ, not copied from case-005. **New precondition P2 (multi-grammar exclusion)** added — MOJ's own file mixes 3 grammars (総表/明細表/定員表) in one document, the first Case-006–010 candidate needing this exclusion made explicit rather than folded into a single "correct table" precondition.

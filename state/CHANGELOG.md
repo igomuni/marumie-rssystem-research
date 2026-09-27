@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: freeze case-006 row selection (branch: research/case-006-moj-source-survey)
+
+- **Selection execution only, applying the already-frozen protocol without modification. No Ground Truth, no amount transcription, no benchmark engine or OCR run.**
+- Re-verified pre-task HEAD (`7ef2250`, matching exactly) and source SHA-256 (unchanged) before beginning.
+- Applied the frozen protocol via direct visual inspection only (`pdftoppm` 200 dpi render of `pdfPageIndex` 8, the universe's own first page) -- no text-extraction-based row discovery, no OCR, no vision-model transcription.
+- Scanned top-to-bottom: two organization/item aggregate rows rejected immediately at C1 (no native identifier, no further criteria evaluated); the third row (request no. `①`, expense code `01-95`, `法務本省一般行政に必要な経費`, 2-line visual wrap) passed all four criteria (C1-C4) and was accepted as the winner, with scanning stopping immediately per the protocol's own "stop at first full pass" rule -- no row after it was viewed, no other page was scanned.
+- **Universe upper boundary explicitly not investigated** -- recorded as unresolved and unnecessary, since the winner was found on the universe's own first page.
+- **Prior-exposure disclosure honored**: this is the same row already disclosed in both the source survey and the protocol -- disclosed again explicitly, not minimized, not claimed as a blind selection.
+- **Incidental visual exposure disclosed separately**: the three amount values, delta sign, and populated remarks content were necessarily visible while confirming C3, but none was transcribed anywhere in the record.
+- **Ground Truth separation explicitly enforced**: no amount transcription, delta-sign determination, arithmetic validation, unit freeze, remarks transcription, or normalized expense-name GT was created -- the recorded expense label is explicitly a selection-identity locator, not a Ground Truth value.
+- Files: `fixtures/document-understanding/case-006/20260928_0742_Case006_Selection_Record.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: selection protocol, source survey, evidence JSON, and the Case-006-010 Selection Freeze all byte-identical to their own freeze commits; case-001-005 unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: create Ground Truth for this row via direct visual transcription, then stop before any benchmark engine or OCR run.
+
 ### research: freeze case-006 selection protocol (branch: research/case-006-moj-source-survey)
 
 - **Protocol design and freeze only. No candidate row enumerated or selected. No Ground Truth. No benchmark engine or OCR run.**
