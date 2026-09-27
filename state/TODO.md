@@ -97,7 +97,14 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, sixth pass complete
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, seventh pass complete
+
+- **裁判官訴追委員会 RESOLVED**, per a user-identified URL (`r6budget_yokyu.pdf`). Verified genuinely FY2024 request-stage material (`CreationDate` 2023-08-04, title confirms `令和6年度歳出概算要求書`). The earlier out-of-scope acquisition (enacted-budget `各目明細書`) is retained as a separate, still-valid artifact — one authority genuinely hosts both an in-scope and an out-of-scope document. **This closes the sole remaining "acquired but out of scope" entry** — all 33 originally-frozen population authorities now have a fully closed status: 31 in-scope, 1 precisely-confirmed-absent (ndl).
+- **復興庁 investigated and found categorically out of scope**: its own budget page confirms it publishes no 一般会計 request at all — its entire FY2024 mechanism is special-account-only (東日本大震災復興特別会計), explicitly excluded by this census's own scope. A 103-page special-account file was locked for evidence only, not counted as in-scope.
+- **Cross-reference-summary family now has 7 confirmed instances** (added sangiin, sotsui) — the most widely-confirmed provisional family after List-Creator itself, ranging from an 8-page body to a 1,723-page one.
+- **Next action (not started)**: deepen inspection (multi-page + context sampling) of the 31 in-scope authorities, then finalize format families and select case-006+ candidates.
+
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — sixth pass (superseded by seventh pass above)
 
 - **参議院 RESOLVED**, per a user-found URL via web search (`r6gaisan-yokyusyo-250905.pdf`), after this census's own 5+ automated search attempts had failed. Verified genuinely FY2024 request-stage material via `pdfinfo`'s own `CreationDate` (2023-08-09), not misled by the filename's own `250905` suffix. Contains both a 総表 (6th confirmed cross-reference-summary instance) and a genuine row-level 明細表. **This closes the last genuinely-unresolved population entry** — all 33 originally-frozen authorities now have a closed status (30 in-scope, 1 out-of-scope, 1 confirmed-absent).
 - **A 34th candidate authority discovered: 復興庁 (Reconstruction Agency)**, via a second MOF index page (`2024gaisangaiyo_link.html`, distinct from the `2024yokyuippan_link.html` this census's population was originally frozen from) — not part of the original 33-authority population freeze. Not yet acquired or inspected.

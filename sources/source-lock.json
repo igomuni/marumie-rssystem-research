@@ -663,6 +663,32 @@
       "etag": "\"c010-6026312c23800\"",
       "lastModified": "Tue, 08 Aug 2023 06:00:00 GMT",
       "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "sotsui-fy2024-general-account-expenditure-request-actual",
+      "url": "https://www.sotsui.go.jp/budget/images/r6budget_yokyu.pdf",
+      "finalUrl": "https://www.sotsui.go.jp/budget/images/r6budget_yokyu.pdf",
+      "fetchedAt": "2026-09-27T11:52:49.342Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 14159,
+      "sha256": "66a11094cdda23d47ee2d3c34f4ce741d528a8480a941cbea7803232a6aef029",
+      "etag": "\"10163450-374f-64d5b1db9565c\"",
+      "lastModified": "Thu, 19 Mar 2026 06:59:56 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "fukkocho-fy2024-special-account-expenditure-request",
+      "url": "https://www.reconstruction.go.jp/files/user/topics/2023_fukkochougaisansaisyutsu.pdf",
+      "finalUrl": "https://www.reconstruction.go.jp/files/user/topics/2023_fukkochougaisansaisyutsu.pdf",
+      "fetchedAt": "2026-09-27T11:53:52.595Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 220553,
+      "sha256": "9e9995110a9959eb926c101b34f562ac4bff2241d68cec1d15ccb6e5d850f68c",
+      "etag": null,
+      "lastModified": null,
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }

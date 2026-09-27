@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- close sotsui, resolve fukkocho as out of scope (branch: research/fy2024-all-authority-format-census)
+
+- **Final population-closing pass. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- The user identified 裁判官訴追委員会's own genuine FY2024 request-stage URL (`r6budget_yokyu.pdf`), correcting the earlier out-of-scope acquisition (an enacted-budget-stage `各目明細書`, which is retained as a separate, still-valid artifact, not deleted). Verified genuinely FY2024 material before locking -- `CreationDate` 2023-08-04, title confirms `令和6年度歳出概算要求書`. Contains a 総表 (7th confirmed cross-reference-summary instance) and a genuine 明細表.
+- **This closes the sole remaining "acquired but out of scope" population entry** -- all 33 originally-frozen population authorities now have a fully closed status: 31 in-scope, 1 precisely-confirmed-absent (国立国会図書館), zero remaining in an ambiguous or wrong-stage state.
+- **復興庁 (the 34th candidate discovered in the prior pass) investigated and found categorically out of scope**: its own budget page confirms it publishes no 一般会計 request at all -- its entire FY2024 mechanism operates exclusively through the 東日本大震災復興特別会計 (reconstruction special account), explicitly excluded by this census's own originating scope. A 103-page special-account file was located and locked for evidence only, not counted as in-scope -- the first authority in this census whose entire budget request is categorically out of scope, not merely one document among several.
+- Cross-reference-summary family now has **7 confirmed instances** (mlit, env, caa, dangai, mhlw, sangiin, sotsui), ranging from an 8-page body to a 1,723-page one -- now the single most widely-confirmed provisional family after List-Creator combined-ledger itself.
+- Files: 2 new `sources/source-lock.json` entries + matching `sources/source-registry.csv` rows, revised-in-place census CSV (33 rows, now covering the full closed population plus the categorically-out-of-scope fukkocho entry) and report (new section 10.2g), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Recommended next step**: deepen inspection (multi-page + context-carry-over sampling) of the 31 in-scope authorities, then finalize format families and select case-006+ candidates.
+
 ### research: FY2024 format census -- resolve sangiin, discover a 34th authority (branch: research/fy2024-all-authority-format-census)
 
 - **Sixth-pass resolution plus a population-scope discovery. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
