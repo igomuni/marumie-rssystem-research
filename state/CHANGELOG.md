@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### research: freeze Case-006-010 selection (branch: research/fy2024-all-authority-format-census)
+
+- **Selection freeze, following human review of the prior rationale review. Does not begin Case-006's own source survey, row selection, or Ground Truth.**
+- After human review, froze the 5-case authority set unchanged in composition: 006 法務省 (raster-only, isolated), 007 内閣官房 (file-scoped context), 008 裁判所 (embedded multi-grammar, promoted to a primary research question), 009 内閣本府 (extreme split packaging, explicitly exploratory), 010 厚生労働省 (large-scale stress test). Rejected alternatives (金融庁, 厚生労働省-as-embedded-substructure-primary, 裁判官弾劾裁判所/裁判官訴追委員会 dedicated case, 公正取引委員会) re-affirmed and frozen for the record.
+- **Froze execution order as strictly one-case-at-a-time** (006 → close out → 007 → close out → 008 → close out → 009 → close out → 010) per explicit human instruction -- a materially stricter discipline than the prior review's own recommendation. Only the current case's own selection protocol is frozen at a time; later cases' protocols are explicitly not pre-frozen, since findings from earlier cases may change how later ones should be designed.
+- **Froze a Case-006-specific methodology note**: a null/empty result from all 3 compared engines on 法務省's raster-only source must be analyzed as a pipeline-applicability-boundary finding (source-representation/acquisition-to-extraction layer, upstream of document understanding), not scored as an ordinary document-understanding failure. Froze the exact execution steps for when Case-006's own source survey begins: freeze raster-only as a source-safe fact before row selection; run the existing unmodified 3-engine pipeline as the first frozen run; preserve a null result as-is; attribute failure to the correct upstream layer in analysis; defer any OCR/alternative-extraction experiment to a separate, later task, never mixed into the first run.
+- **Froze a Case-009-specific reframing**: 内閣本府 must not be framed as "special because ~50 files" -- it is frozen as an exploratory test of whether extreme split packaging produces a genuinely new context/source-identity mechanism distinct from Case-007's own file-scoped mechanism, or is merely the same mechanism at larger scale. Finding "no new mechanism" is explicitly frozen as a legitimate, valuable outcome.
+- Files: `fixtures/document-understanding/fy2024-format-census/20260928_0642_Case006_010_Selection_Freeze.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No case-001-005 fixture/evidence/benchmark file modified; no `scripts/` file modified; no source-lock/registry change.
+- **Recommended next step**: begin Case-006 (法務省) source survey, the first task in the frozen execution order.
+
 ### research: Case-006-010 selection rationale review (branch: research/fy2024-all-authority-format-census)
 
 - **Recommendation only, not frozen. No source survey, row selection, selection protocol freeze, Ground Truth, benchmark run, engine comparison, parser/normalizer/evaluator change, or MOF/RS linkage was performed.**

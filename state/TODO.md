@@ -97,7 +97,15 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-006–010 Selection Rationale Review (branch: research/fy2024-all-authority-format-census) — recommendation only, not frozen
+## Case-006–010 Selection Freeze (branch: research/fy2024-all-authority-format-census) — FROZEN, source survey not yet begun
+
+- **Frozen**: `fixtures/document-understanding/fy2024-format-census/20260928_0642_Case006_010_Selection_Freeze.md`. After human review of the rationale review, the 5-case set is adopted unchanged in composition: 006 法務省 (raster-only), 007 内閣官房 (file-scoped context), 008 裁判所 (embedded multi-grammar), 009 内閣本府 (extreme split, exploratory), 010 厚生労働省 (large-scale stress).
+- **Execution order frozen as strictly one-case-at-a-time**: 006 → close out → 007 → close out → 008 → close out → 009 → close out → 010. Only the current case's own protocol is frozen at a time — later cases' protocols are NOT pre-frozen, since findings from earlier cases may change how later ones should be designed.
+- **Case-006-specific methodology frozen**: a null/empty result from all 3 engines on 法務省's raster-only source must be analyzed as a **pipeline-applicability-boundary** finding (source representation / acquisition-to-extraction layer), not scored as an ordinary document-understanding failure. Frozen execution steps: freeze raster-only as a source-safe fact → run the existing unmodified pipeline as the first frozen run → preserve a null result as-is (same discipline as every other case-001–005 first-frozen result) → attribute failure to the correct layer in analysis → any OCR/alternative-extraction experiment is explicitly deferred to a separate future task, never mixed into Case-006's own first run.
+- **Case-009 reframed and frozen**: not "内閣本府 is special because ~50 files," but an exploratory test of whether extreme split packaging produces a genuinely NEW context/source-identity mechanism vs. Case-007's own already-confirmed file-scoped mechanism, or is merely the same mechanism at larger scale. Finding "no new mechanism" is an explicitly legitimate, valuable outcome, not a wasted case.
+- **Next action (not started)**: begin Case-006 (法務省) source survey — the first task in the frozen execution order.
+
+## Case-006–010 Selection Rationale Review (branch: research/fy2024-all-authority-format-census) — recommendation only, superseded by the freeze above
 
 - **Report**: `reports/document-understanding/20260928_0634_Case006_010_Selection_Rationale_Review.md` + companion CSV `..._Candidate_Coverage_Matrix.csv`. Compares 7 required candidates (金融庁, 法務省, 内閣官房, 裁判官弾劾裁判所, 裁判官訴追委員会, 内閣本府, 厚生労働省) plus 裁判所 (added from census evidence) against the checkpoint's own 4 independent axes.
 - **Departs from the checkpoint's own fixed candidate sketch in 2 material ways, each argued from evidence**:
