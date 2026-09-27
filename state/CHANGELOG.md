@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: close out case-006 baseline (branch: research/case-006-moj-source-survey)
+
+- **Closeout/audit only. No new benchmark run (validation/tests only), no OCR experiment, no adaptation, no Case-007 work.**
+- Audited the full commit chronology (source survey -> protocol freeze -> row selection -> GT freeze -> first frozen benchmark) and re-verified every frozen artifact byte-identical to its own freeze commit via direct `git diff`.
+- Re-confirmed the benchmark result directly against the actual `evidence/document-understanding/case-006-results.json` and `derived/document-understanding/case-006/docling.*.json` files in this task, not merely by re-citing the prior benchmark report.
+- **Census classification refined, not falsified**: "rasterized-no-text-layer" is preserved as a historically accurate provisional label; the source survey's own more precise finding (vector-outlined content, zero font/image resources -- not a photographic scan) is recorded as a refinement of mechanism, explicitly not generalized beyond the pages actually inspected.
+- **Froze precise Docling-OCR wording for future reference**, distinguishing "OCR was run" from "this task added OCR": the unchanged Docling engine invoked its own pre-existing OCR capability as part of its normal, already-committed pipeline behavior -- explicitly warning that a bare "OCR run? No" risks future misreading as "Docling also got a clean null," which is factually incorrect.
+- Restated the central same-score/different-failure finding at its correct strength: an identical 2/11 score across all 3 engines conceals two fundamentally different failure situations; the existing 11 checks are not invalidated by this, they simply were never designed to encode *why* a value is missing.
+- Recorded 6 unresolved questions and 4 explicitly deferred experiments without resolving any of them.
+- **Verdict**: Case-006 research chain COMPLETE for the frozen baseline phase (not "finished" -- future experiments remain open, explicitly not foreclosed).
+- **Case-007 gate: OPEN** -- all closeout conditions satisfied; the frozen execution order permits proceeding to Case-007 (内閣官房) source survey next. Not started in this task.
+- Files: `reports/document-understanding/20260928_0827_Case006_MOJ_Closeout.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: all case-006 frozen artifacts and the Case-006-010 Selection Freeze byte-identical throughout; case-001-005 unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: begin Case-007 (内閣官房) source survey, per the frozen execution order.
+
 ### research: preserve case-006 first frozen benchmark (branch: research/case-006-moj-source-survey)
 
 - **First frozen benchmark run preserved as-is, using the existing, unmodified pipeline and evaluator semantics. No OCR added, no adaptation performed, no Ground Truth modified.**
