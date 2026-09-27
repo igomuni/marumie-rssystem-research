@@ -1,6 +1,6 @@
 # FY2024 All-Authority 概算要求 PDF Format Census — Report
 
-Status: **Fourth pass. 29 of 33 population authorities acquired/inspected in scope (including a major MHLW reclassification -- a genuine 1,723-page ledger was found where "no ledger" had been concluded twice); 1 genuinely unresolved despite extensive search; 1 acquired-but-out-of-scope (wrong document stage); 1 authority precisely confirmed absent from its own live page. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+Status: **Fifth pass. 29 of 33 population authorities acquired/inspected in scope (including a major MHLW reclassification -- a genuine 1,723-page ledger was found where "no ledger" had been concluded twice -- and an exhaustive re-confirmation of all 17 of 内閣官房's own detail files, not merely the 2 originally sampled); 1 genuinely unresolved despite extensive search; 1 acquired-but-out-of-scope (wrong document stage); 1 authority precisely confirmed absent from its own live page. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
 
 Date: 2026-09-27 (Asia/Tokyo)
 
@@ -15,7 +15,16 @@ Branch: `research/fy2024-all-authority-format-census`, from `main@fc7c0ea`.
 - Genuinely unresolved despite extensive multi-query search (not a WAF block — the URL itself could not be located): **1** (参議院/Sangiin)
 - Precisely confirmed absent from the authority's own current live page (request-stage retention window has elapsed; the final-budget-stage document for the same year is still retained): **1** (国立国会図書館/NDL)
 - Direct-PDF-vs-landing-page ratio: most authorities required a landing-page hop; several (防衛省, 会計検査院, 裁判官弾劾裁判所) required bypassing a blocked or unhelpful general landing page in favor of a year-specific direct URL found via web search.
-- Single-file vs. split-package ratio among the 29 acquired: **at least 20 single/combined**, **≥7 split** (文部科学省=4 files, 内閣官房=~17 files, 金融庁=12 files, 内閣本府=~50 files, MHLW's narrative package=10+ files across 3 sub-pages, coexisting with its own single-file 1,723-page 総表+明細表 document).
+- Single-file vs. split-package ratio among the 29 acquired: **at least 20 single/combined**, **≥7 split** (文部科学省=4 files, 内閣官房=17 files (exhaustively confirmed), 金融庁=12 files, 内閣本府=~50 files, MHLW's narrative package=10+ files across 3 sub-pages, coexisting with its own single-file 1,723-page 総表+明細表 document).
+
+## 10.2c Fifth-pass: 内閣官房 (CAS) exhaustively re-confirmed
+
+`[FACT]` The user asked whether more detail files exist beyond the 2 originally sampled (`r6_01.pdf`, `r6_02.pdf`). A full, exact link enumeration of `gaisan_youkyuu_r6.html` confirmed exactly **17 files** (not the earlier "~17" estimate) — all 17 were individually acquired and first-page-inspected in this pass, not merely sampled:
+
+- **一般会計 (general account)**: 1 cover (`r6_01`) + 15 bureau-level detail files, covering **9 distinct bureaus/offices**: 総務官室 (4 sub-offices: 総務課/会計課/官邸事務所/厚生管理官室 — `r6_02`–`r6_05`), 内閣官房・人に伴う経費 (`r6_06`), 副長官補 (2 sub-offices: 副長官補/危機管理 — `r6_07`–`r6_08`, the largest detail file at 29 pages), 内閣広報室 (`r6_09`), 内閣情報調査室 (2 sub-offices: 内閣情報調査室/衛星情報センター — `r6_10`–`r6_11`, 19 pages), 内閣サイバーセキュリティセンター (`r6_12`), 内閣人事局 (`r6_13`), 国家安全保障局 (`r6_14`), 内閣感染症危機管理統括庁 (`r6_15`).
+- **東日本大震災復興特別会計 (reconstruction special account)**: a separate 2-file cover+detail pair (`r6_16`–`r6_17`), mirroring the general account's own cover+detail structure at a smaller scale.
+
+Every one of the 17 files is permission-only AES-encrypted; every one follows the same printed-page-label convention (`内（官）` for the general account, `復興特` for the special account). This confirms a **genuinely complete and clean bureau-level split**, the most granular *individually-verified* (as opposed to merely counted) package structure in this census. `familyConfidence` for this authority is upgraded to **high** — all 17 files acquired and inspected, not sampled.
 
 ## 10.2b Fourth-pass resolution: 厚生労働省 (MHLW) — MAJOR CORRECTION
 
@@ -62,7 +71,7 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 `[INTERPRETATION]` Families induced from observed features, not fixed in advance. This section supersedes the first pass's 8-family sketch — CAS is now a List-Creator-family member, not a narrative-only outlier.
 
-1. **List-Creator combined-ledger family** — single or split PDF, Producer "List Creator", standard ledger grammar, text layer present. Largest family: デジタル庁 (unclassified pending re-integration), 経済産業省, 総務省, 国土交通省, 農林水産省, こども家庭庁, 外務省, 財務省, カジノ管理委員会, 個人情報保護委員会, 皇室費, 宮内庁, 内閣官房 (split variant, ~17 files), 内閣本府 (extreme-split variant, ~50 files).
+1. **List-Creator combined-ledger family** — single or split PDF, Producer "List Creator", standard ledger grammar, text layer present. Largest family: デジタル庁 (unclassified pending re-integration), 経済産業省, 総務省, 国土交通省, 農林水産省, こども家庭庁, 外務省, 財務省, カジノ管理委員会, 個人情報保護委員会, 皇室費, 宮内庁, 内閣官房 (split variant, 17 files, exhaustively confirmed), 内閣本府 (extreme-split variant, ~50 files).
 2. **Split-package encrypted-ledger family (4-file)** — case-004/文部科学省 alone so far. Encryption and packaging-split are shown by this census to be **independent axes**: many authorities are encrypted without a 4-file split (財務省, カジノ管理委員会, 個人情報保護委員会, 消費者庁, 内閣本府, 内閣官房), and none replicate MEXT's specific cover/summary/detail/staffing 4-way split.
 3. **Cross-reference-summary family** — 国土交通省(case-005), 環境省, 消費者庁, 裁判官弾劾裁判所: a 総表 with split 一般行政経費/その他の経費/計 amount subcolumns and an explicit page-number cross-reference into a detail section. Now confirmed in **4 authorities**, ranging from a 9-page body (dangai) to a 1,097-page one (mlit) — the mechanism is not correlated with authority size.
 4. **Rasterized-no-text-layer ledger family** — 金融庁, 法務省: visually identical standard ledger grammar, zero embedded fonts / zero extractable text. **Not present in any of case-001–005.**
@@ -111,7 +120,7 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 1. **金融庁 or 法務省** — rasterized-no-text-layer family, entirely unrepresented in case-001–005.
 2. **環境省, 消費者庁, or 裁判官弾劾裁判所** — cross-reference-summary family, now 4 confirmed instances; selecting a row directly from this structure (rather than case-005's own 明細表-only row) would newly test the cross-reference mechanism itself. 裁判官弾劾裁判所's own 9-page document is notably the smallest in this census, offering a low-cost way to test the mechanism without a 1000+-page document's own confounds.
-3. **内閣本府 or 内閣官房** — extreme/granular-split packaging (~50 and ~17 files respectively), testing whether case-004's context findings hold when "the table" is fragmented across dozens of tiny files.
+3. **内閣本府 or 内閣官房** — extreme/granular-split packaging (~50 and 17 files respectively), testing whether case-004's context findings hold when "the table" is fragmented across dozens of tiny files.
 4. **厚生労働省** — now that a genuine ledger has been located (§10.2b), its own 1,723-page combined 総表+明細表 spanning 8 organizations is itself a strong case-006+ candidate: the largest single document in the census, testing whether context/pagination findings from case-004 hold at an even larger scale, while also uniquely offering a coexisting narrative-document family for any future, differently-scoped benchmark of that document type.
 
 `[INTERPRETATION]` Not decided in this task. Multi-page/context-carry-over investigation across all in-scope authorities, per the originating task's own completion criteria (§18 of the originating instructions), remains outstanding before a final family/candidate determination — see §10.9.
@@ -127,4 +136,4 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 ---
 
-**This report reflects a fourth-pass, still-incomplete FY2024 all-authority format census. 29 of 33 authorities acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine; one of the 29, 外務省, via user-provided-out-of-band file delivery after this repository's own tooling was confirmed domain-wide-blocked; one, 厚生労働省, substantively reclassified after a user-identified URL revealed a 1,723-page ledger two prior passes' own automated link enumeration had missed); 1 acquired but out of scope; 1 genuinely unresolved; 1 precisely confirmed absent. No row was selected; no Ground Truth was created; no benchmark engine was run.**
+**This report reflects a fifth-pass, still-incomplete FY2024 all-authority format census. 29 of 33 authorities acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine; one of the 29, 外務省, via user-provided-out-of-band file delivery after this repository's own tooling was confirmed domain-wide-blocked; one, 厚生労働省, substantively reclassified after a user-identified URL revealed a 1,723-page ledger two prior passes' own automated link enumeration had missed; one, 内閣官房, exhaustively re-confirmed across all 17 of its own detail files rather than the 2 originally sampled); 1 acquired but out of scope; 1 genuinely unresolved; 1 precisely confirmed absent. No row was selected; no Ground Truth was created; no benchmark engine was run.**

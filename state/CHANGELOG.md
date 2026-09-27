@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- exhaustive CAS re-confirmation (branch: research/fy2024-all-authority-format-census)
+
+- **Deepening of an already-in-scope authority's own evidence, per user request. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- The user asked whether 内閣官房 has more detail files beyond the 2 originally sampled. A full, exact link enumeration of `gaisan_youkyuu_r6.html` confirmed exactly 17 files (not the earlier "~17" estimate); all 17 were individually acquired and first-page-inspected in this pass.
+- Confirms a genuinely complete bureau-level split: 1 cover + 15 general-account detail files across 9 distinct bureaus/offices (総務官室's own 4 sub-offices, 副長官補's 2, 内閣情報調査室's 2, plus 内閣広報室/内閣サイバーセキュリティセンター/内閣人事局/国家安全保障局/内閣感染症危機管理統括庁), plus a separate 2-file 東日本大震災復興特別会計 (reconstruction special account) cover+detail pair.
+- Every one of the 17 files confirmed permission-only AES-encrypted; every one follows the same printed-page-label convention.
+- `familyConfidence` for this authority upgraded to **high** (all 17 files acquired and inspected, not merely sampled) -- the most granular individually-verified package structure in this census.
+- Files: 15 new `sources/source-lock.json` entries + matching `sources/source-registry.csv` rows, revised-in-place census CSV/report (new section 10.2c), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Recommended next step**: resolve sangiin's/sotsui's own genuine request-stage documents (if they exist), deepen inspection (multi-page + context sampling) of the 29 in-scope authorities, then finalize format families and select case-006+ candidates.
+
 ### research: FY2024 format census -- major MHLW reclassification (branch: research/fy2024-all-authority-format-census)
 
 - **Correction of a major prior-pass finding. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
