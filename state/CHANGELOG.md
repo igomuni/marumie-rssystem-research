@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### research: design Case Package v0 concept (branch: research/case-005-mlit-source-survey)
+
+- **Concept-design/architecture-review candidate only. Not an ADR. No schema, migration, production code, benchmark change, Ground Truth change, source inspection, or new experiment.**
+- Wrote `reports/document-understanding/20260927_0934_Case_Package_v0_Concept_Design.md`, covering the requested 26 sections, explicitly relating to — not silently overwriting — the existing `20260926_1316_...Architecture.md` design and the actual, already-implemented `schemaVersion: 0` `document-profile.json`/`research-history.jsonl` pair backfilled for case-001/002 only.
+- Reconciled two genuinely different taxonomies that could otherwise be conflated: the Case-Package-content layers (what a package holds) vs. ADR-010's own rule-validity layers (where a rule's assumption breaks) — mapped each content layer to its allowed inputs, provenance requirement, and prohibited dependencies in one table.
+- Centered the design around case-004's own Docling broad-sample finding (identical `maxNumCols` from a genuine embedded matrix vs. a pure engine-segmentation artifact) as the concrete justification for an `observationOrigin` provenance concept, generalizing the Phase-1 schema's already-working `provenance` enum rather than inventing a new one.
+- Built a full layer×layer dependency matrix with Ground Truth leakage visually confined to one column (Evaluation is the sole non-historical consumer; Strategy Selection may read it only under the existing Leave-One-Case-Out protocol).
+- Proposed a conceptual object model in prose (not JSON Schema syntax): `CasePackage` with `sourceObservations[]`/`contextRequirements[]`/`normalizationTraces[]`/`interpretations[]`/`specialObservations[]`/`history[]`/`groundTruthRef`, splitting the Phase-1 `sourceSafeProfile`/`engineDerivedProfile` pair into finer sections, justified by the context-scope trichotomy (page-local/neighbor-bounded/table-metadata) and the five-ministry synthesis's own `item_name_exact_match` heterogeneity finding (uniform outcome, three distinct mechanisms — a Case Package holding only the final value would erase this).
+- Compared same-package-embedded vs. externally-referenced Ground Truth storage and recommended the latter for v0, matching the existing separate `ground-truth.json` convention already used in all five cases — a recommendation to keep an already-working pattern explicit, not a new decision.
+- Ran a five-case migration thought experiment as a table only (straightforward/missing-evidence/ambiguous/extension-needed per case) — no case was actually migrated, no case-001 `not_established` field was filled.
+- Defined acceptance criteria for a future, separately-scoped schema-prototype task, and left six items explicitly unresolved (GT storage enforcement, source visual-region representation, bbox/vector geometry source-safety, context acquisition policy, semantic candidate representation, package granularity).
+- No ADR added — this document is a design candidate for review, explicitly not finalized as an ADR in this task.
+- Files: the concept-design report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No `scripts/`, case-001–005 fixture/evidence/benchmark file, or source lock/registry file modified.
+- **Recommended next step**: review this concept-design candidate; if sound, scope a schema-prototype task against its own acceptance criteria (section 25), targeting case-002 through case-005 only.
+
 ### research: synthesize findings across five ministries (branch: research/case-005-mlit-source-survey)
 
 - **Read-only interim synthesis. No new benchmark, Ground Truth, extraction, normalization experiment, source inspection, or production change.**
