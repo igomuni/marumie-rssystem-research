@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- resolve sangiin, discover a 34th authority (branch: research/fy2024-all-authority-format-census)
+
+- **Sixth-pass resolution plus a population-scope discovery. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- The user found `参議院`'s own FY2024 request-stage URL via web search (`r6gaisan-yokyusyo-250905.pdf`), after this census's own 5+ automated search attempts had failed. Verified genuinely FY2024 material before locking -- `pdfinfo`'s own `CreationDate` reads 2023-08-09, not misled by the filename's own `250905` republish-date suffix. Contains a 総表 (6th confirmed cross-reference-summary instance) and a genuine row-level 明細表.
+- **This closes the last genuinely-unresolved population entry** -- all 33 originally-frozen population authorities now have a closed status: 30 in-scope, 1 acquired-but-out-of-scope (sotsui), 1 precisely-confirmed-absent (ndl).
+- While investigating the user's question about why 裁判官訴追委員会 is absent from a *different* MOF index page (`2024gaisangaiyo_link.html`, distinct from the `2024yokyuippan_link.html` this census's own population was frozen from), discovered that this second page lists 30 authorities including **復興庁 (Reconstruction Agency)** -- an authority not present in this census's own frozen 33-authority population at all. Recorded as a genuine population-freeze gap and a newly-discovered 34th candidate member, not yet acquired.
+- Explained 裁判官訴追委員会 for the user: a National-Diet-affiliated body investigating/prosecuting judges for potential impeachment, distinct from 裁判官弾劾裁判所 (the trial court); its absence from the overview-specific MOF index is plausibly because very small Diet bodies may not publish a separate overview summary document.
+- Files: 1 new `sources/source-lock.json` entry + matching `sources/source-registry.csv` row, revised-in-place census CSV/report (new sections 10.2d/10.2e/10.2f), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Recommended next step**: acquire and inspect 復興庁; resolve 裁判官訴追委員会's own genuine request-stage document (if it exists); deepen inspection (multi-page + context sampling) of the 30 in-scope authorities; then finalize format families and select case-006+ candidates.
+
 ### research: FY2024 format census -- exhaustive CAS re-confirmation (branch: research/fy2024-all-authority-format-census)
 
 - **Deepening of an already-in-scope authority's own evidence, per user request. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**

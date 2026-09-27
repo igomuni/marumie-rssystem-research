@@ -1,6 +1,6 @@
 # FY2024 All-Authority 概算要求 PDF Format Census — Report
 
-Status: **Fifth pass. 29 of 33 population authorities acquired/inspected in scope (including a major MHLW reclassification -- a genuine 1,723-page ledger was found where "no ledger" had been concluded twice -- and an exhaustive re-confirmation of all 17 of 内閣官房's own detail files, not merely the 2 originally sampled); 1 genuinely unresolved despite extensive search; 1 acquired-but-out-of-scope (wrong document stage); 1 authority precisely confirmed absent from its own live page. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+Status: **Sixth pass. All 33 originally-frozen population authorities now have a closed status: 30 acquired/inspected in scope, 1 acquired-but-out-of-scope (wrong document stage), 1 precisely confirmed absent from its own live page. A 34th candidate authority (復興庁) has been discovered via a second MOF index page and is not yet acquired. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
 
 Date: 2026-09-27 (Asia/Tokyo)
 
@@ -8,14 +8,34 @@ Branch: `research/fy2024-all-authority-format-census`, from `main@fc7c0ea`.
 
 ## 10.1 Population
 
-`[FACT]` MOF's official FY2024 cross-authority index (`2024yokyuippan_link.html`) lists **33 authorities** (frozen in `20260927_1909_FY2024_Population_Freeze.md`, commit `558f7fb`).
+`[FACT]` MOF's official FY2024 cross-authority index (`2024yokyuippan_link.html`) lists **33 authorities** (frozen in `20260927_1909_FY2024_Population_Freeze.md`, commit `558f7fb`). See §10.2e for a 34th candidate (復興庁) discovered via a *different* MOF index page in this pass, not yet added to the frozen population.
 
-- Acquired and in-scope: **29** (5 reused from case-001–005's own already-committed evidence; 24 newly acquired this task)
+- Acquired and in-scope: **30** (5 reused from case-001–005's own already-committed evidence; 25 newly acquired this task)
 - Acquired but out of scope (wrong document stage — enacted-budget 各目明細書, not request-stage 概算要求書): **1** (裁判官訴追委員会/Sotsui)
-- Genuinely unresolved despite extensive multi-query search (not a WAF block — the URL itself could not be located): **1** (参議院/Sangiin)
 - Precisely confirmed absent from the authority's own current live page (request-stage retention window has elapsed; the final-budget-stage document for the same year is still retained): **1** (国立国会図書館/NDL)
-- Direct-PDF-vs-landing-page ratio: most authorities required a landing-page hop; several (防衛省, 会計検査院, 裁判官弾劾裁判所) required bypassing a blocked or unhelpful general landing page in favor of a year-specific direct URL found via web search.
-- Single-file vs. split-package ratio among the 29 acquired: **at least 20 single/combined**, **≥7 split** (文部科学省=4 files, 内閣官房=17 files (exhaustively confirmed), 金融庁=12 files, 内閣本府=~50 files, MHLW's narrative package=10+ files across 3 sub-pages, coexisting with its own single-file 1,723-page 総表+明細表 document).
+- Direct-PDF-vs-landing-page ratio: most authorities required a landing-page hop; several (防衛省, 会計検査院, 裁判官弾劾裁判所, 参議院) required bypassing a blocked or unhelpful general landing page in favor of a year-specific direct URL found via web search.
+- Single-file vs. split-package ratio among the 30 acquired: **at least 21 single/combined**, **≥7 split** (文部科学省=4 files, 内閣官房=17 files (exhaustively confirmed), 金融庁=12 files, 内閣本府=~50 files, MHLW's narrative package=10+ files across 3 sub-pages, coexisting with its own single-file 1,723-page 総表+明細表 document).
+
+## 10.2d Sixth-pass resolution: 参議院 (Sangiin) — last genuinely-unresolved entry closed
+
+`[FACT]` The user found the exact URL via web search: `https://www.sangiin.go.jp/jpn/annai/oshirase/pdf/r6gaisan-yokyusyo-250905.pdf`. This census's own automated attempts (5+ targeted `WebSearch` queries, direct filename-pattern-guessing against both sibling years' confirmed conventions) had failed to locate it.
+
+Before locking, this task verified the file is genuinely FY2024 request-stage material, not a mislabeled later document — the filename's own `250905` suffix (which would suggest a September 2025 date) is misleading; `pdfinfo`'s own `CreationDate` field reads `2023-08-09`, consistent with every other authority's own FY2024 submission window. Content confirms: title page reads `令和６年度歳出概算要求書` for `02 国会所管（参議院）`; contains a 総表 (pages 1–2, cross-reference-summary style matching mlit/env/caa/dangai/mhlw) and a genuine row-level 明細表 (pages 3–21), showing the same `NNNNN-NNNN-NN-NNNN` subordinate accounting code convention (`95012-2122-08-1030`) seen throughout this census.
+
+**This resolves the last genuinely-unresolved population entry.** As of this pass, all 33 originally-frozen population authorities have a closed status: 30 in-scope, 1 acquired-but-out-of-scope (sotsui), 1 precisely-confirmed-absent (ndl) — with one further discovery noted in §10.2e below.
+
+## 10.2e A 34th authority discovered: 復興庁 (Reconstruction Agency)
+
+`[FACT]` While investigating a user question about 裁判官訴追委員会's own absence from a *different* MOF index page, this task fetched `https://www.mof.go.jp/policy/budget/budger_workflow/budget/fy2024/2024gaisangaiyo_link.html` (a "概算要求書、要望一覧及び政策評価調書公開ページへのリンク先一覧（概要）" page, distinct from `2024yokyuippan_link.html`, the page this census's own population was originally frozen from). This second MOF index lists **30 authorities**, overlapping heavily with the frozen 33-authority population but with two differences:
+
+- It does **not** list 裁判官訴追委員会 or 裁判官弾劾裁判所 (see §10.2f for why this is not a contradiction).
+- It **does** list **復興庁 (Reconstruction Agency)** — an authority **not present in this census's own frozen 33-authority population** at all. This is a genuine gap in the original population freeze, not an acquisition failure for an already-known authority.
+
+`[INTERPRETATION]` This suggests MOF maintains more than one cross-authority index page for FY2024, each with a slightly different membership, and this census's own population freeze (based on a single page) may not be perfectly complete. 復興庁 is recorded here as a newly-discovered 34th candidate population member, not yet acquired or inspected — see §10.9 for its addition to remaining scope.
+
+## 10.2f What is 裁判官訴追委員会?
+
+`[FACT]`, for context: 裁判官訴追委員会 (the Committee on the Impeachment of Judges) is a National-Diet-affiliated body, established under Japan's Constitution (Article 64) and the 裁判官弾劾法 (Judge Impeachment Act), responsible for **investigating and prosecuting** judges accused of misconduct sufficient to warrant removal from office. It works alongside — but is organizationally distinct from — 裁判官弾劾裁判所 (the Court of Impeachment for Judges), which actually **tries** the case the committee brings. Both are very small, standing Diet bodies (this census's own acquired sotsui-hosted document, itself out of scope, is only 24 pages and covers five such small bodies together; dangai's own request-stage document is only 9 pages). Their absence from the `2024gaisangaiyo_link.html` overview-specific index (§10.2e) is plausibly because such very small bodies may not separately publish a "概要" (overview) summary document — only their full request book — though this has not been independently verified in this task.
 
 ## 10.2c Fifth-pass: 内閣官房 (CAS) exhaustively re-confirmed
 
@@ -51,7 +71,7 @@ Every one of the 17 files is permission-only AES-encrypted; every one follows th
 - **防衛省 (MOD) and 外務省 (MOFA)**: re-attempted via the user's provided direct PDF URLs (found independently to match via web search too). **MOD succeeded** — its landing page is blocked (HTTP 403) but the direct, year-specific PDF URL returns HTTP 200 and was acquired (540 pages, standard ledger grammar). **MOFA's block was confirmed domain-wide** (the mofa.go.jp homepage itself, not just the target file, returns "Access Denied" even via a full Playwright/Chromium session), then **resolved in a third pass** via user-provided-out-of-band file delivery — see §10.2a.
 - **衆議院 (Shugiin), 裁判官弾劾裁判所 (Dangai)**: RESOLVED. Both had genuine FY2024 request-stage documents, findable via web search using year-specific filename patterns not linked from the authorities' own general landing pages.
 - **裁判官訴追委員会 (Sotsui)**: a document WAS found and acquired, but on inspection its own page-1 title (`令和6年度国会所管一般会計歳出予算各目明細書`) and its fundamentally different table grammar (`組織/項/事項/目の区分/要求額/積算内訳`, no 要求番号/経費コード-as-separate-column/前年度-vs-6年度-delta-triple) identify it as an **enacted-budget-stage 各目明細書**, not the request-stage 概算要求書 this census targets — recorded as **acquired but out of scope**, a new third failure category this census did not originally anticipate (distinct from both "acquisition failure" and "not found").
-- **参議院 (Sangiin)**: still unresolved after substantially more effort (5+ web searches, direct URL pattern-guessing against both sibling years' confirmed filename conventions). Notably, sotsui's own combined 各目明細書 does cover 参議院 as an organization, but per the same out-of-scope reasoning above, that does not substitute for a genuine request-stage document.
+- **参議院 (Sangiin)**: RESOLVED in a sixth pass (§10.2d) via a user-found URL, after 5+ web searches and filename-pattern-guessing by this census's own tooling had failed.
 - **国立国会図書館 (NDL)**: precisely re-characterized (not resolved) via a full listing of the authority's own current finances page: R7/R8/R9 request-stage documents are retained, R6's is not, but R6's own FINAL BUDGET document is still retained — confirming a request-stage-specific retention window distinct from (and shorter than) the final-budget retention window.
 
 ## 10.3 Observed common grammar
@@ -99,11 +119,10 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 | Authority | Status | Detail |
 |---|---|---|
-| 参議院 (Sangiin) | Genuinely unresolved | 5+ web searches and filename-pattern-guessing against both sibling years' conventions found no working URL; not a WAF block — the resource itself could not be located |
 | 国立国会図書館 (NDL) | Precisely confirmed absent | Own current page retains R7-R9 request-stage docs and R6's own final-budget doc, but not R6's own request-stage doc — a request-stage-specific retention window, precisely characterized |
 | 裁判官訴追委員会 (Sotsui) | Acquired but out of scope | Document found is an enacted-budget-stage 各目明細書, not a request-stage 概算要求書; a genuine request-stage document specific to this authority was searched for but not located |
 
-`[FACT]` Resolved from the first pass: 防衛省 (direct PDF URL works despite landing-page block), 衆議院, 裁判官弾劾裁判所 (both found via web search after their general landing pages proved unhelpful), 内閣官房 (reclassified, §10.2), 外務省 (resolved via user-provided-out-of-band delivery after a confirmed domain-wide block, §10.2a).
+`[FACT]` Resolved from earlier passes: 防衛省 (direct PDF URL works despite landing-page block), 衆議院, 裁判官弾劾裁判所 (both found via web search after their general landing pages proved unhelpful), 内閣官房 (reclassified, §10.2, exhaustively re-confirmed, §10.2c), 外務省 (resolved via user-provided-out-of-band delivery after a confirmed domain-wide block, §10.2a), 厚生労働省 (major reclassification, §10.2b), 参議院 (resolved via user-found URL, §10.2d).
 
 ## 10.7 Failure/Learning: why the first pass's classifications were wrong
 
@@ -129,11 +148,11 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 `[FACT]` Per the originating task's own completion criteria, this pass still does not close the census:
 
-- **参議院's own status remains genuinely open** — neither acquired, nor confirmed absent, nor confirmed WAF-blocked.
+- **復興庁 (Reconstruction Agency), newly discovered (§10.2e), remains entirely unacquired** — not part of the original 33-authority population freeze; discovered via a second MOF index page distinct from the one this census's population was originally frozen from.
 - **裁判官訴追委員会's own genuine request-stage document remains unlocated** — its own status is "acquired wrong document, correct document not found," a state the original task instructions did not anticipate as a category.
-- **Multi-page and context-carry-over sampling** has not yet been performed for any of the 28 in-scope authorities — every acquired authority beyond case-001–005 has been sampled at only one or two interior pages, not the range needed to characterize header-repeat/context-dependency behavior per the originating task's own §8-I.
+- **Multi-page and context-carry-over sampling** has not yet been performed for any of the 30 in-scope authorities — every acquired authority beyond case-001–005 has been sampled at only one or two interior pages, not the range needed to characterize header-repeat/context-dependency behavior per the originating task's own §8-I.
 - **Format families remain provisional** (§10.4) and case-006+ selection remains preliminary (§10.8) — per the user's own explicit instruction, these are not finalized until the remaining population gaps are closed and deeper per-authority inspection is performed.
 
 ---
 
-**This report reflects a fifth-pass, still-incomplete FY2024 all-authority format census. 29 of 33 authorities acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine; one of the 29, 外務省, via user-provided-out-of-band file delivery after this repository's own tooling was confirmed domain-wide-blocked; one, 厚生労働省, substantively reclassified after a user-identified URL revealed a 1,723-page ledger two prior passes' own automated link enumeration had missed; one, 内閣官房, exhaustively re-confirmed across all 17 of its own detail files rather than the 2 originally sampled); 1 acquired but out of scope; 1 genuinely unresolved; 1 precisely confirmed absent. No row was selected; no Ground Truth was created; no benchmark engine was run.**
+**This report reflects a sixth-pass, still-incomplete FY2024 all-authority format census. All 33 originally-frozen population authorities now have a closed status: 30 acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine; 外務省 via user-provided-out-of-band file delivery after a confirmed domain-wide block; 厚生労働省 substantively reclassified after a user-identified URL revealed a 1,723-page ledger two prior passes had missed; 内閣官房 exhaustively re-confirmed across all 17 of its own detail files; 参議院 resolved via a user-found URL after this census's own search failed), 1 acquired but out of scope, 1 precisely confirmed absent. A 34th candidate authority (復興庁) has been discovered but not yet acquired. No row was selected; no Ground Truth was created; no benchmark engine was run.**

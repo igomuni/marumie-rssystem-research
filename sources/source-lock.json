@@ -650,6 +650,19 @@
       "etag": "\"b09bf5aed8aa3f8a07c7bb8620b37dd6\"",
       "lastModified": "Fri, 13 Mar 2026 12:48:37 GMT",
       "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "sangiin-fy2024-general-account-expenditure-request",
+      "url": "https://www.sangiin.go.jp/jpn/annai/oshirase/pdf/r6gaisan-yokyusyo-250905.pdf",
+      "finalUrl": "https://www.sangiin.go.jp/jpn/annai/oshirase/pdf/r6gaisan-yokyusyo-250905.pdf",
+      "fetchedAt": "2026-09-27T11:42:40.270Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 49168,
+      "sha256": "a5a91f4b79e6809bac97613037530070f2a4ae898aaf5694dfbaea0562b1e28f",
+      "etag": "\"c010-6026312c23800\"",
+      "lastModified": "Tue, 08 Aug 2023 06:00:00 GMT",
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }

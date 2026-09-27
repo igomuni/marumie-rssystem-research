@@ -97,7 +97,14 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, fifth pass complete
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, sixth pass complete
+
+- **参議院 RESOLVED**, per a user-found URL via web search (`r6gaisan-yokyusyo-250905.pdf`), after this census's own 5+ automated search attempts had failed. Verified genuinely FY2024 request-stage material via `pdfinfo`'s own `CreationDate` (2023-08-09), not misled by the filename's own `250905` suffix. Contains both a 総表 (6th confirmed cross-reference-summary instance) and a genuine row-level 明細表. **This closes the last genuinely-unresolved population entry** — all 33 originally-frozen authorities now have a closed status (30 in-scope, 1 out-of-scope, 1 confirmed-absent).
+- **A 34th candidate authority discovered: 復興庁 (Reconstruction Agency)**, via a second MOF index page (`2024gaisangaiyo_link.html`, distinct from the `2024yokyuippan_link.html` this census's population was originally frozen from) — not part of the original 33-authority population freeze. Not yet acquired or inspected.
+- **裁判官訴追委員会 explained** (report §10.2f): a National-Diet-affiliated body investigating/prosecuting judges for potential impeachment, distinct from 裁判官弾劾裁判所 (the actual trial court). Its absence from the second MOF index page is plausibly because very small Diet bodies may not publish a separate "概要" overview document.
+- **Next action (not started)**: acquire and inspect 復興庁; deepen inspection (multi-page + context sampling) of the 30 in-scope authorities; then finalize format families and select case-006+ candidates.
+
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — fifth pass (superseded by sixth pass above)
 
 - **内閣官房 exhaustively re-confirmed**, per user request. All 17 files listed on `gaisan_youkyuu_r6.html` (not merely the 2 originally sampled) were individually acquired and first-page-inspected: 1 cover + 15 bureau-level detail files spanning 9 distinct bureaus/offices (総務官室's own 4 sub-offices, 副長官補's 2, 内閣情報調査室's 2, plus 内閣広報室/内閣サイバーセキュリティセンター/内閣人事局/国家安全保障局/内閣感染症危機管理統括庁), plus a separate 2-file 東日本大震災復興特別会計 section. All 17 confirmed permission-only AES-encrypted. `familyConfidence` for this authority upgraded to high.
 - **Next action (not started)**: resolve sangiin's/sotsui's own genuine request-stage documents if they exist, deepen inspection (multi-page + context sampling) of the 29 in-scope authorities, then finalize format families and select case-006+ candidates.
