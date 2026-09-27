@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- second pass, corrections and failure/learning (branch: research/fy2024-all-authority-format-census)
+
+- **Corrections and re-investigation only, per explicit user instruction not to freeze the first pass's classifications prematurely. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- Re-investigated mhlw and cas via user-identified alternate entry points (mhlw's own `05.html`/`03.html` sub-pages; cas's own year-specific `gaisan_youkyuu_r6.html` sub-page, distinct from the general landing page checked in the first pass) and re-acquired mod/mofa via user-provided direct URLs.
+- **MAJOR RECLASSIFICATION**: 内閣官房 (cas) moved from "narrative-only family" to "List-Creator combined-ledger family" (~17-file split) -- the year-specific sub-page reveals a genuine itemized ledger showing the identical `010 内閣官房/010 内閣官房共通費/①/01-95/内閣官房一般行政に必要な経費` opening template already seen at the start of case-002/003/004/005's own selected rows. The originally-found narrative overview remains a separate, still-valid artifact.
+- 防衛省 resolved: its landing page still returns HTTP 403 but the direct, year-specific PDF URL returns HTTP 200 and was acquired (540 pages) -- a landing-page-specific block, not a domain-wide one.
+- 外務省 CONFIRMED as a harder failure than originally characterized: domain-wide block verified via curl, WebFetch, and a full Playwright/Chromium browser session (which returned an explicit "Access Denied" interstitial, not a solvable JS challenge) -- consistent with network/IP-range-level blocking.
+- 衆議院 and 裁判官弾劾裁判所 resolved via targeted web search using year-specific filename conventions not linked from their own general landing pages.
+- **NEW FAILURE CATEGORY DISCOVERED**: 裁判官訴追委員会's own acquired document, on inspection of its page-1 title (`令和6年度国会所管一般会計歳出予算各目明細書`) and table grammar (`組織/項/事項/目の区分/要求額/積算内訳`, fundamentally different from the request-stage `要求番号/経費コード/前年度-vs-6年度-delta-triple` grammar confirmed across every other in-scope authority), is an ENACTED-BUDGET-STAGE document, not the request-stage document this census targets -- recorded as "acquired but out of scope," distinct from both "acquisition failure" and "not found." A genuine request-stage document specific to this authority was searched for but not located.
+- 参議院 remains genuinely unresolved after 5+ targeted web searches and filename-pattern-guessing against both sibling years' confirmed conventions -- not a WAF block, the resource itself could not be located.
+- 国立国会図書館 precisely re-characterized: its own current page retains R7-R9 request-stage documents and R6's own final-budget document, but not R6's own request-stage document -- confirming a request-stage-specific retention window shorter than the final-budget retention window.
+- **Wrote a dedicated Failure/Learning section (report section 10.7)** preserving why each original miss happened, not silently correcting it -- including this task's own initial mistake with sotsui (reusing a URL pattern from a search snippet that itself labeled the wrong document stage, without checking the acquired document's own content against the census's explicit scope boundary before treating the acquisition as valid).
+- Format families revised to 9 provisional families (cross-reference-summary family now has 4 confirmed instances spanning a 9-page document to a 1,097-page one, not correlated with authority size; added an explicitly out-of-scope enacted-budget-stage family rather than forcing sotsui's document into an in-scope family).
+- Files: revised in place (not duplicated) `reports/document-understanding/20260927_1909_FY2024_All_Authority_Concept_Request_Format_Census.csv` and `..._Report.md`, 6 new `sources/source-lock.json` entries + matching `sources/source-registry.csv` rows (CRLF artifacts caught and fixed before each commit), `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Explicitly not done, per the user's own instruction to continue rather than finalize**: multi-page/context-carry-over sampling across the 28 in-scope authorities; final format-family/case-006+ determination; sangiin/sotsui's own genuine request-stage status remains open.
+- **Recommended next step**: resolve sangiin's and sotsui's own genuine request-stage documents (if they exist), deepen inspection (multi-page + context sampling) of the 28 in-scope authorities, then finalize format families and select case-006+ candidates.
+
 ### research: FY2024 all-authority format census -- first pass (branch: research/fy2024-all-authority-format-census)
 
 - **Source-safe acquisition/inspection only. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**

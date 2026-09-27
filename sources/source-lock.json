@@ -351,6 +351,84 @@
       "etag": "W/\"184218-1693293189267\"",
       "lastModified": "Tue, 29 Aug 2023 07:13:09 GMT",
       "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "mod-fy2024-general-account-expenditure-request",
+      "url": "https://www.mod.go.jp/j/budget/gaisan/r6/gaisanyoukyu.pdf",
+      "finalUrl": "https://www.mod.go.jp/j/budget/gaisan/r6/gaisanyoukyu.pdf",
+      "fetchedAt": "2026-09-27T10:54:04.625Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 1091689,
+      "sha256": "57861291846015dfdc831480149d8614a1d67c283e8b6e313f5c75f92a2a6b47",
+      "etag": "\"10a869-60430e9fedfc0\"",
+      "lastModified": "Thu, 31 Aug 2023 04:59:51 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "cas-fy2024-general-account-expenditure-request-cover",
+      "url": "https://www.cas.go.jp/jp/yosan/pdf/r6_01.pdf",
+      "finalUrl": "https://www.cas.go.jp/jp/yosan/pdf/r6_01.pdf",
+      "fetchedAt": "2026-09-27T10:56:00.579Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 8238,
+      "sha256": "44067ca7f87e9165e0cf3e7ed27584ae113ce80200551485ec2acd1641ff0452",
+      "etag": "\"41fd0c45588127b1235e2e4f590c96a8\"",
+      "lastModified": "Fri, 13 Mar 2026 12:48:37 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "cas-fy2024-general-account-expenditure-request-detail-01",
+      "url": "https://www.cas.go.jp/jp/yosan/pdf/r6_02.pdf",
+      "finalUrl": "https://www.cas.go.jp/jp/yosan/pdf/r6_02.pdf",
+      "fetchedAt": "2026-09-27T10:56:00.759Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 10716,
+      "sha256": "37c5d82cb7fc835ab16d7f85c113f646d712c34315cf45fce556846f0419d5c0",
+      "etag": "\"8fced20ab055028ca109f30f435f4bf2\"",
+      "lastModified": "Fri, 13 Mar 2026 12:48:37 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "shugiin-fy2024-general-account-expenditure-request",
+      "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/osirase/kaikei-saishutsugaisan6.pdf/$File/kaikei-saishutsugaisan6.pdf",
+      "finalUrl": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/osirase/kaikei-saishutsugaisan6.pdf/$File/kaikei-saishutsugaisan6.pdf",
+      "fetchedAt": "2026-09-27T10:56:57.995Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 68050,
+      "sha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+      "etag": "W/\"MTAtMDAwMi0wLTQ5MjU4QTI3MDAyNjlFQ0EtNUNGRUYyN0QxMDlDQzE1NTQ5MjU4QTI3MDAyMzUxMzg=\"",
+      "lastModified": "Mon, 11 Sep 2023 07:01:51 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "sotsui-fy2024-general-account-expenditure-request",
+      "url": "https://www.sotsui.go.jp/budget/images/r6_budget.pdf",
+      "finalUrl": "https://www.sotsui.go.jp/budget/images/r6_budget.pdf",
+      "fetchedAt": "2026-09-27T10:56:58.197Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 85922,
+      "sha256": "f953d0a2325cfc127f7c5bb7685048085a1ee158e167cf1ce32f5a55f52d4c7e",
+      "etag": "\"101faf3b-14fa2-64d5b1dbea5c0\"",
+      "lastModified": "Thu, 19 Mar 2026 06:59:56 GMT",
+      "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "dangai-fy2024-general-account-expenditure-request",
+      "url": "https://www.dangai.go.jp/info/pdf/r06_saisyutu-gaisan.pdf",
+      "finalUrl": "https://www.dangai.go.jp/info/pdf/r06_saisyutu-gaisan.pdf",
+      "fetchedAt": "2026-09-27T10:58:52.444Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 15491,
+      "sha256": "370cd8991433528e8b07c35498959ab0b1fec0b3f634f87e12c7d539944f7a21",
+      "etag": "\"3c83-6050fdf9ed1e3\"",
+      "lastModified": "Mon, 11 Sep 2023 06:59:54 GMT",
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }
