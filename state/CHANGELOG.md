@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- acquisition-difficulty memo (branch: research/fy2024-all-authority-format-census)
+
+- **Memo only, consolidating already-committed findings. No new acquisition, inspection, row selection, Ground Truth, or benchmark engine run.**
+- Wrote `reports/document-understanding/20260927_2059_FY2024_Census_Acquisition_Difficulty_Memo.md`: a compact table summarizing the initial problem, resolution path, and final status for every authority in the census that could not be acquired on the first attempt (防衛省, 内閣官房, 外務省, 衆議院, 裁判官弾劾裁判所, 厚生労働省, 参議院, 裁判官訴追委員会, 国立国会図書館, 復興庁), plus the 5 cross-cutting lessons already recorded in the census report's own §10.7.
+- This memo is an index/summary into the census report's own §10.2–§10.2g, not a replacement for it -- no finding was re-derived or re-verified in producing it.
+- Files: the memo, `state/{TODO.md,CHANGELOG.md}`.
+
 ### research: FY2024 format census -- close sotsui, resolve fukkocho as out of scope (branch: research/fy2024-all-authority-format-census)
 
 - **Final population-closing pass. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**

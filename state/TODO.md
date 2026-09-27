@@ -97,7 +97,9 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, seventh pass complete
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, seventh pass complete + acquisition-difficulty memo
+
+- **Acquisition-difficulty memo written**: `reports/document-understanding/20260927_2059_FY2024_Census_Acquisition_Difficulty_Memo.md` — a compact table summarizing the outcome for every authority that could not be acquired on the first attempt (mod, cas, mofa, shugiin, dangai, mhlw, sangiin, sotsui, ndl, fukkocho), with cross-cutting lessons. Consolidates, does not replace, the full detail in the census report's own §10.2–§10.2g.
 
 - **裁判官訴追委員会 RESOLVED**, per a user-identified URL (`r6budget_yokyu.pdf`). Verified genuinely FY2024 request-stage material (`CreationDate` 2023-08-04, title confirms `令和6年度歳出概算要求書`). The earlier out-of-scope acquisition (enacted-budget `各目明細書`) is retained as a separate, still-valid artifact — one authority genuinely hosts both an in-scope and an out-of-scope document. **This closes the sole remaining "acquired but out of scope" entry** — all 33 originally-frozen population authorities now have a fully closed status: 31 in-scope, 1 precisely-confirmed-absent (ndl).
 - **復興庁 investigated and found categorically out of scope**: its own budget page confirms it publishes no 一般会計 request at all — its entire FY2024 mechanism is special-account-only (東日本大震災復興特別会計), explicitly excluded by this census's own scope. A 103-page special-account file was locked for evidence only, not counted as in-scope.
