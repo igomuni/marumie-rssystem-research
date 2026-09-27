@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### research: synthesize findings across five ministries (branch: research/case-005-mlit-source-survey)
+
+- **Read-only interim synthesis. No new benchmark, Ground Truth, extraction, normalization experiment, source inspection, or production change.**
+- Built a case-001–005 inventory (5 ministries: Digital Agency, METI, MIC, MEXT, MLIT) entirely from already-committed evidence — source registry/lock, Ground Truth files, selection protocols/records, compact benchmark evidence, current evaluation reports, and every timestamped experiment/diagnostic/anomaly report. Genuine unknowns (case-001's page count, Producer, encryption — already marked `not_recorded` in its own `document-profile.json`) are preserved as `not established`, not guessed.
+- **Headline cross-case finding, stated at the correct strength**: `item_name_exact_match` FAILs in all 5 cases for all 3 engines (15/15), but the underlying mechanism is **heterogeneous**, not uniform — pure same-page hierarchy ambiguity (case-001, case-005, and the flat engines in case-002/003), ambiguity compounded by a genuine Docling extraction failure (Docling in case-002/003), and total item-header-context absence (all three engines in case-004, a document/layout-family-interpretation-layer finding, not an ambiguity or extraction defect). Explicitly refused to collapse these into "one bug."
+- Confirmed context recovery requires **at least two genuinely different mechanisms** (a bounded, zero-or-one-page neighbor lookback for item headers vs. a table-wide-once metadata declaration for units) — case-005's own same-page item/unit context is recorded as a clean contrast case demonstrating both mechanisms can resolve to "page-local" for a specific row, not as a refutation of case-004's own diagnostic findings.
+- Traced the CJK-spacing normalization study's full chronology (Docling origin → case-001 control → case-002/003 layer-justified extension with exactly-matching pre-registered predictions → boundary-safety KEEP decision → confirmed still-correct behavior in case-004/005) without generalizing it into a blanket "strip all Japanese whitespace" rule.
+- Synthesized case-004's four-channel anomaly research (geometry/text-grammar/Docling small-sample/Docling broad-sample), correctly reporting the broad-sample falsification as the primary, headline result rather than softening it — explicitly declines to claim "special structures can now be automatically detected."
+- Kept MOF-CSV reverse-linkage discussion strictly separated into evidence (what PDF-derived keys already exist) vs. proposal (a future, unattempted linkage experiment) — no matching performed, no linkage claimed, no semantic equivalence asserted for MLIT's own confirmed `繰入` expressions.
+- Compared five case-006+ priority options (sixth ministry / Case Package formalization / MOF linkage experiment / context-model prototype / RS data-quality line) without implementing any; the RS 1000× anomaly was explicitly **not** added as a new confirmed finding, since it is not yet repository-recorded.
+- No ADR added — this task synthesizes and cross-references existing decisions without introducing a new one.
+- Full report: `reports/document-understanding/20260927_0906_Five_Ministry_Interim_Synthesis.md`.
+- Files: the synthesis report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. No case-001–005 fixture, selection protocol/record, Ground Truth, benchmark evidence, or production code modified.
+- **Recommended next step**: choose among the five case-006+ priority options — no decision made in this task.
+
 ### research: record MLIT case-005 first frozen benchmark (branch: research/case-005-mlit-source-survey)
 
 - **First frozen out-of-sample benchmark run. No adaptation applied.**

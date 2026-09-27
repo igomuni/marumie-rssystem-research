@@ -87,6 +87,16 @@
 - **Next action (recommended, not started): a cross-case interim summary across all five surveyed ministries (case-001–005)** — explicitly deferred from this task to a separate, later task.
 - Not done, by design: no Case Package created; no adaptation applied; no cross-case summary produced yet.
 
+## Five-ministry interim synthesis (read-only, no new research — see reports/document-understanding/20260927_0906_Five_Ministry_Interim_Synthesis.md)
+
+- **Synthesis complete.** Built a case-001–005 inventory from already-committed evidence only; unknowns (case-001's page count/Producer/encryption) explicitly left `not established`, not guessed.
+- **`item_name_exact_match` FAILs in all 5 cases, all 3 engines — but the mechanism is heterogeneous**: pure hierarchy ambiguity (case-001/005, flat engines in 002/003), ambiguity + genuine Docling extraction failure (Docling in 002/003), total item-header-context absence (all 3 engines in case-004). Not one bug — explicitly not collapsed into one.
+- Confirmed context recovery needs ≥2 distinct mechanisms (bounded neighbor-page lookback for item headers vs. table-wide-once metadata for units); case-005 is a same-page-context contrast case, not a refutation of case-004's own findings.
+- CJK-spacing and case-004 anomaly-research chronologies synthesized without overgeneralizing either (the anomaly work's own broad-sample falsification is reported as the primary result, not softened).
+- MOF-CSV reverse-linkage kept strictly evidence-vs-proposal; RS 1000× item not added as a new finding (not yet repository-recorded).
+- **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
+- Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
+
 ## Research architecture (design-only, not implemented — see ADR-010, ADR-011, ADR-012)
 
 - **Case Package Reconstruction Benchmark v0: DONE.** 33/35 checklist items correctly reconstructed across case-001/case-002, zero hallucinations, critical temporal test (evaluator-correction chronology) passed cleanly in both directions. See `reports/document-understanding/20260926_1348_Case_Package_Reconstruction_Benchmark_v0_Report.md` and its 4 companion artifacts.
