@@ -1,6 +1,6 @@
 # FY2024 All-Authority 概算要求 PDF Format Census — Report
 
-Status: **Second pass. 28 of 33 population authorities acquired/inspected in scope; 1 confirmed harder acquisition failure; 1 genuinely unresolved despite extensive search; 1 acquired-but-out-of-scope (wrong document stage); 1 authority precisely confirmed absent from its own live page. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+Status: **Third pass. 29 of 33 population authorities acquired/inspected in scope; 1 genuinely unresolved despite extensive search; 1 acquired-but-out-of-scope (wrong document stage); 1 authority precisely confirmed absent from its own live page. Provisional format families, not finalized. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
 
 Date: 2026-09-27 (Asia/Tokyo)
 
@@ -10,20 +10,25 @@ Branch: `research/fy2024-all-authority-format-census`, from `main@fc7c0ea`.
 
 `[FACT]` MOF's official FY2024 cross-authority index (`2024yokyuippan_link.html`) lists **33 authorities** (frozen in `20260927_1909_FY2024_Population_Freeze.md`, commit `558f7fb`).
 
-- Acquired and in-scope: **28** (5 reused from case-001–005's own already-committed evidence; 23 newly acquired this task)
+- Acquired and in-scope: **29** (5 reused from case-001–005's own already-committed evidence; 24 newly acquired this task)
 - Acquired but out of scope (wrong document stage — enacted-budget 各目明細書, not request-stage 概算要求書): **1** (裁判官訴追委員会/Sotsui)
-- Confirmed harder acquisition failure (domain-wide block, confirmed via curl, WebFetch, AND a full Playwright/Chromium session): **1** (外務省/MOFA)
 - Genuinely unresolved despite extensive multi-query search (not a WAF block — the URL itself could not be located): **1** (参議院/Sangiin)
 - Precisely confirmed absent from the authority's own current live page (request-stage retention window has elapsed; the final-budget-stage document for the same year is still retained): **1** (国立国会図書館/NDL)
 - Direct-PDF-vs-landing-page ratio: most authorities required a landing-page hop; several (防衛省, 会計検査院, 裁判官弾劾裁判所) required bypassing a blocked or unhelpful general landing page in favor of a year-specific direct URL found via web search.
 - Single-file vs. split-package ratio among the 28 acquired: **at least 20 single/combined**, **≥7 split** (文部科学省=4 files, 内閣官房=~17 files, 金融庁=12 files, 内閣本府=~50 files, MHLW's narrative package=10+ files across 3 sub-pages).
+
+## 10.2a Third-pass resolution: 外務省 (MOFA)
+
+`[FACT]` MOFA's domain-wide Akamai block was re-confirmed in this pass at the DOMAIN level, not merely the file level: a full Playwright/Chromium session navigating to the mofa.go.jp HOMEPAGE (not just the target PDF) also returned HTTP 403 "Access Denied." This rules out any file-specific protection, referrer requirement, or JS-challenge-solvable mechanism — the block operates at the network edge before any page content is served, and is not solvable by any tooling available in this research environment (plain fetch, WebFetch, or a real Chromium browser).
+
+**Resolution**: the user independently downloaded the target file (`https://www.mofa.go.jp/mofaj/files/100546568.pdf`) from a different network origin and supplied it locally (`incoming/100546568.pdf`). This task verified the file is a genuine, well-formed PDF (correct magic number, opens cleanly with `pdfinfo`/`pdftotext`, 314 pages, standard List-Creator ledger grammar confirmed on a sampled page) before locking it as `mofa-fy2024-general-account-expenditure-request`. This is the **first source in this entire research program acquired via user-provided-out-of-band delivery** rather than this repository's own fetch tooling — disclosed explicitly in both `source-lock.json`'s own `acquisitionMethod` field and this report, not silently treated as equivalent to an automated fetch. 外務省 is now in-scope, joining the List-Creator combined-ledger family.
 
 ## 10.2 Second-pass corrections (per explicit user instruction not to freeze the first pass's classifications prematurely)
 
 `[FACT]` Two authorities were substantively re-investigated and reclassified after the user identified specific alternate entry points. See §10.7 (Failure/Learning) for the root cause of each original miss.
 
 - **内閣官房 (CAS)**: RECLASSIFIED from "narrative-only family" to **List-Creator combined-ledger family** (split into ~17 files). The year-specific sub-page `gaisan_youkyuu_r6.html` (distinct from the general `index.html` landing page checked in the first pass) links to a genuine `令和６年度歳出概算要求額明細表` split by division, confirmed to show the identical `010 内閣官房/010 内閣官房共通費/①/01-95/内閣官房一般行政に必要な経費` opening template as case-002/003/004/005's own selected rows. The originally-found narrative overview PDF remains a separate, still-valid artifact for this authority (both exist).
-- **防衛省 (MOD) and 外務省 (MOFA)**: re-attempted via the user's provided direct PDF URLs (found independently to match via web search too). **MOD succeeded** — its landing page is blocked (HTTP 403) but the direct, year-specific PDF URL returns HTTP 200 and was acquired (540 pages, standard ledger grammar). **MOFA still failed**, but the failure is now far more precisely characterized: the block is domain-wide (a known-good older MOFA PDF from a FY2023 search result also returns 403), and a full Playwright/Chromium browser session returns an explicit "Access Denied" interstitial rather than a JS challenge a browser could solve — consistent with network-origin/IP-range-level blocking, not bot-detection.
+- **防衛省 (MOD) and 外務省 (MOFA)**: re-attempted via the user's provided direct PDF URLs (found independently to match via web search too). **MOD succeeded** — its landing page is blocked (HTTP 403) but the direct, year-specific PDF URL returns HTTP 200 and was acquired (540 pages, standard ledger grammar). **MOFA's block was confirmed domain-wide** (the mofa.go.jp homepage itself, not just the target file, returns "Access Denied" even via a full Playwright/Chromium session), then **resolved in a third pass** via user-provided-out-of-band file delivery — see §10.2a.
 - **衆議院 (Shugiin), 裁判官弾劾裁判所 (Dangai)**: RESOLVED. Both had genuine FY2024 request-stage documents, findable via web search using year-specific filename patterns not linked from the authorities' own general landing pages.
 - **裁判官訴追委員会 (Sotsui)**: a document WAS found and acquired, but on inspection its own page-1 title (`令和6年度国会所管一般会計歳出予算各目明細書`) and its fundamentally different table grammar (`組織/項/事項/目の区分/要求額/積算内訳`, no 要求番号/経費コード-as-separate-column/前年度-vs-6年度-delta-triple) identify it as an **enacted-budget-stage 各目明細書**, not the request-stage 概算要求書 this census targets — recorded as **acquired but out of scope**, a new third failure category this census did not originally anticipate (distinct from both "acquisition failure" and "not found").
 - **参議院 (Sangiin)**: still unresolved after substantially more effort (5+ web searches, direct URL pattern-guessing against both sibling years' confirmed filename conventions). Notably, sotsui's own combined 各目明細書 does cover 参議院 as an organization, but per the same out-of-scope reasoning above, that does not substitute for a genuine request-stage document.
@@ -46,7 +51,7 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 `[INTERPRETATION]` Families induced from observed features, not fixed in advance. This section supersedes the first pass's 8-family sketch — CAS is now a List-Creator-family member, not a narrative-only outlier.
 
-1. **List-Creator combined-ledger family** — single or split PDF, Producer "List Creator", standard ledger grammar, text layer present. Largest family: デジタル庁 (unclassified pending re-integration), 経済産業省, 総務省, 国土交通省, 農林水産省, こども家庭庁, 財務省, カジノ管理委員会, 個人情報保護委員会, 皇室費, 宮内庁, 内閣官房 (split variant, ~17 files), 内閣本府 (extreme-split variant, ~50 files).
+1. **List-Creator combined-ledger family** — single or split PDF, Producer "List Creator", standard ledger grammar, text layer present. Largest family: デジタル庁 (unclassified pending re-integration), 経済産業省, 総務省, 国土交通省, 農林水産省, こども家庭庁, 外務省, 財務省, カジノ管理委員会, 個人情報保護委員会, 皇室費, 宮内庁, 内閣官房 (split variant, ~17 files), 内閣本府 (extreme-split variant, ~50 files).
 2. **Split-package encrypted-ledger family (4-file)** — case-004/文部科学省 alone so far. Encryption and packaging-split are shown by this census to be **independent axes**: many authorities are encrypted without a 4-file split (財務省, カジノ管理委員会, 個人情報保護委員会, 消費者庁, 内閣本府, 内閣官房), and none replicate MEXT's specific cover/summary/detail/staffing 4-way split.
 3. **Cross-reference-summary family** — 国土交通省(case-005), 環境省, 消費者庁, 裁判官弾劾裁判所: a 総表 with split 一般行政経費/その他の経費/計 amount subcolumns and an explicit page-number cross-reference into a detail section. Now confirmed in **4 authorities**, ranging from a 9-page body (dangai) to a 1,097-page one (mlit) — the mechanism is not correlated with authority size.
 4. **Rasterized-no-text-layer ledger family** — 金融庁, 法務省: visually identical standard ledger grammar, zero embedded fonts / zero extractable text. **Not present in any of case-001–005.**
@@ -74,12 +79,11 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 | Authority | Status | Detail |
 |---|---|---|
-| 外務省 (MOFA) | Confirmed harder failure | Domain-wide block (curl, WebFetch, AND full Playwright/Chromium session all fail; Chromium returns explicit "Access Denied," not a JS challenge) — network/IP-level, not bot-detection |
 | 参議院 (Sangiin) | Genuinely unresolved | 5+ web searches and filename-pattern-guessing against both sibling years' conventions found no working URL; not a WAF block — the resource itself could not be located |
 | 国立国会図書館 (NDL) | Precisely confirmed absent | Own current page retains R7-R9 request-stage docs and R6's own final-budget doc, but not R6's own request-stage doc — a request-stage-specific retention window, precisely characterized |
 | 裁判官訴追委員会 (Sotsui) | Acquired but out of scope | Document found is an enacted-budget-stage 各目明細書, not a request-stage 概算要求書; a genuine request-stage document specific to this authority was searched for but not located |
 
-`[FACT]` Resolved from the first pass: 防衛省 (direct PDF URL works despite landing-page block), 衆議院, 裁判官弾劾裁判所 (both found via web search after their general landing pages proved unhelpful), 内閣官房 (reclassified, §10.2).
+`[FACT]` Resolved from the first pass: 防衛省 (direct PDF URL works despite landing-page block), 衆議院, 裁判官弾劾裁判所 (both found via web search after their general landing pages proved unhelpful), 内閣官房 (reclassified, §10.2), 外務省 (resolved via user-provided-out-of-band delivery after a confirmed domain-wide block, §10.2a).
 
 ## 10.7 Failure/Learning: why the first pass's classifications were wrong
 
@@ -112,4 +116,4 @@ This list is **not** extended to claim universality: several acquired authoritie
 
 ---
 
-**This report reflects a second-pass, still-incomplete FY2024 all-authority format census. 28 of 33 authorities acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine); 1 acquired but out of scope; 1 confirmed harder failure; 1 genuinely unresolved; 1 precisely confirmed absent. No row was selected; no Ground Truth was created; no benchmark engine was run.**
+**This report reflects a third-pass, still-incomplete FY2024 all-authority format census. 29 of 33 authorities acquired and in-scope (source-safe tooling only — pdfinfo/pdffonts/pdftotext/pdftoppm; no compared benchmark engine; one of the 29, 外務省, via user-provided-out-of-band file delivery after this repository's own tooling was confirmed domain-wide-blocked); 1 acquired but out of scope; 1 genuinely unresolved; 1 precisely confirmed absent. No row was selected; no Ground Truth was created; no benchmark engine was run.**

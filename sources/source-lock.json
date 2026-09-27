@@ -429,6 +429,19 @@
       "etag": "\"3c83-6050fdf9ed1e3\"",
       "lastModified": "Mon, 11 Sep 2023 06:59:54 GMT",
       "acquisitionMethod": "plain-fetch"
+    },
+    {
+      "sourceId": "mofa-fy2024-general-account-expenditure-request",
+      "url": "https://www.mofa.go.jp/mofaj/files/100546568.pdf",
+      "finalUrl": "https://www.mofa.go.jp/mofaj/files/100546568.pdf",
+      "fetchedAt": "2026-09-27T20:18:00.000Z",
+      "httpStatus": null,
+      "mimeType": "application/pdf",
+      "sizeBytes": 751268,
+      "sha256": "85781ba1f867aaab4130b2c463c588c4fc9ca6211d097cedfd495c56bf024b55",
+      "etag": null,
+      "lastModified": null,
+      "acquisitionMethod": "user-provided-out-of-band(this repository's own automated tooling -- plain-fetch, WebFetch, and Playwright/Chromium -- was confirmed domain-wide-blocked by Akamai for mofa.go.jp; the user independently downloaded this file from a different network origin and supplied it as incoming/100546568.pdf, verified in this task to be a genuine PDF matching the expected URL's own filename)"
     }
   ]
 }

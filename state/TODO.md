@@ -97,7 +97,14 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, second pass complete
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — IN PROGRESS, third pass complete
+
+- **外務省 (MOFA) resolved via user-provided-out-of-band delivery**, after confirming its Akamai block is domain-wide (the mofa.go.jp homepage itself returns "Access Denied" via a full Playwright/Chromium session, ruling out any solvable JS challenge). The user downloaded the file from a different network origin; this task verified it as a genuine PDF (314 pages, List Creator, standard ledger grammar) before locking it as `mofa-fy2024-general-account-expenditure-request` — the first source in this program acquired this way, disclosed explicitly, not treated as equivalent to an automated fetch.
+- **29 of 33 authorities now in-scope** (up from 28). 防衛省 confirmed correctly acquired (landing-page-only block); 厚生労働省 confirmed correctly classified as narrative-only (no formal ledger) — both per direct user confirmation.
+- **Still unresolved**: 参議院 (genuinely unresolved after extensive search), 裁判官訴追委員会 (acquired document is out-of-scope enacted-budget stage; genuine request-stage document not located).
+- **Next action (not started)**: resolve sangiin's/sotsui's own genuine request-stage documents if they exist, deepen inspection (multi-page + context sampling) of the 29 in-scope authorities, then finalize format families and select case-006+ candidates.
+
+## FY2024 all-authority format census (branch: research/fy2024-all-authority-format-census) — second pass (superseded by third pass above)
 
 - **Second pass corrected the first pass's classifications per explicit user instruction not to freeze them prematurely.** 28 of 33 authorities now acquired/in-scope (up from 25); 1 confirmed harder failure (外務省, domain-wide block confirmed via curl+WebFetch+Playwright/Chromium); 1 genuinely unresolved after extensive multi-query search (参議院); 1 precisely confirmed absent with a characterized retention-window explanation (国立国会図書館); 1 acquired-but-out-of-scope, a NEW failure category (裁判官訴追委員会 — acquired document is an enacted-budget-stage 各目明細書, not the request-stage 概算要求書 this census targets).
 - **MAJOR RECLASSIFICATION**: 内閣官房 moved from "narrative-only family" to "List-Creator combined-ledger family" (~17-file split) after checking a year-specific sub-page (`gaisan_youkyuu_r6.html`) the first pass's general-landing-page check had missed. 防衛省, 衆議院, 裁判官弾劾裁判所 all resolved from failures to acquisitions via direct/year-specific URLs.

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- resolve MOFA via user-provided delivery (branch: research/fy2024-all-authority-format-census)
+
+- **Third-pass resolution of a single authority. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- Re-confirmed 外務省's block is domain-wide, not file-specific: a full Playwright/Chromium session navigating to the mofa.go.jp HOMEPAGE (not just the target PDF) also returned HTTP 403 "Access Denied" -- ruling out any referrer requirement or JS-challenge-solvable mechanism this session's tooling could work around.
+- The user independently downloaded `https://www.mofa.go.jp/mofaj/files/100546568.pdf` from a different network origin and supplied it locally (`incoming/100546568.pdf`). Verified it is a genuine, well-formed PDF (correct magic number, opens cleanly with `pdfinfo`/`pdftotext`, 314 pages, Producer "List Creator", not encrypted, standard ledger grammar confirmed on a sampled page, printed page label `外（本）`) before locking it as `mofa-fy2024-general-account-expenditure-request`.
+- **This is the first source in this entire research program acquired via user-provided-out-of-band delivery** rather than this repository's own fetch tooling -- disclosed explicitly in `source-lock.json`'s own `acquisitionMethod` field (which names the domain-wide block and the out-of-band delivery) and in a new census report section (10.2a), never silently treated as equivalent to an automated fetch.
+- 29 of 33 authorities now in-scope (up from 28). 外務省 joins the List-Creator combined-ledger family.
+- Confirmed and left unchanged, per direct user confirmation: 防衛省 is correctly acquired (a landing-page-specific block only; the direct PDF URL works); 厚生労働省 is correctly classified as narrative-only (no formal ledger found across 3 sub-pages and ~40 files).
+- Files: `incoming/100546568.pdf` copied to `sources/raw/mofa-fy2024-general-account-expenditure-request.pdf` (git-ignored), 1 new `sources/source-lock.json` entry + matching `sources/source-registry.csv` row, revised-in-place census CSV/report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Recommended next step**: resolve sangiin's/sotsui's own genuine request-stage documents (if they exist), deepen inspection (multi-page + context sampling) of the 29 in-scope authorities, then finalize format families and select case-006+ candidates.
+
 ### research: FY2024 format census -- second pass, corrections and failure/learning (branch: research/fy2024-all-authority-format-census)
 
 - **Corrections and re-investigation only, per explicit user instruction not to freeze the first pass's classifications prematurely. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
