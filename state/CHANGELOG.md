@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### research: FY2024 format census -- major MHLW reclassification (branch: research/fy2024-all-authority-format-census)
+
+- **Correction of a major prior-pass finding. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**
+- The user provided the exact URL `https://www.mhlw.go.jp/wp/yosan/yosan/24syokan/dl/05-1b-01.pdf`, previously unlocated by two prior passes' own investigation.
+- This file is the **largest single document in the entire census** (1,723 pages, exceeding 法務省's own 737), Producer "List Creator," not encrypted, containing BOTH a granular, expense-code-level 総表 (pages 1-12, the 5th confirmed instance of the cross-reference-summary mechanism already seen in mlit/env/caa/dangai) AND a genuine row-level 明細表 (pages 13-1,723) spanning 8 internal organizations, confirmed showing the standard `要求番号`/`事項`/`前年度予算額`/`対前年度比較増△減`/`備考` grammar and the same `NNNNN-NNNN-NN-NNNN` subordinate accounting code convention seen throughout this census.
+- **厚生労働省 RECLASSIFIED** from "narrative-only family" into both the cross-reference-summary family and the List-Creator combined-ledger family. Its own narrative/policy-evaluation files found in prior passes remain valid, separately-coexisting artifacts on the same authority's site.
+- **Root cause of the miss, disclosed as a new Failure/Learning entry (report section 10.2b)**: two prior passes used `WebFetch` to enumerate links on this authority's own sub-pages; that enumeration surfaced a *sibling* file (`05-1a-01.pdf`, the revenue-side counterpart) but never the actual expenditure-side counterpart being sought -- an incomplete automated link-extraction result, not a genuine absence on the page. Lesson recorded: `WebFetch`'s own summarized link enumeration is not guaranteed exhaustive, particularly among visually similar, densely-packed file lists differing only by a single character; a negative finding from an automated page summary should be held with less confidence than one from a direct, exhaustive fetch, especially when the cost of a false negative (two entire passes' worth of misclassification) is high.
+- **"Narrative-only family" is now empty** as a populated category -- both candidate authorities for it (内閣官房, 厚生労働省) were found, across this and the prior pass, to also publish genuine ledgers. Retained only as a conceptual category for a future authority that might genuinely lack any ledger.
+- Files: `sources/raw/mhlw-fy2024-general-account-expenditure-request-summary-detail.pdf` (git-ignored), 1 new `sources/source-lock.json` entry + matching `sources/source-registry.csv` row, revised-in-place census CSV/report, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`.
+- **Recommended next step**: resolve sangiin's/sotsui's own genuine request-stage documents (if they exist), deepen inspection (multi-page + context sampling) of the 29 in-scope authorities, then finalize format families and select case-006+ candidates -- MHLW's own 1,723-page document is now itself a strong candidate.
+
 ### research: FY2024 format census -- resolve MOFA via user-provided delivery (branch: research/fy2024-all-authority-format-census)
 
 - **Third-pass resolution of a single authority. No row selection, no Ground Truth, no benchmark engine run, no schema/production change.**

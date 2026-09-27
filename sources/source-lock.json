@@ -442,6 +442,19 @@
       "etag": null,
       "lastModified": null,
       "acquisitionMethod": "user-provided-out-of-band(this repository's own automated tooling -- plain-fetch, WebFetch, and Playwright/Chromium -- was confirmed domain-wide-blocked by Akamai for mofa.go.jp; the user independently downloaded this file from a different network origin and supplied it as incoming/100546568.pdf, verified in this task to be a genuine PDF matching the expected URL's own filename)"
+    },
+    {
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "url": "https://www.mhlw.go.jp/wp/yosan/yosan/24syokan/dl/05-1b-01.pdf",
+      "finalUrl": "https://www.mhlw.go.jp/wp/yosan/yosan/24syokan/dl/05-1b-01.pdf",
+      "fetchedAt": "2026-09-27T11:27:36.937Z",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "sizeBytes": 3444358,
+      "sha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "etag": "\"348e86-6055bbc9f8e40\"",
+      "lastModified": "Fri, 15 Sep 2023 01:30:25 GMT",
+      "acquisitionMethod": "plain-fetch"
     }
   ]
 }
