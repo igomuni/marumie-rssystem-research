@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### research: freeze case-007 selection protocol (branch: research/case-007-cas-baseline)
+
+- **Protocol freeze only. No candidate row enumerated, compared, or selected. No Ground Truth. No benchmark run or OCR experiment.**
+- **Frozen target file**: `cas-fy2024-general-account-expenditure-request-detail-01` (2 pages), chosen via a source-safe comparison table (official link order, file-identity stability, detail-ledger grammar, organization-anchor clarity, grammar purity, navigation determinism) — all 16 detail files passed equally, so the deterministic fallback (first file in official package/link order) applied. Inspection-depth familiarity with `detail-07` (most-examined file in the source survey) was explicitly rejected as a selection input.
+- **Single-file universe** adopted to resolve the source survey's own cross-file item-splitting finding *by construction*, not by adjudication: eligibility and tie-break rules apply only within `detail-01`.
+- **Cross-file splitting handling rule frozen**: no duplicate exclusion, no amount-based winner selection, no merge/aggregation, no assumed semantic equivalence, no guess at a "true" row.
+- **File identity elevated to a required provenance-locator element** for the future selection record (package/file identity, URL, SHA-256, pdfPageIndex, printed page, organization, item, request no., expense code, label) — a limited, CAS-specific disambiguation need, not a claim of a universal semantic row key.
+- **C1/C3 retained unchanged; C2 (multi-line wrap) retained** after explicit reconsideration (comparability with cases 001–006; confirmed non-hypothetical on `detail-01`'s own page 1); **C4 redefined into three evidence layers** (row-local / same-page-or-nearest-preceding item / file-scoped organization anchor, the last never required on the row's own page) so CAS's genuine file-scoped mechanism isn't mistaken for missing evidence.
+- **Context resolution order and tie-break frozen** (row-local → item → file-scoped organization → file identity; package → file → pdfPageIndex → topmost row).
+- Prior exposure (including several amount values on `detail-01`'s own pages, already seen during the source survey) disclosed in full, not minimized; not used to shape any criterion.
+- Files: `fixtures/document-understanding/case-007/20260928_1207_Case007_Selection_Protocol.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: case-007 source survey and evidence JSON byte-identical to `211213c`; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: apply this protocol to `detail-01` to select exactly one row and write a selection record, stopping before Ground Truth.
+
 ### research: survey case-007 CAS source package (branch: research/case-007-cas-baseline)
 
 - **Source survey only. No selection protocol, row selection, Ground Truth, benchmark run, OCR experiment, or production code change. No single "winner" file selected — multiple candidates presented as source-safe facts for a future Selection Protocol task.**

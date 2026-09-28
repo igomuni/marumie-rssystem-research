@@ -97,7 +97,20 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-007 内閣官房 (CAS) source survey (branch: research/case-007-cas-baseline) — complete, Selection Protocol not yet started
+## Case-007 内閣官房 (CAS) selection protocol (branch: research/case-007-cas-baseline) — FROZEN, row not yet selected
+
+- **Report**: `fixtures/document-understanding/case-007/20260928_1207_Case007_Selection_Protocol.md`.
+- **Frozen target file**: `cas-fy2024-general-account-expenditure-request-detail-01` (2 pages), chosen from among the source survey's own undecided candidates by a source-safe file-comparison (all 16 detail files passed equally; deterministic fallback = first file in official package/link order). Inspection-depth familiarity with `detail-07` (the most-examined file in the survey) was explicitly rejected as a selection input.
+- **Single-file universe** adopted specifically to resolve the cross-file item-splitting complication *by construction*: eligibility/tie-break apply only within `detail-01`, so the same-shaped `010/010/①/01-95/内閣官房一般行政に必要な経費` row recurring with different amounts elsewhere never needs adjudication.
+- **Cross-file splitting handling rule frozen**: no duplicate exclusion, no amount-based winner selection, no merging/aggregation, no semantic-equivalence assumption, no guess at a single "true" row.
+- **File identity elevated to a required provenance-locator element** (package identity, file sourceId, URL, SHA-256, pdfPageIndex, printed page, organization, item, request no., expense code, expense label) — not a claim of a universal semantic row key, just the minimum needed to disambiguate a row within a multi-file package.
+- **C2 (multi-line wrap) retained** (comparability with cases 001–006; confirmed non-hypothetical via a genuine 2-line wrap found on `detail-01`'s own page 1). **C4 (self-contained sufficiency) redefined into three evidence layers** (row-local / same-page-or-nearest-preceding-item / file-scoped organization anchor resolved once from the file's own page-1 declaration, never required to be reprinted on the candidate row's own page) — needed so CAS's own genuine file-scoped organization mechanism is never mistaken for missing evidence.
+- **Context resolution order frozen**: row-local → same-page-or-nearest-preceding item header (same file only) → frozen file-level organization anchor → file identity. Justified by a concrete new finding: item `06-95` begins on `detail-01` page 1 and its sub-rows continue onto page 2 without re-declaring the item header.
+- **Tie-break**: package → frozen target file → earliest `pdfPageIndex` → topmost eligible row.
+- **Prior exposure disclosed in full, not minimized**: `detail-01`'s own page-1/page-2 content, including several amount values, was already read during the source survey and re-read in this task for precondition confirmation only — no row was selected or compared based on those values.
+- **Next action (not started)**: apply this protocol to `detail-01`'s own 2 pages, select exactly one row, write a selection record, stop before Ground Truth.
+
+## Case-007 内閣官房 (CAS) source survey (branch: research/case-007-cas-baseline) — complete, Selection Protocol now frozen (see above)
 
 - **Report**: `reports/document-understanding/20260928_1028_Case007_CAS_Source_Survey.md`; evidence: `evidence/document-understanding/case-007-source-representation.json`. Branch created fresh from `main@0612f4f` (post PR #6 merge), not continuing the case-006 branch.
 - **Package inventory**: 18 locked sources (1 narrative overview, 1 cover file with an embedded 総表+目次, 16 numbered detail files `detail-01`/`detail-03`–`detail-17` — `detail-02` does not exist), 1–29 pages each, all SHA-256-verified against the lock with no drift.
