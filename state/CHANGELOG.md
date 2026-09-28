@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: survey Case-010 MHLW source
+
+- **Source/document/package/context survey only.** Started from fresh `main@f4eaf58` after PR #9 merge and rehashed the already-locked MHLW source (`09d26048…`, 3,444,358 bytes) without reacquisition. Confirmed a single 1,723-page, unencrypted A4-landscape List Creator PDF with native text, CID TrueType fonts, and no `pdfimages` rows.
+- Mapped the source as cover/TOC, two blank separators, `pdfPageIndex 8–19` cross-reference 総表, and `20–1722` standard-ledger 明細表 spanning eight TOC-declared organizations. The main detail grammar is standard but its remarks region contains nested explanatory/breakdown tables; sampled local `千円` declarations and nonuniform header repetition make grammar/unit/context boundaries a later protocol concern. No dedicated staffing-table section is TOC-listed.
+- Wrote `reports/document-understanding/20260929_0625_Case010_MHLW_Source_Survey.md` and `evidence/document-understanding/case-010-source-survey.json`; state now recommends Case-010 Selection Protocol Freeze. Cases 001–009, the Case-006–010 Selection Freeze, scripts, parser/normalizer/evaluator, OCR configuration, source lock/registry, and production semantics are unchanged. No selection protocol, row selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred.
+
 ### research: close out case-009 frozen baseline (branch: research/case-009-cao-source-survey)
 
 - **Closeout/audit only.** Directly audited the chronological freeze chain: Source Survey (`e640dc2`) → Protocol (`d42b7b8`) → Selection (`985f77e`) → Ground Truth (`0d238d2`) → First Benchmark (`199ef50`). Every frozen artifact remains byte-identical to its own freeze commit; the locked `1.pdf` SHA was reverified. No benchmark or source inspection was rerun.
