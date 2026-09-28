@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: close Case-010 frozen baseline
+
+- **Closeout/audit only.** Verified the complete Survey → Protocol → Selection → GT → Benchmark chronology and byte identity of every frozen Case-010 artifact. The locked 1,723-page MHLW source SHA remains unchanged; Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production code remain unchanged.
+- Closed Case-010 for the frozen baseline phase. The large source scale is confirmed, but no scale-caused target-benchmark interference was demonstrated. Remarks-side embedded structures are confirmed source facts, while their causal contribution to Docling's local table/row association failure is unproven. The planned Case-006–010 individual pilot sequence is complete; next recommended task is Cross-Case Synthesis, with batch processing and adaptation still not started.
+
 ### research: benchmark Case-010 frozen baseline
 
 - **First frozen benchmark only.** Ran the existing `npm run extract` and `npm run docbench -- case-010` commands against frozen GT, then reran the unchanged docbench command once for reproducibility. pdf.js and PyMuPDF each scored 10/11: target expense/triple recovered and correct item retained among four candidates, but no unique item resolution. Docling scored 3/11 after its one 99-cell target-page table produced no eligible expense candidate.
