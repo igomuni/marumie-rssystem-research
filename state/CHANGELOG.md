@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze Case-010 selection protocol
+
+- **Protocol freeze only.** Rehashed the locked MHLW source (PASS) and read the committed Source Survey/evidence plus prior protocols and the Case-007 NULL structural review. No new render or candidate inspection was performed.
+- Froze `010 厚生労働本省` main-ledger rows at `pdfPageIndex 20–1226` as the first TOC-declared organization with an exact next-organization boundary. Froze main-ledger-versus-remarks-substructure exclusion, C1–C4, same-page-only item context, section-scoped `千円`, direct same-row triple rule, ambiguity/NULL policy, earliest-page/topmost-row tie-break, and stop-at-first-pass rule. Cross-page context is conservatively disallowed because the survey did not establish a safe general lookback.
+- Wrote `fixtures/document-understanding/case-010/20260929_0647_Case010_Selection_Protocol.md` and updated state. Case-010 survey/evidence, Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production semantics are unchanged. No row selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred. Next: Case-010 Row Selection only.
+
 ### research: survey Case-010 MHLW source
 
 - **Source/document/package/context survey only.** Started from fresh `main@f4eaf58` after PR #9 merge and rehashed the already-locked MHLW source (`09d26048…`, 3,444,358 bytes) without reacquisition. Confirmed a single 1,723-page, unencrypted A4-landscape List Creator PDF with native text, CID TrueType fonts, and no `pdfimages` rows.
