@@ -310,4 +310,5 @@
 
 ## Case-009 Cabinet Office — next action
 
-- Begin the Case-009 内閣本府 (CAO) Source Survey only. Its exploratory question is whether extreme split packaging (about 50 files) introduces a context/source-identity mechanism beyond Case-007's file-scoped mechanism, or merely scales the same mechanism; no-new-mechanism is a valid result. Do not begin protocol, selection, Ground Truth, benchmark, or adaptation in the source-survey task.
+- **Source survey complete.** Actual package is 51 files (`0.pdf`–`50.pdf`), not an assumed approximate count. It has a cover/TOC plus 50 standard-ledger detail files with file-start division/organization scope declarations; file boundaries are context-bearing partitions, but package order is not demonstrated as context-required. Only `0.pdf`/`1.pdf` are currently lock entries; the other 49 source-survey downloads are temporary official snapshots and were not locked.
+- Next: Case-009 Selection Protocol Freeze. Before candidate enumeration, freeze a source-safe, lock-aware file/universe decision; preserve file identity plus scope as provenance; do not assume generic `010 内閣本府` hierarchy uniquely identifies a target. No row selection, Ground Truth, benchmark, or adaptation is authorized by this handoff.

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: survey case-009 CAO source package (branch: research/case-009-cao-source-survey)
+
+- **Source/package/context survey only.** Began from merged `main@d2a5cae` after Case-008 closeout, then enumerated the official CAO FY2024 landing page: actual package is 51 files (`0.pdf`–`50.pdf`), 394 pages, not a fixed approximate count. Created a full machine-readable manifest with official URLs, hashes, bytes, pages, metadata, first-page scope, grammar, and lock/snapshot status.
+- The package has one cover/TOC and 50 detail files. Every detail first page has native text, List Creator/A4-landscape/AES metadata, standard-ledger title/header, `千円`, and a newly declared organizational/divisional scope. Recurrent high-level `010 内閣本府` hierarchy plus separate division scope means file identity is a context-bearing partition/locator, while numeric package order itself was not shown necessary for context resolution. Seven stratified boundaries each restart with a new title/header/unit/scope; this is sampled continuation evidence, not a package-wide absence proof.
+- Exploratory finding: grammar is a known homogeneous standard-ledger family, but the package is heterogeneous by organizational/divisional partition. This supports bounded H2/H3 rather than assuming either a wholly new mechanism or packaging-only equivalence to Case-007. Existing locks for `0.pdf`/`1.pdf` re-verified; 49 additional official files were temporary survey snapshots only—no lock, registry, or raw repository change.
+- Wrote `evidence/document-understanding/case-009-source-survey.json` and `reports/document-understanding/20260928_2113_Case009_CAO_Source_Survey.md`; state now recommends a lock-aware Case-009 Selection Protocol Freeze. Case-006–010 freeze, Cases 001–008, scripts, parser/normalizer/evaluator, source lock/registry, and production semantics are unchanged. No selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred.
+
 ### research: close out case-008 frozen baseline (branch: research/case-008-courts-baseline)
 
 - **Closeout/audit only.** Audited the committed Case-008 freeze chain in chronological order: Source Survey (`e10d56c`) → Protocol (`3cf4a4f`) → Selection Record (`0ccea62`) → Ground Truth (`55bda23`) → First Frozen Benchmark (`ec69188`). Each frozen artifact remains byte-identical to its freeze point; the source SHA still matches the lock; no benchmark was rerun.
