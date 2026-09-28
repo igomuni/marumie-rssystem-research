@@ -97,7 +97,17 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-007 内閣官房 (CAS) row selection (branch: research/case-007-cas-baseline) — NULL RESULT, protocol amendment decision required
+## Case-007 内閣官房 (CAS) NULL RESULT structural review (branch: research/case-007-cas-baseline) — CLOSED as a null research result, no amendment
+
+- **Report**: `reports/document-understanding/20260928_1755_Case007_NULL_Result_Structural_Review.md`. The original Selection Protocol (`2cc0821`) and NULL Selection Record (`f530846`) were **not modified**.
+- Minimal cross-file structural check (4 of 16 detail files: `detail-01`, `detail-05`, `detail-07`, `detail-17`) found the **identical** pattern in every file: the request/expense-code row never carries its own printed amount; the amount lives in a deeper, variable-depth child, which is itself frequently an aggregate over further children (directly verified for `detail-01`'s own item `2`: `25,002`/`25,016` = sum of its own two object-code children).
+- **H2 confirmed** (common CAS convention, not a `detail-01` accident); H3 (mixed) not supported by this sample but not exhaustively ruled out (4/16 files checked).
+- **Decision: Option D** — closed as a null research result. Options A/B (semantic-parent/child-inherits-identity models) rejected because the parent-child association is not source-unique (would require either an arbitrary pick among qualifying descendants or forbidden arithmetic reconstruction). Option C (change universe/file) rejected because all 4 sampled files — spanning near-start, middle, and end of official order, plus a structurally distinct special-account file — show the same deep hierarchy, so further file-hunting would be "universe shopping."
+- **No amendment protocol artifact was created** — a deliberate outcome, not an oversight.
+- **Comparability finding**: CAS's own convention genuinely separates "which item/request this is" from "what it costs" (a variable-depth, often-aggregated subtree) — unlike every prior case (002–006), where one row carried both. Recorded for a possible future Case Package design discussion, not acted on here.
+- **Case-007 is now CLOSED.** Next action: per the frozen Case-006–010 execution order, proceed to Case-008 (saibansho/Courts) source survey.
+
+## Case-007 内閣官房 (CAS) row selection (branch: research/case-007-cas-baseline) — NULL RESULT (superseded by the structural review above, which closed Case-007)
 
 - **Report**: `fixtures/document-understanding/case-007/20260928_1244_Case007_Selection_Record.md`.
 - Exhaustively enumerated all 14 rows across both pages of the frozen universe (`detail-01`), applying the frozen protocol's own C1–C4 without modification. **Zero rows satisfy C1–C4 jointly.**

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### research: review case-007 null selection result (branch: research/case-007-cas-baseline) — closed, no amendment
+
+- **Review only. Original protocol and NULL selection record not modified. No row selection re-run. No Ground Truth. No benchmark run or OCR experiment.**
+- Minimal cross-file structural check (4 of 16 detail files: `detail-01`, `detail-05`, `detail-07`, `detail-17`, spanning near-start/middle/end of official order plus a structurally distinct special-account file) to distinguish whether the Selection Record's own null result (`f530846`) was a `detail-01`-specific accident (H1), a common CAS convention (H2), or mixed (H3).
+- **All 4 files show the identical pattern**: the request/expense-code row never carries its own printed amount; the amount lives in a deeper, variable-depth child row, which is itself frequently an aggregate over further children (directly verified for `detail-01`'s own item `2`: its child's printed total equals the sum of its own two object-code children). **H2 confirmed**, H1 refuted; H3 not supported by this sample but not exhaustively ruled out.
+- **Decision: Option D (close as a null research result).** Applying the decision rule directly ("parent-child association not source-unique → D"): Options A and B (semantic-parent/child-inherits-identity models) rejected because no source-safe rule can uniquely resolve "the one associated child" without either an arbitrary pick among qualifying descendants or forbidden arithmetic reconstruction; Option C (change universe) rejected because all 4 sampled files show the same deep hierarchy, so further file-hunting would be "universe shopping" (selecting a universe because it happens to contain an eligible row).
+- **No amendment protocol artifact was created** — deliberate, not an oversight.
+- Recorded, for a future Case Package design discussion only: CAS's own convention separates "which item/request this is" from "what it costs" in a way no prior case (002–006) needed to represent — a genuine structural difference, not resolved here.
+- Files: `reports/document-understanding/20260928_1755_Case007_NULL_Result_Structural_Review.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: original protocol (`2cc0821`) and NULL selection record (`f530846`) byte-identical; source survey/evidence (`211213c`) byte-identical; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Case-007 is now closed.** Recommended next step: per the frozen Case-006-010 execution order, proceed to Case-008 (saibansho/Courts) source survey.
+
 ### research: freeze case-007 row selection (branch: research/case-007-cas-baseline) — null result
 
 - **Row selection attempted, not achieved. No Ground Truth. No benchmark run or OCR experiment. No protocol modification, despite discovering it has no satisfiable candidate in the frozen universe.**
