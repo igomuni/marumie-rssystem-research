@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: freeze Case-010 row selection
+
+- **Row selection only.** Rehashed the locked MHLW source (PASS), confirmed frozen survey/protocol integrity, and applied the unchanged protocol by fresh 400-dpi direct visual inspection from the first page of the frozen universe. The first two evaluated aggregate rows failed C1; the third physical main-ledger row at `pdfPageIndex 20` passed C1–C4 and was selected. Inspection stopped immediately; no later row or page was inspected.
+- Wrote `fixtures/document-understanding/case-010/20260929_0711_Case010_Selection_Record.md` and updated state. Amount glyphs were visually exposed only to establish C3 row association and were not transcribed, normalized, or used in arithmetic. No Ground Truth, benchmark, OCR experiment, parser/normalizer/evaluator change, source-lock/registry change, MOF linkage, or production adaptation occurred. Next: Case-010 Ground Truth Freeze.
+
 ### research: freeze Case-010 selection protocol
 
 - **Protocol freeze only.** Rehashed the locked MHLW source (PASS) and read the committed Source Survey/evidence plus prior protocols and the Case-007 NULL structural review. No new render or candidate inspection was performed.
