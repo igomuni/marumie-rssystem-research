@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: freeze case-009 row selection (branch: research/case-009-cao-source-survey)
+
+- **Selection only, applying the frozen protocol without change.** Re-verified the branch/HEAD (`d42b7b8`), clean working tree, protocol byte identity, and locked `1.pdf` SHA-256 before a fresh 400-dpi direct visual render. Evaluated three physical hierarchy/ledger rows in top-to-bottom order on `pdfPageIndex 0`: the organization and item aggregates failed C1; the next request/expense row passed C1–C4. Stopped immediately, leaving all later rows/pages uninspected for eligibility.
+- Wrote `fixtures/document-understanding/case-009/20260928_2149_Case009_Selection_Record.md` and updated state. The record preserves source/file/section context, identifiers, label, unit evidence, rejection reasons, and stop/tie-break evidence while deliberately omitting numeric amount values. Source Survey/evidence, frozen protocol, Cases 001–008, scripts, source lock/registry, parser/normalizer/evaluator, and production semantics remain unchanged. No Ground Truth, benchmark, OCR, MOF linkage, or adaptation occurred. Next: Case-009 Ground Truth Freeze only.
+
 ### research: freeze case-009 selection protocol (branch: research/case-009-cao-source-survey)
 
 - **Protocol freeze only; no candidate enumeration.** Re-read the committed Case-009 Source Survey/evidence, selection-freeze framing, Case-007/008 protocol references, and source lock/registry. Compared source-admissibility options before any row criterion: chose Option A, the existing locked `1.pdf`, because it is the only already-locked CAO detail binary—not because of row content. Rejected unlocked temporary-snapshot use; package-wide choice would require a separate canonicalization/lock task.
