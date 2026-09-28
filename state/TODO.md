@@ -306,4 +306,8 @@
   2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
 ## Case-008 Courts — next action
 
-- Conduct Case-008 closeout: audit the source-survey → protocol → selection → Ground Truth → first-frozen-benchmark chain, preserve the 10/11, 10/11, and 3/11 results as obtained, and keep parser/normalizer/evaluator/OCR adaptation out of that task.
+- **CLOSED for the frozen baseline phase.** Source survey → protocol → selection → Ground Truth → first frozen benchmark → closeout is complete. Case-009 gate is OPEN.
+
+## Case-009 Cabinet Office — next action
+
+- Begin the Case-009 内閣本府 (CAO) Source Survey only. Its exploratory question is whether extreme split packaging (about 50 files) introduces a context/source-identity mechanism beyond Case-007's file-scoped mechanism, or merely scales the same mechanism; no-new-mechanism is a valid result. Do not begin protocol, selection, Ground Truth, benchmark, or adaptation in the source-survey task.

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: close out case-008 frozen baseline (branch: research/case-008-courts-baseline)
+
+- **Closeout/audit only.** Audited the committed Case-008 freeze chain in chronological order: Source Survey (`e10d56c`) → Protocol (`3cf4a4f`) → Selection Record (`0ccea62`) → Ground Truth (`55bda23`) → First Frozen Benchmark (`ec69188`). Each frozen artifact remains byte-identical to its freeze point; the source SHA still matches the lock; no benchmark was rerun.
+- Closed the baseline phase with source-side, selection-methodology, and benchmark findings explicitly separated. The single 127-page source's embedded multi-grammar structure is confirmed and necessitated section-aware selection/provenance; it did not have demonstrated causal interference with the standard-ledger target benchmark. The benchmark retains pdf.js/PyMuPDF 10/11 candidate-resolution ambiguity versus Docling 3/11 grid/row-association failure.
+- Wrote `reports/document-understanding/20260928_2019_Case008_Closeout.md` and updated state. Case-008 is closed for the frozen baseline phase; **Case-009 gate is OPEN**. No frozen artifact, Ground Truth, parser, normalizer, evaluator, engine configuration, source lock/registry, scripts, or production semantics changed. Recommended next task: Case-009 内閣本府 (CAO) Source Survey only.
+
 ### research: benchmark case-008 frozen baseline (branch: research/case-008-courts-baseline)
 
 - **First frozen benchmark only.** Ran the existing pipeline with `npm run extract` and `npm run docbench -- case-008`, preserving the first successful result: pdfjs-baseline 10/11, pymupdf-baseline 10/11, Docling 3/11. No source, frozen selection artifact, Ground Truth, parser, normalizer, evaluator, engine set, or configuration changed.
