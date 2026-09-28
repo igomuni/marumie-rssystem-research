@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### research: freeze case-007 row selection (branch: research/case-007-cas-baseline) — null result
+
+- **Row selection attempted, not achieved. No Ground Truth. No benchmark run or OCR experiment. No protocol modification, despite discovering it has no satisfiable candidate in the frozen universe.**
+- Exhaustively enumerated all 14 rows across both pages of the frozen universe (`detail-01`), applying the frozen protocol's own C1–C4 without modification (§7–§9 of the record). **Result: zero rows satisfy C1–C4 jointly.**
+- Two candidates (`①/01-95 内閣官房一般行政に必要な経費`; `2/06-95 情報の収集及び分析その他の調査に必要な経費`) pass C1 and C2 but fail C3: their own printed lines have completely blank amount-column cells (confirmed via 2x-zoomed direct visual inspection, not inferred) — the amount triple instead lives one or more levels deeper in the document's own hierarchy (project-level/further-breakdown/object-code rows). All remaining rows fail C1 (no request-number-column entry; deeper code format than the expense-level `NN-NN` convention).
+- **New structural finding**: CAS's `detail-01` ledger uses a deeper hierarchy than any prior case (002–006) — the amount triple attaches to a project-level-or-deeper row, not to the request/expense-code row itself, unlike every prior case where that row was always the amount-bearing row.
+- Discovering this dead end, the task paused and reported it to the user rather than unilaterally reinterpreting C1/C3 or substituting a different row/file; user confirmed: document as a null result and stop, matching the Case-006 null-benchmark-preservation precedent.
+- Files: `fixtures/document-understanding/case-007/20260928_1244_Case007_Selection_Record.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: the Case-007 selection protocol byte-identical to `2cc0821`; the source survey/evidence byte-identical to `211213c`; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step (decision required)**: a Case-007 Selection Protocol Amendment task must choose among (1) redefine C1/C3 to recognize the deeper amount-bearing row as eligible with its own provenance chain back to the governing request number; (2) re-open the file-universe choice to test whether another CAS detail file places the amount directly on the request/expense-code row; (3) accept this null result for `detail-01` and select a different universe for Case-007's actual target row.
+
 ### research: freeze case-007 selection protocol (branch: research/case-007-cas-baseline)
 
 - **Protocol freeze only. No candidate row enumerated, compared, or selected. No Ground Truth. No benchmark run or OCR experiment.**

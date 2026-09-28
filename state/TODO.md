@@ -97,7 +97,16 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
-## Case-007 内閣官房 (CAS) selection protocol (branch: research/case-007-cas-baseline) — FROZEN, row not yet selected
+## Case-007 内閣官房 (CAS) row selection (branch: research/case-007-cas-baseline) — NULL RESULT, protocol amendment decision required
+
+- **Report**: `fixtures/document-understanding/case-007/20260928_1244_Case007_Selection_Record.md`.
+- Exhaustively enumerated all 14 rows across both pages of the frozen universe (`detail-01`), applying the frozen protocol's own C1–C4 without modification. **Zero rows satisfy C1–C4 jointly.**
+- Two candidates (`①/01-95`, `2/06-95`) pass C1 (native identifier) and C2 (confirmed 2-line wrap) but **fail C3**: their own printed lines have completely blank amount-column cells — the amount triple instead lives one or more levels deeper (project-level `011`/further-breakdown `006`/object-code `95016-xxxx`). All other rows fail C1 (no request-number entry, deeper code format).
+- **New structural finding**: CAS's `detail-01` ledger has a deeper hierarchy than any prior case (002–006) — organization → item → request/expense-code row → project-level breakdown → further breakdown → object-code line — with the amount triple attached to the project-level-or-deeper row, not the request/expense-code row itself (unlike every prior case, where that row was always the amount-bearing row).
+- Per the protocol's own explicit prohibition on modifying criteria to rescue a selection, this was reported to the user as a blocking finding rather than resolved unilaterally; user confirmed: document as a null result and stop (matching the Case-006 null-benchmark-preservation precedent).
+- **Next action (decision required, not performed)**: a Case-007 Selection Protocol Amendment task must choose among: (1) redefine C1/C3 to recognize the deeper amount-bearing row as eligible with its own provenance chain; (2) re-open the file-universe choice to test whether another CAS detail file places the amount directly on the request/expense-code row; (3) accept this null result for `detail-01` specifically and select a different universe.
+
+## Case-007 内閣官房 (CAS) selection protocol (branch: research/case-007-cas-baseline) — FROZEN, row selection attempted (null result, see above)
 
 - **Report**: `fixtures/document-understanding/case-007/20260928_1207_Case007_Selection_Protocol.md`.
 - **Frozen target file**: `cas-fy2024-general-account-expenditure-request-detail-01` (2 pages), chosen from among the source survey's own undecided candidates by a source-safe file-comparison (all 16 detail files passed equally; deterministic fallback = first file in official package/link order). Inspection-depth familiarity with `detail-07` (the most-examined file in the survey) was explicitly rejected as a selection input.
