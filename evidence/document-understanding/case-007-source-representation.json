@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 0,
+  "caseId": "case-007-candidate",
+  "authority": "内閣官房 (Cabinet Secretariat, CAS)",
+  "sourceIdPrefix": "cas-fy2024-general-account-expenditure-request-*",
+  "generatedAt": "2026-09-28T10:28:00+09:00",
+  "note": "Source-representation and file-scoped-context diagnostic evidence only. NOT a benchmark result. No engine comparison, no Ground Truth, no row selection, no winner-file selection was performed to produce this file. All fields below are source-safe observations from source-safe tooling (pdfinfo/pdftotext/hashlib), not from any compared benchmark engine (pdf.js/PyMuPDF/Docling).",
+  "packageInventory": {
+    "totalSources": 18,
+    "sourceIdsAllSha256MatchLock": true,
+    "verificationMethod": "Python hashlib.sha256 direct dict lookup against sources/source-lock.json (a prior bash string-comparison attempt failed with a shell quoting error and was replaced)",
+    "files": [
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-overview", "pages": 18, "grammar": "narrative-summary" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-cover", "pages": 2, "grammar": "cross-reference-summary+toc" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-01", "pages": 2, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-03", "pages": 4, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-04", "pages": 4, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-05", "pages": 1, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-06", "pages": 6, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-07", "pages": 29, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-08", "pages": 4, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-09", "pages": 3, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-10", "pages": 4, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-11", "pages": 19, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-12", "pages": 4, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-13", "pages": 3, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-14", "pages": 3, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-15", "pages": 3, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-16", "pages": 2, "grammar": "standard-ledger" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-17", "pages": 1, "grammar": "standard-ledger" }
+    ],
+    "numberingGapObserved": "detail-02 does not exist in the published sequence (fact only, cause not investigated)"
+  },
+  "fileScopedContextInvestigation": {
+    "organizationLevel": {
+      "targetFile": "cas-fy2024-general-account-expenditure-request-detail-07",
+      "coverage": "exhaustive (all 29 pages individually scanned via pdftotext -layout)",
+      "anchorString": "010 内閣官房",
+      "result": "present on page 1 only; absent on pages 2-29",
+      "conclusion": "file-scoped (confirmed exhaustively, not sampled)"
+    },
+    "itemLevel": {
+      "targetFile": "cas-fy2024-general-account-expenditure-request-detail-07",
+      "coverage": "exhaustive per-page header scan (all 29 pages)",
+      "distinctItemCodesObserved": ["07","10","13","16","19","22","31","37","40","43","46","49","52","55","58","64","67","70","76","85","93","96","98"],
+      "approxRecurrenceInterval": "~1 page",
+      "conclusion": "NOT file-scoped; same-page mechanism, distinct from organization-level context, recorded separately per instruction not to collapse mechanisms"
+    }
+  },
+  "crossFileItemSplittingFinding": {
+    "status": "observed on sample, not exhaustively confirmed across all 16 detail files",
+    "sharedItemCode": "010 内閣官房/010 内閣官房共通費/①/01-95/内閣官房一般行政に必要な経費",
+    "filesSampled": 5,
+    "observations": [
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-01", "bureauLabel": "総務課", "previousBudgetSenYen": 1440572, "fy2024RequestSenYen": 1707217 },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-04", "bureauLabel": "not captured in sample", "previousBudgetSenYen": 3374012, "fy2024RequestSenYen": 3424189, "note": "org-level total on same page shown separately as 4998642/4502242 delta -496400" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-08", "bureauLabel": "副長官補危機管理", "note": "only item-total row isolated (1233165/1332219); the ①/01-95 row-level figure itself was not cleanly isolated from the sampled lines - flagged unresolved" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-13", "bureauLabel": "not captured in sample", "previousBudgetSenYen": 281146, "fy2024RequestSenYen": 253174 }
+    ],
+    "interpretation": "[INTERPRETATION] The same nominal item/expense code appears with different amount pairs across multiple bureau-level detail files, consistent with a single MOF-facing item being split/distributed across files. No arithmetic reconciliation or summation against any total was attempted; amount similarity/difference was not used as selection evidence, only reported as an observed fact.",
+    "notYetVerified": "whether the pattern holds across all 16 detail files, and whether the differing figures sum to a single total shown elsewhere (not checked, would require arithmetic reconstruction which is out of scope for a source survey)"
+  },
+  "pageNumberingInvestigation": {
+    "method": "pdftotext -layout, page-1 header line inspection across 12 sampled detail files",
+    "result": "11 of 12 sampled files showed no visible page-number digit on their own page-1 header line; detail-11's page-1 header showed digit '3'",
+    "conclusion": "inconclusive from text-layer extraction alone; could reflect continuous cross-file numbering or a layout/extraction artifact specific to detail-11; not resolved via visual/render inspection in this task"
+  },
+  "unitDeclarationCheck": {
+    "method": "independent re-verification, not copied from case-006",
+    "observations": [
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-07", "page": 1, "unitString": "(単位:千円)" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-detail-11", "page": 1, "unitString": "(単位:千円)" },
+      { "sourceId": "cas-fy2024-general-account-expenditure-request-cover", "page": 1, "unitString": "(単位:千円)", "section": "総表" }
+    ],
+    "conclusion": "unit declared once near file/table-opening page, not re-declared on later pages within the same file"
+  }
+}

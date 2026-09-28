@@ -97,6 +97,18 @@
 - **Next action (recommended, not decided): choose among 5 priority options for case-006+** — (A) a sixth ministry, (B) formalize Case Package/Strategy Selection schema, (C) MOF CSV reverse-linkage experiment, (D) context-model prototype, (E) RS data-quality line. Suggested order B before C/D, A anytime — offered as a recommendation only, no decision made or implemented.
 - Not done, by design: no new benchmark, GT, extraction, normalization, source inspection, or production change; no case-006 started; no schema implemented.
 
+## Case-007 内閣官房 (CAS) source survey (branch: research/case-007-cas-baseline) — complete, Selection Protocol not yet started
+
+- **Report**: `reports/document-understanding/20260928_1028_Case007_CAS_Source_Survey.md`; evidence: `evidence/document-understanding/case-007-source-representation.json`. Branch created fresh from `main@0612f4f` (post PR #6 merge), not continuing the case-006 branch.
+- **Package inventory**: 18 locked sources (1 narrative overview, 1 cover file with an embedded 総表+目次, 16 numbered detail files `detail-01`/`detail-03`–`detail-17` — `detail-02` does not exist), 1–29 pages each, all SHA-256-verified against the lock with no drift.
+- **File-scoped context CONFIRMED at organization level, exhaustively** (all 29 pages of `detail-07` individually checked): `010 内閣官房` appears only on page 1, never re-declared.
+- **REFINEMENT of the census's own single "file-scoped" label**: item-level context is NOT file-scoped — ~22 distinct item headers recur throughout the same file (roughly every 1 page), via the same same-page mechanism already known from cases 002–005. Recorded as a separate mechanism, not collapsed into "file-scoped."
+- **NEW finding, not previously documented**: cross-file item-splitting — the identical item code (`010/010/①/01-95/内閣官房一般行政に必要な経費`) appears on page 1 of 5 sampled detail files, each with a *different* amount pair (e.g. `detail-01`: 1,440,572/1,707,217; `detail-13`: 281,146/253,174), consistent with a single MOF-facing item split/distributed across bureau files. Observed on a 5-file sample only, not exhaustively confirmed across all 16 detail files; no arithmetic reconciliation attempted.
+- **Page-numbering behavior**: inconclusive from text-layer extraction — 11 of 12 sampled files show no page-number digit on their own page-1 header, one (`detail-11`) shows "3"; unresolved, would need visual/render confirmation.
+- **Verdict**: SUITABLE WITH CAVEATS — a future Selection Protocol must explicitly handle the cross-file item-splitting pattern when defining row eligibility.
+- **No winner file selected** (by design — a source survey task, per explicit prohibition on selecting a winner).
+- **Next action (not started)**: Case-007 CAS Selection Protocol Freeze.
+
 ## Case-006 法務省 (MOJ) CLOSEOUT (branch: research/case-006-moj-source-survey) — baseline phase complete, Case-007 gate open
 
 - **Report**: `reports/document-understanding/20260928_0827_Case006_MOJ_Closeout.md`. Audited the full chain (source survey `b4a9cd2` → protocol `7ef2250` → selection `e2253ee` → GT `952a0c1` → benchmark `91b6b51`), re-verified byte-identical to all their own freeze commits, re-confirmed the benchmark result directly against the actual JSON (not the prior handoff text).

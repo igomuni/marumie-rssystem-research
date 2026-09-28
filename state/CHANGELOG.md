@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### research: survey case-007 CAS source package (branch: research/case-007-cas-baseline)
+
+- **Source survey only. No selection protocol, row selection, Ground Truth, benchmark run, OCR experiment, or production code change. No single "winner" file selected — multiple candidates presented as source-safe facts for a future Selection Protocol task.**
+- Branch created fresh from `main@0612f4f` (post PR #6 merge), not continuing the case-006 branch.
+- Re-verified all 18 locked `cas-*` source SHA-256 (Python script, no drift) and re-fetched the official CAS budget page live, confirming 17 PDF links matching the census's own prior inventory.
+- Package inventory: 1 narrative overview (18 pages), 1 cover file (2 pages, containing a 総表 *and* an embedded 目次 — both excluded from the detail-row universe under the case-006 P2 multi-grammar-exclusion precondition), and 16 numbered detail files (`detail-01`, `detail-03`–`detail-17`; `detail-02` does not exist), 1–29 pages each.
+- **File-scoped context confirmed exhaustively at organization level**: all 29 pages of `detail-07` individually scanned; `010 内閣官房` appears only on page 1, never re-declared.
+- **Refinement, not a false claim**: the census's own single "file-scoped" label conflated organization-level and item-level context. Item-level context is *not* file-scoped — ~22 distinct item headers recur throughout the same file (roughly every 1 page) via the same same-page mechanism already known from cases 002–005. Recorded as a separate mechanism.
+- **New finding, previously undocumented in this program**: cross-file item-splitting — the identical item code (`010/010/①/01-95/内閣官房一般行政に必要な経費`) appears on page 1 of 5 sampled detail files, each with a *different* amount pair, consistent with a single MOF-facing item split/distributed across bureau files. Observed on a 5-file sample, not exhaustively confirmed across all 16; no arithmetic reconciliation attempted, amount similarity not used as evidence.
+- Page-numbering behavior across files: inconclusive from text-layer extraction alone (one of 12 sampled files showed a page-1 header number, the rest did not) — flagged unresolved.
+- **Verdict**: SUITABLE WITH CAVEATS — future Selection Protocol must explicitly handle the cross-file item-splitting pattern.
+- Files: `reports/document-understanding/20260928_1028_Case007_CAS_Source_Survey.md`, `evidence/document-understanding/case-007-source-representation.json`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: case-001-006 frozen artifacts unchanged; the Case-006-010 Selection Freeze unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: Case-007 CAS Selection Protocol Freeze, explicitly incorporating a rule for the cross-file item-splitting pattern.
+
 ### research: close out case-006 baseline (branch: research/case-006-moj-source-survey)
 
 - **Closeout/audit only. No new benchmark run (validation/tests only), no OCR experiment, no adaptation, no Case-007 work.**
