@@ -2,6 +2,52 @@
 
 ## Unreleased
 
+### research: close out case-008 frozen baseline (branch: research/case-008-courts-baseline)
+
+- **Closeout/audit only.** Audited the committed Case-008 freeze chain in chronological order: Source Survey (`e10d56c`) → Protocol (`3cf4a4f`) → Selection Record (`0ccea62`) → Ground Truth (`55bda23`) → First Frozen Benchmark (`ec69188`). Each frozen artifact remains byte-identical to its freeze point; the source SHA still matches the lock; no benchmark was rerun.
+- Closed the baseline phase with source-side, selection-methodology, and benchmark findings explicitly separated. The single 127-page source's embedded multi-grammar structure is confirmed and necessitated section-aware selection/provenance; it did not have demonstrated causal interference with the standard-ledger target benchmark. The benchmark retains pdf.js/PyMuPDF 10/11 candidate-resolution ambiguity versus Docling 3/11 grid/row-association failure.
+- Wrote `reports/document-understanding/20260928_2019_Case008_Closeout.md` and updated state. Case-008 is closed for the frozen baseline phase; **Case-009 gate is OPEN**. No frozen artifact, Ground Truth, parser, normalizer, evaluator, engine configuration, source lock/registry, scripts, or production semantics changed. Recommended next task: Case-009 内閣本府 (CAO) Source Survey only.
+
+### research: benchmark case-008 frozen baseline (branch: research/case-008-courts-baseline)
+
+- **First frozen benchmark only.** Ran the existing pipeline with `npm run extract` and `npm run docbench -- case-008`, preserving the first successful result: pdfjs-baseline 10/11, pymupdf-baseline 10/11, Docling 3/11. No source, frozen selection artifact, Ground Truth, parser, normalizer, evaluator, engine set, or configuration changed.
+- Both flat-text engines recovered the target standard-ledger page, wrapped label, row-local triple, unit, and relationships, but honestly emitted no single item name because the correct `010 最高裁判所` remained among multiple item-code-shaped candidates. Docling found the page/unit but its one table's fragmented grid produced no expense candidate or associated triple.
+- Re-ran the identical benchmark command strictly for reproducibility: all six raw/normalized engine artifacts were byte-identical; evaluation JSON/Markdown differed only in generated/evaluated timestamps. RapidOCR initialization was Docling's pre-existing normal pipeline behavior, not a separately introduced OCR experiment.
+- Wrote `evidence/document-understanding/case-008-results.json`, `reports/document-understanding/case-008-evaluation.md`, and `reports/document-understanding/20260928_2005_Case008_First_Frozen_Benchmark.md`; state now recommends Case-008 closeout. Source Survey, Selection Protocol, Selection Record, Ground Truth, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, source lock/registry, and production semantics remain unchanged.
+
+### research: freeze case-008 ground truth (branch: research/case-008-courts-baseline)
+
+- **Ground Truth freeze only.** Re-verified the selected source locator and transcribed the selected standard-ledger row directly from a fresh 400dpi non-OCR render of the locked PDF. No benchmark/extractor/evaluator output, MOF/RS data, or prior expected value was consulted.
+- Wrote `case-008/ground-truth.json` using the established case schema and `20260928_1954_Case008_Ground_Truth_Evidence.md` with raw visual lines, raw-to-normalized amounts, source-glyph sign evidence, same-page section-local 千円 unit, empty remarks evidence, and post-transcription arithmetic PASS.
+- Case-008 provenance remains section-aware: the row is in the standard ledger of the one combined 127-page PDF, not its summary, staffing, policy-framework, or local calculation-box grammars.
+- Source Survey, Selection Protocol, Selection Record, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, lock/registry, and production code remain unchanged. Next task: run the existing, unmodified Case-008 benchmark pipeline for the first time.
+
+### research: freeze case-008 row selection (branch: research/case-008-courts-baseline)
+
+- **Exactly one row selected, then stopped.** Applied the frozen protocol visually, top-to-bottom from standard-ledger `pdfPageIndex` 6, with a 300dpi non-OCR render only. No Ground Truth, amount transcription/arithmetic, benchmark/OCR, protocol amendment, MOF/RS work, or production change.
+- Two aggregate rows (`010 裁判所`, then `010 最高裁判所`) failed C1 because neither carries the required row-local request-number-plus-expense-code pair. The next physical row was the first full P1/P2/C1--C4 pass: `pdfPageIndex` 6 / printed `裁（裁）3`, organization `010 裁判所`, same-page item `010 最高裁判所`, request `①`, expense code `01-95`, label `最高裁判所の事務処理に必要な経費`.
+- C2 passed by direct visual two-line wrapping; C3 passed only as a presence/association check of its own three cells, with no amount digits recorded; C4 passed using same-page item/organization/section/unit evidence. Tie-break stopped the scan before any later row/page.
+- Re-verified raw source SHA against lock and frozen protocol byte identity before inspection. Source Survey, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, lock/registry, and production code remain unchanged.
+- Next task: Case-008 Ground Truth Freeze for this selected row, then stop before a benchmark.
+
+### research: freeze case-008 selection protocol (branch: research/case-008-courts-baseline)
+
+- **Protocol freeze only.** No candidate row was enumerated or selected; no Ground Truth, benchmark/OCR experiment, parser/normalizer/evaluator change, MOF/RS linkage, or production adaptation occurred.
+- Froze the selection unit as one physical standard-ledger row with the full locator tuple `source file + section/grammar + page + hierarchy + row-local identifier`; explicitly rejects file identity alone and CAS-style parent/child amount inheritance.
+- Froze `pdfPageIndex` 6--110 (printed `裁（裁）3`--`107`) as the standard-ledger universe under `010 裁判所`, using combined range/title/header/unit/hierarchy evidence. Excluded cover/TOC, summary, blanks, staffing, policy-framework summary/detail, and local non-target calculation boxes by grammar as well as location.
+- Retained C1 native request-number-plus-expense-code, C2 multi-line label wrap, C3 row-local standard amount triple, and expanded C4 source sufficiency to include section identity, context, and section-local unit. Any blank/ambiguous amount association fails; no arithmetic reconstruction is permitted.
+- Froze section-bounded context order, 千円 ledger-unit evidence, source-cue section rule, `pdfPageIndex` then topmost-row tie-break, ambiguity/continuation handling, and explicit non-criteria. Prior exposure is disclosed and barred as a selection input.
+- Source Survey, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, source lock/registry, and production code remain unchanged. Next task: apply this protocol, write a Selection Record for one qualifying row if one exists, then stop before Ground Truth; a NULL result is permitted.
+
+### research: survey case-008 Courts source structure (branch: research/case-008-courts-baseline)
+
+- **Source survey only.** Re-verified the already locked Courts raw PDF SHA-256; no acquisition/lock/registry update, selection protocol, row selection, Ground Truth, benchmark, OCR experiment, parser/normalizer/evaluator change, MOF linkage, or production adaptation.
+- Established from native metadata/text/object inspection and visual renders: one unencrypted, A4-landscape, 127-page, text-layer PDF (`JUST PDF 3`) contains distinct cover, TOC, standard cross-reference summary, standard ledger, embedded staffing table, and important-policy-framework summary/detail sections.
+- Section map confirms standard ledger at `pdfPageIndex` 6--110 (printed 3--107); blank separators at 1, 3, 5, 111, 113; staffing at 112/114 (printed 109/111, unit 人); policy summary at 115 and policy detail at 116--126 (its own printed 1--11 series, unit 千円).
+- **Refinement of census header framing:** the earlier finding that the staffing-region pages are not missing ledger content remains correct. The survey records the safer section-aware rule: standard-ledger headers repeat throughout their own range; staffing/policy tables have distinct headers; blanks are separators, not header failures.
+- Unit is not file-global: standard ledger/policy sections use 千円, staffing uses 人, and local commitment boxes inside ledger pages can use 百万円. A later protocol must bind a candidate to a governing section/table.
+- **Verdict: SUITABLE WITH CAVEATS.** Next task: Case-008 Selection Protocol Freeze, first defining a standard-ledger-only universe and explicit multi-grammar exclusions.
+
 ### research: review case-007 null selection result (branch: research/case-007-cas-baseline) — closed, no amendment
 
 - **Review only. Original protocol and NULL selection record not modified. No row selection re-run. No Ground Truth. No benchmark run or OCR experiment.**

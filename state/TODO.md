@@ -304,3 +304,10 @@
 - Schema follow-ups noted during Phase 1 backfill (not fixed, since this was backfill-only):
   1. case-001's research-history events use a coarser `result` granularity than case-002's (which distinguishes `experiment` from `result`), because case-001's history was reconstructed after the fact at lower resolution than case-002's contemporaneously-written reports. A future case created with the schema in place from the start should use `experiment` consistently for a first frozen run.
   2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
+## Case-008 Courts — next action
+
+- **CLOSED for the frozen baseline phase.** Source survey → protocol → selection → Ground Truth → first frozen benchmark → closeout is complete. Case-009 gate is OPEN.
+
+## Case-009 Cabinet Office — next action
+
+- Begin the Case-009 内閣本府 (CAO) Source Survey only. Its exploratory question is whether extreme split packaging (about 50 files) introduces a context/source-identity mechanism beyond Case-007's file-scoped mechanism, or merely scales the same mechanism; no-new-mechanism is a valid result. Do not begin protocol, selection, Ground Truth, benchmark, or adaptation in the source-survey task.
