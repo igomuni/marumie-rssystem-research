@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: freeze case-009 ground truth (branch: research/case-009-cao-source-survey)
+
+- **Ground Truth freeze only.** Re-verified the selected-row freeze chain and locked `1.pdf` SHA-256, then used a fresh 600-dpi direct visual render of the selected page. Re-verified locator/identity before reading values; independently transcribed raw label lines, three amount cells, source-visible unsigned delta, section-local unit, and visually empty selected-row remarks. Arithmetic was performed only after transcription and passed.
+- Wrote `fixtures/document-understanding/case-009/ground-truth.json` and `fixtures/document-understanding/case-009/20260928_2202_Case009_Ground_Truth_Evidence.md`, then updated state. Survey, Protocol, and Selection Record remain frozen; Cases 001–008, scripts, source lock/registry, parser/normalizer/evaluator, and production semantics are unchanged. No benchmark, OCR, MOF linkage, parser/normalizer/evaluator change, or adaptation occurred. Next: Case-009 First Frozen Benchmark using the existing pipeline only.
+
 ### research: freeze case-009 row selection (branch: research/case-009-cao-source-survey)
 
 - **Selection only, applying the frozen protocol without change.** Re-verified the branch/HEAD (`d42b7b8`), clean working tree, protocol byte identity, and locked `1.pdf` SHA-256 before a fresh 400-dpi direct visual render. Evaluated three physical hierarchy/ledger rows in top-to-bottom order on `pdfPageIndex 0`: the organization and item aggregates failed C1; the next request/expense row passed C1–C4. Stopped immediately, leaving all later rows/pages uninspected for eligibility.

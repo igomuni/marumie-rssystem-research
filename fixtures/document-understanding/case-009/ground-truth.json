@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-009",
+  "sourceId": "cao-fy2024-general-account-expenditure-request-detail-01",
+  "sourceSha256": "7b5de5dbd397c7067cab4ea527ef02681e91265914057651ee5b886174de7f4e",
+  "pdfPageIndex": 0,
+  "pdfPageNumber": 1,
+  "printedPageLabel": "内（本）",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the document's printed prefix, distinct from the 0-based pdfPageIndex and 1-based pdfPageNumber. Row selected under fixtures/document-understanding/case-009/20260928_2122_Case009_Selection_Protocol.md and frozen in fixtures/document-understanding/case-009/20260928_2149_Case009_Selection_Record.md before this file was created. Direct visual transcription used a fresh 600dpi non-OCR render of the locked PDF only. The selected row is in 1.pdf's standard 歳出概算要求額明細表 grammar, under file-opening scope 19 内閣府所管（官房総務課（総務課））; it is not the embedded explanatory/breakdown material in the remarks region. Unit is declared at the file-section opening and applies to this standard-ledger row. See fixtures/document-understanding/case-009/20260928_2202_Case009_Ground_Truth_Evidence.md for raw visual transcription, unsigned delta glyph evidence, remarks state, and post-transcription arithmetic validation.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "内閣本府共通費",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "内閣本府一般行政に必要な経費",
+    "previousBudget": 79533,
+    "fy2024Request": 84991,
+    "deltaRaw": "5,458",
+    "delta": 5458,
+    "unit": "千円",
+    "remarks": "",
+    "page": 0
+  }
+}
