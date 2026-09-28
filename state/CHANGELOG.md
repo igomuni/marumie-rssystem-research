@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: benchmark Case-010 frozen baseline
+
+- **First frozen benchmark only.** Ran the existing `npm run extract` and `npm run docbench -- case-010` commands against frozen GT, then reran the unchanged docbench command once for reproducibility. pdf.js and PyMuPDF each scored 10/11: target expense/triple recovered and correct item retained among four candidates, but no unique item resolution. Docling scored 3/11 after its one 99-cell target-page table produced no eligible expense candidate.
+- All six raw/normalized artifacts were byte-identical across the rerun; generated evaluation bytes changed with their timestamps while the observed raw counts, normalized results, score summary, and check matrix remained the same. The full 1,723-page source processed successfully, so no scale interference was demonstrated. Embedded remarks-side material was not causally isolated as the reason for Docling’s local association failure. No parser/normalizer/evaluator/GT/OCR configuration or production change occurred. Next: Case-010 Closeout.
+
 ### research: freeze Case-010 ground truth
 
 - **Ground Truth freeze only.** Rehashed the locked MHLW source (PASS), verified the frozen locator against a fresh 600-dpi direct visual render, and independently transcribed the selected main-ledger row. Raw visual forms and normalized values are preserved separately; the delta sign was determined from its own source glyph before arithmetic validation, which passed.
