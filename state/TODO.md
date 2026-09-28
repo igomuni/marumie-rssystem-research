@@ -306,4 +306,4 @@
   2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
 ## Case-008 Courts — next action
 
-- Run the existing, unmodified benchmark pipeline against frozen `fixtures/document-understanding/case-008/ground-truth.json` for the first time. Preserve the first result as-is; do not introduce OCR, parser/normalizer/evaluator changes, or other adaptation in that task.
+- Conduct Case-008 closeout: audit the source-survey → protocol → selection → Ground Truth → first-frozen-benchmark chain, preserve the 10/11, 10/11, and 3/11 results as obtained, and keep parser/normalizer/evaluator/OCR adaptation out of that task.

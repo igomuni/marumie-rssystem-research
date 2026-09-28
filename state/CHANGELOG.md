@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: benchmark case-008 frozen baseline (branch: research/case-008-courts-baseline)
+
+- **First frozen benchmark only.** Ran the existing pipeline with `npm run extract` and `npm run docbench -- case-008`, preserving the first successful result: pdfjs-baseline 10/11, pymupdf-baseline 10/11, Docling 3/11. No source, frozen selection artifact, Ground Truth, parser, normalizer, evaluator, engine set, or configuration changed.
+- Both flat-text engines recovered the target standard-ledger page, wrapped label, row-local triple, unit, and relationships, but honestly emitted no single item name because the correct `010 最高裁判所` remained among multiple item-code-shaped candidates. Docling found the page/unit but its one table's fragmented grid produced no expense candidate or associated triple.
+- Re-ran the identical benchmark command strictly for reproducibility: all six raw/normalized engine artifacts were byte-identical; evaluation JSON/Markdown differed only in generated/evaluated timestamps. RapidOCR initialization was Docling's pre-existing normal pipeline behavior, not a separately introduced OCR experiment.
+- Wrote `evidence/document-understanding/case-008-results.json`, `reports/document-understanding/case-008-evaluation.md`, and `reports/document-understanding/20260928_2005_Case008_First_Frozen_Benchmark.md`; state now recommends Case-008 closeout. Source Survey, Selection Protocol, Selection Record, Ground Truth, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, source lock/registry, and production semantics remain unchanged.
+
 ### research: freeze case-008 ground truth (branch: research/case-008-courts-baseline)
 
 - **Ground Truth freeze only.** Re-verified the selected source locator and transcribed the selected standard-ledger row directly from a fresh 400dpi non-OCR render of the locked PDF. No benchmark/extractor/evaluator output, MOF/RS data, or prior expected value was consulted.
