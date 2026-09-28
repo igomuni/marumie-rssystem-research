@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### research: survey case-008 Courts source structure (branch: research/case-008-courts-baseline)
+
+- **Source survey only.** Re-verified the already locked Courts raw PDF SHA-256; no acquisition/lock/registry update, selection protocol, row selection, Ground Truth, benchmark, OCR experiment, parser/normalizer/evaluator change, MOF linkage, or production adaptation.
+- Established from native metadata/text/object inspection and visual renders: one unencrypted, A4-landscape, 127-page, text-layer PDF (`JUST PDF 3`) contains distinct cover, TOC, standard cross-reference summary, standard ledger, embedded staffing table, and important-policy-framework summary/detail sections.
+- Section map confirms standard ledger at `pdfPageIndex` 6--110 (printed 3--107); blank separators at 1, 3, 5, 111, 113; staffing at 112/114 (printed 109/111, unit 人); policy summary at 115 and policy detail at 116--126 (its own printed 1--11 series, unit 千円).
+- **Refinement of census header framing:** the earlier finding that the staffing-region pages are not missing ledger content remains correct. The survey records the safer section-aware rule: standard-ledger headers repeat throughout their own range; staffing/policy tables have distinct headers; blanks are separators, not header failures.
+- Unit is not file-global: standard ledger/policy sections use 千円, staffing uses 人, and local commitment boxes inside ledger pages can use 百万円. A later protocol must bind a candidate to a governing section/table.
+- **Verdict: SUITABLE WITH CAVEATS.** Next task: Case-008 Selection Protocol Freeze, first defining a standard-ledger-only universe and explicit multi-grammar exclusions.
+
 ### research: review case-007 null selection result (branch: research/case-007-cas-baseline) — closed, no amendment
 
 - **Review only. Original protocol and NULL selection record not modified. No row selection re-run. No Ground Truth. No benchmark run or OCR experiment.**

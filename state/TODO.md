@@ -304,3 +304,6 @@
 - Schema follow-ups noted during Phase 1 backfill (not fixed, since this was backfill-only):
   1. case-001's research-history events use a coarser `result` granularity than case-002's (which distinguishes `experiment` from `result`), because case-001's history was reconstructed after the fact at lower resolution than case-002's contemporaneously-written reports. A future case created with the schema in place from the start should use `experiment` consistently for a first frozen run.
   2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
+## Case-008 Courts — next action
+
+- Freeze a Case-008 Selection Protocol using `reports/document-understanding/20260928_1911_Case008_Courts_Source_Survey.md`. It must define the standard-ledger-only universe (`pdfPageIndex` 6--110), section/box exclusions, unit and context scope, deterministic locator/tie-break, and prior-exposure disclosure before candidate-row inspection. Do not select a row, create Ground Truth, or run a benchmark in the protocol task.
