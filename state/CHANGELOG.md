@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: benchmark case-009 frozen baseline (branch: research/case-009-cao-source-survey)
+
+- **First frozen baseline only.** Re-verified the freeze chain and locked `1.pdf` SHA, then ran the existing unmodified commands `npm run extract` and `npm run docbench -- case-009`. The configured engines completed: pdf.js 10/11, PyMuPDF 10/11, Docling 8/11. The flat-text engines retained the correct item among multiple candidates but honestly left a single item unresolved; Docling retained the target expense/triple but did not reconstruct the target item candidate or item relationship.
+- Re-ran the identical document-understanding command for reproducibility: all six raw/normalized artifacts were byte-identical; generated evaluation artifacts changed timestamp-bearing bytes while retaining identical observed scores/matrix. The source-side 51-file package/context property was not shown to causally interfere with this single-file, first-page target. Wrote generated Case-009 benchmark evidence/evaluation plus `reports/document-understanding/20260928_2213_Case009_First_Frozen_Benchmark.md` and updated state. No source, GT, selection, parser, normalizer, evaluator, engine configuration, OCR configuration, MOF linkage, or production semantics changed. Next: Case-009 Closeout.
+
 ### research: freeze case-009 ground truth (branch: research/case-009-cao-source-survey)
 
 - **Ground Truth freeze only.** Re-verified the selected-row freeze chain and locked `1.pdf` SHA-256, then used a fresh 600-dpi direct visual render of the selected page. Re-verified locator/identity before reading values; independently transcribed raw label lines, three amount cells, source-visible unsigned delta, section-local unit, and visually empty selected-row remarks. Arithmetic was performed only after transcription and passed.
