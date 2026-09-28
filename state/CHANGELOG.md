@@ -2,6 +2,54 @@
 
 ## Unreleased
 
+### research: review case-007 null selection result (branch: research/case-007-cas-baseline) — closed, no amendment
+
+- **Review only. Original protocol and NULL selection record not modified. No row selection re-run. No Ground Truth. No benchmark run or OCR experiment.**
+- Minimal cross-file structural check (4 of 16 detail files: `detail-01`, `detail-05`, `detail-07`, `detail-17`, spanning near-start/middle/end of official order plus a structurally distinct special-account file) to distinguish whether the Selection Record's own null result (`f530846`) was a `detail-01`-specific accident (H1), a common CAS convention (H2), or mixed (H3).
+- **All 4 files show the identical pattern**: the request/expense-code row never carries its own printed amount; the amount lives in a deeper, variable-depth child row, which is itself frequently an aggregate over further children (directly verified for `detail-01`'s own item `2`: its child's printed total equals the sum of its own two object-code children). **H2 confirmed**, H1 refuted; H3 not supported by this sample but not exhaustively ruled out.
+- **Decision: Option D (close as a null research result).** Applying the decision rule directly ("parent-child association not source-unique → D"): Options A and B (semantic-parent/child-inherits-identity models) rejected because no source-safe rule can uniquely resolve "the one associated child" without either an arbitrary pick among qualifying descendants or forbidden arithmetic reconstruction; Option C (change universe) rejected because all 4 sampled files show the same deep hierarchy, so further file-hunting would be "universe shopping" (selecting a universe because it happens to contain an eligible row).
+- **No amendment protocol artifact was created** — deliberate, not an oversight.
+- Recorded, for a future Case Package design discussion only: CAS's own convention separates "which item/request this is" from "what it costs" in a way no prior case (002–006) needed to represent — a genuine structural difference, not resolved here.
+- Files: `reports/document-understanding/20260928_1755_Case007_NULL_Result_Structural_Review.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: original protocol (`2cc0821`) and NULL selection record (`f530846`) byte-identical; source survey/evidence (`211213c`) byte-identical; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Case-007 is now closed.** Recommended next step: per the frozen Case-006-010 execution order, proceed to Case-008 (saibansho/Courts) source survey.
+
+### research: freeze case-007 row selection (branch: research/case-007-cas-baseline) — null result
+
+- **Row selection attempted, not achieved. No Ground Truth. No benchmark run or OCR experiment. No protocol modification, despite discovering it has no satisfiable candidate in the frozen universe.**
+- Exhaustively enumerated all 14 rows across both pages of the frozen universe (`detail-01`), applying the frozen protocol's own C1–C4 without modification (§7–§9 of the record). **Result: zero rows satisfy C1–C4 jointly.**
+- Two candidates (`①/01-95 内閣官房一般行政に必要な経費`; `2/06-95 情報の収集及び分析その他の調査に必要な経費`) pass C1 and C2 but fail C3: their own printed lines have completely blank amount-column cells (confirmed via 2x-zoomed direct visual inspection, not inferred) — the amount triple instead lives one or more levels deeper in the document's own hierarchy (project-level/further-breakdown/object-code rows). All remaining rows fail C1 (no request-number-column entry; deeper code format than the expense-level `NN-NN` convention).
+- **New structural finding**: CAS's `detail-01` ledger uses a deeper hierarchy than any prior case (002–006) — the amount triple attaches to a project-level-or-deeper row, not to the request/expense-code row itself, unlike every prior case where that row was always the amount-bearing row.
+- Discovering this dead end, the task paused and reported it to the user rather than unilaterally reinterpreting C1/C3 or substituting a different row/file; user confirmed: document as a null result and stop, matching the Case-006 null-benchmark-preservation precedent.
+- Files: `fixtures/document-understanding/case-007/20260928_1244_Case007_Selection_Record.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: the Case-007 selection protocol byte-identical to `2cc0821`; the source survey/evidence byte-identical to `211213c`; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step (decision required)**: a Case-007 Selection Protocol Amendment task must choose among (1) redefine C1/C3 to recognize the deeper amount-bearing row as eligible with its own provenance chain back to the governing request number; (2) re-open the file-universe choice to test whether another CAS detail file places the amount directly on the request/expense-code row; (3) accept this null result for `detail-01` and select a different universe for Case-007's actual target row.
+
+### research: freeze case-007 selection protocol (branch: research/case-007-cas-baseline)
+
+- **Protocol freeze only. No candidate row enumerated, compared, or selected. No Ground Truth. No benchmark run or OCR experiment.**
+- **Frozen target file**: `cas-fy2024-general-account-expenditure-request-detail-01` (2 pages), chosen via a source-safe comparison table (official link order, file-identity stability, detail-ledger grammar, organization-anchor clarity, grammar purity, navigation determinism) — all 16 detail files passed equally, so the deterministic fallback (first file in official package/link order) applied. Inspection-depth familiarity with `detail-07` (most-examined file in the source survey) was explicitly rejected as a selection input.
+- **Single-file universe** adopted to resolve the source survey's own cross-file item-splitting finding *by construction*, not by adjudication: eligibility and tie-break rules apply only within `detail-01`.
+- **Cross-file splitting handling rule frozen**: no duplicate exclusion, no amount-based winner selection, no merge/aggregation, no assumed semantic equivalence, no guess at a "true" row.
+- **File identity elevated to a required provenance-locator element** for the future selection record (package/file identity, URL, SHA-256, pdfPageIndex, printed page, organization, item, request no., expense code, label) — a limited, CAS-specific disambiguation need, not a claim of a universal semantic row key.
+- **C1/C3 retained unchanged; C2 (multi-line wrap) retained** after explicit reconsideration (comparability with cases 001–006; confirmed non-hypothetical on `detail-01`'s own page 1); **C4 redefined into three evidence layers** (row-local / same-page-or-nearest-preceding item / file-scoped organization anchor, the last never required on the row's own page) so CAS's genuine file-scoped mechanism isn't mistaken for missing evidence.
+- **Context resolution order and tie-break frozen** (row-local → item → file-scoped organization → file identity; package → file → pdfPageIndex → topmost row).
+- Prior exposure (including several amount values on `detail-01`'s own pages, already seen during the source survey) disclosed in full, not minimized; not used to shape any criterion.
+- Files: `fixtures/document-understanding/case-007/20260928_1207_Case007_Selection_Protocol.md`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: case-007 source survey and evidence JSON byte-identical to `211213c`; the Case-006-010 Selection Freeze unchanged; case-001-006 frozen artifacts unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: apply this protocol to `detail-01` to select exactly one row and write a selection record, stopping before Ground Truth.
+
+### research: survey case-007 CAS source package (branch: research/case-007-cas-baseline)
+
+- **Source survey only. No selection protocol, row selection, Ground Truth, benchmark run, OCR experiment, or production code change. No single "winner" file selected — multiple candidates presented as source-safe facts for a future Selection Protocol task.**
+- Branch created fresh from `main@0612f4f` (post PR #6 merge), not continuing the case-006 branch.
+- Re-verified all 18 locked `cas-*` source SHA-256 (Python script, no drift) and re-fetched the official CAS budget page live, confirming 17 PDF links matching the census's own prior inventory.
+- Package inventory: 1 narrative overview (18 pages), 1 cover file (2 pages, containing a 総表 *and* an embedded 目次 — both excluded from the detail-row universe under the case-006 P2 multi-grammar-exclusion precondition), and 16 numbered detail files (`detail-01`, `detail-03`–`detail-17`; `detail-02` does not exist), 1–29 pages each.
+- **File-scoped context confirmed exhaustively at organization level**: all 29 pages of `detail-07` individually scanned; `010 内閣官房` appears only on page 1, never re-declared.
+- **Refinement, not a false claim**: the census's own single "file-scoped" label conflated organization-level and item-level context. Item-level context is *not* file-scoped — ~22 distinct item headers recur throughout the same file (roughly every 1 page) via the same same-page mechanism already known from cases 002–005. Recorded as a separate mechanism.
+- **New finding, previously undocumented in this program**: cross-file item-splitting — the identical item code (`010/010/①/01-95/内閣官房一般行政に必要な経費`) appears on page 1 of 5 sampled detail files, each with a *different* amount pair, consistent with a single MOF-facing item split/distributed across bureau files. Observed on a 5-file sample, not exhaustively confirmed across all 16; no arithmetic reconciliation attempted, amount similarity not used as evidence.
+- Page-numbering behavior across files: inconclusive from text-layer extraction alone (one of 12 sampled files showed a page-1 header number, the rest did not) — flagged unresolved.
+- **Verdict**: SUITABLE WITH CAVEATS — future Selection Protocol must explicitly handle the cross-file item-splitting pattern.
+- Files: `reports/document-understanding/20260928_1028_Case007_CAS_Source_Survey.md`, `evidence/document-understanding/case-007-source-representation.json`, `state/{CURRENT_STATE.json,TODO.md,CHANGELOG.md}`. Re-verified: case-001-006 frozen artifacts unchanged; the Case-006-010 Selection Freeze unchanged; `scripts/` unchanged; source-lock/registry unchanged.
+- **Recommended next step**: Case-007 CAS Selection Protocol Freeze, explicitly incorporating a rule for the cross-file item-splitting pattern.
+
 ### research: close out case-006 baseline (branch: research/case-006-moj-source-survey)
 
 - **Closeout/audit only. No new benchmark run (validation/tests only), no OCR experiment, no adaptation, no Case-007 work.**
