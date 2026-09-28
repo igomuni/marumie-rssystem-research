@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-008",
+  "sourceId": "courts-fy2024-general-account-expenditure-request",
+  "sourceSha256": "df43f2dc183da84fa9952ae4c5e17888177df186ad4c556ed1a519ba584e3c06",
+  "pdfPageIndex": 6,
+  "pdfPageNumber": 7,
+  "printedPageLabel": "裁（裁）3",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the page label printed on the document itself (top-right corner of the page), distinct from pdfPageIndex/pdfPageNumber (0-based/1-based positions within the physical PDF file). Row selected under fixtures/document-understanding/case-008/20260928_1933_Case008_Selection_Protocol.md and frozen in fixtures/document-understanding/case-008/20260928_1943_Case008_Selection_Record.md before this file was created. Direct visual transcription used a fresh 400dpi non-OCR render of the locked PDF only; the selected row is in the standard 歳出概算要求額明細表 section, not the same file's summary, staffing, policy-framework, or local calculation-box grammar. Unit is declared on this target page itself and applies to the standard-ledger section. See fixtures/document-understanding/case-008/20260928_1954_Case008_Ground_Truth_Evidence.md for raw visual transcription, sign evidence, remarks status, and post-transcription arithmetic validation.",
+  "result": {
+    "itemCode": "010",
+    "itemName": "最高裁判所",
+    "requestNo": "1",
+    "expenseCode": "01-95",
+    "expenseName": "最高裁判所の事務処理に必要な経費",
+    "previousBudget": 68535874,
+    "fy2024Request": 80989261,
+    "deltaRaw": "12,453,387",
+    "delta": 12453387,
+    "unit": "千円",
+    "remarks": "",
+    "page": 6
+  }
+}

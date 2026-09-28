@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: freeze case-008 ground truth (branch: research/case-008-courts-baseline)
+
+- **Ground Truth freeze only.** Re-verified the selected source locator and transcribed the selected standard-ledger row directly from a fresh 400dpi non-OCR render of the locked PDF. No benchmark/extractor/evaluator output, MOF/RS data, or prior expected value was consulted.
+- Wrote `case-008/ground-truth.json` using the established case schema and `20260928_1954_Case008_Ground_Truth_Evidence.md` with raw visual lines, raw-to-normalized amounts, source-glyph sign evidence, same-page section-local 千円 unit, empty remarks evidence, and post-transcription arithmetic PASS.
+- Case-008 provenance remains section-aware: the row is in the standard ledger of the one combined 127-page PDF, not its summary, staffing, policy-framework, or local calculation-box grammars.
+- Source Survey, Selection Protocol, Selection Record, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, lock/registry, and production code remain unchanged. Next task: run the existing, unmodified Case-008 benchmark pipeline for the first time.
+
 ### research: freeze case-008 row selection (branch: research/case-008-courts-baseline)
 
 - **Exactly one row selected, then stopped.** Applied the frozen protocol visually, top-to-bottom from standard-ledger `pdfPageIndex` 6, with a 300dpi non-OCR render only. No Ground Truth, amount transcription/arithmetic, benchmark/OCR, protocol amendment, MOF/RS work, or production change.
