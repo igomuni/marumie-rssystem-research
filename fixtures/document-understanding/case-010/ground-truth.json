@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-010",
+  "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+  "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+  "pdfPageIndex": 20,
+  "pdfPageNumber": 21,
+  "printedPageLabel": "厚（本）13",
+  "groundTruthSource": "manual_visual_verification_against_locked_pdf",
+  "notes": "printedPageLabel is the document's printed label, distinct from the 0-based pdfPageIndex and 1-based pdfPageNumber. The row was selected under fixtures/document-understanding/case-010/20260929_0647_Case010_Selection_Protocol.md and frozen in fixtures/document-understanding/case-010/20260929_0711_Case010_Selection_Record.md before this file was created. Direct visual transcription used a fresh 600dpi non-OCR render of the locked PDF only. The selected row is in the main standard-ledger grammar, under organization 010 厚生労働本省 and item 001 厚生労働本省共通費, and not in the page's embedded remarks-side material. Unit is declared at the main-detail section opening and applies to the selected main-ledger row. See fixtures/document-understanding/case-010/20260929_0754_Case010_Ground_Truth_Evidence.md for raw visual transcription, sign evidence, remarks state, and post-transcription arithmetic validation.",
+  "result": {
+    "itemCode": "001",
+    "itemName": "厚生労働本省共通費",
+    "requestNo": "1",
+    "expenseCode": "05-95",
+    "expenseName": "厚生労働本省一般行政に必要な経費",
+    "previousBudget": 95219981,
+    "fy2024Request": 107468512,
+    "deltaRaw": "12,248,531",
+    "delta": 12248531,
+    "unit": "千円",
+    "remarks": "",
+    "page": 20
+  }
+}

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: freeze Case-010 ground truth
+
+- **Ground Truth freeze only.** Rehashed the locked MHLW source (PASS), verified the frozen locator against a fresh 600-dpi direct visual render, and independently transcribed the selected main-ledger row. Raw visual forms and normalized values are preserved separately; the delta sign was determined from its own source glyph before arithmetic validation, which passed.
+- Wrote `fixtures/document-understanding/case-010/ground-truth.json` and `fixtures/document-understanding/case-010/20260929_0754_Case010_Ground_Truth_Evidence.md`, then updated state. No text extraction, OCR, benchmark output, MOF/RS data, parser/normalizer/evaluator change, source-lock/registry change, row reselection, or production adaptation occurred. Next: Case-010 First Frozen Benchmark.
+
 ### research: freeze Case-010 row selection
 
 - **Row selection only.** Rehashed the locked MHLW source (PASS), confirmed frozen survey/protocol integrity, and applied the unchanged protocol by fresh 400-dpi direct visual inspection from the first page of the frozen universe. The first two evaluated aggregate rows failed C1; the third physical main-ledger row at `pdfPageIndex 20` passed C1–C4 and was selected. Inspection stopped immediately; no later row or page was inspected.
