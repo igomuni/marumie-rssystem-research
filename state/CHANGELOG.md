@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### research: freeze case-008 row selection (branch: research/case-008-courts-baseline)
+
+- **Exactly one row selected, then stopped.** Applied the frozen protocol visually, top-to-bottom from standard-ledger `pdfPageIndex` 6, with a 300dpi non-OCR render only. No Ground Truth, amount transcription/arithmetic, benchmark/OCR, protocol amendment, MOF/RS work, or production change.
+- Two aggregate rows (`010 裁判所`, then `010 最高裁判所`) failed C1 because neither carries the required row-local request-number-plus-expense-code pair. The next physical row was the first full P1/P2/C1--C4 pass: `pdfPageIndex` 6 / printed `裁（裁）3`, organization `010 裁判所`, same-page item `010 最高裁判所`, request `①`, expense code `01-95`, label `最高裁判所の事務処理に必要な経費`.
+- C2 passed by direct visual two-line wrapping; C3 passed only as a presence/association check of its own three cells, with no amount digits recorded; C4 passed using same-page item/organization/section/unit evidence. Tie-break stopped the scan before any later row/page.
+- Re-verified raw source SHA against lock and frozen protocol byte identity before inspection. Source Survey, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, lock/registry, and production code remain unchanged.
+- Next task: Case-008 Ground Truth Freeze for this selected row, then stop before a benchmark.
+
 ### research: freeze case-008 selection protocol (branch: research/case-008-courts-baseline)
 
 - **Protocol freeze only.** No candidate row was enumerated or selected; no Ground Truth, benchmark/OCR experiment, parser/normalizer/evaluator change, MOF/RS linkage, or production adaptation occurred.

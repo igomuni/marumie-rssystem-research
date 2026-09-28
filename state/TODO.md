@@ -306,4 +306,4 @@
   2. ADR-011's A/B discovery-provenance rule (feature classified by how it was *actually* discovered here, not how it theoretically could be) should be re-applied whenever a new case's Document Profile is backfilled, since it is easy to default to the more convenient theoretical classification.
 ## Case-008 Courts — next action
 
-- Apply the frozen `fixtures/document-understanding/case-008/20260928_1933_Case008_Selection_Protocol.md`: visually inspect its standard-ledger-only universe in document order; select exactly one row if it passes P1/P2/C1--C4; write a Selection Record; stop before Ground Truth. If no row qualifies, record a NULL result and stop. Do not widen the universe, inspect excluded grammars to rescue selection, run a benchmark, or run OCR.
+- Freeze Ground Truth evidence for the row selected in `fixtures/document-understanding/case-008/20260928_1943_Case008_Selection_Record.md`. Preserve its source locator, hierarchy, and 千円 section unit; create no benchmark artifact in that task.
