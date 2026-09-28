@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 0,
+  "caseId": "case-006-candidate",
+  "authority": "法務省 (Ministry of Justice)",
+  "sourceId": "moj-fy2024-general-account-expenditure-request",
+  "generatedAt": "2026-09-28T07:00:00+09:00",
+  "note": "Source-representation diagnostic evidence only. NOT a benchmark result. No engine comparison, no Ground Truth, no row selection was performed to produce this file. All fields below are source-safe or engine-derived observations from source-safe tooling (pdfinfo/pdftotext/pdffonts/pypdf/pdftoppm), not from any compared benchmark engine (pdf.js/PyMuPDF/Docling).",
+  "sourceIntegrity": {
+    "sha256": "bd5ce9c5dee48b03407e9a8d4050f3992c8a515f510c0339364316448dd9cf8c",
+    "sha256MatchesLock": true,
+    "byteSize": 147742864,
+    "url": "https://www.moj.go.jp/content/001402818.pdf"
+  },
+  "pdfTechnicalProfile": {
+    "pages": 737,
+    "pdfVersion": "1.5",
+    "producer": "JUST PDF 5",
+    "creator": null,
+    "creationDate": "2023-09-04T11:22:04+09:00",
+    "modDate": "2023-09-04T11:24:59+09:00",
+    "encrypted": false,
+    "pageSizePts": "595.276 x 841.89 (A4)",
+    "pageRotation": 90,
+    "tagged": false
+  },
+  "packageModel": {
+    "fileCount": 1,
+    "sections": [
+      { "label": "令和6年度歳出概算要求額総表", "pdfPageIndex": 4, "pdfPage1based": 5, "printedLabel": "法 1", "grammar": "cross-reference-summary" },
+      { "label": "令和6年度歳出概算要求額明細表", "pdfPageIndex": 8, "pdfPage1based": 9, "printedLabel": "法（本） 5", "grammar": "standard-ledger", "organizationCount": 8 },
+      { "label": "令和6年度概算要求定員表", "pdfPageIndex": 728, "pdfPage1based": 729, "printedLabel": "not_directly_rendered_in_this_task", "grammar": "staffing-table (unit likely 人, not directly page-rendered in this task; inferred from cover TOC only)" }
+    ],
+    "organizationsListedInToc": [
+      { "code": "010", "name": "法務本省", "tocPageRef": 5 },
+      { "code": "020", "name": "法務総合研究所", "tocPageRef": 153 },
+      { "code": "040", "name": "検察庁", "tocPageRef": 176 },
+      { "code": "050", "name": "矯正官署", "tocPageRef": 222 },
+      { "code": "060", "name": "更生保護官署", "tocPageRef": 464 },
+      { "code": "065", "name": "法務局", "tocPageRef": 537 },
+      { "code": "075", "name": "出入国在留管理庁", "tocPageRef": 625 },
+      { "code": "080", "name": "公安審査委員会", "tocPageRef": 705 },
+      { "code": "090", "name": "公安調査庁", "tocPageRef": 708 }
+    ]
+  },
+  "rasterOnlyVerification": {
+    "methodA_textExtraction": {
+      "tool": "pdftotext -layout (whole document)",
+      "pagesScanned": 738,
+      "pagesWithAnyNonWhitespaceText": 0,
+      "coverage": "exhaustive",
+      "result": "extractableText: absent (exhaustively confirmed across all pages)"
+    },
+    "methodB_objectInspection": {
+      "tool": "pypdf 6.19.0, direct page /Resources and content-stream inspection",
+      "pagesSampled": [0, 99, 399, 500, 736],
+      "coverage": "sampled (5 of 737 pages), not exhaustive",
+      "perPageFindings": [
+        { "pdfPageIndex": 0, "fontResourceCount": 0, "xObjectResourceCount": 0, "contentStreamBytes": 423789, "textShowingOperators_Tj_TJ_BT": 0, "vectorPathOperators_m": 1095, "vectorPathOperators_c": 7226, "vectorPathOperators_l": 5502, "fillOperators_f": 563, "xObjectPaintOperators_Do": 0, "inlineImageOperators_BI": 0 },
+        { "pdfPageIndex": 99, "fontResourceCount": 0, "xObjectResourceCount": 0, "contentStreamBytes": 826437, "textShowingOperators_Tj_TJ_BT": 0, "vectorPathOperators_m": 1882, "vectorPathOperators_c": 13880, "vectorPathOperators_l": 12283, "xObjectPaintOperators_Do": 0, "inlineImageOperators_BI": 0 },
+        { "pdfPageIndex": 399, "fontResourceCount": 0, "xObjectResourceCount": 0, "contentStreamBytes": 759757, "textShowingOperators_Tj_TJ_BT": 0, "vectorPathOperators_m": 1818, "vectorPathOperators_c": 12331, "vectorPathOperators_l": 12391, "xObjectPaintOperators_Do": 0, "inlineImageOperators_BI": 0 },
+        { "pdfPageIndex": 500, "fontResourceCount": 0, "xObjectResourceCount": 0, "contentStreamBytes": 499448, "textShowingOperators_Tj_TJ_BT": 0, "vectorPathOperators_m": 1195, "vectorPathOperators_c": 8433, "vectorPathOperators_l": 7620, "xObjectPaintOperators_Do": 0, "inlineImageOperators_BI": 0 },
+        { "pdfPageIndex": 736, "fontResourceCount": 0, "xObjectResourceCount": 0, "contentStreamBytes": 1360124, "textShowingOperators_Tj_TJ_BT": 0, "vectorPathOperators_m": 3384, "vectorPathOperators_c": 22922, "vectorPathOperators_l": 18803, "xObjectPaintOperators_Do": 0, "inlineImageOperators_BI": 0 }
+      ],
+      "interpretation": "[INTERPRETATION] Every sampled page's visible content is drawn entirely via vector path-drawing operators (moveto/curveto/lineto, filled), with ZERO font resources, ZERO XObject (image) resources, ZERO text-showing operators, and ZERO inline images anywhere. This indicates the source represents all visible content -- including what looks like text -- as vector-outlined shapes, NOT as an embedded raster/scanned image and NOT as standard PDF text objects with font references. This is a materially different mechanism from a photographically-scanned document, even though the observable symptom (pdftotext returns nothing) is identical.",
+      "hiddenOcrTextLayer": "not found -- zero BT (text object begin) operators exist anywhere in the sampled content streams, which rules out any invisible/hidden OCR text layer (which would necessarily use a text-rendering-mode-3 Tj/TJ inside a BT/ET block)"
+    },
+    "methodC_visualRender": {
+      "tool": "pdftoppm -png -r 100",
+      "pagesRendered": [1, 5, 9, 100, 153, 400],
+      "result": "All rendered pages show crisp, legible Japanese ledger text and table gridlines with no scan noise, skew, or photographic artifacts -- consistent with vector-drawn content (methodB), not a photographic scan.",
+      "imageResolutionEstimate": "not_applicable -- no embedded raster image exists to estimate a resolution for (methodB confirms zero XObject/image resources)"
+    }
+  },
+  "representationScopeSummary": {
+    "extractableText": "absent",
+    "verificationCoverage_textExtraction": "exhaustive (all 737 pages)",
+    "verificationCoverage_objectInspection": "sampled (5 pages: 1, 100, 400, 501, 737 in 1-based terms)",
+    "verificationCoverage_visualRender": "sampled (6 pages)",
+    "overGeneralizationCaveat": "[FACT] Object-level (font/XObject/operator) inspection was performed on 5 of 737 pages, not exhaustively. The exhaustive pdftotext scan supports 'extractableText: absent, all pages' with high confidence; the specific mechanism (vector-outlined paths, zero raster images) is confirmed only for the 5 sampled pages plus the 6 visually-rendered pages, not proven identical on every single page of the document."
+  }
+}
