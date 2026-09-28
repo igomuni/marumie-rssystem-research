@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: close out case-009 frozen baseline (branch: research/case-009-cao-source-survey)
+
+- **Closeout/audit only.** Directly audited the chronological freeze chain: Source Survey (`e640dc2`) → Protocol (`d42b7b8`) → Selection (`985f77e`) → Ground Truth (`0d238d2`) → First Benchmark (`199ef50`). Every frozen artifact remains byte-identical to its own freeze commit; the locked `1.pdf` SHA was reverified. No benchmark or source inspection was rerun.
+- Closed the baseline phase while separating two conclusions: the exact 51-file CAO package and its file-start, context-bearing scope partitions are confirmed source-side findings, but no causal impact of packaging/file identity was demonstrated for the single-file, first-page frozen benchmark. pdf.js/PyMuPDF’s 10/11 outcomes are candidate-resolution ambiguity; Docling’s 8/11 is item/table association after retaining the target expense/triple. Package scale is not itself declared a new layout mechanism.
+- Wrote `reports/document-understanding/20260928_2220_Case009_Closeout.md` and updated state. Case-010 gate is **OPEN**; recommended next task is Case-010 MHLW Source Survey on a fresh latest-main branch. No frozen artifact, source lock/registry, scripts, parser/normalizer/evaluator, OCR configuration, or production semantics changed; Case-010 work was not started.
+
 ### research: benchmark case-009 frozen baseline (branch: research/case-009-cao-source-survey)
 
 - **First frozen baseline only.** Re-verified the freeze chain and locked `1.pdf` SHA, then ran the existing unmodified commands `npm run extract` and `npm run docbench -- case-009`. The configured engines completed: pdf.js 10/11, PyMuPDF 10/11, Docling 8/11. The flat-text engines retained the correct item among multiple candidates but honestly left a single item unresolved; Docling retained the target expense/triple but did not reconstruct the target item candidate or item relationship.
