@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze case-009 selection protocol (branch: research/case-009-cao-source-survey)
+
+- **Protocol freeze only; no candidate enumeration.** Re-read the committed Case-009 Source Survey/evidence, selection-freeze framing, Case-007/008 protocol references, and source lock/registry. Compared source-admissibility options before any row criterion: chose Option A, the existing locked `1.pdf`, because it is the only already-locked CAO detail binary—not because of row content. Rejected unlocked temporary-snapshot use; package-wide choice would require a separate canonicalization/lock task.
+- Froze the three-page, standard-ledger-only universe; mandatory package/file/section/page provenance; source-visible context resolution within the one file only; section-local `千円`; C1–C4; grammar and nested-box exclusions; no parent/child amount inheritance; ambiguity/NULL handling; earliest-page/topmost-row tie-break; and prior-exposure/non-criteria disclosures. Source lock/registry were not changed.
+- Wrote `fixtures/document-understanding/case-009/20260928_2122_Case009_Selection_Protocol.md` and updated state. The Case-009 Source Survey/evidence, Case-006–010 Selection Freeze, Cases 001–008, scripts, parser/normalizer/evaluator, and production semantics remain unchanged. No row selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred. Next: apply the frozen protocol to locked `1.pdf` only and stop before Ground Truth.
+
 ### research: survey case-009 CAO source package (branch: research/case-009-cao-source-survey)
 
 - **Source/package/context survey only.** Began from merged `main@d2a5cae` after Case-008 closeout, then enumerated the official CAO FY2024 landing page: actual package is 51 files (`0.pdf`–`50.pdf`), 394 pages, not a fixed approximate count. Created a full machine-readable manifest with official URLs, hashes, bytes, pages, metadata, first-page scope, grammar, and lock/snapshot status.
