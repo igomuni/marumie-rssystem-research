@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### research: freeze case-008 selection protocol (branch: research/case-008-courts-baseline)
+
+- **Protocol freeze only.** No candidate row was enumerated or selected; no Ground Truth, benchmark/OCR experiment, parser/normalizer/evaluator change, MOF/RS linkage, or production adaptation occurred.
+- Froze the selection unit as one physical standard-ledger row with the full locator tuple `source file + section/grammar + page + hierarchy + row-local identifier`; explicitly rejects file identity alone and CAS-style parent/child amount inheritance.
+- Froze `pdfPageIndex` 6--110 (printed `裁（裁）3`--`107`) as the standard-ledger universe under `010 裁判所`, using combined range/title/header/unit/hierarchy evidence. Excluded cover/TOC, summary, blanks, staffing, policy-framework summary/detail, and local non-target calculation boxes by grammar as well as location.
+- Retained C1 native request-number-plus-expense-code, C2 multi-line label wrap, C3 row-local standard amount triple, and expanded C4 source sufficiency to include section identity, context, and section-local unit. Any blank/ambiguous amount association fails; no arithmetic reconstruction is permitted.
+- Froze section-bounded context order, 千円 ledger-unit evidence, source-cue section rule, `pdfPageIndex` then topmost-row tie-break, ambiguity/continuation handling, and explicit non-criteria. Prior exposure is disclosed and barred as a selection input.
+- Source Survey, Case-006--010 Selection Freeze, Case-007, Cases 001--006, scripts, source lock/registry, and production code remain unchanged. Next task: apply this protocol, write a Selection Record for one qualifying row if one exists, then stop before Ground Truth; a NULL result is permitted.
+
 ### research: survey case-008 Courts source structure (branch: research/case-008-courts-baseline)
 
 - **Source survey only.** Re-verified the already locked Courts raw PDF SHA-256; no acquisition/lock/registry update, selection protocol, row selection, Ground Truth, benchmark, OCR experiment, parser/normalizer/evaluator change, MOF linkage, or production adaptation.
