@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Authority Selection Manifest Freeze (recommended; not started).** Mechanically execute the frozen Batch-001 procedure against the committed Population Freeze to record exactly six primary authorities in canonical order, with no source acquisition, PDF/content inspection, preflight classification, Batch execution, MOF work, or linkage.
+- **Batch-001 Wave 1 Source Survey / Source Admissibility — authorities 01 and 02 (recommended; not started).** Create isolated authority workspaces for the first frozen Wave-1 pair, then perform only their source survey/acquisition and admissibility work. Do not enumerate candidates before each authority's preflight-profile freeze; do not start canonical extraction, GT, benchmark, OCR, CSV, or MOF linkage.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

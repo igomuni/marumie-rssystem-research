@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze Batch-001 authority selection
+
+- Mechanically executed the frozen, content-blind sampling procedure against the committed 33-record FY2024 Population Freeze. Excluded the ten Case-001–010 authority IDs solely for prior research exposure, then froze the first six eligible records in canonical population order as Batch-001 primaries; no reserve or replacement list exists.
+- Recorded deterministic Batch IDs, ranks, three two-authority waves, `SELECTED_NOT_STARTED` initial status, input SHA-256 values, and an independently reproduced selection result. No authority source, web page, PDF, representation, grammar, context, or suitability was inspected.
+- Next: Batch-001 Wave 1 Source Survey / Source Admissibility for authorities 01 and 02, in isolated authority workspaces. Batch execution beyond selection, canonical extraction, GT, benchmark, OCR, CSV, and MOF work remain unstarted.
+
 ### research: freeze semantic-data Batch-001 design
 
 - Froze a content-blind, deterministic procedure for a six-authority request-side canonicalization pilot: the first six eligible, previously unseen entries in committed FY2024 Population Freeze order will be selected only in the next manifest task. The procedure is intentionally unexecuted here; it has no reserve or replacement policy.

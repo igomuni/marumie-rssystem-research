@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-authority-selection-manifest",
+  "batchId": "batch-001",
+  "status": "FROZEN",
+  "samplingExecuted": true,
+  "sourceInspectionPerformed": false,
+  "population": {
+    "artifact": "fixtures/document-understanding/fy2024-format-census/20260927_1909_FY2024_Population_Freeze.md",
+    "sha256": "e3ecf03042e41c862b66625b124c9deabebab1bc2c8bc63b87a1eb7f6955db81",
+    "canonicalOrder": "numbered row order in the Population Freeze",
+    "populationCount": 33
+  },
+  "samplingProcedure": {
+    "artifact": "fixtures/document-understanding/batch-001/authority-sampling-procedure.json",
+    "sha256": "116bf2c0204b009403a8af576885c6689b4ff7b106a727657c01bdce20daf40a",
+    "freezeCommit": "974140124c715fbe37514e65d43e1d13c2692ede",
+    "schemaVersion": 1,
+    "procedureChangedDuringSelection": false
+  },
+  "selectionAudit": {
+    "priorExposureExclusion": "Cases 001–010 authority IDs excluded solely for prior research exposure / unseen-authority validation",
+    "priorExposureExcludedCount": 10,
+    "duplicateExcludedCount": 0,
+    "missingRequiredMetadataExcludedCount": 0,
+    "eligibleCount": 23,
+    "contentStratificationApplied": false,
+    "ambiguity": "none; six unique primary records were deterministically produced"
+  },
+  "primaryCount": 6,
+  "reserveCount": 0,
+  "replacementPolicy": "none",
+  "initialStatus": "SELECTED_NOT_STARTED",
+  "authorities": [
+    {"batchAuthorityId": "batch-001-authority-01", "authorityId": "kunaicho", "authorityName": "皇室費", "populationOrder": 1, "selectionRank": 1, "wave": 1, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"},
+    {"batchAuthorityId": "batch-001-authority-02", "authorityId": "shugiin", "authorityName": "衆議院", "populationOrder": 2, "selectionRank": 2, "wave": 1, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"},
+    {"batchAuthorityId": "batch-001-authority-03", "authorityId": "sangiin", "authorityName": "参議院", "populationOrder": 3, "selectionRank": 3, "wave": 2, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"},
+    {"batchAuthorityId": "batch-001-authority-04", "authorityId": "ndl", "authorityName": "国立国会図書館", "populationOrder": 4, "selectionRank": 4, "wave": 2, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"},
+    {"batchAuthorityId": "batch-001-authority-05", "authorityId": "sotsui", "authorityName": "裁判官訴追委員会", "populationOrder": 5, "selectionRank": 5, "wave": 3, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"},
+    {"batchAuthorityId": "batch-001-authority-06", "authorityId": "dangai", "authorityName": "裁判官弾劾裁判所", "populationOrder": 6, "selectionRank": 6, "wave": 3, "eligibility": "eligible", "exposure": "unexposed", "initialStatus": "SELECTED_NOT_STARTED"}
+  ],
+  "freezeMetadata": {
+    "frozenAt": "2026-09-29T19:19:00+09:00",
+    "selectionMethod": "mechanical application of frozen procedure; no content inspection",
+    "authorityBranchesOrWorktreesCreated": false,
+    "batchExecutionStarted": false
+  }
+}
