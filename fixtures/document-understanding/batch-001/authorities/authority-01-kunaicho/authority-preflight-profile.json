@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "authority-preflight-profile",
+  "status": "FROZEN; research protocol artifact, not a production schema",
+  "authority": {"authorityId": "kunaicho", "authorityName": "皇室費", "batchAuthorityId": "batch-001-authority-01"},
+  "sources": {
+    "packageId": "kunaicho-fy2024-imperial-household-expense",
+    "files": [{"fileId": "r06-02.pdf", "sha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261", "pageCount": 33, "role": "canonical single file"}],
+    "canonicalSourceStatus": "ADMISSIBLE_FOR_PREFLIGHT",
+    "canonicalityNote": "Locked official single-file FY2024 request source; this profile does not change the source lock.",
+    "sourceLockVerification": {"sha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261", "status": "matched_existing_lock"}
+  },
+  "surveyProvenance": {"integrationCommit": "2b0c55fc7273f9d330179e792158f74931d57706", "surveyCommit": "e095bda4231d472ac88df02477e026c3988e9f9a", "surveyEvidence": "evidence/document-understanding/batch-001/authority-01-kunaicho-source-survey.json", "targetedInspection": "evidence/document-understanding/batch-001/authority-01-kunaicho-preflight-inspection.json"},
+  "preflight": {
+    "representationClass": "native-text PDF; source-native observation permitted",
+    "textAvailability": "native text observed; engine limitations must remain distinct from source absence",
+    "geometryAvailability": "available when emitted by an authorized observation method; optional, not a prerequisite for every observation",
+    "grammarClasses": ["cover/TOC/summary where present", "outer standard ledger", "remarks-side nested structures", "ambiguous or unclassified region"],
+    "targetGrammarClasses": ["outer standard ledger", "remarks-side nested structures as separate structural grammar"],
+    "excludedGrammarClasses": ["cover/TOC/summary as semantic context for ledger observations", "ambiguous or unclassified region"],
+    "packageTopology": "single canonical PDF",
+    "contextPartitions": ["file", "section/grammar", "same-page outer grid", "nested structure"],
+    "organizationScope": "source-visible anchors only; do not infer across grammar boundaries",
+    "unitScopes": ["outer-ledger opening declaration （単位：千円） applies only to the evidenced outer structure", "a nested/local declaration, if present, is bounded to its own framed structure", "ambiguous scope remains ambiguous"],
+    "hierarchyPattern": "outer ledger plus remarks-side nested structures; preserve distinct nodes and edges",
+    "continuationBehavior": "not authorized across pages without later amendment supported by direct evidence",
+    "embeddedStructures": "remarks-side boxes/tables are structurally distinct and must not be flattened into outer-ledger rows",
+    "ambiguityHazards": ["outer versus nested grammar identity", "unit scope", "context crossing a page or grammar boundary", "unproven continuation"]
+  },
+  "canonicalObservation": {"allowed": ["source-native observations in an identified partition", "same-page context within the same outer grid", "separate structural observation of nested material"], "prohibited": ["candidate enumeration", "semantic candidate derivation in this profile", "cross-page or cross-file context inheritance", "flattening nested material into an outer row", "using landing-page provenance as ledger semantics"]},
+  "allowedCandidateDerivationRules": [],
+  "prohibitedCandidateDerivationRules": ["MOF feedback into request-side extraction or normalization", "arbitrary descendant promotion", "arithmetic reconstruction of an unprinted parent amount", "cross-file inheritance without profile-level authorization", "candidate enumeration during preflight", "cross-page inheritance", "nested-unit promotion to the outer ledger"],
+  "financialOwnershipRule": "Record source-observed alignment and containment only. Do not promote child values to a parent, sum descendants, reconstruct arithmetic, or treat a blank as zero.",
+  "contextPermissions": {"samePage": "allowed only within the identified outer grid or the same bounded nested structure", "crossPage": "prohibited", "crossFile": "prohibited"},
+  "stopFailureRules": ["ambiguous grammar or unit/context scope is preserved as ambiguous", "a needed cross-page inference requires amendment rather than silent relaxation"],
+  "provenanceRequirements": ["authorityId", "sourceSha256", "fileId", "pdfPageIndex", "printedPageOrPrefix when visible", "grammarIdentity", "sourceOrder", "observationState", "rawEvidenceReference", "observationMethod", "geometry when available"],
+  "observationStateVocabulary": "Refer unchanged to the Frozen Canonical Semantic Extraction Protocol: observed_value, observed_blank, not_present_on_node, not_applicable, not_inspected, unknown, ambiguous, not_extracted, not_created.",
+  "unresolvedNonblockingItems": ["No general cross-page continuation rule is evidenced; it is prohibited rather than inferred.", "Nested local-unit behavior must be recorded per bounded structure when encountered."],
+  "freezeMetadata": {"protocolVersion": "1", "profileVersion": "batch-001-wave-1-a01-v1", "frozenAt": "2026-09-30T06:26:00+09:00", "freezeCommit": null, "freezeCommitNote": "Recorded by Git history after creation; no self-referential amend loop."}
+}

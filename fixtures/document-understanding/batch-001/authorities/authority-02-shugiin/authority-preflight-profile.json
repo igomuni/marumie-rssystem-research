@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "authority-preflight-profile",
+  "status": "FROZEN; research protocol artifact, not a production schema",
+  "authority": {"authorityId": "shugiin", "authorityName": "衆議院", "batchAuthorityId": "batch-001-authority-02"},
+  "sources": {
+    "packageId": "shugiin-fy2024-general-account-expenditure-request",
+    "files": [{"fileId": "kaikei-saishutsugaisan6.pdf", "sha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435", "pageCount": 36, "role": "canonical single file"}],
+    "canonicalSourceStatus": "ADMISSIBLE_WITH_CAVEATS",
+    "canonicalityNote": "Locked official-domain direct PDF and internal FY2024 identity are confirmed; the current landing page alone did not establish historical FY2024 direct-link placement.",
+    "sourceLockVerification": {"sha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435", "status": "matched_existing_lock"}
+  },
+  "surveyProvenance": {"integrationCommit": "2b0c55fc7273f9d330179e792158f74931d57706", "surveyCommit": "022aff3c866d64dcd93efee0df86fb0c19098bc1", "surveyEvidence": "evidence/document-understanding/batch-001/authority-02-shugiin-source-survey.json", "targetedInspection": "evidence/document-understanding/batch-001/authority-02-shugiin-preflight-inspection.json"},
+  "preflight": {
+    "representationClass": "native-text PDF; source-native observation permitted",
+    "textAvailability": "native text observed; engine limitations must remain distinct from source absence",
+    "geometryAvailability": "available when emitted by an authorized observation method; optional, not a prerequisite for every observation",
+    "grammarClasses": ["cover/TOC/summary where present", "outer standard ledger", "remarks-side nested/local tables", "ambiguous or unclassified region"],
+    "targetGrammarClasses": ["outer standard ledger", "remarks-side nested/local tables as separate structural grammar"],
+    "excludedGrammarClasses": ["cover/TOC/summary as semantic context for ledger observations", "ambiguous or unclassified region"],
+    "packageTopology": "single canonical PDF",
+    "contextPartitions": ["file", "section/grammar", "same-page outer grid", "nested/local table"],
+    "organizationScope": "source-visible anchors only; do not infer across grammar boundaries",
+    "unitScopes": ["outer-ledger opening declaration （単位：千円） applies only to the evidenced outer structure", "framed remarks-side local table declaration （単位：百万円） applies only to that local table", "neither declaration inherits into the other structure", "ambiguous scope remains ambiguous"],
+    "hierarchyPattern": "outer ledger plus remarks-side local tables; preserve distinct nodes and edges",
+    "continuationBehavior": "not authorized across pages without later amendment supported by direct evidence",
+    "embeddedStructures": "remarks-side local tables are structurally distinct and must not be flattened into outer-ledger rows",
+    "ambiguityHazards": ["outer versus local-table grammar identity", "千円 versus 百万円 unit ownership", "context crossing a page or grammar boundary", "unproven continuation"]
+  },
+  "canonicalObservation": {"allowed": ["source-native observations in an identified partition", "same-page context within the same outer grid", "separate structural observation of local tables"], "prohibited": ["candidate enumeration", "semantic candidate derivation in this profile", "cross-page or cross-file context inheritance", "unit inheritance between outer and local tables", "flattening local tables into an outer row", "using landing-page provenance as ledger semantics"]},
+  "allowedCandidateDerivationRules": [],
+  "prohibitedCandidateDerivationRules": ["MOF feedback into request-side extraction or normalization", "arbitrary descendant promotion", "arithmetic reconstruction of an unprinted parent amount", "cross-file inheritance without profile-level authorization", "candidate enumeration during preflight", "cross-page inheritance", "outer/local unit promotion"],
+  "financialOwnershipRule": "Record source-observed alignment and containment only. Do not promote child values to a parent, sum descendants, reconstruct arithmetic, or treat a blank as zero.",
+  "contextPermissions": {"samePage": "allowed only within the identified outer grid or the same bounded local table", "crossPage": "prohibited", "crossFile": "prohibited"},
+  "stopFailureRules": ["ambiguous grammar or unit/context scope is preserved as ambiguous", "a needed cross-page inference requires amendment rather than silent relaxation"],
+  "provenanceRequirements": ["authorityId", "sourceSha256", "fileId", "pdfPageIndex", "printedPageOrPrefix when visible", "grammarIdentity", "sourceOrder", "observationState", "rawEvidenceReference", "observationMethod", "geometry when available"],
+  "observationStateVocabulary": "Refer unchanged to the Frozen Canonical Semantic Extraction Protocol: observed_value, observed_blank, not_present_on_node, not_applicable, not_inspected, unknown, ambiguous, not_extracted, not_created.",
+  "unresolvedNonblockingItems": ["No general cross-page continuation rule is evidenced; it is prohibited rather than inferred.", "The historical landing-page direct-link placement remains a provenance caveat only, not a semantic extraction rule."],
+  "freezeMetadata": {"protocolVersion": "1", "profileVersion": "batch-001-wave-1-a02-v1", "frozenAt": "2026-09-30T06:26:00+09:00", "freezeCommit": null, "freezeCommitNote": "Recorded by Git history after creation; no self-referential amend loop."}
+}

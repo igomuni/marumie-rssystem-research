@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "targeted-preflight-structural-inspection",
+  "status": "COMPLETE",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-02",
+  "authorityId": "shugiin",
+  "source": {"fileId": "kaikei-saishutsugaisan6.pdf", "sha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435", "pageCount": 36},
+  "inspectionPlan": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/preflight-inspection-plan.json",
+  "method": {"renderer": "pdftoppm", "dpi": 300, "ocrUsed": false, "textExtractionUsedForFindings": false},
+  "inspectedLocators": [
+    {"pdfPageIndex": 6, "printedPage": "国（衆）3", "purpose": "opening outer standard-ledger grid, page anchor, and main unit declaration"},
+    {"pdfPageIndex": 17, "printedPage": "国（衆）14", "purpose": "remarks-side nested structure boundary"},
+    {"pdfPageIndex": 35, "printedPage": "国（衆）32", "purpose": "local-unit nested table and cross-page evidence check"}
+  ],
+  "answers": [
+    {"question": "outer main ledger versus remarks-side nested structure", "result": "supported", "evidence": "The outer ledger's request/matter/amount grid is visibly separate from framed, remarks-side tables."},
+    {"question": "main ledger 千円 scope", "result": "supported_with_boundary", "evidence": "The opening outer ledger declares （単位：千円）. Its scope is the corresponding outer structure, not every nested table or the whole file by default."},
+    {"question": "remarks-side 百万円 local-table boundary", "result": "supported", "evidence": "A later framed remarks-side table visibly declares （単位：百万円） and is structurally separate from the outer ledger."},
+    {"question": "unit inheritance", "result": "supported", "evidence": "The distinct framing and local declaration support a non-inheritance boundary: neither local 百万円 nor outer 千円 may be silently applied to the other structure."},
+    {"question": "same-page structural context", "result": "supported", "evidence": "Visible outer-grid title, column geometry, and page/section anchors support same-page context only within the same grammar partition."},
+    {"question": "cross-page context", "result": "unsupported", "evidence": "The fixed samples did not establish a direct continuation rule sufficient to authorize cross-page inheritance."},
+    {"question": "provenance anchors", "result": "supported", "evidence": "File identity, SHA, pdfPageIndex, visible printed prefix/page, grammar partition, and source order are observable anchors."}
+  ],
+  "incidentalExposure": {"rowOrCandidateEnumeration": false, "amountValuesTranscribed": false, "note": "Visible ledger content was not turned into a candidate list, semantic value, financial observation, or Ground Truth."},
+  "conclusion": "Sufficient for a conservative profile with grammar-bounded same-page context, explicit 千円/百万円 separation, and prohibited cross-page/cross-file inheritance.",
+  "completedAt": "2026-09-30T06:26:00+09:00"
+}

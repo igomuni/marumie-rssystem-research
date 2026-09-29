@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze Batch-001 Wave 1 preflight profiles
+
+- Froze separate A01 Kunaicho and A02 Shugiin canonical-observation profiles after their integrated surveys and predeclared, limited 300-dpi structural inspections. Both retain only grammar-bounded same-page context; cross-page and cross-file inheritance are prohibited.
+- A01 preserves the outer-ledger `千円` boundary and remarks-side nested structures. A02 separately preserves outer `千円` and framed local `百万円` tables, with neither unit allowed to inherit into the other structure. A02's historical landing-page provenance caveat remains unchanged.
+- No candidate enumeration, canonical extraction, semantic candidates, financial observations, Ground Truth, benchmark, OCR, CSV, MOF work, Wave-2 work, source-lock/registry change, shared-protocol change, or production adaptation occurred. Next: separately scoped Wave-1 Canonical Observation + Structural Interpretation.
+
 ### research: integrate Batch-001 Wave 1 source surveys
 
 - Audited and individually cherry-picked the two authority-local Wave-1 survey commits into the Batch parent. Each integrated JSON/Markdown pair is byte-identical to its authority branch source; no authority branch was merged wholesale.

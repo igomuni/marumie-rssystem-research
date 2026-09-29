@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 Authority Preflight Profile Freeze — A01 and A02 (recommended; not started).** Use the integrated survey evidence and only the narrowly predeclared structural boundary/context/unit inspections in each `DRAFT_NOT_FROZEN` preparation artifact, then freeze authority-specific preflight profiles. Do not enumerate candidates or begin canonical extraction, GT, benchmark, OCR, CSV, or MOF linkage.
+- **Batch-001 Wave 1 Canonical Observation + Structural Interpretation — A01 and A02 (recommended; not started).** Apply each frozen authority-local preflight profile in a separately scoped, stage-separable task. Do not enumerate rows for selection, create Ground Truth, benchmark, OCR, CSV, MOF linkage, or start Wave 2.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

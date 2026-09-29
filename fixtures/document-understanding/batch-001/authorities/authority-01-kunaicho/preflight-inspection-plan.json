@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-preflight-targeted-inspection-plan",
+  "status": "FROZEN_SCOPE_BEFORE_INSPECTION",
+  "batchAuthorityId": "batch-001-authority-01",
+  "authorityId": "kunaicho",
+  "source": {"sourceId": "kunaicho-fy2024-imperial-household-expense", "sha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261"},
+  "predeclaredQuestions": [
+    "Can the main-ledger outer grid and remarks-side nested structures be distinguished from source-visible properties?",
+    "To which section boundary can the main-ledger 千円 declaration be safely applied?",
+    "When a nested structure has a local header or unit, what is its visible scope boundary?",
+    "What same-page structural context may be permitted?",
+    "Is there direct evidence sufficient to permit cross-page context?",
+    "Which printed/page/section anchors are required for provenance?"
+  ],
+  "fixedInspectionLocators": [
+    {"pdfPageIndex": 6, "purpose": "opening detailed ledger, outer grid, main unit, printed anchor"},
+    {"pdfPageIndex": 16, "purpose": "representative ledger with remarks-side nested structure"},
+    {"pdfPageIndex": 32, "purpose": "later ledger anchor and cross-page evidence check"}
+  ],
+  "prohibited": ["candidate enumeration", "row ranking", "amount transcription", "semantic candidate generation", "Ground Truth", "cross-file inspection"],
+  "createdAt": "2026-09-30T06:23:00+09:00"
+}

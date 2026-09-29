@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "targeted-preflight-structural-inspection",
+  "status": "COMPLETE",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-01",
+  "authorityId": "kunaicho",
+  "source": {"fileId": "r06-02.pdf", "sha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261", "pageCount": 33},
+  "inspectionPlan": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/preflight-inspection-plan.json",
+  "method": {"renderer": "pdftoppm", "dpi": 300, "ocrUsed": false, "textExtractionUsedForFindings": false},
+  "inspectedLocators": [
+    {"pdfPageIndex": 6, "printedPage": "皇（皇）2", "purpose": "opening outer standard-ledger grid, page anchor, and main unit declaration"},
+    {"pdfPageIndex": 16, "printedPage": "皇（皇）12", "purpose": "remarks-side nested structure boundary"},
+    {"pdfPageIndex": 32, "printedPage": "皇（皇）28", "purpose": "late ledger structure and cross-page evidence check"}
+  ],
+  "answers": [
+    {"question": "outer main ledger versus remarks-side nested structure", "result": "supported", "evidence": "The outer grid has ledger-wide request/matter/amount columns; the remarks-side material is spatially separate and includes independently framed inner tables."},
+    {"question": "main ledger 千円 scope", "result": "supported_with_boundary", "evidence": "The opening outer ledger displays （単位：千円）. It supports the observed outer ledger on that page, not an unbounded file-global inference."},
+    {"question": "nested local header or unit scope", "result": "supported_with_caveat", "evidence": "Nested boxes and local headers are visibly distinct from the outer grid. Any local-unit applicability must remain within its own bounded structure; no local unit was promoted."},
+    {"question": "same-page structural context", "result": "supported", "evidence": "The outer-grid title, column geometry, and visible page/section anchors can support same-page context only within that grid."},
+    {"question": "cross-page context", "result": "unsupported", "evidence": "The inspected pages did not supply a direct continuation marker or sufficient stable structural evidence to authorize cross-page inheritance."},
+    {"question": "provenance anchors", "result": "supported", "evidence": "File identity, SHA, pdfPageIndex, visible printed prefix/page, grammar partition, and source order are observable anchors."}
+  ],
+  "incidentalExposure": {"rowOrCandidateEnumeration": false, "amountValuesTranscribed": false, "note": "Rows, identifiers, and figures were incidentally visible while inspecting structure but were not recorded as candidates, semantic values, or Ground Truth."},
+  "conclusion": "Sufficient for a conservative authority-local preflight profile: same-page outer-grid context only; cross-page and cross-file inheritance prohibited.",
+  "completedAt": "2026-09-30T06:26:00+09:00"
+}
