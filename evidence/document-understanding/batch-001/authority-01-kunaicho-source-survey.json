@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-authority-source-survey",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-01",
+  "authorityId": "kunaicho",
+  "authorityName": "皇室費",
+  "stage": "source_survey",
+  "sourceDiscovery": {
+    "officialLandingPage": "https://www.kunaicho.go.jp/kunaicho/kunaicho/gaisanyokyu.html",
+    "landingRetrievedAt": "2026-09-29T19:30:21+09:00",
+    "landingHttpStatus": 200,
+    "provenanceObservation": "The official 宮内庁 page has a 令和6年度 section that labels r06-02.pdf as 令和6年度概算要求書（皇室費）."
+  },
+  "officialSources": [
+    {
+      "sourceId": "kunaicho-fy2024-imperial-household-expense",
+      "classification": "canonical",
+      "title": "令和6年度概算要求書（皇室費）",
+      "directFileUrl": "https://www.kunaicho.go.jp/kunaicho/kunaicho/pdf/r06-02.pdf",
+      "retrievedAt": "2026-09-29T19:30:21+09:00",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "byteSize": 79919,
+      "sha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+      "pageCount": 33,
+      "acquisitionMethod": "plain curl retrieval into isolated worktree; SHA-256 compared with existing source lock",
+      "sourceLockStatus": "already_locked_and_reverified"
+    },
+    {
+      "classification": "supporting_not_acquired",
+      "title": "令和6年度概算要求の概要",
+      "landingReference": "r06-01.pdf",
+      "reasonNotCanonical": "overview, not the 皇室費 request-detail source"
+    },
+    {
+      "classification": "rejected_candidate_not_acquired",
+      "title": "令和6年度概算要求書（宮内庁費）",
+      "landingReference": "r06-03.pdf",
+      "reasonNotCanonical": "a separately labelled authority expense document; not the frozen authority kunaicho / 皇室費"
+    }
+  ],
+  "canonicalSourceDecision": {
+    "sourceId": "kunaicho-fy2024-imperial-household-expense",
+    "decision": "canonical single-file request source for authority-01",
+    "basis": ["official authority landing-page label", "FY2024 internal title", "official-domain direct file", "reacquired bytes match existing lock"],
+    "lockBoundary": "already_locked; source-lock.json and source-registry.csv were not changed"
+  },
+  "package": {
+    "topology": "single_pdf_for_authority-01",
+    "canonicalFileCount": 1,
+    "canonicalPageCount": 33,
+    "landingPageGroup": "FY2024 page also lists a separate overview and a separately labelled 宮内庁費 document",
+    "crossFileContinuation": "not_applicable_for_the_single_canonical_authority-01_file"
+  },
+  "representation": {
+    "classification": "native_text_pdf",
+    "pdfVersion": "1.3",
+    "producer": "List Creator",
+    "encrypted": false,
+    "pageGeometry": "A4 landscape, 842 x 595 points, rotation 0",
+    "fontObservation": "CID TrueType resources, including embedded subset font, reported by pdffonts",
+    "imageObjectObservation": "pdfimages -list reported no raster image objects",
+    "textPresenceCoverage": "pdftotext produced non-empty text on every page; three separator pages contain only a form-feed-sized extraction"
+  },
+  "grammar": {
+    "observed": ["cover/contents", "summary table", "standard expenditure ledger", "remarks-side explanatory and nested tables"],
+    "sampledLocators": ["pdfPageIndex 0 cover/contents", "pdfPageIndex 2 detail contents", "pdfPageIndex 6 first detailed ledger page", "pdfPageIndex 16 interior ledger sample", "pdfPageIndex 32 last ledger sample"],
+    "notClaimed": "No exhaustive visual grammar classification of all pages was performed."
+  },
+  "context": {
+    "observed": ["authority and ledger title on opening detailed page", "printed prefix 皇（皇） on sampled detail pages", "main ledger columns including request-number and matter region", "remarks-side material can contain nested tables"],
+    "crossPage": "printed prefix and ledger header were observed on sampled interior/end pages; safe inheritance rule is deferred to preflight",
+    "crossFile": "not_applicable_for_canonical single-file source"
+  },
+  "units": {
+    "observed": "（単位：千円） is visible on the sampled opening detailed-ledger page (pdfPageIndex 6)",
+    "scope": "opening-detail declaration observed; whether it may be inherited across all later structures is deferred to preflight",
+    "localUnitRisk": "remarks-side nested tables are present and require grammar-local unit assessment"
+  },
+  "inspectionCoverage": {
+    "exhaustive": ["reacquired canonical-file SHA-256", "PDF metadata/page count/fonts/image-object listing", "per-page text-presence census across 33 pages"],
+    "visualSample": ["pdfPageIndex 0, 1, 6, 16, 32 at 180 dpi"],
+    "notInspected": ["full-page visual census", "candidate-row enumeration", "semantic extraction", "Ground Truth transcription"]
+  },
+  "incidentalExposure": "Representative ledger rows, numeric cells, and remarks-side values were visible during structural inspection. None was enumerated, selected, normalized, or recorded as Ground Truth.",
+  "admissibility": {
+    "status": "ADMISSIBLE_FOR_PREFLIGHT",
+    "reason": "Official provenance, FY2024 request identity, locked canonical bytes, single-file boundary, and inspectable source structure are established.",
+    "notAnExtractionVerdict": true
+  },
+  "sourceLockStatus": {"status": "already_locked", "verified": true, "registryChanged": false, "lockChanged": false},
+  "preflightHandoff": ["freeze grammar partitions and main-ledger versus remarks-side boundary", "define context lookup and continuation policy", "determine unit scope without borrowing nested-table units", "define representation-aware observation handling"],
+  "nextRequiredStage": "Wave 1 Source Survey Integration + Preflight Profile Freeze preparation"
+}
