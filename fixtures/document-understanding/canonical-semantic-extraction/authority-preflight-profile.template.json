@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "authority-preflight-profile-template",
+  "status": "FROZEN TEMPLATE; research protocol artifact, not a production schema",
+  "authority": {"authorityId": null, "authorityName": null},
+  "sources": {
+    "packageId": null,
+    "files": [],
+    "canonicalSourceStatus": "unknown",
+    "canonicalityNote": null,
+    "sourceLockVerification": {"sha256": null, "status": "not_inspected"}
+  },
+  "preflight": {
+    "representationClass": "unknown",
+    "textAvailability": "unknown",
+    "geometryAvailability": "unknown",
+    "grammarClasses": [],
+    "targetGrammarClasses": [],
+    "excludedGrammarClasses": [],
+    "packageTopology": "unknown",
+    "contextPartitions": [],
+    "organizationScope": "unknown",
+    "unitScopes": [],
+    "hierarchyPattern": "unknown",
+    "continuationBehavior": "unknown",
+    "embeddedStructures": "unknown",
+    "ambiguityHazards": []
+  },
+  "allowedCandidateDerivationRules": [],
+  "prohibitedCandidateDerivationRules": [
+    "MOF feedback into request-side extraction or normalization",
+    "arbitrary descendant promotion",
+    "arithmetic reconstruction of an unprinted parent amount",
+    "cross-file inheritance without profile-level authorization"
+  ],
+  "financialOwnershipRule": null,
+  "contextPermissions": {"samePage": "unknown", "crossPage": "prohibited_unless_explicitly_authorized", "crossFile": "prohibited_unless_explicitly_authorized"},
+  "stopFailureRules": [],
+  "provenanceRequirements": ["sourceSha256", "fileId", "pdfPageIndex", "grammarIdentity", "sourceOrder", "observationState"],
+  "freezeMetadata": {"protocolVersion": "1", "profileVersion": null, "frozenAt": null, "freezeCommit": null}
+}

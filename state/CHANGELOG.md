@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: freeze canonical semantic extraction protocol
+
+- Froze the request-side S0–S7 canonical semantic extraction contract, authority preflight-profile template, neutral candidate vocabulary, observation-state semantics, relationship provenance, financial ownership, conservative context rules, canonical artifact boundary, and derived CSV boundary.
+- Selected canonical node/edge records plus derived views over a flat row-centric store; Case-006–010 acceptance tests pass, with Case-006 retaining an OCR/non-native-text caveat and Case-007 explicitly prohibiting descendant promotion or arithmetic reconstruction.
+- Deferred MOF mapping/join keys, descendant arithmetic, universal OCR/cross-file policy, evaluator/production implementation, and Batch-001 selection. Next: Semantic-data Batch-001 Design / Authority Sampling Protocol Freeze.
+- No source/PDF inspection, GT, benchmark, OCR, MOF work, source-lock/registry change, production change, or prior frozen-artifact modification occurred.
+
 ### research: define canonical extraction and MOF linkage model
 
 - Reframed the research objective from a single amount-bearing-row benchmark toward a loss-minimized, source-faithful request-side canonical dataset with hierarchy, financial-owner, provenance, raw/normalized, and ambiguity preservation.

@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Canonical Semantic Extraction Protocol Freeze (recommended; not started).** Freeze the source-faithful request-side node/edge contract, raw/normalized/inferred/semantic boundaries, financial-owner separation, and per-authority preflight requirements. Do not select Batch-001 authorities, extract data, acquire MOF sources, or begin linkage until later separately scoped tasks.
+- **Semantic-data Batch-001 Design / Authority Sampling Protocol Freeze (recommended; not started).** Define deterministic 5–8-authority sampling and authority-isolated orchestration under the frozen canonical semantic extraction protocol. Do not acquire sources, select a final authority list, execute Batch-001, acquire MOF data, or begin linkage in this next protocol task.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema
