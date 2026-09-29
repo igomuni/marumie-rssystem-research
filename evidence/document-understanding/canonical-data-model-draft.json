@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "research-design-draft",
+  "status": "non-production; not a frozen extraction schema",
+  "objective": "Create a loss-minimized, source-faithful request-side structured dataset that can later support derived CSV views and independently adjudicated MOF item/matter linkage.",
+  "canonicalStoreRecommendation": {
+    "form": "versioned JSON/JSONL node-edge dataset or equivalent relational graph",
+    "notCanonical": ["flat CSV", "engine-specific raw artifact", "benchmark-normalized result", "Ground Truth", "external linkage result"],
+    "identity": "stable node IDs derived from source SHA-256, file/package identity, page locator, structural location, and interpretation version; never normalized label alone"
+  },
+  "stages": [
+    "source_acquisition",
+    "request_raw_extraction",
+    "request_structural_interpretation",
+    "request_normalization",
+    "request_semantic_candidate_freeze",
+    "mof_acquisition",
+    "mof_raw_extraction",
+    "mof_structural_interpretation",
+    "mof_normalization",
+    "mof_semantic_record_freeze",
+    "linkage_candidate_generation",
+    "linkage_adjudication_or_ground_truth",
+    "linkage_evaluation"
+  ],
+  "entityFamilies": {
+    "source": ["sourceId", "packageId", "fileId", "officialUrl", "sha256", "byteSize", "pageCount", "acquisitionStatus"],
+    "location": ["fileId", "pdfPageIndex", "printedPage", "printedPrefix", "geometry", "sourceOrder"],
+    "node": ["nodeId", "nodeType", "grammarIdentity", "sourceOrder", "observationState"],
+    "text": ["rawText", "rawLines", "normalizedText", "normalizationMethodVersion"],
+    "identifier": ["raw", "normalized", "identifierType", "observationState"],
+    "financialObservation": ["ownerNodeId", "previous", "request", "delta", "signEvidence", "unit", "unitScope", "provenance"],
+    "relationship": ["contains", "parent_of", "child_of", "contextualizes", "amount_belongs_to", "label_belongs_to", "continues_on_page", "embedded_in", "source_order_precedes"]
+  },
+  "observationStates": ["observed_value", "observed_blank", "not_present_on_node", "not_applicable", "not_inspected", "unknown", "ambiguous", "not_extracted", "not_created"],
+  "caseStressTests": {
+    "case-006": "A node may remain source-located when native text is not extracted; source-native absence and OCR-derived engine signal must remain distinct.",
+    "case-007": "A request/expense identity node can have observed_blank amount cells while distinct descendant amount nodes exist; no automatic sum, inheritance, or representative child is allowed.",
+    "case-008": "Section/grammar identity and unit scope are not file-global.",
+    "case-009": "Package survey membership and canonical locked-source admissibility are different states; file identity is context/provenance-bearing.",
+    "case-010": "Main ledger and embedded remarks-side tables must remain separate structures, including their local units."
+  },
+  "requestSemanticCandidate": ["sourceId", "fileId", "pageLocator", "authority", "division", "organizationCodeRaw", "organizationCodeNormalized", "organizationNameRaw", "organizationNameNormalized", "requestItemCandidate", "requestExpenseCandidate", "requestNumberRaw", "requestNumberNormalized", "expenseCodeRaw", "expenseCodeNormalized", "expenseLabelRawLines", "expenseLabelNormalized", "contextProvenance", "structuralNodeId", "ambiguityState"],
+  "derivedCsvViews": ["source_files.csv", "document_nodes.csv", "document_edges.csv", "request_item_candidates.csv", "request_expense_candidates.csv", "financial_observations.csv"],
+  "decisionTable": {
+    "freezeCandidateNow": ["source/file/page provenance", "raw-normalized pairing", "node hierarchy and observed/inferred relationship separation", "financial owner separation", "blank/unknown/ambiguous states", "derived CSV role", "no MOF feedback into request extraction"],
+    "needsTargetedValidation": ["stable structural IDs", "geometry fidelity", "authority-profile interpretation rules", "semantic candidate vocabulary", "provenance completeness metrics"],
+    "deferred": ["MOF item mapping", "MOF matter mapping", "amount-based linkage", "descendant arithmetic", "evaluator extension", "production schema implementation"]
+  },
+  "recommendedNextTask": "Canonical Semantic Extraction Protocol Freeze",
+  "nonActions": ["No MOF acquisition or linkage", "No Batch Protocol or Batch-001", "No source acquisition/render/OCR", "No parser/normalizer/evaluator change", "No frozen artifact change"]
+}

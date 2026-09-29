@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: define canonical extraction and MOF linkage model
+
+- Reframed the research objective from a single amount-bearing-row benchmark toward a loss-minimized, source-faithful request-side canonical dataset with hierarchy, financial-owner, provenance, raw/normalized, and ambiguity preservation.
+- Added a non-production node/edge contract draft and design report. CSV is defined as a derived/auditable view; MOF linkage is explicitly downstream of independently frozen request- and MOF-side semantic records.
+- Case-007's deep hierarchy is a required stress test: observed-blank parent amounts and descendant amount nodes remain separate; no automatic sum, inheritance, or arbitrary representative child is permitted.
+- Recommended next: Canonical Semantic Extraction Protocol Freeze. No source/MOF acquisition, GT, benchmark, OCR, Batch Protocol, Batch-001, parser/normalizer/evaluator change, or frozen-artifact modification occurred.
+
 ### research: synthesize Case-006 through Case-010 pilots
 
 - Added a committed-evidence-only cross-case synthesis and machine-readable companion evidence for the completed purposive Case-006–010 pilot sequence.
