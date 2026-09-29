@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-source-survey-integration",
+  "batchId": "batch-001",
+  "wave": 1,
+  "parentFreezeCommit": "d103e802f0cff13cd98ceba24afbacff1c7591ba",
+  "integrationMethod": "audited authority-local commit diffs followed by cherry-pick of only survey evidence and report artifacts",
+  "authorities": [
+    {
+      "batchAuthorityId": "batch-001-authority-01",
+      "authorityId": "kunaicho",
+      "surveyCommit": "e095bda4231d472ac88df02477e026c3988e9f9a",
+      "parentIntegrationCommit": "afdc191",
+      "surveyArtifactsByteIdentical": true,
+      "surveyIntegrated": true,
+      "sourceStatus": "ADMISSIBLE_FOR_PREFLIGHT",
+      "sourceLockMatch": true,
+      "preflightPreparationStatus": "READY_WITH_TARGETED_INSPECTION"
+    },
+    {
+      "batchAuthorityId": "batch-001-authority-02",
+      "authorityId": "shugiin",
+      "surveyCommit": "022aff3c866d64dcd93efee0df86fb0c19098bc1",
+      "parentIntegrationCommit": "5008c88",
+      "surveyArtifactsByteIdentical": true,
+      "surveyIntegrated": true,
+      "sourceStatus": "ADMISSIBLE_WITH_CAVEATS",
+      "sourceLockMatch": true,
+      "provenanceCaveat": "Current official landing page alone did not establish historical FY2024 direct-link placement.",
+      "preflightPreparationStatus": "READY_WITH_TARGETED_INSPECTION"
+    }
+  ],
+  "commonObservedProperties": ["single canonical PDF", "native text", "unencrypted A4 landscape", "no raster image objects reported", "opening detailed-ledger 千円 declaration", "standard ledger plus remarks-side nested structures"],
+  "sharedProtocolChanged": false,
+  "preflightProfilesFrozen": false,
+  "sourceInspectionPerformedDuringIntegration": false,
+  "nextRequiredStage": "Batch-001 Wave 1 Authority Preflight Profile Freeze — A01 and A02, with narrowly predeclared structural inspection before freeze"
+}

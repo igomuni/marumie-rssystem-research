@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-preflight-decision-preparation",
+  "status": "DRAFT_NOT_FROZEN",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-02",
+  "authorityId": "shugiin",
+  "surveyEvidence": {
+    "artifact": "evidence/document-understanding/batch-001/authority-02-shugiin-source-survey.json",
+    "surveyCommit": "022aff3c866d64dcd93efee0df86fb0c19098bc1",
+    "sourceStatus": "ADMISSIBLE_WITH_CAVEATS",
+    "sourceLockMatch": true,
+    "provenanceCaveat": "Current official landing page alone did not establish historical FY2024 direct-link placement."
+  },
+  "preflightReadiness": "READY_WITH_TARGETED_INSPECTION",
+  "proposedDecisionSpace": {
+    "sourceFileScope": {"proposal": "one locked canonical year-specific direct PDF; retain archival landing-page caveat in provenance", "status": "supported_by_survey"},
+    "representation": {"proposal": "treat as native-text observation source; do not enable OCR fallback by default", "status": "supported_by_survey"},
+    "grammar": {"proposal": "separate cover/contents, summary, main ledger, and remarks-side nested structures including local million-yen tables", "status": "needs_targeted_preflight_inspection"},
+    "context": {"proposal": "same-page evidence may be considered only after mapping; cross-page and cross-file inheritance remain prohibited unless explicitly evidenced", "status": "needs_targeted_preflight_inspection"},
+    "units": {"proposal": "keep opening main-ledger 千円 separate from remarks-side local 百万円 tables", "status": "needs_targeted_preflight_inspection"},
+    "provenance": {"proposal": "require locked source SHA, direct-file URL plus caveat, file ID, pdfPageIndex, printed prefix where visible, grammar identity, source order, and raw/normalized separation", "status": "supported_by_governing_protocol"},
+    "ambiguity": {"proposal": "grammar/context/unit/continuation ambiguity remains preserved and ineligible for semantic promotion", "status": "supported_by_governing_protocol"},
+    "observationScope": {"proposal": "keep remarks-side nested material, especially local-unit tables, structurally distinct from main-ledger candidates", "status": "needs_targeted_preflight_inspection"}
+  },
+  "targetedPreflightInspectionNeeds": ["map exact cover/contents/summary/main-ledger and nested-structure boundaries without enumerating candidates", "determine whether sampled repeated prefix/header supports a bounded same-page context rule", "establish main-ledger 千円 boundary versus local 百万円 table boundaries", "record continuation evidence or preserve cross-page prohibition"],
+  "noCandidateEnumeration": true,
+  "preflightProfileFrozen": false
+}

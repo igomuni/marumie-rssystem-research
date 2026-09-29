@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 Source Survey / Source Admissibility — authorities 01 and 02 (recommended; not started).** Create isolated authority workspaces for the first frozen Wave-1 pair, then perform only their source survey/acquisition and admissibility work. Do not enumerate candidates before each authority's preflight-profile freeze; do not start canonical extraction, GT, benchmark, OCR, CSV, or MOF linkage.
+- **Batch-001 Wave 1 Authority Preflight Profile Freeze — A01 and A02 (recommended; not started).** Use the integrated survey evidence and only the narrowly predeclared structural boundary/context/unit inspections in each `DRAFT_NOT_FROZEN` preparation artifact, then freeze authority-specific preflight profiles. Do not enumerate candidates or begin canonical extraction, GT, benchmark, OCR, CSV, or MOF linkage.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

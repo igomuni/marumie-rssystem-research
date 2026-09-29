@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: integrate Batch-001 Wave 1 source surveys
+
+- Audited and individually cherry-picked the two authority-local Wave-1 survey commits into the Batch parent. Each integrated JSON/Markdown pair is byte-identical to its authority branch source; no authority branch was merged wholesale.
+- Reconfirmed both canonical source SHA values against the existing lock. A01/kunaicho is `ADMISSIBLE_FOR_PREFLIGHT`; A02/shugiin is `ADMISSIBLE_WITH_CAVEATS`, retaining the caveat that the current official landing page alone did not establish historical FY2024 direct-link placement.
+- Added separate `DRAFT_NOT_FROZEN` preflight-decision preparation artifacts. Both authorities require narrowly scoped structural boundary/context/unit inspection before profile freeze; no profile, candidate, canonical extraction, GT, benchmark, OCR, CSV, MOF, source-lock/registry, or Wave-2 work occurred.
+
 ### research: freeze Batch-001 authority selection
 
 - Mechanically executed the frozen, content-blind sampling procedure against the committed 33-record FY2024 Population Freeze. Excluded the ten Case-001–010 authority IDs solely for prior research exposure, then froze the first six eligible records in canonical population order as Batch-001 primaries; no reserve or replacement list exists.

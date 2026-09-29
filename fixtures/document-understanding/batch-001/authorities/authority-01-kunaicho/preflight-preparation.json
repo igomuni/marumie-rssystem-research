@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-preflight-decision-preparation",
+  "status": "DRAFT_NOT_FROZEN",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-01",
+  "authorityId": "kunaicho",
+  "surveyEvidence": {
+    "artifact": "evidence/document-understanding/batch-001/authority-01-kunaicho-source-survey.json",
+    "surveyCommit": "e095bda4231d472ac88df02477e026c3988e9f9a",
+    "sourceStatus": "ADMISSIBLE_FOR_PREFLIGHT",
+    "sourceLockMatch": true
+  },
+  "preflightReadiness": "READY_WITH_TARGETED_INSPECTION",
+  "proposedDecisionSpace": {
+    "sourceFileScope": {"proposal": "one locked canonical file r06-02.pdf", "status": "supported_by_survey"},
+    "representation": {"proposal": "treat as native-text observation source; do not enable OCR fallback by default", "status": "supported_by_survey"},
+    "grammar": {"proposal": "separate cover/contents, summary, main ledger, and remarks-side nested structures", "status": "needs_targeted_preflight_inspection"},
+    "context": {"proposal": "same-page evidence may be considered only after mapping; cross-page and cross-file inheritance remain prohibited unless explicitly evidenced", "status": "needs_targeted_preflight_inspection"},
+    "units": {"proposal": "preserve opening main-ledger 千円 declaration; do not inherit it through nested structures without a frozen rule", "status": "needs_targeted_preflight_inspection"},
+    "provenance": {"proposal": "require locked source SHA, file ID, pdfPageIndex, printed prefix where visible, grammar identity, source order, and raw/normalized separation", "status": "supported_by_governing_protocol"},
+    "ambiguity": {"proposal": "grammar/context/unit/continuation ambiguity remains preserved and ineligible for semantic promotion", "status": "supported_by_governing_protocol"},
+    "observationScope": {"proposal": "keep remarks-side nested material structurally distinct; do not promote it to main-ledger semantic candidates", "status": "needs_targeted_preflight_inspection"}
+  },
+  "targetedPreflightInspectionNeeds": ["map exact cover/contents/summary/main-ledger and nested-structure boundaries without enumerating candidates", "determine whether sampled repeated prefix/header supports a bounded same-page context rule", "establish main-ledger unit boundary versus nested-table local units", "record continuation evidence or preserve cross-page prohibition"],
+  "noCandidateEnumeration": true,
+  "preflightProfileFrozen": false
+}
