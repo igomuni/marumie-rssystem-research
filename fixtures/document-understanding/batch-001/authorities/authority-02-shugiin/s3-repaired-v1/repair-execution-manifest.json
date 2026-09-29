@@ -1,0 +1,31 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-execution-manifest",
+  "authorityId": "shugiin",
+  "baselineS2AndExperimentalS3Mutated": false,
+  "mechanics": {
+    "crossFileInference": false,
+    "crossPageInference": false,
+    "lineBandTolerance": "page maximum observed textLine height",
+    "localRule": "s3-repair-v1:same-page-bounded-structural-group",
+    "outerRule": "s3-repair-v1:localized-outer-ledger-header",
+    "pageWideTokenRuleUsed": false,
+    "rightSideThresholdUsed": false
+  },
+  "namespace": "s3r1",
+  "outputBoundary": "s3-repaired-v1",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v1_execution.py",
+    "sha256": "35af84dbeb709948dea937053bce77fe9688c0ea965a9ddf6c90779f9a4203ee"
+  },
+  "profileVersion": "batch-001-wave-1-a02-v1",
+  "schemaVersion": 1,
+  "serialization": {
+    "absolutePathsExcluded": true,
+    "encoding": "UTF-8",
+    "jsonKeyOrder": "sorted",
+    "newlines": "LF",
+    "recordOrder": "stable ID ascending"
+  },
+  "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+  "specVersion": "batch-001-wave-1-s3-repair-v1"
+}

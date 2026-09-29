@@ -1,0 +1,571 @@
+{
+  "a02HyakumanYenReconciliation": [
+    {
+      "blockObservationId": "s2s3-8cba2be9515e26decfc3947c",
+      "groupNodeId": "s3r1-boundedLocalTable-08c1d5ad21ae3655ba87",
+      "observationId": "s2s3-2ffead6ad9ce5341f201e5f9",
+      "pdfPageIndex": 14,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-4e0dcd475005d70e6def5642",
+      "groupNodeId": "s3r1-boundedLocalTable-41f1789859cf0fc201ce",
+      "observationId": "s2s3-52b3f91f6ae3f607d3142b28",
+      "pdfPageIndex": 14,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-4e0dcd475005d70e6def5642",
+      "groupNodeId": "s3r1-boundedLocalTable-41f1789859cf0fc201ce",
+      "observationId": "s2s3-8fa6e12cac5c47af84a4a9de",
+      "pdfPageIndex": 14,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-8cba2be9515e26decfc3947c",
+      "groupNodeId": "s3r1-boundedLocalTable-08c1d5ad21ae3655ba87",
+      "observationId": "s2s3-cab49529cbec5efa244243f0",
+      "pdfPageIndex": 14,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-bddefa269b74a2dca058d32a",
+      "groupNodeId": "s3r1-boundedLocalTable-d94d04cd437b072ec7e9",
+      "observationId": "s2s3-395710e231bbae8f0f4eca09",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-4653a266d8c222e2ff8654dd",
+      "groupNodeId": "s3r1-boundedLocalTable-1e870805a519399af6d5",
+      "observationId": "s2s3-4aeee313008efdc12218d6ba",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-bddefa269b74a2dca058d32a",
+      "groupNodeId": "s3r1-boundedLocalTable-d94d04cd437b072ec7e9",
+      "observationId": "s2s3-5ad7f50384bfa4ddfdf9b886",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-4653a266d8c222e2ff8654dd",
+      "groupNodeId": "s3r1-boundedLocalTable-1e870805a519399af6d5",
+      "observationId": "s2s3-9fb0bbe537ba5d6149f32ede",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-66edadbba50a95397fa07bab",
+      "groupNodeId": "s3r1-boundedLocalTable-7f2e2763c8bfdfd5fc8e",
+      "observationId": "s2s3-a6de5e7741d7bc5050be9008",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-66edadbba50a95397fa07bab",
+      "groupNodeId": "s3r1-boundedLocalTable-7f2e2763c8bfdfd5fc8e",
+      "observationId": "s2s3-a876cc1c84f22c3a70f3f57b",
+      "pdfPageIndex": 15,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fa55f3a32225b153ffa2b744",
+      "groupNodeId": "s3r1-boundedLocalTable-d2a0c27209e47ea9b91f",
+      "observationId": "s2s3-2bae3e6b3190b9f451a927a6",
+      "pdfPageIndex": 16,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fa55f3a32225b153ffa2b744",
+      "groupNodeId": "s3r1-boundedLocalTable-d2a0c27209e47ea9b91f",
+      "observationId": "s2s3-45c41bbb1cf6c313ddab20bf",
+      "pdfPageIndex": 16,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-77171d2f12d6c3ebc4bd7bac",
+      "groupNodeId": "s3r1-boundedLocalTable-63cdb135a83c23d7d0f8",
+      "observationId": "s2s3-b6129a7d1d853c5ff5171282",
+      "pdfPageIndex": 16,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-77171d2f12d6c3ebc4bd7bac",
+      "groupNodeId": "s3r1-boundedLocalTable-63cdb135a83c23d7d0f8",
+      "observationId": "s2s3-eb6d46d74eafeb1cc5537872",
+      "pdfPageIndex": 16,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-e6289dc5a0409cd0d18e7ffa",
+      "groupNodeId": "s3r1-boundedLocalTable-8a6bc2134b6a5c3119a4",
+      "observationId": "s2s3-37e8c5122a1d00f85b899cff",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-e6289dc5a0409cd0d18e7ffa",
+      "groupNodeId": "s3r1-boundedLocalTable-8a6bc2134b6a5c3119a4",
+      "observationId": "s2s3-aec5f3bbfaae33571bee5e7d",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-300856e1e0e25fb8a5359084",
+      "groupNodeId": "s3r1-boundedLocalTable-6224b9a18d84d9af3f7f",
+      "observationId": "s2s3-bebddb47fb139cc7c27f76da",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-300856e1e0e25fb8a5359084",
+      "groupNodeId": "s3r1-boundedLocalTable-6224b9a18d84d9af3f7f",
+      "observationId": "s2s3-d505f6a2a91b7c92d6f85ee9",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fcb50fa9504e628ec774d490",
+      "groupNodeId": "s3r1-boundedLocalTable-2eb79e00ce3d3fd7a2e0",
+      "observationId": "s2s3-e5ea85a56b31fccc0b313400",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fcb50fa9504e628ec774d490",
+      "groupNodeId": "s3r1-boundedLocalTable-2eb79e00ce3d3fd7a2e0",
+      "observationId": "s2s3-f3037eb77b99c125c7779d6b",
+      "pdfPageIndex": 17,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-c745c2644eff5c9ef80b30af",
+      "groupNodeId": "s3r1-boundedLocalTable-048491d92ce790c9423c",
+      "observationId": "s2s3-10340d44c0c073d1df1ea52f",
+      "pdfPageIndex": 18,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fd84f66cf22ff2fe7ee68f42",
+      "groupNodeId": "s3r1-boundedLocalTable-bf693d37e3894d23c652",
+      "observationId": "s2s3-75d1053a8e85a8f31799ed62",
+      "pdfPageIndex": 18,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-c745c2644eff5c9ef80b30af",
+      "groupNodeId": "s3r1-boundedLocalTable-048491d92ce790c9423c",
+      "observationId": "s2s3-7941ace3a123c9f9e51bd4ed",
+      "pdfPageIndex": 18,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fd84f66cf22ff2fe7ee68f42",
+      "groupNodeId": "s3r1-boundedLocalTable-bf693d37e3894d23c652",
+      "observationId": "s2s3-cf5e1dd4df8dc37f9d0b3a7d",
+      "pdfPageIndex": 18,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-ba694181c5ad2bf44062c8b6",
+      "groupNodeId": "s3r1-boundedLocalTable-813a4f70df54d4420eee",
+      "observationId": "s2s3-1a8a120b7a6f6d317ff0aca2",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-e64e28a1a3220eb0071a8440",
+      "groupNodeId": "s3r1-boundedLocalTable-2d35137278a8a8bd3507",
+      "observationId": "s2s3-21c8f67e79a425135eb3f68c",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-c9c7f06f9e9d3bd754b4f8ff",
+      "groupNodeId": "s3r1-boundedLocalTable-76621d77cac666340d67",
+      "observationId": "s2s3-271662ae8ecead40fed9008f",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-c9c7f06f9e9d3bd754b4f8ff",
+      "groupNodeId": "s3r1-boundedLocalTable-76621d77cac666340d67",
+      "observationId": "s2s3-7d858fe4d006ffcc9ea722c0",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-ba694181c5ad2bf44062c8b6",
+      "groupNodeId": "s3r1-boundedLocalTable-813a4f70df54d4420eee",
+      "observationId": "s2s3-d8a26fc4ba361a9e7852481f",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-e64e28a1a3220eb0071a8440",
+      "groupNodeId": "s3r1-boundedLocalTable-2d35137278a8a8bd3507",
+      "observationId": "s2s3-e7cbc94f0099d01abcb4edd8",
+      "pdfPageIndex": 19,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fa52f92052367e9a690fae94",
+      "groupNodeId": "s3r1-boundedLocalTable-5078a0ed18ae07f38025",
+      "observationId": "s2s3-1695b595c8f2ae0bbfd2922b",
+      "pdfPageIndex": 20,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-fa52f92052367e9a690fae94",
+      "groupNodeId": "s3r1-boundedLocalTable-5078a0ed18ae07f38025",
+      "observationId": "s2s3-40e12f4ca9fe5a534e12612d",
+      "pdfPageIndex": 20,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-85f2a7fd46e027145a158a7e",
+      "groupNodeId": "s3r1-boundedLocalTable-d67df78a2f1880a4ee89",
+      "observationId": "s2s3-851aad1692a799225f1bdd59",
+      "pdfPageIndex": 20,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-85f2a7fd46e027145a158a7e",
+      "groupNodeId": "s3r1-boundedLocalTable-d67df78a2f1880a4ee89",
+      "observationId": "s2s3-9ba6d2c4ca9d6d1757a07ca7",
+      "pdfPageIndex": 20,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-faa1a095380735f3f4d61af2",
+      "groupNodeId": "s3r1-boundedLocalTable-1ecf1411daa6505d7a4a",
+      "observationId": "s2s3-03e700a331c24f3ab1318905",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-b31101d2e5e1187dc5049fbf",
+      "groupNodeId": "s3r1-boundedLocalTable-38ecb48daf2b2546ae1b",
+      "observationId": "s2s3-3e1fae8faf42837a897144bf",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-faa1a095380735f3f4d61af2",
+      "groupNodeId": "s3r1-boundedLocalTable-1ecf1411daa6505d7a4a",
+      "observationId": "s2s3-84db66ca9c14ae1d672a3139",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-b31101d2e5e1187dc5049fbf",
+      "groupNodeId": "s3r1-boundedLocalTable-38ecb48daf2b2546ae1b",
+      "observationId": "s2s3-916f8a69b8b164bccb64bc77",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-2f582c68680289e20e0cafe3",
+      "groupNodeId": "s3r1-boundedLocalTable-7150e552d7c402cfe8f5",
+      "observationId": "s2s3-c6ea02b5576064abac0c250a",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-2f582c68680289e20e0cafe3",
+      "groupNodeId": "s3r1-boundedLocalTable-7150e552d7c402cfe8f5",
+      "observationId": "s2s3-cf8aa0aaa9fa63cc32c8d02e",
+      "pdfPageIndex": 21,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-81595b1019621f92c1068bfe",
+      "groupNodeId": "s3r1-boundedLocalTable-a86111e50d91d3b1e1db",
+      "observationId": "s2s3-357bbaa12cee864b487ffd70",
+      "pdfPageIndex": 22,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-81595b1019621f92c1068bfe",
+      "groupNodeId": "s3r1-boundedLocalTable-a86111e50d91d3b1e1db",
+      "observationId": "s2s3-5fc197b35d624444a0c5a62f",
+      "pdfPageIndex": 22,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-75ffa9d4872b9e1e4f1afd90",
+      "groupNodeId": "s3r1-boundedLocalTable-d32c70d179f04dddc343",
+      "observationId": "s2s3-03680f61c28ba03662db8ead",
+      "pdfPageIndex": 35,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-0db402d89df55a8b4de9ad93",
+      "groupNodeId": "s3r1-boundedLocalTable-6f9cafd9f6739ea18750",
+      "observationId": "s2s3-21190af5d163dd9ee25c8e2d",
+      "pdfPageIndex": 35,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-75ffa9d4872b9e1e4f1afd90",
+      "groupNodeId": "s3r1-boundedLocalTable-d32c70d179f04dddc343",
+      "observationId": "s2s3-49fdd8a09371d0eab98e43fd",
+      "pdfPageIndex": 35,
+      "treatment": "member_of_supported_boundedLocalTable"
+    },
+    {
+      "blockObservationId": "s2s3-0db402d89df55a8b4de9ad93",
+      "groupNodeId": "s3r1-boundedLocalTable-6f9cafd9f6739ea18750",
+      "observationId": "s2s3-a29a8bf66bcca58fba280cf4",
+      "pdfPageIndex": 35,
+      "treatment": "member_of_supported_boundedLocalTable"
+    }
+  ],
+  "artifactType": "batch-001-wave-1-s3-repaired-manifest",
+  "authorityId": "shugiin",
+  "canonicalFreezeStatus": "not_created",
+  "countsByStructuralStatus": {
+    "source_observed": 37,
+    "structurally_supported": 36,
+    "unclassified": 23
+  },
+  "crossFileEdgeCount": 0,
+  "crossPageEdgeCount": 0,
+  "edgeCount": 95,
+  "financialAssociationStatus": "not_created",
+  "inputSourceObservations": {
+    "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/source-observations.jsonl",
+    "sha256": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f"
+  },
+  "namespace": "s3r1",
+  "nodeCount": 96,
+  "normalizationStatus": "not_created",
+  "outerLocalUnitInheritanceEdgeCount": 0,
+  "pageSummaries": [
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-e6362f32922559085bd3",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 0
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-ed11c407c3019291fcab",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 1
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-33a711e4943459b23547",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 2
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6aa380cb9f20f1215659",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 3
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-47d68e0cf41f6b7b3520",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 4
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f8dd3ae8a36fa9a8fa2c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 5
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-85252d9970941c743c5d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 6
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b8fc74a6e2519d4db9fd",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 7
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-2b03dcaf58d56c574278",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 8
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-c3ccac71ae2af666e8f4",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 9
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-5af39415eb94f8623df7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 10
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6ed77c4bcdcf0eb55ff7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 11
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-7373eee42e3a31cd6b28",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 12
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-5282ecde15a402f0329c",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 13
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-a0939582fe5ea871954d",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 14
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-1730dda12d27bc0ffd6f",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 15
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f83d875be6062b6cf95c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 16
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-9bb7d6c3164688f0e528",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 17
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-d7a5d785d65a35b5cdbe",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 18
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-c4f1f0c975685e8da82a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 19
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-29910bce91f357673bff",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 20
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6a7852a8456e420b4ba2",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 21
+    },
+    {
+      "localOrNestedGroupCount": 1,
+      "outerPartitionNodeId": "s3r1-outerLedger-aa508d8758f6c57546ce",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 22
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-e9deceb1727309ccdfc1",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 23
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-b424ed9b6cb58dd916c0",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 24
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-b886039e335358eb179b",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 25
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-50b598601fb516bfc22e",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 26
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-30b764b39a80033c0c4f",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 27
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-bb5dbbe8d430448d8224",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 28
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-16d2352faa4ba7b3cfe7",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 29
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ad01c4e0a2db9b81ddcd",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 30
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b01ee2624de395db3069",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 31
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-04b17ebacaa9e06079ce",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 32
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-045dfd9d8038751170c6",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 33
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9f0ee4fde0fed76a29d8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 34
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-outerLedger-194254e016304c86d48f",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 35
+    }
+  ],
+  "profileVersion": "batch-001-wave-1-a02-v1",
+  "schemaVersion": 1,
+  "semanticCandidateStatus": "not_created",
+  "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "stage": "S3_REPAIRED",
+  "stageStatus": "COMPLETE_NOT_CANONICAL_FROZEN"
+}

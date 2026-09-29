@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: execute Batch-001 Wave 1 S3 structural repair
+
+- Executed the frozen `s3r1` repair contract against immutable A01/A02 retained S2/raw evidence and wrote separate `s3-repaired-v1` graphs. The original experimental S3 remains byte-identical baseline evidence.
+- The repaired graphs carry direct non-empty S2 evidence closure, rule/profile/ambiguity provenance, deterministic IDs, zero cross-page/cross-file/unit-inheritance edges, and a deterministic independent rerun. A02 reconciles all 46 frozen-design `百万円` text-line occurrences without promoting them into the outer `千円` grammar.
+- This is execution evidence only: it awaits a separate structural review and S4 authorization gate. No S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract amendment, canonical-parent merge, or production adaptation occurred.
+
 ### research: freeze Batch-001 Wave 1 S3 structural repair design
 
 - Froze a design-only, text-anchor plus geometry S3 repair contract for A01 and A02. It replaces the invalid page-token/right-side assumptions with same-page, direct-evidence structural groups and explicit ambiguity/representation-limited outcomes; it never infers a PDF frame/cell the retained S2 does not represent.

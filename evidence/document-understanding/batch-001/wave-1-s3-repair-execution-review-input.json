@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-execution-review-input",
+  "status": "EXECUTION_COMPLETE_WITH_REPRESENTATION_LIMITATIONS_AWAITING_REVIEW",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "executionBaseCommit": "8d9867e742bfd3e1b17f57a6626b5e4ec59c1ff2",
+  "authorities": {
+    "kunaicho": {
+      "profileVersion": "batch-001-wave-1-a01-v1",
+      "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+      "outputs": {
+        "nodes.jsonl": "6d85ab08503e8495e36af72b0544b4dc3bafb6057359f2af3db4ee290bbb6156",
+        "edges.jsonl": "7bb247babf7e1c8a90c5379dd1e640c1108706aa9fd9c9d769f63395cdf65cd3",
+        "structural-interpretation-manifest.json": "4b95b682f3efc71f875dd37f32ed1fc93d3e886a50031a95bbd77001d474c80d"
+      },
+      "counts": {"nodes": 68, "edges": 67, "supportedNestedStructures": 1, "supportedOuterLedgers": 19, "unclassifiedPagePartitions": 14},
+      "nestedCandidateAudit": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v1/structural-interpretation-manifest.json#a01NestedCandidateAudit"
+    },
+    "shugiin": {
+      "profileVersion": "batch-001-wave-1-a02-v1",
+      "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+      "outputs": {
+        "nodes.jsonl": "16b2bcd1c6c5676b6cd3500951a4ad464fe7a1bd70c958deb22d37abbf3637ac",
+        "edges.jsonl": "95318747f9f20157ffde7e060e693e1aa0c0a1fe9a95d4989b4371767d4e82e0",
+        "structural-interpretation-manifest.json": "6b065f974604afa94e346710c80c5ad09dba69d6ac7bf3d8572b6e247ab5db3c"
+      },
+      "counts": {"nodes": 96, "edges": 95, "supportedBoundedLocalTables": 23, "supportedOuterLedgers": 13, "unclassifiedPagePartitions": 23},
+      "hyakumanYenTextLineOccurrences": {"expectedFromFrozenDesignDiagnostics": 46, "accountedFor": 46, "supportedBoundedLocalTableMembers": 46, "representationLimited": 0}
+    }
+  },
+  "evidenceClosureAudit": {"allInferredRecordsHaveNonEmptyDirectS2Support": true, "allSupportIdsResolve": true, "allEdgeEndpointsResolve": true, "old57PercentRuleHits": 0, "pageWideTokenOnlyOuterLedgerRuleHits": 0},
+  "boundaryAudit": {"crossPageEdges": 0, "crossFileEdges": 0, "outerLocalUnitInheritanceEdges": 0, "semanticCandidatesCreated": false, "financialAssociationsCreated": false, "normalizationPerformed": false, "canonicalFreezePerformed": false},
+  "deterministicRerun": {"coreArtifactsByteIdentical": true, "independentScratchOutputUsed": true},
+  "baselineAndFrozenContractAudit": {"immutableBaselineArtifactsMatchedFrozenHashesBeforeAndAfter": true, "repairSpecUnchanged": true, "authorityProfilesUnchanged": true, "commonProtocolUnchanged": true},
+  "nextRequiredGate": "Batch-001 Wave 1 S3 Structural Repair Review and S4 Authorization Gate",
+  "s4Authorized": false
+}
