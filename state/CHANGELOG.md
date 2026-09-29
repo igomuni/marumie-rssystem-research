@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze semantic-data Batch-001 design
+
+- Froze a content-blind, deterministic procedure for a six-authority request-side canonicalization pilot: the first six eligible, previously unseen entries in committed FY2024 Population Freeze order will be selected only in the next manifest task. The procedure is intentionally unexecuted here; it has no reserve or replacement policy.
+- Froze authority-isolated B0–B10 lifecycle, max-two concurrent authorities across three waves, isolated branch/worktree integration strategy, per-authority canonical artifact contract, terminal-status taxonomy, batch-pause/amendment rules, review checkpoints, and statistical/MOF/CSV boundaries.
+- Next: Batch-001 Authority Selection Manifest Freeze. No authority was selected or processed; no source/PDF inspection, GT, benchmark, OCR, CSV, MOF work, source-lock/registry change, production change, or prior frozen-artifact modification occurred.
+
 ### research: freeze canonical semantic extraction protocol
 
 - Froze the request-side S0–S7 canonical semantic extraction contract, authority preflight-profile template, neutral candidate vocabulary, observation-state semantics, relationship provenance, financial ownership, conservative context rules, canonical artifact boundary, and derived CSV boundary.

@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Semantic-data Batch-001 Design / Authority Sampling Protocol Freeze (recommended; not started).** Define deterministic 5–8-authority sampling and authority-isolated orchestration under the frozen canonical semantic extraction protocol. Do not acquire sources, select a final authority list, execute Batch-001, acquire MOF data, or begin linkage in this next protocol task.
+- **Batch-001 Authority Selection Manifest Freeze (recommended; not started).** Mechanically execute the frozen Batch-001 procedure against the committed Population Freeze to record exactly six primary authorities in canonical order, with no source acquisition, PDF/content inspection, preflight classification, Batch execution, MOF work, or linkage.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

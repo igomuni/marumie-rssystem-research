@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-authority-execution-template",
+  "status": "TEMPLATE; research orchestration artifact, not a production schema",
+  "batch": {"batchId": "batch-001", "batchDesignProtocol": null, "selectionManifest": null, "batchBaseCommit": null},
+  "authority": {"authorityId": null, "authorityName": null, "selectionOrder": null, "wave": null, "authorityBranch": null, "worktree": null},
+  "lifecycle": {
+    "B0_selectedAuthorityFrozen": "not_started",
+    "B1_sourceSurveyAcquisition": "not_started",
+    "B2_sourceAdmissibility": "not_started",
+    "B3_preflightProfileFreeze": "not_started",
+    "B4_canonicalObservation": "not_started",
+    "B5_structuralInterpretation": "not_started",
+    "B6_normalization": "not_started",
+    "B7_semanticCandidateDerivation": "not_started",
+    "B8_financialAssociation": "not_started",
+    "B9_canonicalFreeze": "not_started",
+    "B10_validationCloseout": "not_started"
+  },
+  "artifacts": {
+    "sourceManifest": null,
+    "authorityPreflight": null,
+    "nodes": null,
+    "edges": null,
+    "financialObservations": null,
+    "semanticCandidates": null,
+    "canonicalManifest": null,
+    "closeoutReport": null
+  },
+  "terminalStatus": null,
+  "terminalStatusVocabulary": ["COMPLETE", "PARTIAL", "NULL_SEMANTIC_CANDIDATE", "STRUCTURAL_MISMATCH", "REPRESENTATION_BLOCKED", "SOURCE_UNAVAILABLE", "SOURCE_INADMISSIBLE", "AMBIGUOUS", "EXTRACTION_FAILURE", "PROTOCOL_BLOCKED"],
+  "pauseOrAmendment": {"batchPauseRequired": false, "defectRecord": null, "amendmentProtocol": null, "rerunDecision": null},
+  "integrity": {"sourceLockVerified": "not_started", "mofOrGtLeakage": "not_started", "canonicalFreezeVerified": "not_started"},
+  "reviewCheckpoints": {"samplingManifest": "not_started", "preflight": "not_started", "canonicalFreeze": "not_started", "batchSynthesis": "not_started"}
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-authority-sampling-procedure",
+  "status": "FROZEN; procedure only, not executed",
+  "samplingExecuted": false,
+  "population": {
+    "name": "FY2024 official central-government request authority population",
+    "sourceArtifact": "fixtures/document-understanding/fy2024-format-census/20260927_1909_FY2024_Population_Freeze.md",
+    "machineReadableCompanion": "reports/document-understanding/20260927_1909_FY2024_All_Authority_Concept_Request_Format_Census.csv",
+    "canonicalOrder": "the numbered row order in the Population Freeze"
+  },
+  "priorExposureExclusion": {
+    "rule": "exclude every authority already represented by Case-001 through Case-010 before sampling",
+    "reason": "unseen-authority validation boundary; not an outcome or suitability judgment",
+    "caseRange": ["case-001", "case-002", "case-003", "case-004", "case-005", "case-006", "case-007", "case-008", "case-009", "case-010"],
+    "authorityIds": ["digital", "meti", "soumu", "mext", "mlit", "moj", "cas", "courts", "cao", "mhlw"]
+  },
+  "eligibility": {
+    "requiredPopulationFields": ["authorityId", "authorityName", "mofIndexUrl"],
+    "deduplicate": "retain first occurrence of an authorityId in canonical population order; record later occurrences as excluded duplicates",
+    "missingMetadata": "exclude and record the missing-field reason; do not repair from web lookup or content inspection",
+    "contentInspection": "prohibited before and during sampling"
+  },
+  "selection": {
+    "primaryN": 6,
+    "algorithm": "after exclusions and metadata eligibility, select the first 6 eligible population records in canonical order",
+    "tieBreak": "canonical population order only",
+    "randomization": "none",
+    "desiredStructureStratification": "prohibited"
+  },
+  "reserveAndReplacement": {
+    "reserveN": 0,
+    "replacementPolicy": "none; every selected primary authority is retained to its own terminal status",
+    "prohibited": ["replacing an authority because its content is inconvenient", "continuing until 6 successful authorities", "source substitution without a separately frozen amendment"]
+  },
+  "manifestExecutionContract": {
+    "nextTask": "Batch-001 Authority Selection Manifest Freeze",
+    "requiredRecordedInputs": ["Population Freeze artifact path", "input artifact SHA-256", "protocol path", "execution timestamp", "all exclusions and reasons", "ordered eligible count", "selected primary IDs/names"],
+    "prohibitedNextTaskActions": ["source acquisition", "landing-page visit", "PDF inspection", "preflight classification", "candidate enumeration"]
+  },
+  "statisticalBoundary": "operational pilot selection, not a population-representative sample or accuracy study"
+}
