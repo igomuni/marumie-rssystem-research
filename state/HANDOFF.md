@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 S2/S3 integration and structural-review gate
+Batch-001 Wave 1 frozen S3 structural-repair design
 
 Next action:
-Design and freeze a deterministic S3 structural-interpretation repair for Wave 1 A01/A02 using their retained, accepted S2/raw source-observation artifacts. The current S3 graphs are reproducible experimental evidence but are not authoritative for S4; do not start normalization until the repair is reviewed.
+Execute the frozen Wave 1 S3 repair contract against immutable A01/A02 S2/raw inputs. It must write a separate versioned repaired S3 graph, preserve baseline S3, prove deterministic reruns, and stop for structural review before S4; normalization remains unauthorized.
 
 Read first:
 - START_HERE.md

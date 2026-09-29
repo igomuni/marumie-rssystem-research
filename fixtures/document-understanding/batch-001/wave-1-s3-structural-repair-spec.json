@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-structural-repair-spec",
+  "status": "FROZEN; design-only research contract, not a production schema or repaired S3 execution",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "canonicalBaseCommit": "bb86311499ab2183bff12389dfe78e9308ccdb2c",
+  "protocol": {
+    "path": "fixtures/document-understanding/canonical-semantic-extraction/20260929_1801_Canonical_Semantic_Extraction_Protocol.md",
+    "version": "1"
+  },
+  "immutableBaseline": {
+    "rule": "Do not mutate, rename, replace, or relabel baseline S2/S3 artifacts. The baseline S3 graph remains experimental evidence.",
+    "authorityArtifactHashes": {
+      "kunaicho": {
+        "raw/poppler-bbox-layout.xml": "a1d5cbc77413390c375f14b2106516dc9ff909b89ba0736b961159e3be1682e5",
+        "source-observations.jsonl": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1",
+        "nodes.jsonl": "837f523d91e022b4070fa7118e2e9b47ee4645e9508c4f4cc745ae787e4c2a77",
+        "edges.jsonl": "f3f6a934533457eedf5c72d516d675dac3f77a5008bb347b355a4ea4ec626d9e",
+        "observation-manifest.json": "d2de53eb31a9a15b3c9b3debbefa00fa80975add00e15d1ed591fc2745270589",
+        "structural-interpretation-manifest.json": "7e19da8796a94c5eb5ab05430cdf7cbbcd916bdfa5776c30e16c80e464835659",
+        "s2_s3_observation_procedure.py": "638f910b8ff09b2765da5288f80ac8bd110460a4de164fc662077fada573b404",
+        "source-manifest.json": "18812b72085b25e57be271bbfadd43436c0e2faeddffb6335fcdbbd6081beb3a",
+        "authority-preflight-profile.json": "df9871702ec5724faa4dd8f0419211e37e8a4319e9491681023e8b92445c6c79"
+      },
+      "shugiin": {
+        "raw/poppler-bbox-layout.xml": "6043f4b744d4d9e4c8f250ad7ee713d8f6cc4971bea88d0ec163ee3fdff7c771",
+        "source-observations.jsonl": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f",
+        "nodes.jsonl": "c7563d2ac3357a7a6b46810f8a8eb2db6a9d7e84331ee94a633dbfa77f7edeb9",
+        "edges.jsonl": "91daac24e8f96f352b848842b4b3ba4472754bf82908af21c99244c76dc981f9",
+        "observation-manifest.json": "d0d1872eb75ecf318d68b57e16e1ce60755a46cf0c1b3e4fd22a04aa48e499f0",
+        "structural-interpretation-manifest.json": "8b23d9c72a878dc81d0ddf70856f1ff49ea06cc1fafa66ff8e21c3de421eb234",
+        "s2_s3_observation_procedure.py": "2fb1db8ed43e00de667002526cb1e906bdd4c43a29525ebaa1113ee1df44c176",
+        "source-manifest.json": "5ea19682fd0e303774831771e5ccd310d05769252211567c13c531dc29a983c1",
+        "authority-preflight-profile.json": "c71bdaa92932a86098e33230ae792f76a327d5897bcb1d965cfbd08df471600a"
+      }
+    }
+  },
+  "authorityProfiles": {
+    "kunaicho": {"path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/authority-preflight-profile.json", "profileVersion": "batch-001-wave-1-a01-v1"},
+    "shugiin": {"path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/authority-preflight-profile.json", "profileVersion": "batch-001-wave-1-a02-v1"}
+  },
+  "allowedS2Evidence": ["page observation and geometry", "textBlock observation and geometry", "textLine observation and geometry", "word observation and geometry", "raw engine-native text", "source order", "source SHA/file/page identity", "retained raw Poppler XML"],
+  "knownS2Limits": ["no PDF drawing/path objects", "no explicit cell boundaries", "no explicit visible-blank-cell observations", "Poppler emission order is not semantic reading order"],
+  "structuralPrimitiveContract": {
+    "pagePartition": "A same-page structural class supported by named header-anchor observations; not a semantic candidate.",
+    "headerAnchorGroup": "A set of raw word/line observations whose geometry forms one local header band. Its members and bounding union are retained.",
+    "columnPattern": "A repeated set of source-observed x-ranges inside a named header/row band; it is evidence, not a table cell model.",
+    "boundedStructuralGroup": "A same-page union of constituent observation bboxes with explicit member observation IDs. Its inferred bounding box never asserts a PDF-drawn frame.",
+    "localUnitAnchor": "A raw unit declaration retained as a source observation; it scopes only an explicitly supported boundedStructuralGroup.",
+    "ambiguousStructuralGroup": "A group with partial source support that must not be promoted to outer ledger, remarks, local table, semantic candidate, or financial owner."
+  },
+  "rules": {
+    "outerLedger": {
+      "id": "s3-repair-v1:localized-outer-ledger-header",
+      "requirements": [
+        "On one page, form raw-glyph header groups for 要求+番号, 事+項, 前+年+度+予+算+額, 概+算+要+求+額, and 備+考.",
+        "Each group must be in one local header band, defined by overlapping/touching line bboxes using that page's maximum observed line height as its tolerance; no global pixel or percentage threshold is allowed.",
+        "The groups must be ordered left-to-right by their geometry and retain their constituent observation IDs and union bboxes.",
+        "At least two source-observed row bands below the header must repeat two or more header x-ranges. The evidence is the concrete rows/observations, not page-wide token presence.",
+        "The result is outerLedger only when all requirements hold. Otherwise emit unclassifiedStructure or ambiguousStructuralGroup, never a guessed outer ledger."
+      ],
+      "prohibitions": ["page-wide token co-occurrence", "fixed page-width split", "cross-page header inheritance", "semantic interpretation of the labels"]
+    },
+    "nestedOrLocal": {
+      "id": "s3-repair-v1:same-page-bounded-structural-group",
+      "requirements": [
+        "Build a candidate only from a same-page, contiguous source-order/geometry group with its own header-anchor group and at least two repeated x-cluster row bands.",
+        "A02 boundedLocalTable additionally requires a raw （単位：百万円） localUnitAnchor in the candidate group plus a local multi-column header group. Right-side location, unit co-occurrence, and proximity to outer ledger are each insufficient alone.",
+        "A01 may create nestedStructure only where the group independently meets the header-plus-repeated-pattern rule. Otherwise retain ambiguousStructuralGroup with its direct observations.",
+        "Do not infer PDF frame lines, cell boundaries, outer-to-local containment, or parent financial ownership from the inferred bbox.",
+        "Place outerLedger and boundedLocalTable/nestedStructure as separate page-contained grammar partitions. Do not create an embedded_in edge between them unless direct S2 evidence supports that exact relationship."
+      ],
+      "unitScope": "A localUnitAnchor contextualizes only its own boundedLocalTable. Outer 千円 and local 百万円 have no inheritance edge between them; missing sufficient support yields ambiguity rather than a unit assignment."
+    }
+  },
+  "evidenceClosure": {
+    "requiredForEveryInferredNodeOrEdge": ["evidenceClass", "inferenceRule", "profileVersion", "ambiguityState", "sourceSha256", "fileId", "pdfPageIndex", "supportingObservationIds", "evidenceLocator", "ruleInput"],
+    "membershipRule": "Every inferred membership/containment edge lists the direct child observation IDs and the direct parent anchor/group observations that caused it. Broad page-line lists and empty supportingObservationIds are invalid.",
+    "stateRule": "state remains an observation-state field where applicable. Structural certainty is carried separately in ambiguityState and structuralStatus; state: observed_value never means structurally inferred.",
+    "referenceRule": "All supportingObservationIds must resolve in immutable source-observations.jsonl. Each locator contains source-order paths and raw geometry/bbox references sufficient to re-evaluate the rule."
+  },
+  "structuralStatusVocabulary": ["structurally_supported", "structurally_ambiguous", "unclassified", "representation_limited", "prohibited_cross_page", "profile_contradiction"],
+  "manifestSeparation": {
+    "S2": "Contains source/acquisition/extraction facts, raw-artifact hashes, coverage, and S2 statistics only.",
+    "S3": "Contains partitions, inferred-structure counts, ambiguity summaries, rule/profile versions, and structural diagnostics.",
+    "crossStage": "If retained, cross-stage run metadata is separately labeled and cannot make an S2 manifest assert an S3 conclusion."
+  },
+  "idPolicy": {
+    "decision": "new versioned repaired S3 namespace",
+    "namespace": "s3r1",
+    "inputs": ["specVersion", "sourceSha256", "fileId", "pdfPageIndex", "structural primitive type", "inferenceRule", "sorted supportingObservationIds"],
+    "requirements": ["S2 observation IDs remain unchanged", "baseline S3 IDs remain baseline-only", "no timestamps, hostnames, or worktree paths", "collision detection", "byte-deterministic serialization"],
+    "outputBoundary": "Future execution writes repaired artifacts under a distinct s3-repaired-v1 directory and labels baseline references explicitly."
+  },
+  "designVerdicts": {
+    "kunaicho": "REPAIR_DESIGN_FROZEN_WITH_EXPLICIT_AMBIGUITY",
+    "shugiin": "REPAIR_DESIGN_FROZEN_WITH_EXPLICIT_AMBIGUITY",
+    "additionalS2ObservationMethodRequired": false,
+    "profileAmendmentRequired": false,
+    "commonProtocolAmendmentRequired": false,
+    "s4Authorized": false
+  },
+  "prohibitedOperations": ["mutating baseline S2 or S3", "executing repaired S3 in this task", "S4 normalization", "S5 candidates", "S6 financial association", "S7 freeze", "GT", "benchmark", "OCR", "CSV", "MOF", "Wave 2", "source replacement", "production adaptation"],
+  "nextAuthorizedTask": "Batch-001 Wave 1 S3 Structural Interpretation Repair Execution"
+}

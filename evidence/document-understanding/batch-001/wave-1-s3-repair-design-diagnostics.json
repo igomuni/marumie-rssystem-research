@@ -1,0 +1,2256 @@
+{
+  "artifactType": "wave-1-s3-repair-design-diagnostics",
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "hundredMillionYenOccurrenceCount": 0,
+      "hundredMillionYenOccurrences": [],
+      "pageSignals": [
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 21,
+          "pdfPageIndex": 0,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 1,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": true,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 37,
+          "pdfPageIndex": 2,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 3,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": true,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 170,
+          "pdfPageIndex": 4,
+          "unitLineCount": 1
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 5,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 230,
+          "pdfPageIndex": 6,
+          "unitLineCount": 1
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 218,
+          "pdfPageIndex": 7,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 218,
+          "pdfPageIndex": 8,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 214,
+          "pdfPageIndex": 9,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 197,
+          "pdfPageIndex": 10,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 212,
+          "pdfPageIndex": 11,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 201,
+          "pdfPageIndex": 12,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 212,
+          "pdfPageIndex": 13,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 196,
+          "pdfPageIndex": 14,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 190,
+          "pdfPageIndex": 15,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 183,
+          "pdfPageIndex": 16,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 211,
+          "pdfPageIndex": 17,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 197,
+          "pdfPageIndex": 18,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 183,
+          "pdfPageIndex": 19,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 190,
+          "pdfPageIndex": 20,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 149,
+          "pdfPageIndex": 21,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 169,
+          "pdfPageIndex": 22,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 157,
+          "pdfPageIndex": 23,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 174,
+          "pdfPageIndex": 24,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 213,
+          "pdfPageIndex": 25,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 193,
+          "pdfPageIndex": 26,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 194,
+          "pdfPageIndex": 27,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 194,
+          "pdfPageIndex": 28,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 209,
+          "pdfPageIndex": 29,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 160,
+          "pdfPageIndex": 30,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 250,
+          "pdfPageIndex": 31,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 172,
+          "pdfPageIndex": 32,
+          "unitLineCount": 0
+        }
+      ],
+      "s2ObservationPath": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-observations.jsonl",
+      "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261"
+    },
+    {
+      "authorityId": "shugiin",
+      "hundredMillionYenOccurrenceCount": 46,
+      "hundredMillionYenOccurrences": [
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "201.368025",
+              "yMin": "118.043385"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-4e0dcd475005d70e6def5642",
+          "containingBlockTextSha256": "36669c437f83d4da1d6893287fdd8e626020bed93d7da7145a90783454f67246",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "131.930825",
+              "yMin": "124.987105"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-52b3f91f6ae3f607d3142b28",
+          "pdfPageIndex": 14,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 15,
+            "line": 1,
+            "page": 14
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "201.368025",
+              "yMin": "118.043385"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-4e0dcd475005d70e6def5642",
+          "containingBlockTextSha256": "36669c437f83d4da1d6893287fdd8e626020bed93d7da7145a90783454f67246",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "379.610000",
+              "yMax": "194.424305",
+              "yMin": "187.480585"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-8fa6e12cac5c47af84a4a9de",
+          "pdfPageIndex": 14,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          27,602百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 15,
+            "line": 47,
+            "page": 14
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "416.623225",
+              "yMin": "340.242305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-8cba2be9515e26decfc3947c",
+          "containingBlockTextSha256": "7f28cbbc7b3df340799aa1c899955e3a9f81bcad3ca81845899c847926945fef",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "347.186025",
+              "yMin": "340.242305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-cab49529cbec5efa244243f0",
+          "pdfPageIndex": 14,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 27,
+            "line": 0,
+            "page": 14
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "416.623225",
+              "yMin": "340.242305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-8cba2be9515e26decfc3947c",
+          "containingBlockTextSha256": "7f28cbbc7b3df340799aa1c899955e3a9f81bcad3ca81845899c847926945fef",
+          "geometry": {
+            "bbox": {
+              "xMax": "435.159760",
+              "xMin": "379.610000",
+              "yMax": "409.679505",
+              "yMin": "402.735785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-2ffead6ad9ce5341f201e5f9",
+          "pdfPageIndex": 14,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          214百万円\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 27,
+            "line": 46,
+            "page": 14
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "138.874585",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-bddefa269b74a2dca058d32a",
+          "containingBlockTextSha256": "356dfc356c5579949f80810ff1c1e1dbda248797b1600f22e45248b7cd4e49fc",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "69.437385",
+              "yMin": "62.493665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-5ad7f50384bfa4ddfdf9b886",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 10,
+            "line": 1,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "138.874585",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-bddefa269b74a2dca058d32a",
+          "containingBlockTextSha256": "356dfc356c5579949f80810ff1c1e1dbda248797b1600f22e45248b7cd4e49fc",
+          "geometry": {
+            "bbox": {
+              "xMax": "435.159760",
+              "xMin": "379.610000",
+              "yMax": "131.930865",
+              "yMin": "124.987145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-395710e231bbae8f0f4eca09",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          388百万円\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 10,
+            "line": 47,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "409.679425",
+              "yMin": "326.354785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-4653a266d8c222e2ff8654dd",
+          "containingBlockTextSha256": "fd19606b6f3e494aa1af99afb3ff1e13d04170407098b2c353a8d09fd925e609",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "733.739220",
+              "yMax": "340.242225",
+              "yMin": "333.298505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-4aeee313008efdc12218d6ba",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 32,
+            "line": 1,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "409.679425",
+              "yMin": "326.354785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-4653a266d8c222e2ff8654dd",
+          "containingBlockTextSha256": "fd19606b6f3e494aa1af99afb3ff1e13d04170407098b2c353a8d09fd925e609",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990420",
+              "xMin": "379.609500",
+              "yMax": "402.735705",
+              "yMin": "395.791985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-9fb0bbe537ba5d6149f32ede",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          32,148百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 32,
+            "line": 46,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "506.891505",
+              "yMin": "423.566865"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-66edadbba50a95397fa07bab",
+          "containingBlockTextSha256": "7f70881d06c61c30e357229edd50785e5ac774dff527dbd28674bb6848ab2525",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "733.739220",
+              "yMax": "437.454305",
+              "yMin": "430.510585"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-a6de5e7741d7bc5050be9008",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 1,
+            "flow": 32,
+            "line": 1,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "506.891505",
+              "yMin": "423.566865"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-66edadbba50a95397fa07bab",
+          "containingBlockTextSha256": "7f70881d06c61c30e357229edd50785e5ac774dff527dbd28674bb6848ab2525",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990420",
+              "xMin": "379.609500",
+              "yMax": "499.947785",
+              "yMin": "493.004065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-a876cc1c84f22c3a70f3f57b",
+          "pdfPageIndex": 15,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          18,343百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 1,
+            "flow": 32,
+            "line": 46,
+            "page": 15
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "222.199185",
+              "yMin": "138.874545"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fa55f3a32225b153ffa2b744",
+          "containingBlockTextSha256": "d6bba32f19dcfc61cb9340312be82cda59e477cd4572419b1810ef5f2e5262bd",
+          "geometry": {
+            "bbox": {
+              "xMax": "785.817620",
+              "xMin": "730.267860",
+              "yMax": "152.761985",
+              "yMin": "145.818265"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-2bae3e6b3190b9f451a927a6",
+          "pdfPageIndex": 16,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 14,
+            "line": 1,
+            "page": 16
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "222.199185",
+              "yMin": "138.874545"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fa55f3a32225b153ffa2b744",
+          "containingBlockTextSha256": "d6bba32f19dcfc61cb9340312be82cda59e477cd4572419b1810ef5f2e5262bd",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "417.800460",
+              "yMax": "215.255465",
+              "yMin": "208.311745"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-45c41bbb1cf6c313ddab20bf",
+          "pdfPageIndex": 16,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          214百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 14,
+            "line": 48,
+            "page": 16
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "423.566985",
+              "yMin": "347.186065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-77171d2f12d6c3ebc4bd7bac",
+          "containingBlockTextSha256": "5d4d8c33fa79d68396c60d8d08f301ede94edefcd7f47c21c15b3529732c8f1a",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "354.129785",
+              "yMin": "347.186065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-b6129a7d1d853c5ff5171282",
+          "pdfPageIndex": 16,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 27,
+            "line": 0,
+            "page": 16
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "423.566985",
+              "yMin": "347.186065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-77171d2f12d6c3ebc4bd7bac",
+          "containingBlockTextSha256": "5d4d8c33fa79d68396c60d8d08f301ede94edefcd7f47c21c15b3529732c8f1a",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "421.272320",
+              "yMax": "416.623265",
+              "yMin": "409.679545"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-eb6d46d74eafeb1cc5537872",
+          "pdfPageIndex": 16,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          99百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 27,
+            "line": 47,
+            "page": 16
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "138.874585",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-300856e1e0e25fb8a5359084",
+          "containingBlockTextSha256": "06b6e5e1288e64a921372fc11e70c9003d4719711e40da3465739c5c448cbe85",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "69.437385",
+              "yMin": "62.493665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-d505f6a2a91b7c92d6f85ee9",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 9,
+            "line": 1,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "138.874585",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-300856e1e0e25fb8a5359084",
+          "containingBlockTextSha256": "06b6e5e1288e64a921372fc11e70c9003d4719711e40da3465739c5c448cbe85",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "417.800460",
+              "yMax": "131.930865",
+              "yMin": "124.987145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-bebddb47fb139cc7c27f76da",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          60百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 9,
+            "line": 48,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "333.298665",
+              "yMin": "256.917745"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fcb50fa9504e628ec774d490",
+          "containingBlockTextSha256": "af4e91f4444549443a34ec2ffb8a3ec28a0e2c629ef068fb58501b59f6f4bad5",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "263.861465",
+              "yMin": "256.917745"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-f3037eb77b99c125c7779d6b",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 22,
+            "line": 0,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "333.298665",
+              "yMin": "256.917745"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fcb50fa9504e628ec774d490",
+          "containingBlockTextSha256": "af4e91f4444549443a34ec2ffb8a3ec28a0e2c629ef068fb58501b59f6f4bad5",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "326.354945",
+              "yMin": "319.411225"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-e5ea85a56b31fccc0b313400",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          0.74百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 22,
+            "line": 47,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "527.722705",
+              "yMin": "451.341785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-e6289dc5a0409cd0d18e7ffa",
+          "containingBlockTextSha256": "7cb015d58f7381e0f21b70beed6f0d13e7f9b7240a2933f378952a2c9f90baf6",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "458.285505",
+              "yMin": "451.341785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-37e8c5122a1d00f85b899cff",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 36,
+            "line": 0,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "527.722705",
+              "yMin": "451.341785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-e6289dc5a0409cd0d18e7ffa",
+          "containingBlockTextSha256": "7cb015d58f7381e0f21b70beed6f0d13e7f9b7240a2933f378952a2c9f90baf6",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "520.778985",
+              "yMin": "513.835265"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-aec5f3bbfaae33571bee5e7d",
+          "pdfPageIndex": 17,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          271百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 36,
+            "line": 47,
+            "page": 17
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "229.142905",
+              "yMin": "152.761985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-c745c2644eff5c9ef80b30af",
+          "containingBlockTextSha256": "5c0e147657cd6d808436f80b80776ce1cc44b32e99ac2202e377f62c096d8101",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "159.705705",
+              "yMin": "152.761985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-7941ace3a123c9f9e51bd4ed",
+          "pdfPageIndex": 18,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 18,
+            "line": 0,
+            "page": 18
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "229.142905",
+              "yMin": "152.761985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-c745c2644eff5c9ef80b30af",
+          "containingBlockTextSha256": "5c0e147657cd6d808436f80b80776ce1cc44b32e99ac2202e377f62c096d8101",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "222.199185",
+              "yMin": "215.255465"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-10340d44c0c073d1df1ea52f",
+          "pdfPageIndex": 18,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          3.70百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 18,
+            "line": 47,
+            "page": 18
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "423.566945",
+              "yMin": "347.186025"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fd84f66cf22ff2fe7ee68f42",
+          "containingBlockTextSha256": "42430c14e9c570ad1cbaab56e6c2cc6e9ef4cbd0c44bba3afdb8c545568edf01",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "354.129745",
+              "yMin": "347.186025"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-cf5e1dd4df8dc37f9d0b3a7d",
+          "pdfPageIndex": 18,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 32,
+            "line": 0,
+            "page": 18
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "423.566945",
+              "yMin": "347.186025"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fd84f66cf22ff2fe7ee68f42",
+          "containingBlockTextSha256": "42430c14e9c570ad1cbaab56e6c2cc6e9ef4cbd0c44bba3afdb8c545568edf01",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "416.623225",
+              "yMin": "409.679505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-75d1053a8e85a8f31799ed62",
+          "pdfPageIndex": 18,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          114百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 32,
+            "line": 47,
+            "page": 18
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "131.930865",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-c9c7f06f9e9d3bd754b4f8ff",
+          "containingBlockTextSha256": "813c45a633e2a706db52d97a3a599f2de4801ae10af9f6e403307143b227dfee",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "62.493665",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-7d858fe4d006ffcc9ea722c0",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 9,
+            "line": 0,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "131.930865",
+              "yMin": "55.549945"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-c9c7f06f9e9d3bd754b4f8ff",
+          "containingBlockTextSha256": "813c45a633e2a706db52d97a3a599f2de4801ae10af9f6e403307143b227dfee",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "124.987145",
+              "yMin": "118.043425"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-271662ae8ecead40fed9008f",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          1.66百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 9,
+            "line": 47,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "326.354905",
+              "yMin": "243.030265"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-ba694181c5ad2bf44062c8b6",
+          "containingBlockTextSha256": "82aedbcd402b28264d5bd15ed49501c7cbeebd02b10bf9c5aca521427139075f",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "256.917705",
+              "yMin": "249.973985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-d8a26fc4ba361a9e7852481f",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 19,
+            "line": 1,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "326.354905",
+              "yMin": "243.030265"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-ba694181c5ad2bf44062c8b6",
+          "containingBlockTextSha256": "82aedbcd402b28264d5bd15ed49501c7cbeebd02b10bf9c5aca521427139075f",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "417.800460",
+              "yMax": "319.411185",
+              "yMin": "312.467465"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-1a8a120b7a6f6d317ff0aca2",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          31百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 19,
+            "line": 48,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "534.666425",
+              "yMin": "451.341785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-e64e28a1a3220eb0071a8440",
+          "containingBlockTextSha256": "e1bf4553b84d01c40c964f95fcbac635125ee1a4de55abbcb9324d9fe1feb706",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "465.229225",
+              "yMin": "458.285505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-21c8f67e79a425135eb3f68c",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 28,
+            "line": 1,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "534.666425",
+              "yMin": "451.341785"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-e64e28a1a3220eb0071a8440",
+          "containingBlockTextSha256": "e1bf4553b84d01c40c964f95fcbac635125ee1a4de55abbcb9324d9fe1feb706",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "527.722705",
+              "yMin": "520.778985"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-e7cbc94f0099d01abcb4edd8",
+          "pdfPageIndex": 19,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          0.50百万円│\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 28,
+            "line": 48,
+            "page": 19
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "236.086585",
+              "yMin": "159.705665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fa52f92052367e9a690fae94",
+          "containingBlockTextSha256": "0656ce3fe29c3dca0a2be6c1206ab5c1db34d70f234d31f0a8090e39dd095f1f",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "166.649385",
+              "yMin": "159.705665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-40e12f4ca9fe5a534e12612d",
+          "pdfPageIndex": 20,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 24,
+            "line": 0,
+            "page": 20
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "236.086585",
+              "yMin": "159.705665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-fa52f92052367e9a690fae94",
+          "containingBlockTextSha256": "0656ce3fe29c3dca0a2be6c1206ab5c1db34d70f234d31f0a8090e39dd095f1f",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "229.142865",
+              "yMin": "222.199145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-1695b595c8f2ae0bbfd2922b",
+          "pdfPageIndex": 20,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          154百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 24,
+            "line": 47,
+            "page": 20
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "444.398065",
+              "yMin": "368.017145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-85f2a7fd46e027145a158a7e",
+          "containingBlockTextSha256": "bf3abb2be0adaadf825b6cde89e183a7e753d8018f8cdb421b83ddfcd213f467",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "374.960865",
+              "yMin": "368.017145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-9ba6d2c4ca9d6d1757a07ca7",
+          "pdfPageIndex": 20,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 38,
+            "line": 0,
+            "page": 20
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "444.398065",
+              "yMin": "368.017145"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-85f2a7fd46e027145a158a7e",
+          "containingBlockTextSha256": "bf3abb2be0adaadf825b6cde89e183a7e753d8018f8cdb421b83ddfcd213f467",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "437.454345",
+              "yMin": "430.510625"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-851aad1692a799225f1bdd59",
+          "pdfPageIndex": 20,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          109百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 38,
+            "line": 47,
+            "page": 20
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "152.761985",
+              "yMin": "76.381065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-b31101d2e5e1187dc5049fbf",
+          "containingBlockTextSha256": "ed4efd0eeb2b034b7efa1cf5cccb60dea4b0424df651f3e824047176cb7c4be5",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "83.324785",
+              "yMin": "76.381065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-3e1fae8faf42837a897144bf",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 12,
+            "line": 0,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "152.761985",
+              "yMin": "76.381065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-b31101d2e5e1187dc5049fbf",
+          "containingBlockTextSha256": "ed4efd0eeb2b034b7efa1cf5cccb60dea4b0424df651f3e824047176cb7c4be5",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "379.610000",
+              "yMax": "145.818265",
+              "yMin": "138.874545"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-916f8a69b8b164bccb64bc77",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          0.20百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 12,
+            "line": 46,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "354.129745",
+              "yMin": "270.805105"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-2f582c68680289e20e0cafe3",
+          "containingBlockTextSha256": "ffbd693e36028b8357c8171f3b4d0f96e238041043da6bc0a456721c8e3ae9d2",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "284.692545",
+              "yMin": "277.748825"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-cf8aa0aaa9fa63cc32c8d02e",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 22,
+            "line": 1,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "354.129745",
+              "yMin": "270.805105"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-2f582c68680289e20e0cafe3",
+          "containingBlockTextSha256": "ffbd693e36028b8357c8171f3b4d0f96e238041043da6bc0a456721c8e3ae9d2",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "417.800460",
+              "yMax": "347.186025",
+              "yMin": "340.242305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-c6ea02b5576064abac0c250a",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          44百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 22,
+            "line": 48,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "548.553785",
+              "yMin": "479.116585"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-faa1a095380735f3f4d61af2",
+          "containingBlockTextSha256": "dd6a7477732a4aaa208b113f14685b2a1a623d663a71b8343c73a29d7004c855",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "486.060305",
+              "yMin": "479.116585"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-03e700a331c24f3ab1318905",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 36,
+            "line": 0,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "548.553785",
+              "yMin": "479.116585"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-faa1a095380735f3f4d61af2",
+          "containingBlockTextSha256": "dd6a7477732a4aaa208b113f14685b2a1a623d663a71b8343c73a29d7004c855",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "548.553785",
+              "yMin": "541.610065"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-84db66ca9c14ae1d672a3139",
+          "pdfPageIndex": 21,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          235百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 36,
+            "line": 47,
+            "page": 21
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "270.805145",
+              "yMin": "187.480505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-81595b1019621f92c1068bfe",
+          "containingBlockTextSha256": "a6cbc152f7f6df49443cd56cb2b23b5eb2c706596720d0187c1c189064cab216",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "733.739720",
+              "yMax": "201.367945",
+              "yMin": "194.424225"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-5fc197b35d624444a0c5a62f",
+          "pdfPageIndex": 22,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 20,
+            "line": 1,
+            "page": 22
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.289480",
+              "xMin": "379.610000",
+              "yMax": "270.805145",
+              "yMin": "187.480505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-81595b1019621f92c1068bfe",
+          "containingBlockTextSha256": "a6cbc152f7f6df49443cd56cb2b23b5eb2c706596720d0187c1c189064cab216",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990920",
+              "xMin": "414.328600",
+              "yMax": "263.861425",
+              "yMin": "256.917705"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-357bbaa12cee864b487ffd70",
+          "pdfPageIndex": 22,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          102百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 20,
+            "line": 48,
+            "page": 22
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "347.185945",
+              "yMin": "263.861305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-0db402d89df55a8b4de9ad93",
+          "containingBlockTextSha256": "fd19606b6f3e494aa1af99afb3ff1e13d04170407098b2c353a8d09fd925e609",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "733.739220",
+              "yMax": "277.748745",
+              "yMin": "270.805025"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-21190af5d163dd9ee25c8e2d",
+          "pdfPageIndex": 35,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 29,
+            "line": 1,
+            "page": 35
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "347.185945",
+              "yMin": "263.861305"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-0db402d89df55a8b4de9ad93",
+          "containingBlockTextSha256": "fd19606b6f3e494aa1af99afb3ff1e13d04170407098b2c353a8d09fd925e609",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990420",
+              "xMin": "379.609500",
+              "yMax": "340.242225",
+              "yMin": "333.298505"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-a29a8bf66bcca58fba280cf4",
+          "pdfPageIndex": 35,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          32,148百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 0,
+            "flow": 29,
+            "line": 46,
+            "page": 35
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "437.454305",
+              "yMin": "354.129665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-75ffa9d4872b9e1e4f1afd90",
+          "containingBlockTextSha256": "b3b441f216cbc0d2c092c796a0002fa6a89e5bf04df588c556ea7acc388597af",
+          "geometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "733.739220",
+              "yMax": "368.017105",
+              "yMin": "361.073385"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-03680f61c28ba03662db8ead",
+          "pdfPageIndex": 35,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          （単位：百万円）\n        ",
+          "sourceOrder": {
+            "block": 1,
+            "flow": 29,
+            "line": 1,
+            "page": 35
+          }
+        },
+        {
+          "containingBlockGeometry": {
+            "bbox": {
+              "xMax": "789.288980",
+              "xMin": "379.609500",
+              "yMax": "437.454305",
+              "yMin": "354.129665"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "containingBlockObservationId": "s2s3-75ffa9d4872b9e1e4f1afd90",
+          "containingBlockTextSha256": "b3b441f216cbc0d2c092c796a0002fa6a89e5bf04df588c556ea7acc388597af",
+          "geometry": {
+            "bbox": {
+              "xMax": "455.990420",
+              "xMin": "379.609500",
+              "yMax": "430.510585",
+              "yMin": "423.566865"
+            },
+            "coordinateSystem": "Poppler bbox-layout page coordinates"
+          },
+          "observationId": "s2s3-49fdd8a09371d0eab98e43fd",
+          "pdfPageIndex": 35,
+          "proposedTreatment": "localTableAnchorCandidate; no unit inheritance outside a future same-page bounded local structure",
+          "rawText": "\n          │総額\n          13,805百万円\n          │\n        ",
+          "sourceOrder": {
+            "block": 1,
+            "flow": 29,
+            "line": 47,
+            "page": 35
+          }
+        }
+      ],
+      "pageSignals": [
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 26,
+          "pdfPageIndex": 0,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 1,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 44,
+          "pdfPageIndex": 2,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 3,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": false,
+            "要求": true
+          },
+          "lineCount": 163,
+          "pdfPageIndex": 4,
+          "unitLineCount": 1
+        },
+        {
+          "headerTokenPresence": {
+            "備": false,
+            "番号": false,
+            "考": false,
+            "要求": false
+          },
+          "lineCount": 0,
+          "pdfPageIndex": 5,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 206,
+          "pdfPageIndex": 6,
+          "unitLineCount": 1
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 172,
+          "pdfPageIndex": 7,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 150,
+          "pdfPageIndex": 8,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 112,
+          "pdfPageIndex": 9,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 125,
+          "pdfPageIndex": 10,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 130,
+          "pdfPageIndex": 11,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 130,
+          "pdfPageIndex": 12,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 118,
+          "pdfPageIndex": 13,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 167,
+          "pdfPageIndex": 14,
+          "unitLineCount": 2
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 224,
+          "pdfPageIndex": 15,
+          "unitLineCount": 3
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 163,
+          "pdfPageIndex": 16,
+          "unitLineCount": 2
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 217,
+          "pdfPageIndex": 17,
+          "unitLineCount": 3
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 172,
+          "pdfPageIndex": 18,
+          "unitLineCount": 2
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 212,
+          "pdfPageIndex": 19,
+          "unitLineCount": 3
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 177,
+          "pdfPageIndex": 20,
+          "unitLineCount": 2
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 219,
+          "pdfPageIndex": 21,
+          "unitLineCount": 3
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 158,
+          "pdfPageIndex": 22,
+          "unitLineCount": 1
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 119,
+          "pdfPageIndex": 23,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 127,
+          "pdfPageIndex": 24,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 120,
+          "pdfPageIndex": 25,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 123,
+          "pdfPageIndex": 26,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 125,
+          "pdfPageIndex": 27,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 157,
+          "pdfPageIndex": 28,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 178,
+          "pdfPageIndex": 29,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 177,
+          "pdfPageIndex": 30,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 166,
+          "pdfPageIndex": 31,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 154,
+          "pdfPageIndex": 32,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 146,
+          "pdfPageIndex": 33,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 142,
+          "pdfPageIndex": 34,
+          "unitLineCount": 0
+        },
+        {
+          "headerTokenPresence": {
+            "備": true,
+            "番号": true,
+            "考": true,
+            "要求": true
+          },
+          "lineCount": 171,
+          "pdfPageIndex": 35,
+          "unitLineCount": 2
+        }
+      ],
+      "s2ObservationPath": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/source-observations.jsonl",
+      "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435"
+    }
+  ],
+  "stage": "design_only"
+}

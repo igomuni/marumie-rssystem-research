@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S3 Structural Interpretation Repair Design and Freeze — A01 and A02 (recommended; not started).** Retain the accepted S2 source-observation substrate and the current reproducible experimental S3 baseline, then design a separately scoped repair for grammar/table boundaries and inferred-edge evidence closure. Do not begin S4 normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
+- **Batch-001 Wave 1 S3 Structural Interpretation Repair Execution — A01 and A02 (recommended; not started).** Mechanically apply the frozen `wave-1-s3-structural-repair-spec.json` to immutable S2/raw inputs, retain the experimental baseline S3, produce separately versioned repaired S3 artifacts with direct inference provenance, rerun deterministically, and stop for structural review before S4. Do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

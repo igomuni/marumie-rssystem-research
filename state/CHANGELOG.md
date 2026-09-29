@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: freeze Batch-001 Wave 1 S3 structural repair design
+
+- Froze a design-only, text-anchor plus geometry S3 repair contract for A01 and A02. It replaces the invalid page-token/right-side assumptions with same-page, direct-evidence structural groups and explicit ambiguity/representation-limited outcomes; it never infers a PDF frame/cell the retained S2 does not represent.
+- Froze direct inferred-node/edge provenance, S2/S3 manifest separation, and a separate deterministic `s3r1` repaired-output namespace. Both authorities are `REPAIR_DESIGN_FROZEN_WITH_EXPLICIT_AMBIGUITY`; no additional S2 method or frozen profile/common-protocol amendment is required.
+- Baseline S2/raw/current experimental S3 artifacts remain byte-identical and no repaired S3 was executed. S4 remains blocked pending a separately scoped repair execution and review gate; no GT, benchmark, OCR, CSV, MOF, Wave 2, source-lock/registry, or production change occurred.
+
 ### research: review Batch-001 Wave 1 S2/S3 integration
 
 - Audited and cherry-picked the two authority-local S2/S3 commits into an isolated review branch, preserving the original branches. Locked source SHA values, full page coverage, JSON/JSONL integrity, unique IDs, zero cross-page/cross-file edges, and independent byte-identical reruns of raw XML, S2 observations, S3 nodes, and S3 edges all passed.
