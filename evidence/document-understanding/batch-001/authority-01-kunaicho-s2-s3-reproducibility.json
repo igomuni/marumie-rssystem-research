@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "s2-s3-reproducibility-record",
+  "authorityId": "kunaicho",
+  "batchAuthorityId": "batch-001-authority-01",
+  "methodVersion": "experiment-local-s2-s3-v1",
+  "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+  "runs": [
+    {"ordinal": 1, "completedAt": "2026-09-30T06:58:41+09:00", "artifactHashes": {"rawXml": "a1d5cbc77413390c375f14b2106516dc9ff909b89ba0736b961159e3be1682e5", "sourceObservations": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1", "nodes": "837f523d91e022b4070fa7118e2e9b47ee4645e9508c4f4cc745ae787e4c2a77", "edges": "f3f6a934533457eedf5c72d516d675dac3f77a5008bb347b355a4ea4ec626d9e"}},
+    {"ordinal": 2, "completedAt": "2026-09-30T06:58:41+09:00", "artifactHashes": {"rawXml": "a1d5cbc77413390c375f14b2106516dc9ff909b89ba0736b961159e3be1682e5", "sourceObservations": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1", "nodes": "837f523d91e022b4070fa7118e2e9b47ee4645e9508c4f4cc745ae787e4c2a77", "edges": "f3f6a934533457eedf5c72d516d675dac3f77a5008bb347b355a4ea4ec626d9e"}}
+  ],
+  "comparison": {"rawXmlByteIdentical": true, "sourceObservationsByteIdentical": true, "nodesByteIdentical": true, "edgesByteIdentical": true, "idsIdentical": true, "countsIdentical": true, "differences": [], "conclusion": "Byte-identical deterministic rerun after the pre-completion header-token validation correction."}
+}
