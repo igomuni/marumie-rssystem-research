@@ -2,6 +2,38 @@
 
 ## Unreleased
 
+### research: close Case-010 frozen baseline
+
+- **Closeout/audit only.** Verified the complete Survey → Protocol → Selection → GT → Benchmark chronology and byte identity of every frozen Case-010 artifact. The locked 1,723-page MHLW source SHA remains unchanged; Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production code remain unchanged.
+- Closed Case-010 for the frozen baseline phase. The large source scale is confirmed, but no scale-caused target-benchmark interference was demonstrated. Remarks-side embedded structures are confirmed source facts, while their causal contribution to Docling's local table/row association failure is unproven. The planned Case-006–010 individual pilot sequence is complete; next recommended task is Cross-Case Synthesis, with batch processing and adaptation still not started.
+
+### research: benchmark Case-010 frozen baseline
+
+- **First frozen benchmark only.** Ran the existing `npm run extract` and `npm run docbench -- case-010` commands against frozen GT, then reran the unchanged docbench command once for reproducibility. pdf.js and PyMuPDF each scored 10/11: target expense/triple recovered and correct item retained among four candidates, but no unique item resolution. Docling scored 3/11 after its one 99-cell target-page table produced no eligible expense candidate.
+- All six raw/normalized artifacts were byte-identical across the rerun; generated evaluation bytes changed with their timestamps while the observed raw counts, normalized results, score summary, and check matrix remained the same. The full 1,723-page source processed successfully, so no scale interference was demonstrated. Embedded remarks-side material was not causally isolated as the reason for Docling’s local association failure. No parser/normalizer/evaluator/GT/OCR configuration or production change occurred. Next: Case-010 Closeout.
+
+### research: freeze Case-010 ground truth
+
+- **Ground Truth freeze only.** Rehashed the locked MHLW source (PASS), verified the frozen locator against a fresh 600-dpi direct visual render, and independently transcribed the selected main-ledger row. Raw visual forms and normalized values are preserved separately; the delta sign was determined from its own source glyph before arithmetic validation, which passed.
+- Wrote `fixtures/document-understanding/case-010/ground-truth.json` and `fixtures/document-understanding/case-010/20260929_0754_Case010_Ground_Truth_Evidence.md`, then updated state. No text extraction, OCR, benchmark output, MOF/RS data, parser/normalizer/evaluator change, source-lock/registry change, row reselection, or production adaptation occurred. Next: Case-010 First Frozen Benchmark.
+
+### research: freeze Case-010 row selection
+
+- **Row selection only.** Rehashed the locked MHLW source (PASS), confirmed frozen survey/protocol integrity, and applied the unchanged protocol by fresh 400-dpi direct visual inspection from the first page of the frozen universe. The first two evaluated aggregate rows failed C1; the third physical main-ledger row at `pdfPageIndex 20` passed C1–C4 and was selected. Inspection stopped immediately; no later row or page was inspected.
+- Wrote `fixtures/document-understanding/case-010/20260929_0711_Case010_Selection_Record.md` and updated state. Amount glyphs were visually exposed only to establish C3 row association and were not transcribed, normalized, or used in arithmetic. No Ground Truth, benchmark, OCR experiment, parser/normalizer/evaluator change, source-lock/registry change, MOF linkage, or production adaptation occurred. Next: Case-010 Ground Truth Freeze.
+
+### research: freeze Case-010 selection protocol
+
+- **Protocol freeze only.** Rehashed the locked MHLW source (PASS) and read the committed Source Survey/evidence plus prior protocols and the Case-007 NULL structural review. No new render or candidate inspection was performed.
+- Froze `010 厚生労働本省` main-ledger rows at `pdfPageIndex 20–1226` as the first TOC-declared organization with an exact next-organization boundary. Froze main-ledger-versus-remarks-substructure exclusion, C1–C4, same-page-only item context, section-scoped `千円`, direct same-row triple rule, ambiguity/NULL policy, earliest-page/topmost-row tie-break, and stop-at-first-pass rule. Cross-page context is conservatively disallowed because the survey did not establish a safe general lookback.
+- Wrote `fixtures/document-understanding/case-010/20260929_0647_Case010_Selection_Protocol.md` and updated state. Case-010 survey/evidence, Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production semantics are unchanged. No row selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred. Next: Case-010 Row Selection only.
+
+### research: survey Case-010 MHLW source
+
+- **Source/document/package/context survey only.** Started from fresh `main@f4eaf58` after PR #9 merge and rehashed the already-locked MHLW source (`09d26048…`, 3,444,358 bytes) without reacquisition. Confirmed a single 1,723-page, unencrypted A4-landscape List Creator PDF with native text, CID TrueType fonts, and no `pdfimages` rows.
+- Mapped the source as cover/TOC, two blank separators, `pdfPageIndex 8–19` cross-reference 総表, and `20–1722` standard-ledger 明細表 spanning eight TOC-declared organizations. The main detail grammar is standard but its remarks region contains nested explanatory/breakdown tables; sampled local `千円` declarations and nonuniform header repetition make grammar/unit/context boundaries a later protocol concern. No dedicated staffing-table section is TOC-listed.
+- Wrote `reports/document-understanding/20260929_0625_Case010_MHLW_Source_Survey.md` and `evidence/document-understanding/case-010-source-survey.json`; state now recommends Case-010 Selection Protocol Freeze. Cases 001–009, the Case-006–010 Selection Freeze, scripts, parser/normalizer/evaluator, OCR configuration, source lock/registry, and production semantics are unchanged. No selection protocol, row selection, Ground Truth, benchmark, OCR experiment, MOF linkage, or adaptation occurred.
+
 ### research: close out case-009 frozen baseline (branch: research/case-009-cao-source-survey)
 
 - **Closeout/audit only.** Directly audited the chronological freeze chain: Source Survey (`e640dc2`) → Protocol (`d42b7b8`) → Selection (`985f77e`) → Ground Truth (`0d238d2`) → First Benchmark (`199ef50`). Every frozen artifact remains byte-identical to its own freeze commit; the locked `1.pdf` SHA was reverified. No benchmark or source inspection was rerun.

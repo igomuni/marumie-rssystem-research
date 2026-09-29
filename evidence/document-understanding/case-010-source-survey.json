@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "caseId": "case-010",
+  "authority": "厚生労働省 (Ministry of Health, Labour and Welfare)",
+  "task": "source/document/package/context survey",
+  "createdAt": "2026-09-29T06:25:00+09:00",
+  "source": {
+    "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+    "officialUrl": "https://www.mhlw.go.jp/wp/yosan/yosan/24syokan/dl/05-1b-01.pdf",
+    "title": "令和６年度歳出概算要求書（一般会計）総表・明細表",
+    "authority": "25 厚生労働省所管",
+    "fiscalYear": 2024,
+    "sha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+    "sizeBytes": 3444358,
+    "pages": 1723,
+    "packageModel": "single combined PDF",
+    "encrypted": false,
+    "pdfVersion": "1.3",
+    "producer": "List Creator",
+    "creationDate": "2023-09-07T11:06:46+09:00",
+    "modificationDate": "2023-09-07T15:45:47+09:00",
+    "pageSizePoints": [842, 595],
+    "orientation": "A4 landscape",
+    "rawPath": "sources/raw/mhlw-fy2024-general-account-expenditure-request-summary-detail.pdf",
+    "lockStatus": "already locked; rehashed locally in this survey; no acquisition or lock mutation"
+  },
+  "representation": {
+    "classification": "native text with embedded CID TrueType fonts; vector table/text layout; no raster image objects reported by pdfimages",
+    "textLayer": {
+      "tool": "pdftotext -layout",
+      "nonblankPdfPageIndices": 1721,
+      "blankPdfPageIndices": [1, 7],
+      "coverage": "exhaustive"
+    },
+    "fonts": {
+      "tool": "pdffonts",
+      "reportedFontRows": 5,
+      "observedTypes": ["CID TrueType"],
+      "coverage": "document-level tool output"
+    },
+    "images": {
+      "tool": "pdfimages -list",
+      "reportedImageRows": 0,
+      "coverage": "document-level tool output"
+    }
+  },
+  "sectionMap": [
+    {
+      "pdfPageIndexRange": [0, 0],
+      "printedPages": null,
+      "title": "令和６年度歳出概算要求書 / 25 厚生労働省所管",
+      "grammar": "cover and high-level contents",
+      "selectionStatus": "exclude"
+    },
+    {
+      "pdfPageIndexRange": [1, 1],
+      "printedPages": null,
+      "title": null,
+      "grammar": "blank separator",
+      "selectionStatus": "exclude"
+    },
+    {
+      "pdfPageIndexRange": [2, 6],
+      "printedPages": [1, 5],
+      "title": "令和６年度歳出概算要求額目次",
+      "grammar": "contents/cross-reference locator",
+      "selectionStatus": "exclude"
+    },
+    {
+      "pdfPageIndexRange": [7, 7],
+      "printedPages": null,
+      "title": null,
+      "grammar": "blank separator",
+      "selectionStatus": "exclude"
+    },
+    {
+      "pdfPageIndexRange": [8, 19],
+      "printedPages": [1, 12],
+      "title": "令和６年度歳出概算要求額総表",
+      "grammar": "cross-reference summary with split amount subcolumns and 明細書頁数",
+      "unit": "千円, section-opening declaration",
+      "selectionStatus": "separate grammar; exclude unless a later protocol expressly selects it"
+    },
+    {
+      "pdfPageIndexRange": [20, 1722],
+      "printedPages": [13, 1715],
+      "title": "令和６年度歳出概算要求額明細表",
+      "grammar": "standard expenditure ledger with nested explanatory/breakdown material in remarks",
+      "unit": "千円, declared at section opening; locally redeclared in sampled embedded tables",
+      "selectionStatus": "candidate grammar for later protocol; no universe frozen"
+    }
+  ],
+  "detailOrganizationStarts": [
+    {"pdfPageIndex": 20, "printedPage": 13, "organization": "010 厚生労働本省", "printedPrefix": "厚（本）"},
+    {"pdfPageIndex": 1227, "printedPage": 1220, "organization": "030 検疫所", "printedPrefix": "厚（検）"},
+    {"pdfPageIndex": 1255, "printedPage": 1248, "organization": "040 国立ハンセン病療養所", "printedPrefix": "厚（ハ）"},
+    {"pdfPageIndex": 1280, "printedPage": 1273, "organization": "045 厚生労働本省試験研究機関", "printedPrefix": "厚（試）"},
+    {"pdfPageIndex": 1469, "printedPage": 1462, "organization": "050 国立障害者リハビリテーションセンター", "printedPrefix": "厚（障）"},
+    {"pdfPageIndex": 1554, "printedPage": 1547, "organization": "070 地方厚生局", "printedPrefix": "厚（地）"},
+    {"pdfPageIndex": 1602, "printedPage": 1595, "organization": "080 都道府県労働局", "printedPrefix": "厚（労）"},
+    {"pdfPageIndex": 1700, "printedPage": 1693, "organization": "090 中央労働委員会", "printedPrefix": "厚（中）"}
+  ],
+  "contextFindings": {
+    "fileScope": "single file; no cross-file context mechanism",
+    "authorityScope": "cover/section heading",
+    "organizationScope": "TOC and organization-opening rows; organization-tied printed page prefixes observed",
+    "itemAndRowScope": "source-visible hierarchy within the standard ledger; continuation and subordinate detail require same-section visual context",
+    "headerBehavior": "repeated standard-ledger header observed on some sampled pages; other sampled continuation pages did not visibly repeat it, so page index alone or header repetition alone is insufficient",
+    "ambiguityRisk": "remarks can contain explanatory lists and embedded tables with independent headers/units; do not treat those as main-ledger rows without a later rule"
+  },
+  "inspectionCoverage": {
+    "metadataHashFontsImages": "document-level",
+    "textPresence": "all 1723 PDF pages",
+    "tocAndSectionBoundary": "cover/TOC plus native text map",
+    "visualPagesOneBased": [1, 3, 21, 45, 1222, 1228, 1256, 1281, 1470, 1555, 1603, 1701, 1723],
+    "visualPurpose": "cover/TOC, summary, detail opening, embedded-table sample, late organization starts, and final detail page",
+    "notCovered": "no page-by-page visual grammar/context census and no candidate-row enumeration"
+  },
+  "surveyOutcome": {
+    "suitability": "SUITABLE WITH CAVEATS",
+    "selectionProtocolCreated": false,
+    "rowSelected": false,
+    "groundTruthCreated": false,
+    "benchmarkRun": false,
+    "ocrExperimentRun": false,
+    "sourceLockRegistryChanged": false
+  }
+}
