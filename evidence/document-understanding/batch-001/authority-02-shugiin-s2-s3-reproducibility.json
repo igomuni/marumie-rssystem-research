@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "s2-s3-reproducibility-record",
+  "authorityId": "shugiin",
+  "batchAuthorityId": "batch-001-authority-02",
+  "methodVersion": "experiment-local-s2-s3-v1",
+  "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+  "runs": [
+    {"ordinal": 1, "completedAt": "2026-09-30T06:58:41+09:00", "artifactHashes": {"rawXml": "6043f4b744d4d9e4c8f250ad7ee713d8f6cc4971bea88d0ec163ee3fdff7c771", "sourceObservations": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f", "nodes": "c7563d2ac3357a7a6b46810f8a8eb2db6a9d7e84331ee94a633dbfa77f7edeb9", "edges": "91daac24e8f96f352b848842b4b3ba4472754bf82908af21c99244c76dc981f9"}},
+    {"ordinal": 2, "completedAt": "2026-09-30T06:58:41+09:00", "artifactHashes": {"rawXml": "6043f4b744d4d9e4c8f250ad7ee713d8f6cc4971bea88d0ec163ee3fdff7c771", "sourceObservations": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f", "nodes": "c7563d2ac3357a7a6b46810f8a8eb2db6a9d7e84331ee94a633dbfa77f7edeb9", "edges": "91daac24e8f96f352b848842b4b3ba4472754bf82908af21c99244c76dc981f9"}}
+  ],
+  "comparison": {"rawXmlByteIdentical": true, "sourceObservationsByteIdentical": true, "nodesByteIdentical": true, "edgesByteIdentical": true, "idsIdentical": true, "countsIdentical": true, "differences": [], "conclusion": "Byte-identical deterministic rerun after the pre-completion header-token validation correction."}
+}
