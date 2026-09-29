@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Research reproducibility
+Batch-001 Wave 1 S2/S3 integration and structural-review gate
 
 Next action:
-Make curated fixture generation reproducible from deterministic PDF extraction while preserving historical golden equivalence.
+Design and freeze a deterministic S3 structural-interpretation repair for Wave 1 A01/A02 using their retained, accepted S2/raw source-observation artifacts. The current S3 graphs are reproducible experimental evidence but are not authoritative for S4; do not start normalization until the repair is reviewed.
 
 Read first:
 - START_HERE.md

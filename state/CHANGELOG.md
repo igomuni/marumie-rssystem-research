@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: review Batch-001 Wave 1 S2/S3 integration
+
+- Audited and cherry-picked the two authority-local S2/S3 commits into an isolated review branch, preserving the original branches. Locked source SHA values, full page coverage, JSON/JSONL integrity, unique IDs, zero cross-page/cross-file edges, and independent byte-identical reruns of raw XML, S2 observations, S3 nodes, and S3 edges all passed.
+- Accepted both S2 corpora as reusable source-native observation substrates with documented Poppler bbox-layout gaps and a manifest-only S2/S3 layering defect. The current S3 experiments are retained but are **not authoritative**: the generic header/right-side rules do not establish ledger or nested-table boundaries, inferred membership edges lack supporting observations, and inferred edges omit required profile/ambiguity provenance.
+- S4 is blocked pending a separately scoped `Batch-001 Wave 1 S3 Structural Interpretation Repair Design and Freeze`. No normalization, candidates, financial association, canonical freeze, GT, benchmark, OCR, CSV, MOF, Wave 2, frozen-protocol/profile, source-lock/registry, or production change occurred.
+
 ### research: freeze Batch-001 Wave 1 preflight profiles
 
 - Froze separate A01 Kunaicho and A02 Shugiin canonical-observation profiles after their integrated surveys and predeclared, limited 300-dpi structural inspections. Both retain only grammar-bounded same-page context; cross-page and cross-file inheritance are prohibited.

@@ -1,0 +1,61 @@
+{
+  "artifactType": "batch-001-wave-1-s2-s3-integration-review",
+  "batchId": "batch-001",
+  "wave": 1,
+  "reviewStatus": "COMPLETE",
+  "inputs": {
+    "frozenParentCommit": "210a039dc7131bf52e631746d3c4458a36041748",
+    "authorityCommits": {
+      "batch-001-authority-01": "dab6429025debdb6a4ba64abdd611d87a2ce6d88",
+      "batch-001-authority-02": "0a9e9cbc458018640ae823907d4030cec65cab1c"
+    },
+    "integrationMethod": "audited authority-local cherry-picks into an isolated review branch"
+  },
+  "authorities": [
+    {
+      "batchAuthorityId": "batch-001-authority-01",
+      "authorityId": "kunaicho",
+      "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+      "pageCoverage": {"expected": 33, "observed": 33, "rawXml": 33},
+      "artifactCounts": {"observations": 19442, "nodes": 10497, "edges": 14037},
+      "s2Verdict": "ACCEPT_WITH_DOCUMENTED_OBSERVATION_GAPS",
+      "s3Verdict": "REPAIR_REQUIRED_BEFORE_S4",
+      "reproducibility": {"rerunPerformed": true, "coreArtifactsByteIdentical": true},
+      "samplePages": [4, 5, 6, 11, 19, 32],
+      "findings": [
+        "The raw Poppler XML and S2 JSONL remain separate and byte-reproduced; text/word geometry is source-native, unsorted, and OCR-free.",
+        "The S2 manifest incorrectly embeds S3-derived structuralPartition and remarksSideBlockCount summaries; this is a manifest-layering defect, not contamination of source-observations.jsonl.",
+        "The right-side threshold groups outer-ledger numeric columns with the visually separate remarks-side nested material.",
+        "3544 of 3604 inferred edges have empty supportingObservationIds; all inferred edges omit profileVersion and ambiguityState."
+      ]
+    },
+    {
+      "batchAuthorityId": "batch-001-authority-02",
+      "authorityId": "shugiin",
+      "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+      "pageCoverage": {"expected": 36, "observed": 36, "rawXml": 36},
+      "artifactCounts": {"observations": 17072, "nodes": 8437, "edges": 10361},
+      "s2Verdict": "ACCEPT_WITH_DOCUMENTED_OBSERVATION_GAPS",
+      "s3Verdict": "REPAIR_REQUIRED_BEFORE_S4",
+      "reproducibility": {"rerunPerformed": true, "coreArtifactsByteIdentical": true},
+      "samplePages": [4, 5, 6, 17, 20, 35],
+      "findings": [
+        "The historical landing-page caveat remains provenance metadata only; locked bytes and S2 coverage reproduce exactly.",
+        "The S2 manifest has the same S3-summary layering defect as A01, while source-observations.jsonl remains source-observation-only.",
+        "The generic remarksRegion does not represent the framed local 百万円 tables as bounded distinct structures from the outer 千円 ledger.",
+        "1928 of 1994 inferred edges have empty supportingObservationIds; all inferred edges omit profileVersion and ambiguityState."
+      ]
+    }
+  ],
+  "crossBoundaryChecks": {
+    "crossPageEdges": 0,
+    "crossFileEdges": 0,
+    "semanticCandidatesCreated": false,
+    "financialObservationsCreated": false,
+    "normalizationRun": false,
+    "canonicalFreezeRun": false
+  },
+  "s4Readiness": "NOT_AUTHORIZED",
+  "protocolOrProfileAmendmentRequired": false,
+  "nextRecommendedTask": "Batch-001 Wave 1 S3 Structural Interpretation Repair Design and Freeze"
+}
