@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-authority-source-survey",
+  "batchId": "batch-001",
+  "batchAuthorityId": "batch-001-authority-02",
+  "authorityId": "shugiin",
+  "authorityName": "衆議院",
+  "stage": "source_survey",
+  "sourceDiscovery": {
+    "officialLandingPage": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/osirase/kaikei-gaisan.html",
+    "landingRetrievedAt": "2026-09-29T19:30:22+09:00",
+    "landingHttpStatus": 200,
+    "provenanceObservation": "The current official landing page is titled 概算要求書等の公表について; the FY2024 direct file was not confirmed from its current listing during this survey."
+  },
+  "officialSources": [
+    {
+      "sourceId": "shugiin-fy2024-general-account-expenditure-request",
+      "classification": "canonical",
+      "title": "令和6年度歳出概算要求書",
+      "directFileUrl": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/osirase/kaikei-saishutsugaisan6.pdf/$File/kaikei-saishutsugaisan6.pdf",
+      "retrievedAt": "2026-09-29T19:30:22+09:00",
+      "httpStatus": 200,
+      "mimeType": "application/pdf",
+      "byteSize": 68050,
+      "sha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+      "pageCount": 36,
+      "acquisitionMethod": "plain curl retrieval into isolated worktree; SHA-256 compared with existing source lock",
+      "sourceLockStatus": "already_locked_and_reverified"
+    }
+  ],
+  "canonicalSourceDecision": {
+    "sourceId": "shugiin-fy2024-general-account-expenditure-request",
+    "decision": "canonical single-file request source for authority-02, with archival-discovery caveat",
+    "basis": ["official 衆議院 domain direct file", "FY2024 internal title", "reacquired bytes match existing lock", "existing registry provenance"],
+    "caveat": "The current official landing page was available but did not itself establish the historical FY2024 direct-link placement during this survey.",
+    "lockBoundary": "already_locked; source-lock.json and source-registry.csv were not changed"
+  },
+  "package": {
+    "topology": "single_pdf_for_authority-02",
+    "canonicalFileCount": 1,
+    "canonicalPageCount": 36,
+    "crossFileContinuation": "not_applicable_for_the_single_canonical_authority-02_file"
+  },
+  "representation": {
+    "classification": "native_text_pdf",
+    "pdfVersion": "1.3",
+    "producer": "List Creator",
+    "encrypted": false,
+    "pageGeometry": "A4 landscape, 842 x 595 points, rotation 0",
+    "fontObservation": "CID TrueType resources, including embedded subset font, reported by pdffonts",
+    "imageObjectObservation": "pdfimages -list reported no raster image objects",
+    "textPresenceCoverage": "pdftotext produced non-empty text on every page; three separator pages contain only a form-feed-sized extraction"
+  },
+  "grammar": {
+    "observed": ["cover/contents", "summary table", "standard expenditure ledger", "remarks-side explanatory and nested tables"],
+    "sampledLocators": ["pdfPageIndex 0 cover/contents", "pdfPageIndex 2 detail contents", "pdfPageIndex 6 first detailed ledger page", "pdfPageIndex 17 interior ledger sample", "pdfPageIndex 35 last ledger sample"],
+    "notClaimed": "No exhaustive visual grammar classification of all pages was performed."
+  },
+  "context": {
+    "observed": ["authority and ledger title on opening detailed page", "printed prefix 国（衆） on sampled detail pages", "main ledger columns including request-number and matter region", "remarks-side material can contain nested tables"],
+    "crossPage": "printed prefix and ledger header were observed on sampled interior/end pages; safe inheritance rule is deferred to preflight",
+    "crossFile": "not_applicable_for_canonical single-file source"
+  },
+  "units": {
+    "observed": "（単位：千円） is visible on the sampled opening detailed-ledger page (pdfPageIndex 6); page-level text census also observed 千円 on multiple later pages",
+    "scope": "multiple declarations are observed, but a safe main-ledger unit inheritance rule is deferred to preflight",
+    "localUnitRisk": "remarks-side nested tables visibly carry local million-yen tables on sampled later pages"
+  },
+  "inspectionCoverage": {
+    "exhaustive": ["reacquired canonical-file SHA-256", "PDF metadata/page count/fonts/image-object listing", "per-page text-presence census across 36 pages"],
+    "visualSample": ["pdfPageIndex 0, 1, 6, 17, 35 at 180 dpi"],
+    "notInspected": ["full-page visual census", "candidate-row enumeration", "semantic extraction", "Ground Truth transcription"]
+  },
+  "incidentalExposure": "Representative ledger rows, numeric cells, and remarks-side values were visible during structural inspection. None was enumerated, selected, normalized, or recorded as Ground Truth.",
+  "admissibility": {
+    "status": "ADMISSIBLE_WITH_CAVEATS",
+    "reason": "Official-domain direct PDF, FY2024 internal identity, locked canonical bytes, single-file boundary, and inspectable structure are established.",
+    "caveat": "Current landing-page archival linkage to the FY2024 direct file was not established in this survey; preserve direct-file and lock provenance through preflight.",
+    "notAnExtractionVerdict": true
+  },
+  "sourceLockStatus": {"status": "already_locked", "verified": true, "registryChanged": false, "lockChanged": false},
+  "preflightHandoff": ["freeze grammar partitions and main-ledger versus remarks-side boundary", "define context lookup and continuation policy", "define unit scope without borrowing local million-yen-table units", "preserve direct-file provenance caveat"],
+  "nextRequiredStage": "Wave 1 Source Survey Integration + Preflight Profile Freeze preparation"
+}
