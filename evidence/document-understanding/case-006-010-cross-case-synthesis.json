@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "cross-case-synthesis",
+  "scope": ["case-006", "case-007", "case-008", "case-009", "case-010"],
+  "basis": "Committed frozen pilot artifacts on main at 10cd45a29a080f64280ab46fb05763adb31e41b3; no new source inspection or experiment.",
+  "cases": [
+    {
+      "caseId": "case-006",
+      "authority": "MOJ",
+      "source": {"topology": "single combined PDF", "pages": 737, "representation": "zero extractable text; vector-path mechanism sampled", "canonicalBytes": "locked"},
+      "selection": {"outcome": "selected", "profile": "single physical standard-ledger row"},
+      "groundTruth": {"status": "frozen; direct visual provenance; arithmetic pass"},
+      "benchmark": {"status": "benchmarked", "scores": {"pdfjs-baseline": "2/11", "pymupdf-baseline": "2/11", "docling": "2/11"}, "earliestFailure": {"pdfjs-baseline": "representation/text extraction", "pymupdf-baseline": "representation/text extraction", "docling": "table/grid association after pre-existing OCR signal"}},
+      "provenance": {"sourceSurveyCommit": "b4a9cd211a849bfdcdd9f5abbd93c4e14d39e042", "selectionProtocolCommit": "7ef22502ab8dce9adc03615c939754f26f80ae16", "selectionCommit": "e2253eeb6179c6780eb8924460747f837912d6f4", "groundTruthCommit": "952a0c18118795ec6d326953c6a2c8f7bcaa9182", "benchmarkCommit": "91b6b514fc4ea8eb02c0306f62a3c79ef7d60a55"}
+    },
+    {
+      "caseId": "case-007",
+      "authority": "CAS",
+      "source": {"topology": "official multi-file package", "detailUniverse": "locked detail-01, 2 pages", "representation": "native text", "context": "file-scoped organization; item blocks can continue"},
+      "selection": {"outcome": "NULL", "rowsEvaluated": 14, "reason": "request/expense rows have no same-row amount triple; descendant hierarchy is variable and source association is not unique"},
+      "groundTruth": {"status": "not_created"},
+      "benchmark": {"status": "not_benchmarked"},
+      "provenance": {"sourceSurveyCommit": "211213cd84d347bfbc76a2b8a3a61cab914043da", "selectionProtocolCommit": "2cc08219b3cc9cfa50bf50875166dbfefa420300", "selectionCommit": "f530846b670168cff95ebc959f8716e87d77c676", "structuralReviewCommit": "34021737be975e7f515ae5f13f8519412624a89c"}
+    },
+    {
+      "caseId": "case-008",
+      "authority": "Courts",
+      "source": {"topology": "single combined PDF", "pages": 127, "representation": "native text", "grammar": "standard ledger plus staffing and policy-framework sections", "canonicalBytes": "locked"},
+      "selection": {"outcome": "selected", "profile": "standard-ledger-only single physical row"},
+      "groundTruth": {"status": "frozen; direct visual provenance; arithmetic pass"},
+      "benchmark": {"status": "benchmarked", "scores": {"pdfjs-baseline": "10/11", "pymupdf-baseline": "10/11", "docling": "3/11"}, "earliestFailure": {"pdfjs-baseline": "candidate resolution", "pymupdf-baseline": "candidate resolution", "docling": "table/grid association"}},
+      "causalFinding": {"multiGrammarInterference": "not_demonstrated"},
+      "provenance": {"sourceSurveyCommit": "e10d56c529ce9c8197f71dd71df32297ea3675fb", "selectionProtocolCommit": "3cf4a4f23f036c96cae6852f97a8a17801725299", "selectionCommit": "0ccea62537dea8b97e2792a4ced1f70bd5f95f85", "groundTruthCommit": "55bda2319c761745debcab1df9bc2921b541fabe", "benchmarkCommit": "ec69188d3dcd11342acfe9256f946be23298f1b5"}
+    },
+    {
+      "caseId": "case-009",
+      "authority": "CAO",
+      "source": {"topology": "51-file official package; 50 detail files", "pages": 394, "representation": "native text", "context": "file identity is a context-bearing scope partition"},
+      "selection": {"outcome": "selected", "sourceAdmissibility": "only already-locked detail 1.pdf was canonical for selection/GT"},
+      "groundTruth": {"status": "frozen; direct visual provenance; arithmetic pass"},
+      "benchmark": {"status": "benchmarked", "scores": {"pdfjs-baseline": "10/11", "pymupdf-baseline": "10/11", "docling": "8/11"}, "earliestFailure": {"pdfjs-baseline": "candidate resolution", "pymupdf-baseline": "candidate resolution", "docling": "table/row association"}},
+      "causalFinding": {"packageInterference": "not_demonstrated"},
+      "provenance": {"sourceSurveyCommit": "e640dc21c5bf536ab5ca40b20ed4b3ea8b2b3c11", "selectionProtocolCommit": "d42b7b89f2671c8e9cad04b75116fbd7b64b7af6", "selectionCommit": "985f77ed1ffa3cd29ae9e5b90f2b5de8fa74b969", "groundTruthCommit": "0d238d247d76d99c986541c6b8fa5ca03551ef3a", "benchmarkCommit": "199ef50b56a9629d285ae7d3ed2b86502509f7e4"}
+    },
+    {
+      "caseId": "case-010",
+      "authority": "MHLW",
+      "source": {"topology": "single combined PDF", "pages": 1723, "representation": "native text", "grammar": "cross-reference summary plus standard ledger with remarks-side embedded structures"},
+      "selection": {"outcome": "selected", "profile": "main-ledger-only single physical row"},
+      "groundTruth": {"status": "frozen; direct visual provenance; arithmetic pass"},
+      "benchmark": {"status": "benchmarked", "scores": {"pdfjs-baseline": "10/11", "pymupdf-baseline": "10/11", "docling": "3/11"}, "earliestFailure": {"pdfjs-baseline": "candidate resolution", "pymupdf-baseline": "candidate resolution", "docling": "table/row association"}},
+      "causalFinding": {"scaleInterference": "not_demonstrated", "embeddedStructureInterference": "not_demonstrated"},
+      "provenance": {"sourceSurveyCommit": "cc5115b80076159dc58570fb9fa4e7d7267a14f5", "selectionProtocolCommit": "2f910f218a35a776d57d32c30f10322b0b945209", "selectionCommit": "4b98acea75c4abad9b4086ecd76a3c3261b1bab5", "groundTruthCommit": "ce985191d02993584fe3c99716691fa7013983d9", "benchmarkCommit": "e6d17e61f1e429afb0a19b358ce63309094ada33"}
+    }
+  ],
+  "crossCasePatterns": [
+    {"classification": "bounded_generalization", "statement": "All four benchmarked pilots preserved raw/normalized/evaluation evidence and performed an identical-condition reproducibility rerun; this is evidence about these four pilots, not a population rate."},
+    {"classification": "cross_case_pattern", "statement": "In 3 of 3 native-text benchmarked pilots (008–010), pdf.js and PyMuPDF retained the correct item among candidates and recovered target expense/triple while failing unique item resolution, yielding 10/11."},
+    {"classification": "cross_case_pattern", "statement": "Docling failures are all structural/association-family failures in the observed pilots, but raw mechanisms and scores differ; a universal Docling failure mechanism is not established."}
+  ],
+  "negativeFindings": [
+    {"caseId": "case-008", "finding": "non-target multi-grammar causal interference not demonstrated"},
+    {"caseId": "case-009", "finding": "51-file package causal benchmark interference not demonstrated"},
+    {"caseId": "case-010", "finding": "1723-page scale causal benchmark interference not demonstrated"},
+    {"caseId": "case-010", "finding": "embedded remarks-side causal interference not demonstrated"}
+  ],
+  "batchReadiness": {"verdict": "GO WITH GUARDRAILS", "primaryGoalRecommendation": "benchmark-comparability batch first", "recommendedInitialBatchSize": "5-8 authorities"},
+  "unresolved": ["deep-hierarchy multi-row semantic Ground Truth", "globally safe unique-item resolution", "profile-specific evaluator extensions", "causal contribution of embedded structures to table reconstruction"]
+}

@@ -2,6 +2,7 @@
 
 ## Next
 
+- **Batch Experiment Protocol Freeze (recommended; not started).** Use the completed Case-006–010 cross-case synthesis to propose global provenance/stage/NULL/GT invariants and per-authority source/grammar/context/unit preflight parameters. Do not select Batch-001 authorities or begin batch execution until this protocol is separately frozen.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

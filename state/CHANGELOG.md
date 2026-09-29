@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### research: synthesize Case-006 through Case-010 pilots
+
+- Added a committed-evidence-only cross-case synthesis and machine-readable companion evidence for the completed purposive Case-006–010 pilot sequence.
+- Classified batch-transition findings into global invariant candidates, per-authority parameters/preflight requirements, and RED unresolved items. The resulting recommendation is **GO WITH GUARDRAILS** toward a separate Batch Experiment Protocol Freeze; Batch-001 authority selection and execution remain unstarted.
+- Preserved Case-007 as a first-class NULL structural counterexample: its deep hierarchy must not be silently forced into the existing single-row benchmark model.
+- No source acquisition, GT, benchmark, OCR experiment, parser/normalizer/evaluator change, source-lock/registry change, or frozen-artifact modification was performed.
+
 ### research: close Case-010 frozen baseline
 
 - **Closeout/audit only.** Verified the complete Survey → Protocol → Selection → GT → Benchmark chronology and byte identity of every frozen Case-010 artifact. The locked 1,723-page MHLW source SHA remains unchanged; Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production code remain unchanged.
