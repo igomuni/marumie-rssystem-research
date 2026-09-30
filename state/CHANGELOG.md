@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### research: independently review Wave 1 S4 normalization contract
+
+- Rejected frozen S4 normalization contract v1: recursively open nested schema objects permit hidden downstream semantics and material output/state/rule/order choices remain undefined. S4 stage authorization and entry freeze v2 remain valid; real-data normalization remains prohibited.
+
 ### research: freeze Batch-001 Wave 1 S4 normalization contract
 
 - Froze `batch-001-wave-1-s4-normalization-v1` / `s4n1` as a source-faithful lexical normalization contract, closed record schema, synthetic vectors, and a static design-side audit pinned to S4 entry freeze v2.

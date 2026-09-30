@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S4 Normalization Contract Independent Review and Execution Gate (recommended; not started).** Independently review the frozen `s4n1` lexical contract, schema, and synthetic vectors against S4 entry freeze v2. Do not normalize real data until the reviewed contract chain is integrated and an execution entry point is separately recorded.
+- **Batch-001 Wave 1 S4 Normalization Contract v2 Repair (required; not started).** Create a separately versioned repair that closes recursive schema, exact object, state/disposition, rule-ID, whitespace, and record-order defects identified in the independent v1 review. Preserve rejected v1 unchanged and do not normalize real data.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

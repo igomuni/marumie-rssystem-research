@@ -1,0 +1,27 @@
+{
+  "artifactType":"batch-001-wave-1-s4-normalization-contract-independent-review",
+  "canonicalCommitObservedAtReviewStart":"38f29ba8af4d2cd8a9795895726d5f7a06373490",
+  "executionGateRecommendation":"BLOCKED_CONTRACT_REPAIR_REQUIRED",
+  "independentReviewProcedure":{"bytes":5233,"path":"evidence/document-understanding/batch-001/audit-wave-1-s4-normalization-contract-independent-review.py","sha256":"7f17597c984444810d46cde9ecf9c6e2fabaaff4503e5b7b9689423ecfebec36"},
+  "pinnedReviewedArtifacts":[
+    {"path":"fixtures/document-understanding/batch-001/s4-normalization-contract-v1.json","sha256":"62a23c72700f8acff144ff7bf8fa49136843195ed5dcb9ef6af1e02ee0c7731c"},
+    {"path":"fixtures/document-understanding/batch-001/s4-normalization-record-schema-v1.json","sha256":"8952dbbb8cb867be34455f0b14d9ae1e02be36e8af8ac9a121a62620f14342d1"},
+    {"path":"fixtures/document-understanding/batch-001/s4-normalization-test-vectors-v1.json","sha256":"3e27d10fb5a13eca99e89cad6e7219468499ac15e0e6856783a06a54f9c1eab4"},
+    {"path":"evidence/document-understanding/batch-001/wave-1-s4-normalization-contract-freeze.json","sha256":"81448edc3f3108810f9911b73ed00b3b857f4fe2497eb8f7e4db7afd4d89708c"},
+    {"path":"evidence/document-understanding/batch-001/audit-wave-1-s4-normalization-contract-freeze.py","sha256":"4cb696a425e25c8d94da276e11b4ecb15369c1f4f7e4657f45cb6d44d96a4481"},
+    {"path":"fixtures/document-understanding/canonical-semantic-extraction/20260929_1801_Canonical_Semantic_Extraction_Protocol.md","sha256":"c2394d1fc95d8013b2aada5c85bc125d65688e58f5490b420ed41aebdc87dadb"},
+    {"path":"evidence/document-understanding/batch-001/wave-1-s4-entry-freeze-v2.json","sha256":"dc647bfd65f9bcf8cd48a10bee4b59f348a652acbdb0c850fbf46e09266b10d0"},
+    {"path":"evidence/document-understanding/batch-001/audit-wave-1-s4-entry-freeze-v2.py","sha256":"7b5bb6844b5055827febe0c1f3213dd685957e363542c73ce71b906d8e50bd61"},
+    {"path":"fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/authority-preflight-profile.json","sha256":"df9871702ec5724faa4dd8f0419211e37e8a4319e9491681023e8b92445c6c79"},
+    {"path":"fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/authority-preflight-profile.json","sha256":"c71bdaa92932a86098e33230ae792f76a327d5897bcb1d965cfbd08df471600a"}
+  ],
+  "reviewedBranch":"research/batch-001-wave1-s4-normalization-contract-freeze",
+  "reviewedCommit":"0a3f47509b5a6365921b8001addf6a7babef8cfa",
+  "results":{"knownAnswerStableIds":{"pass":true,"vectors":3},"numericGrammar":{"pass":true},"realDataExecution":{"pass":true,"s4NormalizedOutputDirectories":0},"syntheticVectors":{"count":22,"pass":true},"unicode":{"pass":true},"unitGrammar":{"pass":true}},
+  "blockingFindings":["recursive_schema_objects_allow_hidden_semantic_fields","exact_output_object_shapes_and_disposition_vocabulary_undefined","source_state_kind_and_disposition_combinations_not_closed","applied_rule_ids_not_closed_or_semantically_bound","unsupported_word_whitespace_has_no_exact_output_disposition","record_order_native_source_order_tuple_not_formally_defined"],
+  "designAuditCoverageFindings":["self_consistency_not_known_answer_stable_id","negative_assertions_not_executed","no_recursive_schema_closure_test","no_state_disposition_closure_test","no_exact_nested_object_shape_test","no_record_order_construction_test"],
+  "nextTask":"Batch-001 Wave 1 S4 Normalization Contract v2 Repair",
+  "realDataExecutionAuthorization":"NOT_AUTHORIZED_PENDING_CONTRACT_REPAIR",
+  "schemaVersion":1,
+  "verdict":"REJECTED"
+}
