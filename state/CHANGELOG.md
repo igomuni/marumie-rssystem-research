@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: freeze Batch-001 Wave 1 S4 normalization contract
+
+- Froze `batch-001-wave-1-s4-normalization-v1` / `s4n1` as a source-faithful lexical normalization contract, closed record schema, synthetic vectors, and a static design-side audit pinned to S4 entry freeze v2.
+- The contract is pending independent review; S4 remains authorized at the stage level but real-data normalization is not authorized and has not started. No S5--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source/frozen-contract mutation, canonical merge, or production adaptation occurred.
+
 ### research: repair Wave 1 S4 entry freeze completeness
 
 - Preserved incomplete v1 and created byte-complete v2 S4 entry freeze/verifier covering S2, accepted v4 S3, profiles, contracts, procedures, and acceptance evidence. This repairs freeze provenance only, not S3 or integration history.

@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 Repaired S3 Integration and S4 Entry Freeze — A01 and A02 (recommended; not started).** Integrate the independently accepted v4 provenance chain into the canonical parent, verify hashes, and freeze the exact S3 input boundary for authorized S4. Do not execute normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2 in the integration/freeze task.
+- **Batch-001 Wave 1 S4 Normalization Contract Independent Review and Execution Gate (recommended; not started).** Independently review the frozen `s4n1` lexical contract, schema, and synthetic vectors against S4 entry freeze v2. Do not normalize real data until the reviewed contract chain is integrated and an execution entry point is separately recorded.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

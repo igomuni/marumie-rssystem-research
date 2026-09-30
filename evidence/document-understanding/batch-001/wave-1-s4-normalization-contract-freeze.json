@@ -1,0 +1,20 @@
+{
+  "artifactType": "batch-001-wave-1-s4-normalization-contract-freeze",
+  "baseCommit": "38f29ba8af4d2cd8a9795895726d5f7a06373490",
+  "contractVersion": "batch-001-wave-1-s4-normalization-v1",
+  "namespace": "s4n1",
+  "pinned": [
+    {"bytes":9892,"path":"evidence/document-understanding/batch-001/wave-1-s4-entry-freeze-v2.json","role":"frozen_s4_entry_boundary","sha256":"dc647bfd65f9bcf8cd48a10bee4b59f348a652acbdb0c850fbf46e09266b10d0"},
+    {"bytes":10755,"path":"fixtures/document-understanding/canonical-semantic-extraction/20260929_1801_Canonical_Semantic_Extraction_Protocol.md","role":"governing_protocol","sha256":"c2394d1fc95d8013b2aada5c85bc125d65688e58f5490b420ed41aebdc87dadb"},
+    {"bytes":3924,"path":"fixtures/document-understanding/batch-001/s4-normalization-contract-v1.json","role":"frozen_contract","sha256":"62a23c72700f8acff144ff7bf8fa49136843195ed5dcb9ef6af1e02ee0c7731c"},
+    {"bytes":1527,"path":"fixtures/document-understanding/batch-001/s4-normalization-record-schema-v1.json","role":"frozen_output_schema","sha256":"8952dbbb8cb867be34455f0b14d9ae1e02be36e8af8ac9a121a62620f14342d1"},
+    {"bytes":1421,"path":"fixtures/document-understanding/batch-001/s4-normalization-test-vectors-v1.json","role":"synthetic_conformance_vectors","sha256":"3e27d10fb5a13eca99e89cad6e7219468499ac15e0e6856783a06a54f9c1eab4"},
+    {"bytes":6099,"path":"evidence/document-understanding/batch-001/audit-wave-1-s4-normalization-contract-freeze.py","role":"design_side_static_and_synthetic_audit","sha256":"4cb696a425e25c8d94da276e11b4ecb15369c1f4f7e4657f45cb6d44d96a4481"},
+    {"authority":"authority-01-kunaicho","bytes":5316,"path":"fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/authority-preflight-profile.json","role":"authority_boundary","sha256":"df9871702ec5724faa4dd8f0419211e37e8a4319e9491681023e8b92445c6c79"},
+    {"authority":"authority-02-shugiin","bytes":5579,"path":"fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/authority-preflight-profile.json","role":"authority_boundary","sha256":"c71bdaa92932a86098e33230ae792f76a327d5897bcb1d965cfbd08df471600a"}
+  ],
+  "realDataExecutionAuthorization":"NOT_AUTHORIZED_PENDING_CONTRACT_REVIEW",
+  "s4":{"entryBoundary":"FROZEN_V2","execution":"NOT_STARTED","stageAuthorization":"AUTHORIZED"},
+  "schemaVersion":1,
+  "status":"FROZEN_PENDING_INDEPENDENT_REVIEW"
+}

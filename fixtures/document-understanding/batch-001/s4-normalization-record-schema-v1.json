@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "appliedRuleIds": {"items": {"type": "string"}, "type": "array", "uniqueItems": true},
+    "authorityId": {"type": "string"}, "contractVersion": {"const": "batch-001-wave-1-s4-normalization-v1"},
+    "fileId": {"type": "string"}, "lineJoinPolicy": {"const": "preserve_observation_and_token_boundaries_v1"},
+    "normalizationDisposition": {"type": "string"}, "normalizationId": {"pattern": "^s4n1-[0-9a-f]{64}$", "type": "string"},
+    "normalizedText": {"type": ["string", "null"]},
+    "numericLexeme": {"type": ["object", "null"]}, "pdfPageIndex": {"minimum": 0, "type": "integer"},
+    "provenance": {"type": "object"}, "raw": {"type": "object"}, "schemaVersion": {"const": 1},
+    "sourceObservationId": {"type": "string"}, "sourceObservationKind": {"type": "string"}, "sourceOrder": {"type": "object"}, "sourceSha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "sourceState": {"type": "string"}, "stage": {"const": "S4"}, "unitLexeme": {"type": ["object", "null"]}
+  },
+  "required": ["schemaVersion", "stage", "contractVersion", "normalizationId", "authorityId", "sourceSha256", "fileId", "pdfPageIndex", "sourceObservationId", "sourceObservationKind", "sourceState", "sourceOrder", "raw", "normalizationDisposition", "normalizedText", "appliedRuleIds", "numericLexeme", "unitLexeme", "lineJoinPolicy", "provenance"],
+  "title": "Batch-001 Wave-1 S4 normalization record v1", "type": "object"
+}

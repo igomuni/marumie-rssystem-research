@@ -1,0 +1,12 @@
+{
+  "contractVersion": "batch-001-wave-1-s4-normalization-v1",
+  "vectors": [
+    {"rawText":"①","expectedText":"1"},{"rawText":"⑳","expectedText":"20"},{"rawText":"㉑","expectedText":"21"},{"rawText":"㊿","expectedText":"50"},{"rawText":"⓪","expectedText":"0"},
+    {"rawText":"０１－９５","expectedText":"01-95","numeric":null},{"rawText":"１，２３４","expectedNumeric":"1234","expectedText":"1,234"},{"rawText":"△１，２３４","expectedNumeric":"-1234","expectedSign":"△","expectedText":"△1,234"},{"rawText":"▲1,234","expectedNumeric":"-1234"},{"rawText":"−123","expectedNumeric":"-123"},{"rawText":"1,23","numeric":null},{"rawText":"01-95","numeric":null},
+    {"rawText":"（単位：千円）","unitCode":"JPY_THOUSAND"},{"rawText":"(単位:千円)","unitCode":"JPY_THOUSAND"},{"rawText":"（単位：百万円）","unitCode":"JPY_MILLION"},{"rawText":"百万円","unitCode":"JPY_MILLION"},
+    {"rawText":"皇室費","expectedText":"皇室費"},{"rawText":"Ａ","expectedText":"Ａ"},{"rawText":"㍑","expectedText":"㍑"},{"rawText":"a  b","expectedText":"a  b"},
+    {"rawText":"","sourceState":"observed_blank","expectedText":null},{"rawText":null,"sourceState":"unknown","expectedText":null}
+  ],
+  "negativeAssertions": ["no_global_unicode_normalization", "no_malformed_comma_repair", "no_unit_propagation", "no_line_joining", "no_candidate_derivation"],
+  "schemaVersion": 1
+}
