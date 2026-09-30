@@ -1,0 +1,36 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v2-execution-manifest",
+  "authorityId": "shugiin",
+  "documentContainmentOmittedFromPageScopedGraph": true,
+  "executionRevision": "v2",
+  "idPolicy": {
+    "edgePrimitive": "edge:contains",
+    "nodeAndEdgeInputs": [
+      "specVersion",
+      "sourceSha256",
+      "fileId",
+      "pdfPageIndex",
+      "structural primitive type",
+      "inferenceRule",
+      "sorted supportingObservationIds"
+    ],
+    "parentOrChildIdsExcluded": true
+  },
+  "namespace": "s3r1",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py",
+    "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5"
+  },
+  "profileVersion": "batch-001-wave-1-a02-v1",
+  "schemaVersion": 1,
+  "serialization": {
+    "absolutePathsExcluded": true,
+    "encoding": "UTF-8",
+    "jsonKeyOrder": "sorted",
+    "newlines": "LF",
+    "recordOrder": "stable ID ascending"
+  },
+  "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "v1OutputPreserved": true
+}

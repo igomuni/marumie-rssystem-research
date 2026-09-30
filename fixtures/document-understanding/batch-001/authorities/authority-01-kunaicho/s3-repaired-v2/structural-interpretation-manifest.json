@@ -1,0 +1,240 @@
+{
+  "a01NestedCandidateAudit": [
+    {
+      "blockObservationId": "s2s3-4d2331bc1132742d590ab563",
+      "nodeId": "s3r1-nestedStructure-58401aad68ab019694e1",
+      "pdfPageIndex": 6,
+      "reason": "header-and-row-cluster-rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "nestedStructure"
+    }
+  ],
+  "artifactType": "batch-001-wave-1-s3-repaired-v2-manifest",
+  "authorityId": "kunaicho",
+  "canonicalFreezeStatus": "not_created",
+  "countsByStructuralStatus": {
+    "source_observed": 33,
+    "structurally_supported": 21,
+    "unclassified": 13
+  },
+  "crossFileInferredStructuralEdgeCount": 0,
+  "crossPageInferredStructuralEdgeCount": 0,
+  "documentMembershipEdgeCount": 0,
+  "edgeCount": 34,
+  "financialAssociationStatus": "not_created",
+  "inputSourceObservations": {
+    "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-observations.jsonl",
+    "sha256": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1"
+  },
+  "namespace": "s3r1",
+  "nodeCount": 67,
+  "normalizationStatus": "not_created",
+  "outerLocalUnitInheritanceEdgeCount": 0,
+  "pageSummaries": [
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-cd7abd5a83da6680a1b9",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 0
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-5c9394b8fa937d7d5e94",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 1
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-fbbe8e1ebeb5cf52ffa7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 2
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-05011463ef1d67149d3c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 3
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f21073d58485a8ecb99b",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 4
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-48a8c4683f68a7f4a471",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 5
+    },
+    {
+      "localOrNestedGroupCount": 1,
+      "outerPartitionNodeId": "s3r1-outerLedger-edf49b293274f5900352",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 6
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-da6e9c08e28d968df068",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 7
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-179813592b396ae59a1d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 8
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-4b3154c6912febff80f9",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 9
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-4c8ba3db1946501088b7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 10
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-a4ba5513ce22c6aca555",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 11
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-bba8bdd4f7eab5a07003",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 12
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9523fe3bf7cd9295360a",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 13
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-dfa6bad6dcfb22d5358d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 14
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-be37d06750914dedfd6a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 15
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-3e601a7c59615cb3d64b",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 16
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ee5a1e0a1d5da4f2f9a0",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 17
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b0dcc82892983d2612c4",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 18
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-93b7c5fbce6e12e02a1d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 19
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-0033282dabc4ae35e7b4",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 20
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-2453f226aba0607a4af0",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 21
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-dfd72ca693cb08a3592a",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 22
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-07eb4bf0177a3d86c955",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 23
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-38c9ab9c0915a4ebe772",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 24
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-2e47d02e529ecf209e03",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 25
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-6c3ed7907e83cf5b9653",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 26
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6e98b7112d559171194a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 27
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9598717c9cd563ee47b6",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 28
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ecb1f82f45f7d977244e",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 29
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b26895a9333bff0f63a8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 30
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-0f3fef968f5e0af63faa",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 31
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-81710e9ce34ca5198f92",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 32
+    }
+  ],
+  "profileVersion": "batch-001-wave-1-a01-v1",
+  "schemaVersion": 1,
+  "semanticCandidateStatus": "not_created",
+  "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "stage": "S3_REPAIRED_V2",
+  "stageStatus": "COMPLETE_NOT_CANONICAL_FROZEN"
+}

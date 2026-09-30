@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v1-v2-comparison",
+  "v1Commit": "509cc4236a410d4434a5c500cea464e73db9f787",
+  "v2BaseCommit": "97bce801b1e069fd075d275cadd2aca0bf47a688",
+  "comparisonIsNotAcceptance": true,
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "v1": {"nodes": 68, "edges": 67},
+      "v2": {"nodes": 67, "edges": 34},
+      "changedOuterPartitionPages": [{"pdfPageIndex": 30, "v1": "unclassifiedStructure", "v2": "outerLedger", "reason": "header_cluster_evidence_now_closed"}],
+      "structuralDifferenceReasons": ["source_order_locator_repair_only", "document_scope_removed_from_structural_graph", "header_cluster_evidence_now_closed", "edge_id_direct_tuple_reconstruction"]
+    },
+    {
+      "authorityId": "shugiin",
+      "v1": {"nodes": 96, "edges": 95},
+      "v2": {"nodes": 95, "edges": 59},
+      "changedOuterPartitionPages": [
+        {"pdfPageIndex": 15, "v1": "unclassifiedStructure", "v2": "outerLedger", "reason": "header_cluster_evidence_now_closed"},
+        {"pdfPageIndex": 24, "v1": "unclassifiedStructure", "v2": "outerLedger", "reason": "header_cluster_evidence_now_closed"}
+      ],
+      "structuralDifferenceReasons": ["source_order_locator_repair_only", "document_scope_removed_from_structural_graph", "header_cluster_evidence_now_closed", "edge_id_direct_tuple_reconstruction"]
+    }
+  ],
+  "v1PreservedByteIdentical": true,
+  "interpretation": "Counts and classifications are execution evidence only. The next independent review decides structural acceptance and S4 authorization."
+}

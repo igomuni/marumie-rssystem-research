@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 repaired S3 review complete; execution v2 required
+Batch-001 Wave 1 repaired S3 execution v2 complete; independent review required
 
 Next action:
-Prepare a separately versioned S3 repair execution v2 that corrects the reviewed evidence-closure, page-scope, x-cluster, and edge-ID defects while preserving all existing baseline and `s3r1` graph artifacts. Normalization remains unauthorized.
+Independently review the separately versioned `s3-repaired-v2` graph against the frozen repair contract. The v2 executor preserved baseline/v1 artifacts, fixed exact source-order/bbox locator closure, page-scope accounting, direct word-level header-to-row cluster evidence, and direct-tuple edge IDs. This execution is not acceptance: normalization remains unauthorized pending the review gate.
 
 Read first:
 - START_HERE.md

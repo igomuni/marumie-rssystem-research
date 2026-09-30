@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: execute Batch-001 Wave 1 S3 repair v2
+
+- Created separately versioned `s3-repaired-v2` evidence under the frozen `s3r1` semantic namespace while retaining all immutable baseline and reviewed v1 output byte-identically. The executor copies each cited S2 source-order and bbox object verbatim, omits synthetic document containment from the page-scoped graph, records direct word-level header-to-row x-cluster evidence, and derives inferred node and edge IDs from the frozen direct tuple.
+- Independent execution audit passed: zero locator source-order/bbox failures, zero endpoint-derived cross-page/cross-file/document-membership/outer-local direct edges, zero direct-tuple ID failures, and no header/row cluster-evidence failures. A scratch-root rerun produced byte-identical core graph artifacts. A02 reconciles all 46 `百万円` text-line observations, preserving 44 as representation-limited rather than forcing promotion.
+- This is execution evidence only. A01/A02 require an independent v2 structural review before S4 may be authorized. No S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract mutation, canonical-parent merge, or production adaptation occurred.
+
 ### research: review Batch-001 Wave 1 S3 repair and gate S4
 
 - Independently audited the `s3r1` repaired execution from immutable S2/raw evidence without importing the executor. Both A01 and A02 are `REPAIR_REQUIRED_BEFORE_S4`; S4 remains unauthorized.

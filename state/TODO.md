@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S3 Repair Execution v2 — A01 and A02 (recommended; not started).** Preserve the reviewed `s3r1` graph and execute a separately versioned repair that restores actual source-order locators, auditable header-to-row x-cluster evidence, correct page-scope accounting, and frozen-tuple edge IDs. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
+- **Batch-001 Wave 1 S3 Repair v2 Review and S4 Authorization Gate — A01 and A02 (recommended; not started).** Independently review the separately versioned `s3-repaired-v2` evidence against the frozen repair contract, including exact locator source-order/bbox closure, endpoint-derived page/file scope, direct word-level header-to-row x-cluster evidence, direct-tuple IDs, outer-header evidence, and every A02 `百万円` treatment. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

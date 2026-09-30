@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v2-execution-review-input",
+  "executionVerdict": "EXECUTION_V2_COMPLETE_WITH_REPRESENTATION_LIMITATIONS_AWAITING_REVIEW",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "namespace": "s3r1",
+  "executionRevision": "v2",
+  "baseCommit": "97bce801b1e069fd075d275cadd2aca0bf47a688",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py",
+    "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5"
+  },
+  "preservation": {
+    "immutableBaselineHashAudit": "pass",
+    "reviewedV1OutputHashAudit": "pass",
+    "frozenSpecProfileAndCommonProtocolUnchanged": true
+  },
+  "authorityResults": [
+    {
+      "authorityId": "kunaicho",
+      "profileVersion": "batch-001-wave-1-a01-v1",
+      "output": {
+        "nodes": 67,
+        "edges": 34,
+        "nodesSha256": "45564b6ef46a4fdef61358c7c07b8c5a9a8d309dd95c303d40d5400c0422288c",
+        "edgesSha256": "7597c1c8fdd0766837e2f4f349482c793ee2c0be059806476263d9a5b43a43dd",
+        "structuralManifestSha256": "f8a0d7297ebc36afd055dfe11ff0d5f9c55108f989d9904367ecbf1e1717a0d2"
+      },
+      "statuses": {"structurally_supported": 21, "unclassified": 13, "source_observed": 33},
+      "ruleReconstruction": {"supportedOuterLedgers": 20, "supportedNestedStructures": 1, "clusterGroupsChecked": 1, "clusterEvidenceFailures": 0},
+      "provenanceClosure": {"locatorCount": 1455, "exactSourceOrderAndBBoxFailures": 0, "directTupleIdRecords": 68, "directTupleIdFailures": 0},
+      "boundaryAudit": {"crossPage": 0, "crossFile": 0, "outerLocalDirectEdges": 0, "documentMembershipEdges": 0}
+    },
+    {
+      "authorityId": "shugiin",
+      "profileVersion": "batch-001-wave-1-a02-v1",
+      "output": {
+        "nodes": 95,
+        "edges": 59,
+        "nodesSha256": "8923c3d70b38d9c5dfb11383b25fcd44522b27872ab91a936f4ad9c912702b7f",
+        "edgesSha256": "42236fbc1d0df56fff72421976539ff0d6f3b1e3ab8e85545228c523dcfc6ff4",
+        "structuralManifestSha256": "e423a1f061963dd938f028a61037746c77778f0ba4f6b98a0c8db7eb6c7ede4a"
+      },
+      "statuses": {"structurally_supported": 38, "unclassified": 21, "source_observed": 36},
+      "ruleReconstruction": {"supportedOuterLedgers": 15, "supportedBoundedLocalTables": 23, "clusterGroupsChecked": 23, "clusterEvidenceFailures": 0},
+      "provenanceClosure": {"locatorCount": 3476, "exactSourceOrderAndBBoxFailures": 0, "directTupleIdRecords": 118, "directTupleIdFailures": 0},
+      "boundaryAudit": {"crossPage": 0, "crossFile": 0, "outerLocalDirectEdges": 0, "documentMembershipEdges": 0},
+      "hyakumanYenReconciliation": {"observedTextLineOccurrences": 46, "memberOfSupportedBoundedLocalTable": 2, "notStructurallyGroupedRepresentationLimited": 44}
+    }
+  ],
+  "deterministicScratchRerun": {
+    "coreArtifactsByteIdentical": true,
+    "artifactsCheckedPerAuthority": ["nodes.jsonl", "edges.jsonl", "structural-interpretation-manifest.json"]
+  },
+  "s4Authorization": "NOT_AUTHORIZED_PENDING_INDEPENDENT_V2_REVIEW",
+  "nextAuthorizedTask": "Batch-001 Wave 1 S3 Repair v2 Review and S4 Authorization Gate"
+}
