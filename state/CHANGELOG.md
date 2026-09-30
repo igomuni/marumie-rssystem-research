@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: execute Batch-001 Wave 1 S3 repair v4
+
+- Created separate `s3-repaired-v4` outputs from immutable S2, retaining complete actual header source-line membership and literal local-band relations in direct support/locators, and using strict observed row-word/header-x overlap only for outer-ledger support.
+- Pinned v3 and transitive v2 helper hashes in effective-procedure provenance. Execution audit, A02's 46-occurrence reconciliation, local/nested regression checks, and byte-identical scratch rerun pass.
+- V4 awaits an independent structural review; S4 remains unauthorized. No S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract mutation, canonical-parent merge, or production adaptation occurred.
+
 ### research: review Batch-001 Wave 1 S3 repair v3 and gate S4
 
 - Independently reviewed `s3-repaired-v3` from immutable S2 without importing an executor or execution audit. Baseline/frozen and v1/v2 preservation, exact locators, endpoint scope, direct-tuple IDs, local/nested cluster evidence, A02's 46-occurrence reconciliation, and scratch rerun all pass.

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v4-execution-review-input",
+  "executionVerdict": "EXECUTION_V4_COMPLETE_AWAITING_INDEPENDENT_REVIEW",
+  "executionRevision": "v4",
+  "baseCommit": "b7c81839873337ab80b20829fffea91e1fcba878",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "namespace": "s3r1",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v4_execution.py",
+    "sha256": "4e16cc758d272c8538731d9b18f6e40f382e90ce054b1509843bbd65ff2c996b",
+    "repositoryLocalDependencies": [
+      {"path": "fixtures/document-understanding/batch-001/s3_repaired_v3_execution.py", "sha256": "0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd", "role": "S2 geometry and frozen local-structure helper access"},
+      {"path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py", "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5", "role": "transitive v3 S2 geometry and local-candidate helper"}
+    ]
+  },
+  "preservation": {"immutableBaseline": "PASS", "reviewedV1V2V3": "PASS", "frozenSpecProfilesProtocolLocksRegistry": "PASS", "v3ReviewArtifacts": "PASS"},
+  "authorities": {
+    "kunaicho": {"nodes": 67, "edges": 34, "types": {"page": 33, "outerLedger": 20, "unclassifiedStructure": 13, "nestedStructure": 1}, "outer": {"supported": 20, "unclassified": 13, "headerSourceLineMembershipFailures": 0, "literalBandFailures": 0, "strictRowWordFailures": 0, "toleranceOnlyMatchesExcludedFromSupport": 0}, "specialPages": {"6": "outerLedger; strict reconstruction found", "30": "outerLedger; actual source-line support retained"}},
+    "shugiin": {"nodes": 95, "edges": 59, "types": {"page": 36, "outerLedger": 15, "unclassifiedStructure": 21, "boundedLocalTable": 23}, "outer": {"supported": 15, "unclassified": 21, "headerSourceLineMembershipFailures": 0, "literalBandFailures": 0, "strictRowWordFailures": 0, "toleranceOnlyMatchesExcludedFromSupport": 0}, "specialPages": {"6": "outerLedger", "15": "outerLedger; actual source-line support retained", "24": "outerLedger; actual source-line support retained"}, "hyakumanYen": {"occurrences": 46, "treatments": {"member_of_supported_boundedLocalTable": 23, "not_structurally_grouped_representation_limited": 23}, "directAnchorTreatmentMismatches": 0, "sharedDirectAnchors": 0, "samePageSupportedTableOverlaps": 0}}
+  },
+  "audit": {"path": "evidence/document-understanding/batch-001/wave-1-s3-repair-v4-execution-audit.json", "locatorFailures": 0, "supportFailures": 0, "boundaryFailures": 0, "directTupleIdFailures": 0, "idCollisions": 0, "localNestedFailures": 0, "effectiveProcedureDependencyHashFailures": 0},
+  "reproducibility": {"scratchRerun": "PASS_BYTE_IDENTICAL"},
+  "s4Status": "NOT_AUTHORIZED_PENDING_INDEPENDENT_V4_REVIEW",
+  "nextAuthorizedTask": "Batch-001 Wave 1 S3 Repair v4 Review and S4 Authorization Gate"
+}

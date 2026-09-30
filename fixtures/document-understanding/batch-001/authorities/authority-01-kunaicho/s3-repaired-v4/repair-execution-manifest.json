@@ -1,0 +1,52 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v4-execution-manifest",
+  "authorityId": "kunaicho",
+  "documentContainmentOmittedFromPageScopedGraph": true,
+  "executionRevision": "v4",
+  "historicalV1V2V3Preserved": true,
+  "idPolicy": {
+    "edgePrimitive": "edge:contains",
+    "nodeAndEdgeInputs": [
+      "specVersion",
+      "sourceSha256",
+      "fileId",
+      "pdfPageIndex",
+      "structural primitive type",
+      "inferenceRule",
+      "sorted supportingObservationIds"
+    ],
+    "parentOrChildIdsExcluded": true
+  },
+  "namespace": "s3r1",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v4_execution.py",
+    "repositoryLocalDependencies": [
+      {
+        "path": "fixtures/document-understanding/batch-001/s3_repaired_v3_execution.py",
+        "role": "S2 geometry and frozen local-structure helper access",
+        "sha256": "0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd"
+      },
+      {
+        "path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py",
+        "role": "transitive v3 S2 geometry and local-candidate helper",
+        "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5"
+      }
+    ],
+    "sha256": "4e16cc758d272c8538731d9b18f6e40f382e90ce054b1509843bbd65ff2c996b"
+  },
+  "profileVersion": "batch-001-wave-1-a01-v1",
+  "runtime": {
+    "ocrUsed": false,
+    "pythonVersion": "3.14.5",
+    "sourceNativeS2Only": true
+  },
+  "schemaVersion": 1,
+  "serialization": {
+    "absolutePathsExcluded": true,
+    "encoding": "UTF-8",
+    "jsonKeyOrder": "sorted",
+    "newlines": "LF",
+    "recordOrder": "stable ID ascending"
+  },
+  "specVersion": "batch-001-wave-1-s3-repair-v1"
+}

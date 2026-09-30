@@ -1,0 +1,243 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v4-execution-audit",
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "boundaryFailures": [],
+      "edges": 34,
+      "effectiveProcedureDependenciesPinned": 2,
+      "effectiveProcedureDependencyHashFailures": [],
+      "idFailures": [],
+      "immutableBaselineHashPass": true,
+      "localFailures": [],
+      "locatorFailures": [],
+      "nodeTypes": {
+        "nestedStructure": 1,
+        "outerLedger": 20,
+        "page": 33,
+        "unclassifiedStructure": 13
+      },
+      "nodes": 67,
+      "outerAudit": [
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-0a26742c87f4277acb51",
+          "pdfPageIndex": 14
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-0f68cad941e6eed5b50d",
+          "pdfPageIndex": 28
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-158f30c0e825030e88d8",
+          "pdfPageIndex": 31
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-2b6d671a874d412cdd3f",
+          "pdfPageIndex": 7
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-30b479a06b972370eb53",
+          "pdfPageIndex": 9
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-5d5e0fbbb37a39fbb57e",
+          "pdfPageIndex": 18
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-706fe55d1cef03f05595",
+          "pdfPageIndex": 13
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-7440ecf973e0fc370109",
+          "pdfPageIndex": 6
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-81b3759c6583be078b62",
+          "pdfPageIndex": 29
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-83afe56aaecb898cdbc8",
+          "pdfPageIndex": 12
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-840afc02a96be00079d1",
+          "pdfPageIndex": 26
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-8833e0afe89d801f3f6d",
+          "pdfPageIndex": 20
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-8a9902666dc69a3a2dbd",
+          "pdfPageIndex": 19
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-8ad5c73dac839267f6f8",
+          "pdfPageIndex": 30
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-b4b3574370335a7a88ce",
+          "pdfPageIndex": 22
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-b8d252c6d58a9b990ed7",
+          "pdfPageIndex": 16
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-c008a85e7f2cb06641a4",
+          "pdfPageIndex": 8
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-c901315fa0589d0f5719",
+          "pdfPageIndex": 17
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-e14a2087600366cdaa09",
+          "pdfPageIndex": 32
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-f417d3c45cf8cebc71aa",
+          "pdfPageIndex": 25
+        }
+      ],
+      "outerFailures": [],
+      "statuses": {
+        "source_observed": 33,
+        "structurally_supported": 21,
+        "unclassified": 13
+      },
+      "supportFailures": []
+    },
+    {
+      "a02AnchorTreatmentMismatches": [],
+      "a02OccurrenceCount": 46,
+      "a02SharedAnchors": {},
+      "a02Treatments": {
+        "member_of_supported_boundedLocalTable": 23,
+        "not_structurally_grouped_representation_limited": 23
+      },
+      "authorityId": "shugiin",
+      "boundaryFailures": [],
+      "edges": 59,
+      "effectiveProcedureDependenciesPinned": 2,
+      "effectiveProcedureDependencyHashFailures": [],
+      "idFailures": [],
+      "immutableBaselineHashPass": true,
+      "localFailures": [],
+      "locatorFailures": [],
+      "nodeTypes": {
+        "boundedLocalTable": 23,
+        "outerLedger": 15,
+        "page": 36,
+        "unclassifiedStructure": 21
+      },
+      "nodes": 95,
+      "outerAudit": [
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-12f9dd90b1893f4c4a96",
+          "pdfPageIndex": 15
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-151415db58eacfee7582",
+          "pdfPageIndex": 29
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-1d0ba262e1546416b8f7",
+          "pdfPageIndex": 22
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-291a0831b0815d476617",
+          "pdfPageIndex": 34
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-2d2712d4dca88a3f9993",
+          "pdfPageIndex": 6
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-5ddc60f35f4256b4fb73",
+          "pdfPageIndex": 27
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-71ed6812be5e40f19c71",
+          "pdfPageIndex": 8
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-7e0c3b9cd11909fb9a2a",
+          "pdfPageIndex": 30
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-9fcb5b0f540cd9814e73",
+          "pdfPageIndex": 13
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-a720b457fae66d7f894f",
+          "pdfPageIndex": 12
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-aed6a97cdd00e89c3340",
+          "pdfPageIndex": 28
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-e0cc034866ec0d472a61",
+          "pdfPageIndex": 31
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-e140cdb1d852874c093b",
+          "pdfPageIndex": 35
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-ee49751a24482fb3a7b7",
+          "pdfPageIndex": 24
+        },
+        {
+          "failures": [],
+          "nodeId": "s3r1-outerLedger-f45399791d10a06003f4",
+          "pdfPageIndex": 7
+        }
+      ],
+      "outerFailures": [],
+      "statuses": {
+        "source_observed": 36,
+        "structurally_supported": 38,
+        "unclassified": 21
+      },
+      "supportFailures": []
+    }
+  ],
+  "independence": "Does not import executors, execution audits, or helpers.",
+  "schemaVersion": 1
+}

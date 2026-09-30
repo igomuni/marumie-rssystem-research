@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v3-v4-comparison",
+  "basis": "v4 was regenerated from immutable S2; v3 graph artifacts were not used as structural input.",
+  "authorities": {
+    "kunaicho": {"v3": {"nodes": 67, "edges": 34, "outerLedger": 20, "unclassifiedStructure": 13, "nestedStructure": 1}, "v4": {"nodes": 67, "edges": 34, "outerLedger": 20, "unclassifiedStructure": 13, "nestedStructure": 1}, "classificationChanges": [], "supportAndIdChanges": "Every supported outer ledger now includes direct actual header-source-line evidence and strict-only row-word matches; direct-tuple IDs changed accordingly."},
+    "shugiin": {"v3": {"nodes": 95, "edges": 59, "outerLedger": 15, "unclassifiedStructure": 21, "boundedLocalTable": 23}, "v4": {"nodes": 95, "edges": 59, "outerLedger": 15, "unclassifiedStructure": 21, "boundedLocalTable": 23}, "classificationChanges": [], "supportAndIdChanges": "Every supported outer ledger now includes direct actual header-source-line evidence and strict-only row-word matches; local-table and 46-occurrence treatment classifications are unchanged."}
+  },
+  "reasonCategories": ["header_source_line_evidence_added", "strict_row_word_overlap_closed", "direct_support_set_changed_id_recomputed", "effective_procedure_dependency_pinned"],
+  "nonInterpretation": "Unchanged classification counts are not treated as proof of structural acceptance; independent v4 review remains required."
+}

@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 repaired S3 execution v3 independently reviewed; S4 blocked
+Batch-001 Wave 1 repaired S3 execution v4 complete; independent review required
 
 Next action:
-Execute a narrowly scoped `Batch-001 Wave 1 S3 Repair Execution v4`. The v3 acceptance review rejects both graphs: most emitted outer ledgers omit the source-line membership required to reconstruct a literal local header band, and A01 page 6 relies on a tolerance-only x-range match. Preserve v1/v2/v3; do not start normalization.
+Independently review `s3-repaired-v4` before S4. V4 retains actual S2 header source lines in direct support, uses strict-only row x-overlap, and pins effective procedure dependencies. This is execution evidence only; normalization remains unauthorized.
 
 Read first:
 - START_HERE.md

@@ -1,0 +1,437 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repaired-v4-manifest",
+  "authorityId": "kunaicho",
+  "canonicalFreezeStatus": "not_created",
+  "countsByStructuralStatus": {
+    "source_observed": 33,
+    "structurally_supported": 21,
+    "unclassified": 13
+  },
+  "crossFileInferredStructuralEdgeCount": 0,
+  "crossPageInferredStructuralEdgeCount": 0,
+  "documentMembershipEdgeCount": 0,
+  "edgeCount": 34,
+  "executionRevision": "v4",
+  "financialAssociationStatus": "not_created",
+  "inputSourceObservations": {
+    "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-observations.jsonl",
+    "sha256": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1"
+  },
+  "namespace": "s3r1",
+  "nodeCount": 67,
+  "nodeCountsByType": {
+    "nestedStructure": 1,
+    "outerLedger": 20,
+    "page": 33,
+    "unclassifiedStructure": 13
+  },
+  "normalizationStatus": "not_created",
+  "outerDiagnostics": [
+    {
+      "pdfPageIndex": 0,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 1,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 2,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 3,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 4,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 5,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 6,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 7,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 8,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 9,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 10,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 11,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 12,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 13,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 14,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 15,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 16,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 17,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 18,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 19,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 20,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 21,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 22,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 23,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 24,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 25,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 26,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 27,
+      "reason": "literal-local-header-band-or-two-strict-row-x-range-pattern-not-supported",
+      "v4Classification": "unclassifiedStructure",
+      "v4Status": "unclassified"
+    },
+    {
+      "pdfPageIndex": 28,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 29,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 30,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 31,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    },
+    {
+      "pdfPageIndex": 32,
+      "reason": "not_ambiguous",
+      "v4Classification": "outerLedger",
+      "v4Status": "structurally_supported"
+    }
+  ],
+  "outerLocalUnitInheritanceEdgeCount": 0,
+  "pageSummaries": [
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-cd7abd5a83da6680a1b9",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 0
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-5c9394b8fa937d7d5e94",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 1
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-fbbe8e1ebeb5cf52ffa7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 2
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-05011463ef1d67149d3c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 3
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f21073d58485a8ecb99b",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 4
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-48a8c4683f68a7f4a471",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 5
+    },
+    {
+      "localOrNestedGroupCount": 1,
+      "outerPartitionNodeId": "s3r1-outerLedger-7440ecf973e0fc370109",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 6
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-2b6d671a874d412cdd3f",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 7
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-c008a85e7f2cb06641a4",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 8
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-30b479a06b972370eb53",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 9
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-4c8ba3db1946501088b7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 10
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-a4ba5513ce22c6aca555",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 11
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-83afe56aaecb898cdbc8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 12
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-706fe55d1cef03f05595",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 13
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-0a26742c87f4277acb51",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 14
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-be37d06750914dedfd6a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 15
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b8d252c6d58a9b990ed7",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 16
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-c901315fa0589d0f5719",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 17
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-5d5e0fbbb37a39fbb57e",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 18
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-8a9902666dc69a3a2dbd",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 19
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-8833e0afe89d801f3f6d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 20
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-2453f226aba0607a4af0",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 21
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b4b3574370335a7a88ce",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 22
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-07eb4bf0177a3d86c955",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 23
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-38c9ab9c0915a4ebe772",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 24
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-f417d3c45cf8cebc71aa",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 25
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-840afc02a96be00079d1",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 26
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6e98b7112d559171194a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 27
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-0f68cad941e6eed5b50d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 28
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-81b3759c6583be078b62",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 29
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-8ad5c73dac839267f6f8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 30
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-158f30c0e825030e88d8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 31
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-e14a2087600366cdaa09",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 32
+    }
+  ],
+  "profileVersion": "batch-001-wave-1-a01-v1",
+  "schemaVersion": 1,
+  "semanticCandidateStatus": "not_created",
+  "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "stage": "S3_REPAIRED_V4",
+  "stageStatus": "COMPLETE_NOT_CANONICAL_FROZEN"
+}
