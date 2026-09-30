@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S3 Repair v4 Review and S4 Authorization Gate — A01 and A02 (recommended; not started).** Independently review `s3-repaired-v4`, including its actual header source-line membership, literal-band relations, strict-only row-word x matches, pinned dependency set, preserved local/nested evidence, and A02 reconciliation. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
+- **Batch-001 Wave 1 Repaired S3 Integration and S4 Entry Freeze — A01 and A02 (recommended; not started).** Integrate the independently accepted v4 provenance chain into the canonical parent, verify hashes, and freeze the exact S3 input boundary for authorized S4. Do not execute normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2 in the integration/freeze task.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

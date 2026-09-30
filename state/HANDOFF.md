@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 repaired S3 execution v4 complete; independent review required
+Batch-001 Wave 1 repaired S3 v4 independently accepted; S4 authorized but not started
 
 Next action:
-Independently review `s3-repaired-v4` before S4. V4 retains actual S2 header source lines in direct support, uses strict-only row x-overlap, and pins effective procedure dependencies. This is execution evidence only; normalization remains unauthorized.
+Integrate the accepted repaired-S3 provenance chain into the canonical parent and freeze the exact S3 entry boundary for S4. Do not execute normalization in that integration task.
 
 Read first:
 - START_HERE.md

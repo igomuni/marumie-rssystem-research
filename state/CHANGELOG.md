@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### research: review Batch-001 Wave 1 S3 repair v4 and gate S4
+
+- Independently accepted A01/A02 v4 repaired S3 from immutable S2: actual header source-line memberships, literal local bands, strict row-word x overlap, locators, direct IDs, boundaries, local/nested evidence, A02 reconciliation, and dependency provenance pass.
+- S4 is authorized but has not started. Next: Repaired S3 Integration and S4 Entry Freeze; no S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source or frozen-contract change, canonical-parent merge, or production adaptation occurred.
+
 ### research: execute Batch-001 Wave 1 S3 repair v4
 
 - Created separate `s3-repaired-v4` outputs from immutable S2, retaining complete actual header source-line membership and literal local-band relations in direct support/locators, and using strict observed row-word/header-x overlap only for outer-ledger support.

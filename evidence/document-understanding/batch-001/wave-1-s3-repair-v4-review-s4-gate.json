@@ -1,0 +1,389 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v4-independent-review",
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "boundaryFailures": [],
+      "edges": 34,
+      "idFailures": [],
+      "immutableBaselinePass": true,
+      "locatorFailures": [],
+      "nodes": 67,
+      "outer": [
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 14,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 28,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 31,
+          "strictMatches": [
+            4,
+            2
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 7,
+          "strictMatches": [
+            2,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 9,
+          "strictMatches": [
+            3,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 18,
+          "strictMatches": [
+            2,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 13,
+          "strictMatches": [
+            3,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 6,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 29,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 12,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 26,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 20,
+          "strictMatches": [
+            2,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 19,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 30,
+          "strictMatches": [
+            4,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 22,
+          "strictMatches": [
+            4,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 16,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 8,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 17,
+          "strictMatches": [
+            2,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 32,
+          "strictMatches": [
+            3,
+            2
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 25,
+          "strictMatches": [
+            4,
+            3
+          ]
+        }
+      ],
+      "outerFailures": [],
+      "statuses": {
+        "source_observed": 33,
+        "structurally_supported": 21,
+        "unclassified": 13
+      },
+      "supportFailures": [],
+      "types": {
+        "nestedStructure": 1,
+        "outerLedger": 20,
+        "page": 33,
+        "unclassifiedStructure": 13
+      }
+    },
+    {
+      "a02Mismatch": [],
+      "a02Occurrences": 46,
+      "a02Shared": {},
+      "a02Treatments": {
+        "member_of_supported_boundedLocalTable": 23,
+        "not_structurally_grouped_representation_limited": 23
+      },
+      "authorityId": "shugiin",
+      "boundaryFailures": [],
+      "edges": 59,
+      "idFailures": [],
+      "immutableBaselinePass": true,
+      "locatorFailures": [],
+      "nodes": 95,
+      "outer": [
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 15,
+          "strictMatches": [
+            2,
+            2
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 29,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 22,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 34,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 6,
+          "strictMatches": [
+            3,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 27,
+          "strictMatches": [
+            4,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 8,
+          "strictMatches": [
+            4,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 30,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 13,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 12,
+          "strictMatches": [
+            3,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 28,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 31,
+          "strictMatches": [
+            3,
+            3
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 35,
+          "strictMatches": [
+            3,
+            2
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 24,
+          "strictMatches": [
+            3,
+            4
+          ]
+        },
+        {
+          "accepted": true,
+          "failures": [],
+          "page": 7,
+          "strictMatches": [
+            3,
+            3
+          ]
+        }
+      ],
+      "outerFailures": [],
+      "statuses": {
+        "source_observed": 36,
+        "structurally_supported": 38,
+        "unclassified": 21
+      },
+      "supportFailures": [],
+      "types": {
+        "boundedLocalTable": 23,
+        "outerLedger": 15,
+        "page": 36,
+        "unclassifiedStructure": 21
+      }
+    }
+  ],
+  "authorityVerdicts": {
+    "kunaicho": "ACCEPT_REPAIRED_S3_FOR_S4",
+    "shugiin": "ACCEPT_REPAIRED_S3_FOR_S4"
+  },
+  "baseCommit": "1b0f2ef1f4edb2dc0a595a0c924e5848d08b2aeb",
+  "effectiveProcedureProvenance": {
+    "v2": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5",
+    "v3": "0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd",
+    "v4": "4e16cc758d272c8538731d9b18f6e40f382e90ce054b1509843bbd65ff2c996b",
+    "verdict": "COMPLETE_EFFECTIVE_PROCEDURE_PROVENANCE"
+  },
+  "globalS4Authorization": "AUTHORIZED",
+  "independence": "No executor, audit, or helper imports.",
+  "schemaVersion": 1
+}
