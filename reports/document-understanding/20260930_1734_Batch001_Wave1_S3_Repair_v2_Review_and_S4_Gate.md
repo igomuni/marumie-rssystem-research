@@ -37,7 +37,7 @@ V2 has 95 nodes and 59 edges: 15 supported outer-ledger partitions, 23 supported
 
 The same outer-ledger evidence-closure defect remains: 15 supported outer-ledger nodes omit the direct row-word evidence required for repeated header x-range reconstruction, and one outer header fails literal band reconstruction.
 
-There is also a graph/manifest certainty mismatch. The reconciliation records two `百万円` occurrences as supported-table members and 44 as representation-limited, yet 21 of the latter are direct local-unit-anchor observations used by nodes asserted as `structurally_supported`. This is not coherent occurrence-level uncertainty: an observation cannot simultaneously be the direct local-unit basis for a supported table and be recorded as not structurally grouped. The required next execution must either align reconciliation with the graph's direct evidence or downgrade the conflicting groups to an allowed ambiguous/representation-limited structural outcome.
+There is also a graph/manifest certainty mismatch. The reconciliation records two `百万円` occurrences as supported-table members and 44 as representation-limited, yet 23 of the latter are direct local-unit-anchor observations used by nodes asserted as `structurally_supported`. This is not coherent occurrence-level uncertainty: an observation cannot simultaneously be the direct local-unit basis for a supported table and be recorded as not structurally grouped. The required next execution must either align reconciliation with the graph's direct evidence or downgrade the conflicting groups to an allowed ambiguous/representation-limited structural outcome.
 
 Verdict: `REPAIR_REQUIRED_BEFORE_S4`.
 

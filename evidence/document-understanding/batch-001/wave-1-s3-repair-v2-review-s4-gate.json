@@ -53,10 +53,10 @@
         "sharedLocalUnitAnchors": 0,
         "supportedTableOverlaps": 0,
         "manifestTreatments": {"member_of_supported_boundedLocalTable": 2, "not_structurally_grouped_representation_limited": 44},
-        "anchorTreatmentMismatches": 21
+        "anchorTreatmentMismatches": 23
       },
       "verdict": "REPAIR_REQUIRED_BEFORE_S4",
-      "blockingReason": "Outer-ledger row-word evidence is missing as for A01. In addition, 21 source observations used as supported-table local-unit anchors are simultaneously recorded by the reconciliation as not structurally grouped, producing a graph/manifest certainty mismatch."
+      "blockingReason": "Outer-ledger row-word evidence is missing as for A01. In addition, 23 source observations used as supported-table local-unit anchors are simultaneously recorded by the reconciliation as not structurally grouped, producing a graph/manifest certainty mismatch."
     }
   ],
   "representationLimitedCoherence": "GRAPH_MANIFEST_CERTAINTY_MISMATCH_REQUIRING_S3_REPAIR",

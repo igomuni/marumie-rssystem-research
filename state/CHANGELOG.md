@@ -5,7 +5,7 @@
 ### research: review Batch-001 Wave 1 S3 repair v2 and gate S4
 
 - Independently reviewed `s3-repaired-v2` against immutable S2 and the frozen repair contract without importing the executor. The four v1 mechanical defects are closed: exact locator source-order/bbox provenance, endpoint-derived page/file scope, local/nested word-level x-cluster evidence, and frozen direct-tuple IDs all pass; v1/baseline/frozen artifacts remain preserved and a scratch rerun is byte-identical.
-- Both authorities remain `REPAIR_REQUIRED_BEFORE_S4`. Supported outer-ledger nodes retain line-band references and derived match indices but omit the direct S2 row-word observations necessary to reproduce repeated header x-range evidence; literal header-band reconstruction also fails once per authority. A02 additionally has a graph/manifest certainty mismatch: 21 direct local-unit anchors of supported tables are marked representation-limited in the 46-occurrence reconciliation.
+- Both authorities remain `REPAIR_REQUIRED_BEFORE_S4`. Supported outer-ledger nodes retain line-band references and derived match indices but omit the direct S2 row-word observations necessary to reproduce repeated header x-range evidence; literal header-band reconstruction also fails once per authority. A02 additionally has a graph/manifest certainty mismatch: 23 direct local-unit anchors of supported tables are marked representation-limited in the 46-occurrence reconciliation.
 - S4 remains unauthorized. Preserve v1/v2 and perform a narrowly scoped S3 Repair Execution v3; no S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract mutation, canonical-parent merge, or production adaptation occurred.
 
 ### research: execute Batch-001 Wave 1 S3 repair v2
