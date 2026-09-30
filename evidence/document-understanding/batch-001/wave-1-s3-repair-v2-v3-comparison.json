@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v2-v3-comparison",
+  "v2Base": "8d8baec47b551bfb3c9077ae1dab93fffd694984",
+  "v3Base": "2b6e5b334814fafcc0439ee14edf39dccce6d243",
+  "classificationChanges": [],
+  "supportAndProvenanceChanges": ["outer_row_word_evidence_closed", "literal_local_header_band_closed", "direct_support_set_changed_id_recomputed", "unit_reconciliation_aligned_with_direct_anchor"],
+  "a02Reconciliation": {"v2": {"supported": 2, "representationLimited": 44, "anchorTreatmentMismatches": 23}, "v3": {"supported": 23, "representationLimited": 23, "anchorTreatmentMismatches": 0}},
+  "interpretation": "Unchanged structural classifications do not imply unchanged proof: v3 replaces rejected outer support sets and reconciles A02 treatment from the final direct-anchor graph. Independent review remains required."
+}

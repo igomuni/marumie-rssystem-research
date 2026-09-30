@@ -1,0 +1,1524 @@
+{
+  "a02HyakumanYenReconciliation": [
+    {
+      "bbox": {
+        "xMax": "435.159760",
+        "xMin": "379.610000",
+        "yMax": "409.679505",
+        "yMin": "402.735785"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-25fe069a5ef90c0151b4"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-2ffead6ad9ce5341f201e5f9",
+      "pdfPageIndex": 14,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 27,
+        "line": 46,
+        "page": 14
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "131.930825",
+        "yMin": "124.987105"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-2375cd3493fb2d3797cc"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-2375cd3493fb2d3797cc"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-2375cd3493fb2d3797cc",
+      "observationId": "s2s3-52b3f91f6ae3f607d3142b28",
+      "pdfPageIndex": 14,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 15,
+        "line": 1,
+        "page": 14
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "379.610000",
+        "yMax": "194.424305",
+        "yMin": "187.480585"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-2375cd3493fb2d3797cc"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-8fa6e12cac5c47af84a4a9de",
+      "pdfPageIndex": 14,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 15,
+        "line": 47,
+        "page": 14
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "347.186025",
+        "yMin": "340.242305"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-25fe069a5ef90c0151b4"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-25fe069a5ef90c0151b4"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-25fe069a5ef90c0151b4",
+      "observationId": "s2s3-cab49529cbec5efa244243f0",
+      "pdfPageIndex": 14,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 27,
+        "line": 0,
+        "page": 14
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "435.159760",
+        "xMin": "379.610000",
+        "yMax": "131.930865",
+        "yMin": "124.987145"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-395710e231bbae8f0f4eca09",
+      "pdfPageIndex": 15,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 10,
+        "line": 47,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.288980",
+        "xMin": "733.739220",
+        "yMax": "340.242225",
+        "yMin": "333.298505"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-169d0f996af38e95e9f5"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-169d0f996af38e95e9f5"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-169d0f996af38e95e9f5",
+      "observationId": "s2s3-4aeee313008efdc12218d6ba",
+      "pdfPageIndex": 15,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 32,
+        "line": 1,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "69.437385",
+        "yMin": "62.493665"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548",
+      "observationId": "s2s3-5ad7f50384bfa4ddfdf9b886",
+      "pdfPageIndex": 15,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 10,
+        "line": 1,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990420",
+        "xMin": "379.609500",
+        "yMax": "402.735705",
+        "yMin": "395.791985"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-169d0f996af38e95e9f5"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-9fb0bbe537ba5d6149f32ede",
+      "pdfPageIndex": 15,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 32,
+        "line": 46,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.288980",
+        "xMin": "733.739220",
+        "yMax": "437.454305",
+        "yMin": "430.510585"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-2789a1b303bf11a0a337"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-2789a1b303bf11a0a337"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-2789a1b303bf11a0a337",
+      "observationId": "s2s3-a6de5e7741d7bc5050be9008",
+      "pdfPageIndex": 15,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 1,
+        "flow": 32,
+        "line": 1,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990420",
+        "xMin": "379.609500",
+        "yMax": "499.947785",
+        "yMin": "493.004065"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-2789a1b303bf11a0a337"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-a876cc1c84f22c3a70f3f57b",
+      "pdfPageIndex": 15,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 1,
+        "flow": 32,
+        "line": 46,
+        "page": 15
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "785.817620",
+        "xMin": "730.267860",
+        "yMax": "152.761985",
+        "yMin": "145.818265"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-34295a86df86f462fc5b"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-34295a86df86f462fc5b"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-34295a86df86f462fc5b",
+      "observationId": "s2s3-2bae3e6b3190b9f451a927a6",
+      "pdfPageIndex": 16,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 14,
+        "line": 1,
+        "page": 16
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "417.800460",
+        "yMax": "215.255465",
+        "yMin": "208.311745"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-34295a86df86f462fc5b"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-45c41bbb1cf6c313ddab20bf",
+      "pdfPageIndex": 16,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 14,
+        "line": 48,
+        "page": 16
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "354.129785",
+        "yMin": "347.186065"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-8872303ea60ce12a2bc2"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-8872303ea60ce12a2bc2"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-8872303ea60ce12a2bc2",
+      "observationId": "s2s3-b6129a7d1d853c5ff5171282",
+      "pdfPageIndex": 16,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 27,
+        "line": 0,
+        "page": 16
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "421.272320",
+        "yMax": "416.623265",
+        "yMin": "409.679545"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-8872303ea60ce12a2bc2"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-eb6d46d74eafeb1cc5537872",
+      "pdfPageIndex": 16,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 27,
+        "line": 47,
+        "page": 16
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "458.285505",
+        "yMin": "451.341785"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-af64c3fc2924d1f357ca"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-af64c3fc2924d1f357ca"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-af64c3fc2924d1f357ca",
+      "observationId": "s2s3-37e8c5122a1d00f85b899cff",
+      "pdfPageIndex": 17,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 36,
+        "line": 0,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "520.778985",
+        "yMin": "513.835265"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-af64c3fc2924d1f357ca"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-aec5f3bbfaae33571bee5e7d",
+      "pdfPageIndex": 17,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 36,
+        "line": 47,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "417.800460",
+        "yMax": "131.930865",
+        "yMin": "124.987145"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-bebddb47fb139cc7c27f76da",
+      "pdfPageIndex": 17,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 9,
+        "line": 48,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "69.437385",
+        "yMin": "62.493665"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8",
+      "observationId": "s2s3-d505f6a2a91b7c92d6f85ee9",
+      "pdfPageIndex": 17,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 9,
+        "line": 1,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "326.354945",
+        "yMin": "319.411225"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-d432b714bdad97dbd49c"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-e5ea85a56b31fccc0b313400",
+      "pdfPageIndex": 17,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 22,
+        "line": 47,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "263.861465",
+        "yMin": "256.917745"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-d432b714bdad97dbd49c"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-d432b714bdad97dbd49c"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-d432b714bdad97dbd49c",
+      "observationId": "s2s3-f3037eb77b99c125c7779d6b",
+      "pdfPageIndex": 17,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 22,
+        "line": 0,
+        "page": 17
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "222.199185",
+        "yMin": "215.255465"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-10340d44c0c073d1df1ea52f",
+      "pdfPageIndex": 18,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 18,
+        "line": 47,
+        "page": 18
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "416.623225",
+        "yMin": "409.679505"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-75d1053a8e85a8f31799ed62",
+      "pdfPageIndex": 18,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 32,
+        "line": 47,
+        "page": 18
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "159.705705",
+        "yMin": "152.761985"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73",
+      "observationId": "s2s3-7941ace3a123c9f9e51bd4ed",
+      "pdfPageIndex": 18,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 18,
+        "line": 0,
+        "page": 18
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "354.129745",
+        "yMin": "347.186025"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755",
+      "observationId": "s2s3-cf5e1dd4df8dc37f9d0b3a7d",
+      "pdfPageIndex": 18,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 32,
+        "line": 0,
+        "page": 18
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "417.800460",
+        "yMax": "319.411185",
+        "yMin": "312.467465"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-08225f5cd379552530e6"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-1a8a120b7a6f6d317ff0aca2",
+      "pdfPageIndex": 19,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 19,
+        "line": 48,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "465.229225",
+        "yMin": "458.285505"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-0418394a5717e9958a67"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-0418394a5717e9958a67"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-0418394a5717e9958a67",
+      "observationId": "s2s3-21c8f67e79a425135eb3f68c",
+      "pdfPageIndex": 19,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 28,
+        "line": 1,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "124.987145",
+        "yMin": "118.043425"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-7b329a2ca272f43e84c4"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-271662ae8ecead40fed9008f",
+      "pdfPageIndex": 19,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 9,
+        "line": 47,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "62.493665",
+        "yMin": "55.549945"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-7b329a2ca272f43e84c4"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-7b329a2ca272f43e84c4"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-7b329a2ca272f43e84c4",
+      "observationId": "s2s3-7d858fe4d006ffcc9ea722c0",
+      "pdfPageIndex": 19,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 9,
+        "line": 0,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "256.917705",
+        "yMin": "249.973985"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-08225f5cd379552530e6"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-08225f5cd379552530e6"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-08225f5cd379552530e6",
+      "observationId": "s2s3-d8a26fc4ba361a9e7852481f",
+      "pdfPageIndex": 19,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 19,
+        "line": 1,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "527.722705",
+        "yMin": "520.778985"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-0418394a5717e9958a67"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-e7cbc94f0099d01abcb4edd8",
+      "pdfPageIndex": 19,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 28,
+        "line": 48,
+        "page": 19
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "229.142865",
+        "yMin": "222.199145"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-c1570996a338d9ba9a12"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-1695b595c8f2ae0bbfd2922b",
+      "pdfPageIndex": 20,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 24,
+        "line": 47,
+        "page": 20
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "166.649385",
+        "yMin": "159.705665"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-c1570996a338d9ba9a12"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-c1570996a338d9ba9a12"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-c1570996a338d9ba9a12",
+      "observationId": "s2s3-40e12f4ca9fe5a534e12612d",
+      "pdfPageIndex": 20,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 24,
+        "line": 0,
+        "page": 20
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "437.454345",
+        "yMin": "430.510625"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-e7a10643728340f579dd"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-851aad1692a799225f1bdd59",
+      "pdfPageIndex": 20,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 38,
+        "line": 47,
+        "page": 20
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "374.960865",
+        "yMin": "368.017145"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-e7a10643728340f579dd"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-e7a10643728340f579dd"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-e7a10643728340f579dd",
+      "observationId": "s2s3-9ba6d2c4ca9d6d1757a07ca7",
+      "pdfPageIndex": 20,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 38,
+        "line": 0,
+        "page": 20
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "486.060305",
+        "yMin": "479.116585"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f",
+      "observationId": "s2s3-03e700a331c24f3ab1318905",
+      "pdfPageIndex": 21,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 36,
+        "line": 0,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "83.324785",
+        "yMin": "76.381065"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-b2d77b53a5980b4dc223"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-b2d77b53a5980b4dc223"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-b2d77b53a5980b4dc223",
+      "observationId": "s2s3-3e1fae8faf42837a897144bf",
+      "pdfPageIndex": 21,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 12,
+        "line": 0,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "548.553785",
+        "yMin": "541.610065"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-84db66ca9c14ae1d672a3139",
+      "pdfPageIndex": 21,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 36,
+        "line": 47,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "379.610000",
+        "yMax": "145.818265",
+        "yMin": "138.874545"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-b2d77b53a5980b4dc223"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-916f8a69b8b164bccb64bc77",
+      "pdfPageIndex": 21,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 12,
+        "line": 46,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "417.800460",
+        "yMax": "347.186025",
+        "yMin": "340.242305"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-c6ea02b5576064abac0c250a",
+      "pdfPageIndex": 21,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 22,
+        "line": 48,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "284.692545",
+        "yMin": "277.748825"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2",
+      "observationId": "s2s3-cf8aa0aaa9fa63cc32c8d02e",
+      "pdfPageIndex": 21,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 22,
+        "line": 1,
+        "page": 21
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990920",
+        "xMin": "414.328600",
+        "yMax": "263.861425",
+        "yMin": "256.917705"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-8c70e39ccde9beb6d785"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-357bbaa12cee864b487ffd70",
+      "pdfPageIndex": 22,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 20,
+        "line": 48,
+        "page": 22
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.289480",
+        "xMin": "733.739720",
+        "yMax": "201.367945",
+        "yMin": "194.424225"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-8c70e39ccde9beb6d785"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-8c70e39ccde9beb6d785"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-8c70e39ccde9beb6d785",
+      "observationId": "s2s3-5fc197b35d624444a0c5a62f",
+      "pdfPageIndex": 22,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 20,
+        "line": 1,
+        "page": 22
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.288980",
+        "xMin": "733.739220",
+        "yMax": "368.017105",
+        "yMin": "361.073385"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-7a6ce65c237111f03bf3"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-7a6ce65c237111f03bf3"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-7a6ce65c237111f03bf3",
+      "observationId": "s2s3-03680f61c28ba03662db8ead",
+      "pdfPageIndex": 35,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 1,
+        "flow": 29,
+        "line": 1,
+        "page": 35
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "789.288980",
+        "xMin": "733.739220",
+        "yMax": "277.748745",
+        "yMin": "270.805025"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-d3a8a51f975ec7477e71"
+      ],
+      "directUnitAnchorGroupIds": [
+        "s3r1-boundedLocalTable-d3a8a51f975ec7477e71"
+      ],
+      "finalTreatment": "member_of_supported_boundedLocalTable",
+      "groupNodeId": "s3r1-boundedLocalTable-d3a8a51f975ec7477e71",
+      "observationId": "s2s3-21190af5d163dd9ee25c8e2d",
+      "pdfPageIndex": 35,
+      "reason": "direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 29,
+        "line": 1,
+        "page": 35
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990420",
+        "xMin": "379.609500",
+        "yMax": "430.510585",
+        "yMin": "423.566865"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-7a6ce65c237111f03bf3"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-49fdd8a09371d0eab98e43fd",
+      "pdfPageIndex": 35,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 1,
+        "flow": 29,
+        "line": 47,
+        "page": 35
+      }
+    },
+    {
+      "bbox": {
+        "xMax": "455.990420",
+        "xMin": "379.609500",
+        "yMax": "340.242225",
+        "yMin": "333.298505"
+      },
+      "bboxContainmentOnlyGroupIds": [
+        "s3r1-boundedLocalTable-d3a8a51f975ec7477e71"
+      ],
+      "directUnitAnchorGroupIds": [],
+      "finalTreatment": "not_structurally_grouped_representation_limited",
+      "observationId": "s2s3-a29a8bf66bcca58fba280cf4",
+      "pdfPageIndex": 35,
+      "reason": "no-direct-local-unit-anchor",
+      "sourceOrder": {
+        "block": 0,
+        "flow": 29,
+        "line": 46,
+        "page": 35
+      }
+    }
+  ],
+  "artifactType": "batch-001-wave-1-s3-repaired-v3-manifest",
+  "authorityId": "shugiin",
+  "canonicalFreezeStatus": "not_created",
+  "countsByStructuralStatus": {
+    "source_observed": 36,
+    "structurally_supported": 38,
+    "unclassified": 21
+  },
+  "crossFileInferredStructuralEdgeCount": 0,
+  "crossPageInferredStructuralEdgeCount": 0,
+  "documentMembershipEdgeCount": 0,
+  "edgeCount": 59,
+  "executionRevision": "v3",
+  "financialAssociationStatus": "not_created",
+  "inputSourceObservations": {
+    "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/source-observations.jsonl",
+    "sha256": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f"
+  },
+  "localAudit": [
+    {
+      "candidateBlockObservationId": "s2s3-4e0dcd475005d70e6def5642",
+      "nodeId": "s3r1-boundedLocalTable-2375cd3493fb2d3797cc",
+      "pdfPageIndex": 14,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-8cba2be9515e26decfc3947c",
+      "nodeId": "s3r1-boundedLocalTable-25fe069a5ef90c0151b4",
+      "pdfPageIndex": 14,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-bddefa269b74a2dca058d32a",
+      "nodeId": "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548",
+      "pdfPageIndex": 15,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-4653a266d8c222e2ff8654dd",
+      "nodeId": "s3r1-boundedLocalTable-169d0f996af38e95e9f5",
+      "pdfPageIndex": 15,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-66edadbba50a95397fa07bab",
+      "nodeId": "s3r1-boundedLocalTable-2789a1b303bf11a0a337",
+      "pdfPageIndex": 15,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-fa55f3a32225b153ffa2b744",
+      "nodeId": "s3r1-boundedLocalTable-34295a86df86f462fc5b",
+      "pdfPageIndex": 16,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-77171d2f12d6c3ebc4bd7bac",
+      "nodeId": "s3r1-boundedLocalTable-8872303ea60ce12a2bc2",
+      "pdfPageIndex": 16,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-300856e1e0e25fb8a5359084",
+      "nodeId": "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8",
+      "pdfPageIndex": 17,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-fcb50fa9504e628ec774d490",
+      "nodeId": "s3r1-boundedLocalTable-d432b714bdad97dbd49c",
+      "pdfPageIndex": 17,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-e6289dc5a0409cd0d18e7ffa",
+      "nodeId": "s3r1-boundedLocalTable-af64c3fc2924d1f357ca",
+      "pdfPageIndex": 17,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-c745c2644eff5c9ef80b30af",
+      "nodeId": "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73",
+      "pdfPageIndex": 18,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-fd84f66cf22ff2fe7ee68f42",
+      "nodeId": "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755",
+      "pdfPageIndex": 18,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-c9c7f06f9e9d3bd754b4f8ff",
+      "nodeId": "s3r1-boundedLocalTable-7b329a2ca272f43e84c4",
+      "pdfPageIndex": 19,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-ba694181c5ad2bf44062c8b6",
+      "nodeId": "s3r1-boundedLocalTable-08225f5cd379552530e6",
+      "pdfPageIndex": 19,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-e64e28a1a3220eb0071a8440",
+      "nodeId": "s3r1-boundedLocalTable-0418394a5717e9958a67",
+      "pdfPageIndex": 19,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-fa52f92052367e9a690fae94",
+      "nodeId": "s3r1-boundedLocalTable-c1570996a338d9ba9a12",
+      "pdfPageIndex": 20,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-85f2a7fd46e027145a158a7e",
+      "nodeId": "s3r1-boundedLocalTable-e7a10643728340f579dd",
+      "pdfPageIndex": 20,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-b31101d2e5e1187dc5049fbf",
+      "nodeId": "s3r1-boundedLocalTable-b2d77b53a5980b4dc223",
+      "pdfPageIndex": 21,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-2f582c68680289e20e0cafe3",
+      "nodeId": "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2",
+      "pdfPageIndex": 21,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-faa1a095380735f3f4d61af2",
+      "nodeId": "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f",
+      "pdfPageIndex": 21,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-81595b1019621f92c1068bfe",
+      "nodeId": "s3r1-boundedLocalTable-8c70e39ccde9beb6d785",
+      "pdfPageIndex": 22,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-0db402d89df55a8b4de9ad93",
+      "nodeId": "s3r1-boundedLocalTable-d3a8a51f975ec7477e71",
+      "pdfPageIndex": 35,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    },
+    {
+      "candidateBlockObservationId": "s2s3-75ffa9d4872b9e1e4f1afd90",
+      "nodeId": "s3r1-boundedLocalTable-7a6ce65c237111f03bf3",
+      "pdfPageIndex": 35,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "boundedLocalTable"
+    }
+  ],
+  "namespace": "s3r1",
+  "nodeCount": 95,
+  "nodeCountsByType": {
+    "boundedLocalTable": 23,
+    "outerLedger": 15,
+    "page": 36,
+    "unclassifiedStructure": 21
+  },
+  "normalizationStatus": "not_created",
+  "outerLocalUnitInheritanceEdgeCount": 0,
+  "pageSummaries": [
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-e6362f32922559085bd3",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 0
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-ed11c407c3019291fcab",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 1
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-33a711e4943459b23547",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 2
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6aa380cb9f20f1215659",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 3
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-47d68e0cf41f6b7b3520",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 4
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f8dd3ae8a36fa9a8fa2c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 5
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-d9161b75113cb3ab3c8e",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 6
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-306608918282ff1812b8",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 7
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-6341aa3908bcd905d40a",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 8
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-c3ccac71ae2af666e8f4",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 9
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-5af39415eb94f8623df7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 10
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6ed77c4bcdcf0eb55ff7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 11
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-e48482a7606a47160936",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 12
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-5dbe76cac42840e37c30",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 13
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-a0939582fe5ea871954d",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 14
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-outerLedger-8ec680c7bc78548844a4",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 15
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f83d875be6062b6cf95c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 16
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-9bb7d6c3164688f0e528",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 17
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-d7a5d785d65a35b5cdbe",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 18
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-c4f1f0c975685e8da82a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 19
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-29910bce91f357673bff",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 20
+    },
+    {
+      "localOrNestedGroupCount": 3,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6a7852a8456e420b4ba2",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 21
+    },
+    {
+      "localOrNestedGroupCount": 1,
+      "outerPartitionNodeId": "s3r1-outerLedger-871da9ff06b46c48c67d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 22
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-e9deceb1727309ccdfc1",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 23
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-383e5212bb296e1490f4",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 24
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-b886039e335358eb179b",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 25
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-50b598601fb516bfc22e",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 26
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9148ce43ad13255e37c2",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 27
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9534a69996b0a94bcbd2",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 28
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-d074b0f2ebdcb124862d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 29
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-6ebc5c1e383d72f06ef5",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 30
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-9d28dc4247e8a4bd9380",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 31
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-04b17ebacaa9e06079ce",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 32
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-045dfd9d8038751170c6",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 33
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-07e1cd13a4c896c454bc",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 34
+    },
+    {
+      "localOrNestedGroupCount": 2,
+      "outerPartitionNodeId": "s3r1-outerLedger-dd2ff7b0d07a3e876984",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 35
+    }
+  ],
+  "profileVersion": "batch-001-wave-1-a02-v1",
+  "schemaVersion": 1,
+  "semanticCandidateStatus": "not_created",
+  "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "stage": "S3_REPAIRED_V3",
+  "stageStatus": "COMPLETE_NOT_CANONICAL_FROZEN"
+}

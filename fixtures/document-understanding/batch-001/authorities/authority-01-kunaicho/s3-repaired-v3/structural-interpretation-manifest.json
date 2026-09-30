@@ -1,0 +1,247 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repaired-v3-manifest",
+  "authorityId": "kunaicho",
+  "canonicalFreezeStatus": "not_created",
+  "countsByStructuralStatus": {
+    "source_observed": 33,
+    "structurally_supported": 21,
+    "unclassified": 13
+  },
+  "crossFileInferredStructuralEdgeCount": 0,
+  "crossPageInferredStructuralEdgeCount": 0,
+  "documentMembershipEdgeCount": 0,
+  "edgeCount": 34,
+  "executionRevision": "v3",
+  "financialAssociationStatus": "not_created",
+  "inputSourceObservations": {
+    "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-observations.jsonl",
+    "sha256": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1"
+  },
+  "localAudit": [
+    {
+      "candidateBlockObservationId": "s2s3-4d2331bc1132742d590ab563",
+      "nodeId": "s3r1-nestedStructure-58401aad68ab019694e1",
+      "pdfPageIndex": 6,
+      "reason": "rule-satisfied",
+      "structuralStatus": "structurally_supported",
+      "type": "nestedStructure"
+    }
+  ],
+  "namespace": "s3r1",
+  "nodeCount": 67,
+  "nodeCountsByType": {
+    "nestedStructure": 1,
+    "outerLedger": 20,
+    "page": 33,
+    "unclassifiedStructure": 13
+  },
+  "normalizationStatus": "not_created",
+  "outerLocalUnitInheritanceEdgeCount": 0,
+  "pageSummaries": [
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-cd7abd5a83da6680a1b9",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 0
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-5c9394b8fa937d7d5e94",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 1
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-fbbe8e1ebeb5cf52ffa7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 2
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-05011463ef1d67149d3c",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 3
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-f21073d58485a8ecb99b",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 4
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-48a8c4683f68a7f4a471",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 5
+    },
+    {
+      "localOrNestedGroupCount": 1,
+      "outerPartitionNodeId": "s3r1-outerLedger-17ceff74a7a01ab4faa2",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 6
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-a6d950a556f75e07da10",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 7
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-6173ac97d44d8dcc5427",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 8
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-d283899ab06b5906b116",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 9
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-4c8ba3db1946501088b7",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 10
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-a4ba5513ce22c6aca555",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 11
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-845d9a5940248ae8e99c",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 12
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-83fa0db623e45d708187",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 13
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-f4db2a1f1890dc487953",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 14
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-be37d06750914dedfd6a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 15
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ed6f7d331f31a700384f",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 16
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-063b2ab4d5e19e0566cd",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 17
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ef42d92a47d54ecadb08",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 18
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-fbc5494e398bba6669b9",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 19
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-ae090b26760a93f8b106",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 20
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-2453f226aba0607a4af0",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 21
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-5674497367808ad20b82",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 22
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-07eb4bf0177a3d86c955",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 23
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-38c9ab9c0915a4ebe772",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 24
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-db7c52e46c7b93cb0e5b",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 25
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-5390f8c048f67260e0b2",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 26
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-unclassifiedStructure-6e98b7112d559171194a",
+      "outerPartitionStatus": "unclassified",
+      "pdfPageIndex": 27
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-eb4c1ad41079dc1fed1f",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 28
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-b11a75c136d8065b9a57",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 29
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-df6ffc41f223473ea907",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 30
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-0e1d5b310cebe5dffd39",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 31
+    },
+    {
+      "localOrNestedGroupCount": 0,
+      "outerPartitionNodeId": "s3r1-outerLedger-56c35df62d0621a7462d",
+      "outerPartitionStatus": "structurally_supported",
+      "pdfPageIndex": 32
+    }
+  ],
+  "profileVersion": "batch-001-wave-1-a01-v1",
+  "schemaVersion": 1,
+  "semanticCandidateStatus": "not_created",
+  "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "stage": "S3_REPAIRED_V3",
+  "stageStatus": "COMPLETE_NOT_CANONICAL_FROZEN"
+}

@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 repaired S3 v2 reviewed; execution v3 required
+Batch-001 Wave 1 repaired S3 execution v3 complete; independent review required
 
 Next action:
-Execute a separately versioned S3 repair v3 while preserving v1/v2. The v2 review accepted its locator, scope, local/nested cluster, and direct-ID corrections but found unsupported outer-ledger row-pattern evidence and an A02 local-unit-anchor graph/manifest mismatch. Normalization remains unauthorized.
+Independently review `s3-repaired-v3` against the frozen contract. V3 retains direct row-word and literal-band evidence for outer ledgers and rebuilds A02 reconciliation from direct anchors with zero graph/manifest mismatch. This is execution evidence only; normalization remains unauthorized pending the review gate.
 
 Read first:
 - START_HERE.md

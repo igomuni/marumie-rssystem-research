@@ -1,0 +1,36 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v3-execution-manifest",
+  "authorityId": "kunaicho",
+  "documentContainmentOmittedFromPageScopedGraph": true,
+  "executionRevision": "v3",
+  "historicalV1AndV2Preserved": true,
+  "idPolicy": {
+    "edgePrimitive": "edge:contains",
+    "nodeAndEdgeInputs": [
+      "specVersion",
+      "sourceSha256",
+      "fileId",
+      "pdfPageIndex",
+      "structural primitive type",
+      "inferenceRule",
+      "sorted supportingObservationIds"
+    ],
+    "parentOrChildIdsExcluded": true
+  },
+  "namespace": "s3r1",
+  "procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v3_execution.py",
+    "sha256": "0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd"
+  },
+  "profileVersion": "batch-001-wave-1-a01-v1",
+  "schemaVersion": 1,
+  "serialization": {
+    "absolutePathsExcluded": true,
+    "encoding": "UTF-8",
+    "jsonKeyOrder": "sorted",
+    "newlines": "LF",
+    "recordOrder": "stable ID ascending"
+  },
+  "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261",
+  "specVersion": "batch-001-wave-1-s3-repair-v1"
+}

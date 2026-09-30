@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: execute Batch-001 Wave 1 S3 repair v3
+
+- Created separate `s3-repaired-v3` outputs under the frozen `s3r1` namespace without modifying v1/v2, baseline S2/S3, profiles, protocol, spec, or sources. Every supported outer ledger now retains direct S2 row-word support and literal local-band evidence; independent execution audit reports zero outer evidence failures.
+- Rebuilt A02's complete 46-occurrence `百万円` reconciliation from finalized direct anchors: 23 supported direct-anchor members and 23 representation-limited non-anchors, with zero direct-anchor/treatment contradictions, shared direct anchors, or supported-table overlap.
+- V3 is awaiting an independent structural review; S4 remains unauthorized. No S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract mutation, canonical-parent merge, or production adaptation occurred.
+
 ### research: review Batch-001 Wave 1 S3 repair v2 and gate S4
 
 - Independently reviewed `s3-repaired-v2` against immutable S2 and the frozen repair contract without importing the executor. The four v1 mechanical defects are closed: exact locator source-order/bbox provenance, endpoint-derived page/file scope, local/nested word-level x-cluster evidence, and frozen direct-tuple IDs all pass; v1/baseline/frozen artifacts remain preserved and a scratch rerun is byte-identical.
