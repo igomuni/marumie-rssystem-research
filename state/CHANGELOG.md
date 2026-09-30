@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### research: repair Wave 1 S4 entry freeze completeness
+
+- Preserved incomplete v1 and created byte-complete v2 S4 entry freeze/verifier covering S2, accepted v4 S3, profiles, contracts, procedures, and acceptance evidence. This repairs freeze provenance only, not S3 or integration history.
+
 ### research: review Batch-001 Wave 1 S3 repair v4 and gate S4
 
 - Independently accepted A01/A02 v4 repaired S3 from immutable S2: actual header source-line memberships, literal local bands, strict row-word x overlap, locators, direct IDs, boundaries, local/nested evidence, A02 reconciliation, and dependency provenance pass.

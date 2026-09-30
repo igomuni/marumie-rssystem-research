@@ -1,0 +1,266 @@
+{
+  "artifactType": "batch-001-wave-1-s4-entry-freeze",
+  "authorities": {
+    "kunaicho": {
+      "graphCounts": {
+        "edges": 34,
+        "nestedStructure": 1,
+        "nodes": 67,
+        "outerLedger": 20,
+        "page": 33,
+        "unclassifiedStructure": 13
+      },
+      "pages": 33,
+      "s2RecordCount": 19442,
+      "sourceSha256": "ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261"
+    },
+    "shugiin": {
+      "graphCounts": {
+        "boundedLocalTable": 23,
+        "edges": 59,
+        "nodes": 95,
+        "outerLedger": 15,
+        "page": 36,
+        "unclassifiedStructure": 21
+      },
+      "pages": 36,
+      "s2RecordCount": 17072,
+      "sourceSha256": "30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435"
+    }
+  },
+  "entrySourceCommit": "2e5a619d601050ff815cdfc67fef9167f490334d",
+  "excludedInputs": [
+    "baseline S3",
+    "s3-repaired-v1",
+    "s3-repaired-v2",
+    "s3-repaired-v3",
+    "GT",
+    "benchmark",
+    "OCR",
+    "CSV",
+    "MOF",
+    "Wave 2",
+    "production artifacts"
+  ],
+  "freezeVersion": "v2",
+  "integrationCommit": "14736a442ce1160b3baa13b35a9c568b60484a74",
+  "repairReason": [
+    "s2_bytes_not_pinned",
+    "v4_s3_bytes_not_pinned",
+    "profile_and_source_identity_not_verified",
+    "excluded_boundary_not_enforced"
+  ],
+  "s4": {
+    "authorization": "AUTHORIZED",
+    "entryBoundary": "FROZEN",
+    "execution": "NOT_STARTED"
+  },
+  "s4Inputs": [
+    {
+      "byteSize": 10755,
+      "path": "fixtures/document-understanding/canonical-semantic-extraction/20260929_1801_Canonical_Semantic_Extraction_Protocol.md",
+      "role": "governingContract",
+      "sha256": "c2394d1fc95d8013b2aada5c85bc125d65688e58f5490b420ed41aebdc87dadb",
+      "stage": "protocol"
+    },
+    {
+      "byteSize": 9718,
+      "path": "fixtures/document-understanding/batch-001/wave-1-s3-structural-repair-spec.json",
+      "role": "governingContract",
+      "sha256": "fd56e1115f791eeb2b3d7a887090b176bfe90190a49de5276843703bc1b4e9b1",
+      "stage": "repairSpec"
+    },
+    {
+      "byteSize": 18588,
+      "path": "fixtures/document-understanding/batch-001/s3_repaired_v4_execution.py",
+      "role": "effectiveProcedureProvenance",
+      "sha256": "4e16cc758d272c8538731d9b18f6e40f382e90ce054b1509843bbd65ff2c996b",
+      "stage": "v4"
+    },
+    {
+      "byteSize": 14763,
+      "path": "fixtures/document-understanding/batch-001/s3_repaired_v3_execution.py",
+      "role": "effectiveProcedureProvenance",
+      "sha256": "0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd",
+      "stage": "v3-transitive"
+    },
+    {
+      "byteSize": 20747,
+      "path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py",
+      "role": "effectiveProcedureProvenance",
+      "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5",
+      "stage": "v2-transitive"
+    },
+    {
+      "byteSize": 6559,
+      "path": "evidence/document-understanding/batch-001/review-wave-1-s3-repair-v4-s4-gate.py",
+      "role": "acceptanceEvidence",
+      "sha256": "6f9befc07a9e344633fb0c8056102d7878eef02bb62e864aec9ffd2ce888bf00",
+      "stage": "procedure"
+    },
+    {
+      "byteSize": 7890,
+      "path": "evidence/document-understanding/batch-001/wave-1-s3-repair-v4-review-s4-gate.json",
+      "role": "acceptanceEvidence",
+      "sha256": "ed817a7e8e920a7dd1bf96ee806f96a19e338fe2ced9f5efc07603ec2b2f2872",
+      "stage": "verdict"
+    },
+    {
+      "byteSize": 1975,
+      "path": "reports/document-understanding/20260930_2040_Batch001_Wave1_S3_Repair_v4_Review_and_S4_Gate.md",
+      "role": "acceptanceEvidence",
+      "sha256": "fa7f5355471e6688aca78ce6355079d03c68a512f8c6e3f8520de29e1fc8e3b3",
+      "stage": "report"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 5316,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/authority-preflight-profile.json",
+      "role": "authorityProfile",
+      "sha256": "df9871702ec5724faa4dd8f0419211e37e8a4319e9491681023e8b92445c6c79",
+      "stage": "S1"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 663,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-manifest.json",
+      "role": "sourceIdentity",
+      "sha256": "18812b72085b25e57be271bbfadd43436c0e2faeddffb6335fcdbbd6081beb3a",
+      "stage": "S0"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 13826531,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/source-observations.jsonl",
+      "role": "s2Evidence",
+      "sha256": "de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1",
+      "stage": "S2"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 6126,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/observation-manifest.json",
+      "role": "s2Evidence",
+      "sha256": "d2de53eb31a9a15b3c9b3debbefa00fa80975add00e15d1ed591fc2745270589",
+      "stage": "S2"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 2072652,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/raw/poppler-bbox-layout.xml",
+      "role": "s2Evidence",
+      "sha256": "a1d5cbc77413390c375f14b2106516dc9ff909b89ba0736b961159e3be1682e5",
+      "stage": "S2raw"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 692368,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v4/nodes.jsonl",
+      "role": "acceptedS3",
+      "sha256": "ddb0f28dd7ff57bafd4b9c26aa4bc073831b3d2ab55ef91db468dcc95628bbf0",
+      "stage": "S3"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 360483,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v4/edges.jsonl",
+      "role": "acceptedS3",
+      "sha256": "21f4adbd0ca08984338e55c0fb54b8285cd68761ccb562210f681feda47e68de",
+      "stage": "S3"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 13885,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v4/structural-interpretation-manifest.json",
+      "role": "acceptedS3",
+      "sha256": "c1ad9c4fe74bcc923238aac80ffb6397751ce0ed0703ac2fa5fe3897c38f3929",
+      "stage": "S3"
+    },
+    {
+      "authority": "kunaicho",
+      "byteSize": 1716,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v4/repair-execution-manifest.json",
+      "role": "acceptedS3",
+      "sha256": "1bc271feb92a9970e9499af9e50fbcbdf75998c1be3452a8d44f08b9bb91d435",
+      "stage": "S3"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 5579,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/authority-preflight-profile.json",
+      "role": "authorityProfile",
+      "sha256": "c71bdaa92932a86098e33230ae792f76a327d5897bcb1d965cfbd08df471600a",
+      "stage": "S1"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 769,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/source-manifest.json",
+      "role": "sourceIdentity",
+      "sha256": "5ea19682fd0e303774831771e5ccd310d05769252211567c13c531dc29a983c1",
+      "stage": "S0"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 12515388,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/source-observations.jsonl",
+      "role": "s2Evidence",
+      "sha256": "8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f",
+      "stage": "S2"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 6515,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/observation-manifest.json",
+      "role": "s2Evidence",
+      "sha256": "d0d1872eb75ecf318d68b57e16e1ce60755a46cf0c1b3e4fd22a04aa48e499f0",
+      "stage": "S2"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 1819624,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/raw/poppler-bbox-layout.xml",
+      "role": "s2Evidence",
+      "sha256": "6043f4b744d4d9e4c8f250ad7ee713d8f6cc4971bea88d0ec163ee3fdff7c771",
+      "stage": "S2raw"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 1052060,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/s3-repaired-v4/nodes.jsonl",
+      "role": "acceptedS3",
+      "sha256": "ecc7e8f08bfed93b149668969155b0db8a70aedaf9b59621fb4596a0aed25f36",
+      "stage": "S3"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 585313,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/s3-repaired-v4/edges.jsonl",
+      "role": "acceptedS3",
+      "sha256": "eab0dde78e5ff41b4b0982d02a066cfd171506ec62739737c9db349002f2c00e",
+      "stage": "S3"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 46216,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/s3-repaired-v4/structural-interpretation-manifest.json",
+      "role": "acceptedS3",
+      "sha256": "9d34876b579ebd140f0c05375576f7caa33b763d85ffdb6abfb5733fa9b66a92",
+      "stage": "S3"
+    },
+    {
+      "authority": "shugiin",
+      "byteSize": 1715,
+      "path": "fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/s3-repaired-v4/repair-execution-manifest.json",
+      "role": "acceptedS3",
+      "sha256": "ed994e94a22f4b00b39817d7413ffed0a340726ba2179f6d71c1e70ed0f18fc9",
+      "stage": "S3"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "FROZEN_S4_ENTRY_NOT_EXECUTED",
+  "supersedes": {
+    "path": "evidence/document-understanding/batch-001/wave-1-s4-entry-freeze.json",
+    "sha256": "ff22c22aee6c2c0300e655778f4b3d6768133a12fd1b7a5ef31bd730320eb0ce"
+  }
+}
