@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S4 Normalization Contract v2 Independent Review and Execution Gate (required; not started).** Independently retest recursive schema closure, exact shapes, state matrix, rule semantics, whitespace blocks, ordinals, known IDs, and serialization before any later integration or execution entry.
+- **Batch-001 Wave 1 S4 Normalization Contract v3 Repair (required; not started).** Preserve v1/v2 and repair raw/source-order kind coupling, numeric/unit tuple relationships, executable negative vectors, and rule-correspondence conformance before another review.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema
