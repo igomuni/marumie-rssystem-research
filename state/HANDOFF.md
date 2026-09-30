@@ -4,10 +4,10 @@ Last completed Research Phase: 15
 Workspace Phase: 1D (deterministic page-aware PDF extraction, hash-verified against the Phase 1C lock)
 
 Current focus:
-Batch-001 Wave 1 repaired S3 execution v3 complete; independent review required
+Batch-001 Wave 1 repaired S3 execution v3 independently reviewed; S4 blocked
 
 Next action:
-Independently review `s3-repaired-v3` against the frozen contract. V3 retains direct row-word and literal-band evidence for outer ledgers and rebuilds A02 reconciliation from direct anchors with zero graph/manifest mismatch. This is execution evidence only; normalization remains unauthorized pending the review gate.
+Execute a narrowly scoped `Batch-001 Wave 1 S3 Repair Execution v4`. The v3 acceptance review rejects both graphs: most emitted outer ledgers omit the source-line membership required to reconstruct a literal local header band, and A01 page 6 relies on a tolerance-only x-range match. Preserve v1/v2/v3; do not start normalization.
 
 Read first:
 - START_HERE.md

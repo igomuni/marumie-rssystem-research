@@ -1,0 +1,5465 @@
+{
+  "artifactType": "batch-001-wave-1-s3-repair-v3-independent-review-audit",
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "crossPageOrFileEdgeCount": 0,
+      "crossPageOrFileEdges": [],
+      "edgeCount": 34,
+      "edgeIdDuplicates": 0,
+      "endpointFailureCount": 0,
+      "endpointFailures": [],
+      "historicalV1V2CoreHashPass": true,
+      "historicalV1V2CoreHashResults": {
+        "s3-repaired-v1/edges.jsonl": true,
+        "s3-repaired-v1/nodes.jsonl": true,
+        "s3-repaired-v2/edges.jsonl": true,
+        "s3-repaired-v2/nodes.jsonl": true
+      },
+      "idFailureCount": 0,
+      "idFailures": [],
+      "immutableBaselineHashPass": true,
+      "immutableBaselineHashResults": {
+        "authority-preflight-profile.json": true,
+        "edges.jsonl": true,
+        "nodes.jsonl": true,
+        "observation-manifest.json": true,
+        "raw/poppler-bbox-layout.xml": true,
+        "s2_s3_observation_procedure.py": true,
+        "source-manifest.json": true,
+        "source-observations.jsonl": true,
+        "structural-interpretation-manifest.json": true
+      },
+      "localNestedFailureCount": 0,
+      "localNestedReview": [
+        {
+          "nodeId": "s3r1-nestedStructure-58401aad68ab019694e1",
+          "pass": true,
+          "pdfPageIndex": 6,
+          "problems": []
+        }
+      ],
+      "locatorFailureCount": 0,
+      "locatorFailures": [],
+      "nodeCount": 67,
+      "nodeIdDuplicates": 0,
+      "nodeTypes": {
+        "nestedStructure": 1,
+        "outerLedger": 20,
+        "page": 33,
+        "unclassifiedStructure": 13
+      },
+      "outerAcceptedCount": 0,
+      "outerFullPageAgreementCount": 13,
+      "outerFullPageMatrix": [
+        {
+          "agreement": true,
+          "pdfPageIndex": 0,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 1,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 2,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 3,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 4,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 5,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 6,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 7,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 8,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 9,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 10,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 11,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 12,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 13,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 14,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 15,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 16,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 17,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 18,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 19,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 20,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 21,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 22,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 23,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 24,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 25,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 26,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 27,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 28,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 29,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 30,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 31,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 32,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        }
+      ],
+      "outerRejectedCount": 20,
+      "outerReview": [
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-e7dc5d238c3c1ded89aa17b7",
+              "s2s3-1114abb7c82bab8573888bb2",
+              "s2s3-6d0778f91fd1ac46f1292efa",
+              "s2s3-08a5d65f560258bec1788c79",
+              "s2s3-0b6d7cccd2be42faf54891e0",
+              "s2s3-86db19f5f2e7770708b06e69",
+              "s2s3-f1796e9b4cf751428ac20794",
+              "s2s3-2f48ada30e67e0ccb2f557e0",
+              "s2s3-1742206be03f6b2bc0c41368",
+              "s2s3-cbd9038f0841004fe6a1d418",
+              "s2s3-59cdc3f299f01b1615ad9b21",
+              "s2s3-9da6cfc36bcd7e0982aca255"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-063b2ab4d5e19e0566cd",
+          "pdfPageIndex": 17,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-28e66ed8de2f600e5717a8a9",
+                "s2s3-baa30305f7933435c2ff33bd",
+                "s2s3-3acbf2bfd344ef4280055572",
+                "s2s3-82f762bb0ce321d06849fa6d",
+                "s2s3-717d937781d494319733792e",
+                "s2s3-83a25df14262248efa5831d5",
+                "s2s3-2f5f6021303f6fa3f340acd3",
+                "s2s3-2e39b32d1f2c2ea9b0314d92"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-3eeb74346549a912b1b31f53",
+                "s2s3-3b923a3bfeab06b27e15da66",
+                "s2s3-3a4a9589ca4c9bf78e8a8571",
+                "s2s3-ea3d7b4d57a8101fbd0c3091",
+                "s2s3-7f24da9dc71844e3a166c2c1",
+                "s2s3-8a24fc7b7e9617090f46f27a",
+                "s2s3-50d106999f9dc402cbc21451",
+                "s2s3-6ca72033a6efd9c1046f26f1"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-198ca871e606fafc381a4535",
+              "s2s3-543efa10237e34e714209f88",
+              "s2s3-36a75318dcb289b7a2e06d3b",
+              "s2s3-0d0f0c97008365c11c9accd7",
+              "s2s3-26ebcd61ed77157b18aa8609",
+              "s2s3-d3bcc3b8d3b7c3e25cdd449a",
+              "s2s3-9e7f5d25ddf2514089549576",
+              "s2s3-4fec57e3841c23c38bdecaa0",
+              "s2s3-13220f2e33ca64315b770670",
+              "s2s3-066ef61769cc82bbb4f7d9c8",
+              "s2s3-18a93f8c2fbd5663c036fdee",
+              "s2s3-569b730fb9fcec6c1c1b8b4a"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-0e1d5b310cebe5dffd39",
+          "pdfPageIndex": 31,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-f18d680d73704e9ec631d5d4",
+                "s2s3-42b9aa8fda0bd73be1d9140a",
+                "s2s3-2f904e46475340498d8919e3",
+                "s2s3-d315ccd0a3d1ffb7a25d9412",
+                "s2s3-b14d9bbef7ca18feb161e950",
+                "s2s3-0b86d77526c1e3e2252dc62c",
+                "s2s3-dbd29d5e9c4c38ea382bcbbc",
+                "s2s3-39e74926882e97b7805b588e",
+                "s2s3-baee411cfcf1613f877739b2",
+                "s2s3-7f3703bf0a1a1e96098c2078",
+                "s2s3-73ae06be7721b37bfe0f68ef",
+                "s2s3-8a315de942e48d214a990f20",
+                "s2s3-d754aac357d63e738232c8df",
+                "s2s3-ac419e9b5bfc901e102f21b6"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-932e3818c47dbd69eb5d25da",
+                "s2s3-33e2e695e6122fd269a4a4c0",
+                "s2s3-df07e2a28133e451a7c557cd",
+                "s2s3-81d3bf5933cdbb76065f4fd5",
+                "s2s3-200b89123b8dfed78e5788a7",
+                "s2s3-9094061ecc35a7af7a5bab44",
+                "s2s3-45c63c5758d943499b3f1e26"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                79.852345,
+                48.00304,
+                86.796065
+              ],
+              [
+                34.1156,
+                86.796065,
+                48.00304,
+                93.739785
+              ],
+              [
+                91.4515,
+                83.324205,
+                98.39522,
+                90.267925
+              ],
+              [
+                153.94502,
+                83.324205,
+                160.88874,
+                90.267925
+              ],
+              [
+                207.0585,
+                79.852345,
+                214.00222,
+                86.796065
+              ],
+              [
+                207.0585,
+                86.796065,
+                214.00222,
+                93.739785
+              ],
+              [
+                226.15372,
+                79.852345,
+                233.09744,
+                86.796065
+              ],
+              [
+                226.15372,
+                86.796065,
+                233.09744,
+                93.739785
+              ],
+              [
+                245.24894,
+                79.852345,
+                265.76822,
+                86.796065
+              ],
+              [
+                245.24894,
+                86.796065,
+                303.9587,
+                93.739785
+              ],
+              [
+                588.3945,
+                83.324205,
+                595.33822,
+                90.267925
+              ],
+              [
+                650.88802,
+                83.324205,
+                657.83174,
+                90.267925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-30ab5e9dd6b40baa311cd5ba",
+              "s2s3-4bd35733c155d3edd5b1b40f",
+              "s2s3-7301ebbf1d38f03cb66ccba8",
+              "s2s3-c1c56413d2a1d922a94e5de3",
+              "s2s3-a6c1575801f3a67e1bfc0694",
+              "s2s3-3030ed205040836ea203f3ce",
+              "s2s3-b9ea9540e69edc939d3ae8dd",
+              "s2s3-2afbaa5c6f4a73cd4e463881",
+              "s2s3-015454b05890b918a8a1197f",
+              "s2s3-143b52dd0769ace73adb51ab",
+              "s2s3-f4aeb2ae172ba07d3600967b",
+              "s2s3-c920fa930a24809610863321"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 14.92900000000001,
+            "verticalSpan": 13.887439999999998
+          },
+          "literalBandPass": true,
+          "nodeId": "s3r1-outerLedger-17ceff74a7a01ab4faa2",
+          "pdfPageIndex": 6,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-d8923a3d452948d466ed711c",
+                "s2s3-e9e4628743f35d60d31aa5a5",
+                "s2s3-3858c22dabc7435992c1a8ea"
+              ],
+              "strictHeaderRangeMatches": 1,
+              "toleranceDependentOnlyMatches": 1
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-cc65d191cf45fc8b5134da36",
+                "s2s3-c3f0c713e3dffff367a49375",
+                "s2s3-412b2d7cf58e6673d8dc1fa9",
+                "s2s3-9f0140061ebd9a685af3bcf0",
+                "s2s3-c45b4e109b91c7f088561cfa",
+                "s2s3-3de31d4c50f69c51ead8a5b3",
+                "s2s3-a7ef083efedef6810c38258a"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": false
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-033fdfd36f8ab6986fef9ed6",
+              "s2s3-cdf71d59e2ef4faa682fae28",
+              "s2s3-0f7f742e5a1b3a5377f25650",
+              "s2s3-f6e8897f0343190637f77781",
+              "s2s3-244246b7c7877e2943749ca0",
+              "s2s3-f016944360430c7cb4e9141c",
+              "s2s3-e883634773c6e70d6333bbe2",
+              "s2s3-3f54f3db7d661591f4ee0fe9",
+              "s2s3-5bc5e9a0e7d126575488318b",
+              "s2s3-ee034442ec29071a4fd662e1",
+              "s2s3-85cf73cfe132ae523a446553",
+              "s2s3-cf1db7559138bfa93e92f272"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-5390f8c048f67260e0b2",
+          "pdfPageIndex": 26,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-ac0e6b2bce2f9ab22af7b7e0",
+                "s2s3-c173d8e53e11318070ce6f61",
+                "s2s3-8299b6d74544d4878afacfba",
+                "s2s3-1def5eb64201d4fff19d78cc",
+                "s2s3-ac07b39fed04f765118ffbe9",
+                "s2s3-b2d546312ce58d7384f8409a",
+                "s2s3-4f9bbdfc5419699a9f4daa3b",
+                "s2s3-89af88ffee69ca5ebeb362c9",
+                "s2s3-7c8ed375bb1eb020305a52aa",
+                "s2s3-6ae392ee0b1c761260b5354d",
+                "s2s3-dae0ab72fe9f68d418c3a34b"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a9159f0de4be4ac3e6e14d46",
+                "s2s3-52a80d716c071311fc9bf6af",
+                "s2s3-6187af4de9e1c1578f01b601",
+                "s2s3-0941cfcce26f2bc7abe7fdad",
+                "s2s3-0bd1f9f3d93e68f1af3bcb47",
+                "s2s3-98dbd3eb104056a51341c594",
+                "s2s3-b5f52bb6e6d912aa63bc5108",
+                "s2s3-cede7ec23cd56f2afd2dd26c",
+                "s2s3-e1c4ef8140cffe6535741ffb",
+                "s2s3-43b2e2e9a6b12131e66a55b6",
+                "s2s3-5af84575d39efad3b935513d",
+                "s2s3-8a29796b437a1430fd9b3d42",
+                "s2s3-fc4bdc34cf95d021f12cc8fa",
+                "s2s3-8fc58ab92ff73e6d4c2dcd70"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-7a38c4a220e3abcacb14bacd",
+              "s2s3-ec9426d344c68046870a3048",
+              "s2s3-d05c82cbe408a4418352502e",
+              "s2s3-ecabb321634fa581a7ff5e17",
+              "s2s3-9d15d680303945d9a7cf0e1b",
+              "s2s3-430345fed2c45734becee9c8",
+              "s2s3-f159e8b1dc8753e6092b0bf5",
+              "s2s3-1dcb1caca4e5199f982e814b",
+              "s2s3-72a377d2a91fc267a61be3ca",
+              "s2s3-4310d09f9ca399584f281474",
+              "s2s3-1b622e372469d90e427fff93",
+              "s2s3-af6d03b0782157d5f9fde8f8"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-5674497367808ad20b82",
+          "pdfPageIndex": 22,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-2e70f10acf5c29ae0fb6023c",
+                "s2s3-39e078da226f33db5e1f3085",
+                "s2s3-4e0630cc8765525a6522c952",
+                "s2s3-50fc906854f1a093c932e191",
+                "s2s3-f7f94c9b3b3ef8f56b1c9645",
+                "s2s3-f86e382dbe3b117f9f88f752",
+                "s2s3-b9cf53b0a5ca1477b3510e3f"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-07300ab788b8da534253333c",
+                "s2s3-efd153176d82309eb4b64f89",
+                "s2s3-eeabb3a802194073d6119dce",
+                "s2s3-b5f38a6eca16c30c7e7d5968"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-6dec8e974bdb2ed11b55a374",
+              "s2s3-fd798da309a7660abc27fb61",
+              "s2s3-4b9ca5465eb72366a521442f",
+              "s2s3-016c7a4f0d9e4030646f401b",
+              "s2s3-ad930c5b476d2b402a113db2",
+              "s2s3-318c6611106bcef6408b2144",
+              "s2s3-91674aad3f0629da007332b6",
+              "s2s3-8bb25e64aedde1bce143dc85",
+              "s2s3-d2b1ca3c63f9b1f7fa3462f0",
+              "s2s3-b7a60c8708ccb948384c3547",
+              "s2s3-d86323daed608d1746229198",
+              "s2s3-423ffef639c1e948e8c98c6e"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-56c35df62d0621a7462d",
+          "pdfPageIndex": 32,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-13980cd7c0f09be753420274",
+                "s2s3-16293c13e8b5133030f0f989",
+                "s2s3-07f44050279bdc8bc35924db",
+                "s2s3-addb304ffbe3be83f6237f41"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-c86ef409c831456825fefc7d",
+                "s2s3-c4421edef3686fc48e5fe013"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-46bb700f52d3cf64c7d1de8a",
+              "s2s3-406f20c3395f6f10324e39a0",
+              "s2s3-776f78ff915652e48924c2a7",
+              "s2s3-9d1a217debaf580cc28616ae",
+              "s2s3-dcf5f9500c67556e8e8c9660",
+              "s2s3-6ed5dca9e83550a7f7776b6f",
+              "s2s3-a6ac448e2ed132f66820f7e9",
+              "s2s3-af4cf0c72b8f84bd32d1f6ac",
+              "s2s3-88a8f85f7b981d16248e1a40",
+              "s2s3-36b32ad75b71f5e33b8388af",
+              "s2s3-a14080d17580ae82f602ba86",
+              "s2s3-f5b2fad629ebb91ec109787d"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-6173ac97d44d8dcc5427",
+          "pdfPageIndex": 8,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-3d5906e246289d3b3111de0f",
+                "s2s3-ca764afa3b2f0cddd812314b",
+                "s2s3-22db39c4b233a7b6cd3787c0",
+                "s2s3-52e487c76b728adbcc054e14",
+                "s2s3-3ce1dabc4607646636b9f0a9",
+                "s2s3-5bf93f7443e560a3138c6775",
+                "s2s3-17a2ecd31d231761d220522a",
+                "s2s3-ca21f80e09a98f814c316767",
+                "s2s3-24a84d00d4451151e34ddcda"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-8843b15fef8344ab6b405c44",
+                "s2s3-ecf98c35c10bf7fd79cc7ecd",
+                "s2s3-9c12aaeb374bc60ad0e5fb0d",
+                "s2s3-7fe892fb3e458abe54817c9b",
+                "s2s3-5d836c71a2981608c7768328",
+                "s2s3-7d013f81242bf7b5be8d280e",
+                "s2s3-2e56a4376a57767970ad95d8",
+                "s2s3-f11ea4ec24e9a9e690fb5c9a",
+                "s2s3-85e3e6afe2e471651899847b",
+                "s2s3-1043b05a5b0e09f1a2dbe758",
+                "s2s3-4e8c2713abc3e99646bf0adf",
+                "s2s3-6ca93d6ac13e50c24b78aec5",
+                "s2s3-5c3ea3dab7d8245bc032849c",
+                "s2s3-5587ed69a4dc8b5314d876dc"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-50709bce8e98d97345a11bd0",
+              "s2s3-c77af01dc82dbb0c925c2f11",
+              "s2s3-becf20f0a4fd9469f9787096",
+              "s2s3-4a4b931c8bab4a9a7b666862",
+              "s2s3-961e0b80693040e98fa22112",
+              "s2s3-0392d3e19bcf731ead88989c",
+              "s2s3-86627e1ed59bb5cae2a1b9e7",
+              "s2s3-0cdbc441e08f7564a2883e79",
+              "s2s3-34914c5e5de7e1d32c3a48ba",
+              "s2s3-ddd46550b75dbdec4bcbf9cb",
+              "s2s3-d41bf28f0fc369711fb65182",
+              "s2s3-58fd81c42573bf7ccc9dbce0"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-83fa0db623e45d708187",
+          "pdfPageIndex": 13,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-ccae0d374ae6265637423a0e",
+                "s2s3-dd10cd6d14f6a32d8c6ccc12",
+                "s2s3-e96c4e4090067b04fe2ee73a",
+                "s2s3-7f77903aa6494daeab04e7ef",
+                "s2s3-f73c1b088347e6d702a2b5fa",
+                "s2s3-306ca9aefc4a2bed94962de1",
+                "s2s3-ff4693dfba2291a3488d5d43",
+                "s2s3-bc1725b88227bb860b6d50ee",
+                "s2s3-ddd7a00127d53693bfe9279e"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-68172d76b39ef0e02ebc856f",
+                "s2s3-b0a6e34ce481324e8c2d4819",
+                "s2s3-b4462cb616bee6d85b49e059",
+                "s2s3-2b0c45f9637f19e92603c1c5",
+                "s2s3-055c5e9df8412f43cfba4846",
+                "s2s3-2ff501d76ccbc410d56c0b0c",
+                "s2s3-77d4c3355022b3d7382170df",
+                "s2s3-9b309fa4ccdfbbfdad40b34d",
+                "s2s3-1c97080229cd09cac38304bd",
+                "s2s3-0b91adf98618c6c457bb7aeb",
+                "s2s3-6d05f4da9d1047a4b635801c",
+                "s2s3-5f2a6837754d1442b0137007",
+                "s2s3-b36c2c6690727dacb2d7ae55"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-6628eb51bfccef893906f109",
+              "s2s3-ab70362264f771b6e0540dc5",
+              "s2s3-f52f3e6d6e64358ce56e7beb",
+              "s2s3-34869bedb262ff5579087e1b",
+              "s2s3-5534903522eeed2a4e7ad2e6",
+              "s2s3-76dafe21f278a9f78eaf4072",
+              "s2s3-8bc27bdc8068201c250fb46a",
+              "s2s3-0efe42928daac67642e1ce33",
+              "s2s3-62c9c3092f8570b3498c140a",
+              "s2s3-665e53f60b8e995dbf94c380",
+              "s2s3-fd950eee0c43faccaeeed315",
+              "s2s3-25ae41cf8bd42de79e10b75a"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-845d9a5940248ae8e99c",
+          "pdfPageIndex": 12,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-035bfe385af1a5bb7ec11839",
+                "s2s3-389ceb1da59ca9c5abcdbef7",
+                "s2s3-08e3eff3331f4e2e44bbbae4",
+                "s2s3-62fa30b740ccb67ea362cf90",
+                "s2s3-7216b93efc36e6939d18c0fe",
+                "s2s3-6ac268ca1ec7be05ac6d0f95",
+                "s2s3-0ba5825096e103109be5a1bb",
+                "s2s3-99e373c8303f77081cf34ccb",
+                "s2s3-f0d0689133e51794f024eaf7"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a539350a7e95661dec4483d3",
+                "s2s3-eecd97caf2b57816b3c40844",
+                "s2s3-6c6df26974d25c0f90c4c4a4",
+                "s2s3-a567e28ffe67ded60ae7e4d8",
+                "s2s3-8efc80ab8b5b1c0a85be2596",
+                "s2s3-f5fe4fef74fca9e6e16a4f85",
+                "s2s3-333cafdd33249b037c39cc72",
+                "s2s3-2f53e324e57479c449992abd",
+                "s2s3-1de84e065ad981ce6631a163"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-3de2b35efd07f4ba6484a179",
+              "s2s3-632f3e7afcc0cd8385f816fd",
+              "s2s3-4544a12c9400caff17141930",
+              "s2s3-2444f866e5df9506e95272b2",
+              "s2s3-327d3e5d57454876fbf10384",
+              "s2s3-6432b8e77eeae2395f7afe63",
+              "s2s3-103d2d5af4fb8155276a12d2",
+              "s2s3-f45af8d7a9d88e531d17642b",
+              "s2s3-e7385fb9dd781028c78cea89",
+              "s2s3-15ba04a3570eef9350cb5bcb",
+              "s2s3-2c69b1d69e45b701267f3f7b",
+              "s2s3-6f4980630443e4d9c8e2dc78"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-a6d950a556f75e07da10",
+          "pdfPageIndex": 7,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-4c63b44bbbb6fb295c5e88e9",
+                "s2s3-d13f54ac4c7b884f50b1e250",
+                "s2s3-6475264d7d8c1c3d0019f9e0",
+                "s2s3-7fcfeae4f504894104a38dff",
+                "s2s3-eb5e523f9eb0172bbc446bf5",
+                "s2s3-d6680f101e3cf2f9c8916876",
+                "s2s3-6c42532d340a5d63e8f185d9",
+                "s2s3-f2359241f46571840702f8b9"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-88a1cef22896ef58d8f84d09",
+                "s2s3-f881dc2baacc9c9688063c8d",
+                "s2s3-d97b43805a6b514c4e00cc3d",
+                "s2s3-e41e9fb92b6329eda25b752f",
+                "s2s3-b686af1294d9dcd3aa043c0e",
+                "s2s3-5031cd4bebbf23a65583e237",
+                "s2s3-af2de56d104f954435c6bf5b"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-e227e88e8ec7a42d89a3a555",
+              "s2s3-31ecc5bd9413c43d92b15492",
+              "s2s3-25acbc3e58f46a482e7ab01a",
+              "s2s3-e09e7594d0dd432bd8689dcd",
+              "s2s3-f7bbb608ead37faa0ed1c1bb",
+              "s2s3-726af1724ba2bc70fca351ae",
+              "s2s3-86fe3997abf05a0cf55993cf",
+              "s2s3-51658fbed73c153f430529ce",
+              "s2s3-a7221811fc3379befe935c7e",
+              "s2s3-c30c39e95c20726b0032dfb4",
+              "s2s3-3b038a71909a6e1be6944e13",
+              "s2s3-9ddb39f64c6c05c8470551d6"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-ae090b26760a93f8b106",
+          "pdfPageIndex": 20,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-00c75e1c08515cd08dc4c52e",
+                "s2s3-f78ac1ae418a8f5ace4cdf2e",
+                "s2s3-26ffbf0945bf9f5e2725ae47",
+                "s2s3-183e4a5e2004fd17f9e8e9f5",
+                "s2s3-bea34e392ea2565e96569489",
+                "s2s3-dc8302c80c4493d0ce64cee0",
+                "s2s3-930c3bafa0abd7755ac0e73d"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-578e7c176864d7da14d0f1d0",
+                "s2s3-69b96e75a2b87a21255d6e4c",
+                "s2s3-e8b929614a1f69d12f2385ac",
+                "s2s3-d818f25aef539541a8084c7f",
+                "s2s3-6fc0f29fdb37fcde0d94b279"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-aa508472a7a7fdf581728761",
+              "s2s3-da7303d5d4e42e664c3cad09",
+              "s2s3-18a435c5e5ad6451e8ed96a1",
+              "s2s3-a245b80f8088fc92eb929787",
+              "s2s3-821a98674575313c25d91956",
+              "s2s3-72e6526b33e3e3432b355ddb",
+              "s2s3-05f3b3b30d10474a749eb4a5",
+              "s2s3-c908a1efa3030ff62440d5d2",
+              "s2s3-acda8e3d4250fdf1da6850a7",
+              "s2s3-1901dd7eea69e8f481380b59",
+              "s2s3-94be2784014b65dbe96b6a9d",
+              "s2s3-3b7b0be157d5adfce7bbe97d"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-b11a75c136d8065b9a57",
+          "pdfPageIndex": 29,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-d056f6e5196ea899b0457761",
+                "s2s3-dce77db81a42f01f9fabef46",
+                "s2s3-aa6e583a980813604226375b",
+                "s2s3-60bc998dbe3c354724ff14d0",
+                "s2s3-783d59899c0c3a77595ce102",
+                "s2s3-bd83ff46146c9125c9df0f18",
+                "s2s3-325e4558711966139e7ed1e3",
+                "s2s3-f61eaf724e3be0ce44f0aae3",
+                "s2s3-4bb5e363ffe81d4342fd9b4b",
+                "s2s3-d1283a286d11f7b2111cff88"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-689c2922c4ac448ea13e25d9",
+                "s2s3-ff0494f630bb6b0def9f5eea",
+                "s2s3-ba42514e8892993df0ff93b8",
+                "s2s3-ad17f095302d6cc330eb34dc",
+                "s2s3-e7ad0f03c1ecdd17e607f5a6",
+                "s2s3-6bce7db80b80f718c39e8ea4",
+                "s2s3-69dc1912002278360e2175d1",
+                "s2s3-7ff94f449d1f100f48318c1e",
+                "s2s3-eb2a4757d943c3bb1c672659",
+                "s2s3-2cca4cf589e1b2bafedce4ab"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-44fc7a1305d4bc470338e0ce",
+              "s2s3-6b67828d70e077b9e4a79f8b",
+              "s2s3-fc814015b6fbfe8831df2efa",
+              "s2s3-5280268a99fb1e213c2801de",
+              "s2s3-9cd12199b1fea788bb7fba3b",
+              "s2s3-6a7b5ff85d0cf0495182a5f8",
+              "s2s3-5e8ce6dcd74971bacfdda073",
+              "s2s3-7dd429dbf1e5060fdc885f3a",
+              "s2s3-1849c3f31dd4229d15b897f4",
+              "s2s3-8833ae309831216badec1059",
+              "s2s3-a855a2e0507ed882dd9de988",
+              "s2s3-f8aca52455aaaf8ae3348b4f"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-d283899ab06b5906b116",
+          "pdfPageIndex": 9,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-b73c7fc185917988e6e99beb",
+                "s2s3-4b96c06073b5a472e0c16604",
+                "s2s3-c4778db78ae62f767fcc90f5",
+                "s2s3-cc3051337cec746408ee99f6",
+                "s2s3-576f2558e8c636eb16aa0c83",
+                "s2s3-81f0ba92a858ff220e0e5a06",
+                "s2s3-005f4b1fd931bc18c3f5081c",
+                "s2s3-75db12e4f6abb08c64da1e1d",
+                "s2s3-ddff7b5a1c643458fd0334a5",
+                "s2s3-7ff2ec9fb8fbd06e3e3ccf7f"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-6cdcbc814cfb515816401ace",
+                "s2s3-715b010f3b784c1033244daf",
+                "s2s3-0819c800830ced3247a106d1",
+                "s2s3-61370395c14335a870b5a3e0",
+                "s2s3-ae6e5704f22c963e9c59bd53",
+                "s2s3-b68a9b0565fe5395d4fbee52",
+                "s2s3-22076e7c6109662ad407d1d6",
+                "s2s3-b5773818591dec06a1c82521",
+                "s2s3-b9680c30c52758ad0122bca8",
+                "s2s3-73673edcccde9906a52e3f07"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-cc0c394d8eb825ec9e66323d",
+              "s2s3-d8d22bf7c6059c972f8a4735",
+              "s2s3-64fab189d28e08918a58ec34",
+              "s2s3-3d4e80cb6711ff80b0bc114a",
+              "s2s3-fb07c7ac8d3f3bc6f257521b",
+              "s2s3-b0ce8e15272f84df4c690a8b",
+              "s2s3-c04f2d767dcad79d09334589",
+              "s2s3-67c7b93b1f42cc59766db92e",
+              "s2s3-a671a06a0c57b60e0e596367",
+              "s2s3-42a805064966d73ff8a19c9e",
+              "s2s3-553c1b8aecfc3d844f0ed493",
+              "s2s3-4e6f3d2a6b59cf6da154ab00"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-db7c52e46c7b93cb0e5b",
+          "pdfPageIndex": 25,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-f921086fd1328773c224431c",
+                "s2s3-c69c6375015c3469df49f7e4",
+                "s2s3-1fe425250ddb13e0f6fd6f65",
+                "s2s3-4f28447fdd599b2b453c2f53",
+                "s2s3-2ec43234096426ab35390ac3",
+                "s2s3-28ef957ff5f2340bb6c98ef5",
+                "s2s3-260d3b6979f4481f7a45cfe6",
+                "s2s3-162e09729ec04e7bfa9d72bd",
+                "s2s3-b913324986279bdd52824fec",
+                "s2s3-8de13e0a439b67b5ab0e0446",
+                "s2s3-464d18cdcf92011b8d85b05f",
+                "s2s3-374aad3bec913adb9f2b8781"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-c1514549bc27394885f054f8",
+                "s2s3-8b61029dba66c46c5e715df5",
+                "s2s3-24de8d4e1b3578cbe64c5652",
+                "s2s3-e21e77f4d81eebf61b1d202e",
+                "s2s3-470e65a52868850b8099f27b",
+                "s2s3-66d914667cc30dd58977a421",
+                "s2s3-6b6fa0c3800660a2a42e4dae",
+                "s2s3-a599e996fa6fe6ca31e6a521",
+                "s2s3-4f060c86b6ed3b1c2fe212b2",
+                "s2s3-e528d8650a7310ec5d33c40f",
+                "s2s3-5cf765edc24097d6e412d605",
+                "s2s3-7874108b6d3ee95dc20ee7a2",
+                "s2s3-5544b5a1b2766e3d6cd876fb",
+                "s2s3-91a19889fee3ae28f8e15700"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-9ad70cb4e4f2f3801a933597",
+              "s2s3-2d85fd5cc3695eb12d450d94",
+              "s2s3-48392830362d11180e2dc69f",
+              "s2s3-0d72b32c0b5b6d6e31326863",
+              "s2s3-4e5c3414e40a2200ae89f969",
+              "s2s3-aeceb3c3c680abb7baa95ec8",
+              "s2s3-4c35bb1e972c5c6cd9251e49",
+              "s2s3-8c30c57219d3e57b834ee123",
+              "s2s3-41a39bed18a5a1bfeb8999e4",
+              "s2s3-ca1e5176463d4fbd87c6325f",
+              "s2s3-22ed8911b7ab471b8739467a",
+              "s2s3-94042dffe3492e07d34ad1ca"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-df6ffc41f223473ea907",
+          "pdfPageIndex": 30,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-447e493de8a8ef7c604bed76",
+                "s2s3-11fda4f2dc96cb7369f9edd4",
+                "s2s3-7f0a95df99b7bdb34a0a7d76",
+                "s2s3-71c81a0f74ab1fb7241228f5",
+                "s2s3-6000e4dd3d71726a543efb7e",
+                "s2s3-1b9cc541561445d389c73eaa",
+                "s2s3-c6c939947db3ffd73290b19a",
+                "s2s3-369d66354e95535ffa9dec78"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-66d3d44f0f134fa83790fb74",
+                "s2s3-405ce8954c1122b566894e35",
+                "s2s3-16ede52b2918f4fb0a469c8f",
+                "s2s3-a19217913e3ac909e077ad39",
+                "s2s3-a444ffb588442f491ef44ac3"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-49b2cd0112156c139c83983d",
+              "s2s3-6b2be2fea1154c489fa37fea",
+              "s2s3-be5e89e8c44b338a5e672d48",
+              "s2s3-167d51c45c59636578af7bd0",
+              "s2s3-98815ad1edf7363514daca7d",
+              "s2s3-9385e422eaa7f96dea1eb8f8",
+              "s2s3-a7f30e0f059ac84ff6d56f4c",
+              "s2s3-ba74b21a96b0775a998acfa5",
+              "s2s3-7bab594159ab135cd3c7c2e7",
+              "s2s3-efe27e69a4df71ff56e66837",
+              "s2s3-0ff9e2e6c756c8bbf49f5111",
+              "s2s3-c7874824d92a0280088d6e7f"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-eb4c1ad41079dc1fed1f",
+          "pdfPageIndex": 28,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-288eb26bdfe262aff686dab9",
+                "s2s3-79d52684bb7a8926e079fa90",
+                "s2s3-43052fbc038cb0c933e1ac41",
+                "s2s3-1bfadf752edea429c78dad72",
+                "s2s3-aaa6130ed26db273b5bbdb18",
+                "s2s3-5bb156064bfd4bd35904b445",
+                "s2s3-33e2eb04eb75a37d8a7c9189",
+                "s2s3-1129371b5b2bbf14ea7ffcf1",
+                "s2s3-e15e03d9e3de9531a5b34d46",
+                "s2s3-53cbb213b3a3b8dcf06b09bd",
+                "s2s3-4c952988229d5799aa9a6acb"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-286d1ace25135cf82c47e5c8",
+                "s2s3-3bae84b083e55b4566bb1fcc",
+                "s2s3-44d788d4fcfab561df226e1e",
+                "s2s3-7efababcbbb40a273a10e1a5",
+                "s2s3-d0f75c43651e16ca8e10d95d",
+                "s2s3-83f2185f6bbbd6d15d9cfcb3",
+                "s2s3-8d426af435e7c604f5bbcbcc"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-1d56faa216b8a570ab472d16",
+              "s2s3-25b1264a05a4a90b35cecb5e",
+              "s2s3-81f2f8df5bfaffe7c080c1ed",
+              "s2s3-5b578e4cdea965ac2fc4a382",
+              "s2s3-f5ff1cde06889312336aeeb1",
+              "s2s3-a25951be6baac1bc60d2d83f",
+              "s2s3-8140be1ed8041e17326c03d1",
+              "s2s3-34cc161cfca843879e2e955b",
+              "s2s3-dc877a5e255e471f09542eab",
+              "s2s3-69c6960e108264c9393e30f6",
+              "s2s3-c19d89806db2e74f80264fd8",
+              "s2s3-e515af6dee93ff140a59ce3d"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-ed6f7d331f31a700384f",
+          "pdfPageIndex": 16,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-4f6d470997bab173d739b0fd",
+                "s2s3-a3d545ad423471cd00097b62",
+                "s2s3-8c68cbe9ca0e0e36f0bcea7b",
+                "s2s3-8a0a98ae9a4edbbed8280134",
+                "s2s3-db82188122cf6ad8622aefe2",
+                "s2s3-0601ea14a4bb87ad3b495e52",
+                "s2s3-933ba3dfa033a85df0504c6c",
+                "s2s3-2900a47b6f0d536e4d3c4109",
+                "s2s3-cc8b16bff06611a07e2c146e",
+                "s2s3-2df6c875aefe31de99cd48fd",
+                "s2s3-67b7b3119abadf335c29a165",
+                "s2s3-f06c7c1f253306f84c321fbf"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-f376af4c59ad3ba947681d18",
+                "s2s3-015d979c302fd4d4bfab209f",
+                "s2s3-1b6fd4eef3866d02d56d4a59",
+                "s2s3-e78a9eda9572253471215ce3",
+                "s2s3-7cc9cc0ec224c9538db7b398",
+                "s2s3-20ac1845e861589ef132d8f4",
+                "s2s3-d1acc1e34f697ff1fdefaace",
+                "s2s3-090f8b29e5dd36e0f70e2ac0",
+                "s2s3-fd71e32668c573d124d947f8"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-1d433f879a40a21962855b5a",
+              "s2s3-c1b73b0d80ea3747d01b2ade",
+              "s2s3-7947b2164985da045b5f1ff6",
+              "s2s3-01328f2f97e343e7c8ed41de",
+              "s2s3-1f79be8334bc415b715d1749",
+              "s2s3-e9070ba43abeb71e5a2a783c",
+              "s2s3-77465dc938d5b182c6bf5e88",
+              "s2s3-baae163b8208f123873a5323",
+              "s2s3-724cb610190293d5e352931e",
+              "s2s3-aac47cf45e1807e4bbe12c0a",
+              "s2s3-833d4391debceccf35a1375f",
+              "s2s3-4b7b8effa59aaeb7926541da"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-ef42d92a47d54ecadb08",
+          "pdfPageIndex": 18,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-6802af213d2fdb5b4464e167",
+                "s2s3-b59ac5ae8ec225fa08df80d7",
+                "s2s3-e06b237e853f2fcaeb662119",
+                "s2s3-28d5e3cba8fd83461e8d2679",
+                "s2s3-9f12e5479d22234104086ddf",
+                "s2s3-4707ddf5fdc8dfe70712e8ab",
+                "s2s3-0cfed5f8cf62920ed16cbdd1"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-362b004f028e8b47522435c1",
+                "s2s3-d5ad1a0df4161538dcb7b3e4",
+                "s2s3-4b04c81f5a5953287edda571",
+                "s2s3-f9c02c704951165c6d8f8ccf",
+                "s2s3-8646d49d9dcd0887aef6e671"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-66037709d6c25bafb03b49af",
+              "s2s3-48cbea42bbdfa909d0134fdb",
+              "s2s3-593119ae4fbe11471c0a3304",
+              "s2s3-7d9117bc1a21fc437435e04a",
+              "s2s3-cbf447cbfb3772c29de2e8c7",
+              "s2s3-75c33dcda4911d28ba1c1a95",
+              "s2s3-ab134a7b117b3a65a843f880",
+              "s2s3-84b7f354dbf0dad5710685b7",
+              "s2s3-af2270623d4cda45f14c28c0",
+              "s2s3-d8121bc66dec4ac7d5a4e5bb",
+              "s2s3-6bb277a3dab7b047dd77966d",
+              "s2s3-a222de8fef9739a4961e30f3"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-f4db2a1f1890dc487953",
+          "pdfPageIndex": 14,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a72149c3bbc9fc6b0a12fae0",
+                "s2s3-eb06c804110499e575f68c97",
+                "s2s3-8d3033740f90d0021834be07",
+                "s2s3-2b8d34d7583a842f7400fb0c",
+                "s2s3-62c8f58b289a823051e6aa51",
+                "s2s3-c33d723656588825418dc2f3",
+                "s2s3-cfe29f1ff7aa4292301116ce",
+                "s2s3-3c70a16b763ea0fb4b3fa80b",
+                "s2s3-dbf5cf513e82aa7927076958",
+                "s2s3-d3649c27ece2c0f35dfb3e95",
+                "s2s3-dbf8ebcddea05896dbd112ae",
+                "s2s3-533b877c79157d2593b5b2d1"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-eb765ab133543a8c0c46fdac",
+                "s2s3-79b9022ca8b22c0c678e1ebe",
+                "s2s3-1a9d42d98c4ae75b21abd7ec",
+                "s2s3-bf533c5b8160762a4642687b",
+                "s2s3-a7d5417fbfade32af0c40146",
+                "s2s3-89680ea5ccdf3cd637e03534",
+                "s2s3-5be6567592f6e7a7bdd4d500",
+                "s2s3-06b081c3aa5ee5dbd48ea6f2",
+                "s2s3-44892684b08780e295ea0720"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-acd6f660c8c170facc4f7a56",
+              "s2s3-cdbf94d8c75ed8cfc86b7ae0",
+              "s2s3-8528f234fac61db33ddf5d9e",
+              "s2s3-164ff237094fdf6c9b497b5c",
+              "s2s3-58af6bd89ea69a16d05ea463",
+              "s2s3-62592e15a31d088951595bc5",
+              "s2s3-f7c83cea91cd8c7c060dcb6d",
+              "s2s3-cd67e057ae6fc771f90bd735",
+              "s2s3-49b35dde1b1bb4b0a7bdb66d",
+              "s2s3-a123a32f683a2428290b5941",
+              "s2s3-e234a5639a1f7de3fb16e6b3",
+              "s2s3-df1a179c8acfe39b9b7f0a9d"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-fbc5494e398bba6669b9",
+          "pdfPageIndex": 19,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-5805470f39f1d91cd30377f6",
+                "s2s3-d36e4eecd1b2c188816483c4",
+                "s2s3-b91f0554cf5cdcf2473a51bf",
+                "s2s3-67b96cf4e16082792308fc9d",
+                "s2s3-98b9e39de70f407fb6e70d68",
+                "s2s3-d86c1a5618e98ec2dcb8e06b",
+                "s2s3-8dd395ac8ff1bd57db95d423",
+                "s2s3-6bae07b617bb80e213b274b5",
+                "s2s3-3e3818af193e475a184b5e24",
+                "s2s3-2f6ae108b1c3c623de9b4ba2"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-f4fd4f4e311dde67e6a74282",
+                "s2s3-16019d6341ac4a07f2f4b66b",
+                "s2s3-a97e0e09790485acbdc09fbb",
+                "s2s3-caded2a7363adda76f487169",
+                "s2s3-eb2841d91b80a1a7751d6236",
+                "s2s3-8c126fb44ad1870eae6e6856",
+                "s2s3-7dbdb762102d83ad7ea349ed",
+                "s2s3-6a7d6332ed1f0e0bd95bdc96",
+                "s2s3-26a52e2ff0a2a2f47b44c917",
+                "s2s3-556c7fad322190c0e1c01475",
+                "s2s3-0383d2d41eb687932190d667",
+                "s2s3-035b361e2c1bc0747825cd94"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        }
+      ],
+      "structuralStatuses": {
+        "source_observed": 33,
+        "structurally_supported": 21,
+        "unclassified": 13
+      },
+      "supportFailureCount": 0,
+      "supportFailures": []
+    },
+    {
+      "a02DirectAnchorTreatmentMismatches": [],
+      "a02HyakumanOccurrenceCount": 46,
+      "a02MissingTreatmentRows": [],
+      "a02SharedDirectAnchors": {},
+      "a02SupportedTableOverlaps": [],
+      "a02TreatmentCount": 46,
+      "a02TreatmentDistribution": {
+        "member_of_supported_boundedLocalTable": 23,
+        "not_structurally_grouped_representation_limited": 23
+      },
+      "authorityId": "shugiin",
+      "crossPageOrFileEdgeCount": 0,
+      "crossPageOrFileEdges": [],
+      "edgeCount": 59,
+      "edgeIdDuplicates": 0,
+      "endpointFailureCount": 0,
+      "endpointFailures": [],
+      "historicalV1V2CoreHashPass": true,
+      "historicalV1V2CoreHashResults": {
+        "s3-repaired-v1/edges.jsonl": true,
+        "s3-repaired-v1/nodes.jsonl": true,
+        "s3-repaired-v2/edges.jsonl": true,
+        "s3-repaired-v2/nodes.jsonl": true
+      },
+      "idFailureCount": 0,
+      "idFailures": [],
+      "immutableBaselineHashPass": true,
+      "immutableBaselineHashResults": {
+        "authority-preflight-profile.json": true,
+        "edges.jsonl": true,
+        "nodes.jsonl": true,
+        "observation-manifest.json": true,
+        "raw/poppler-bbox-layout.xml": true,
+        "s2_s3_observation_procedure.py": true,
+        "source-manifest.json": true,
+        "source-observations.jsonl": true,
+        "structural-interpretation-manifest.json": true
+      },
+      "localNestedFailureCount": 0,
+      "localNestedReview": [
+        {
+          "nodeId": "s3r1-boundedLocalTable-0418394a5717e9958a67",
+          "pass": true,
+          "pdfPageIndex": 19,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-08225f5cd379552530e6",
+          "pass": true,
+          "pdfPageIndex": 19,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-169d0f996af38e95e9f5",
+          "pass": true,
+          "pdfPageIndex": 15,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-1c1bb506ea9a98bf1548",
+          "pass": true,
+          "pdfPageIndex": 15,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-2375cd3493fb2d3797cc",
+          "pass": true,
+          "pdfPageIndex": 14,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-25fe069a5ef90c0151b4",
+          "pass": true,
+          "pdfPageIndex": 14,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-2789a1b303bf11a0a337",
+          "pass": true,
+          "pdfPageIndex": 15,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-34295a86df86f462fc5b",
+          "pass": true,
+          "pdfPageIndex": 16,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-376f4e9dd4fe2b23fc73",
+          "pass": true,
+          "pdfPageIndex": 18,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-3bc3de1eb3bbb518046f",
+          "pass": true,
+          "pdfPageIndex": 21,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-3e6bca3a9bb4cb993ab8",
+          "pass": true,
+          "pdfPageIndex": 17,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-3eb1d84aa3524b9b7755",
+          "pass": true,
+          "pdfPageIndex": 18,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-63d62e195d5d4bfe90f2",
+          "pass": true,
+          "pdfPageIndex": 21,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-7a6ce65c237111f03bf3",
+          "pass": true,
+          "pdfPageIndex": 35,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-7b329a2ca272f43e84c4",
+          "pass": true,
+          "pdfPageIndex": 19,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-8872303ea60ce12a2bc2",
+          "pass": true,
+          "pdfPageIndex": 16,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-8c70e39ccde9beb6d785",
+          "pass": true,
+          "pdfPageIndex": 22,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-af64c3fc2924d1f357ca",
+          "pass": true,
+          "pdfPageIndex": 17,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-b2d77b53a5980b4dc223",
+          "pass": true,
+          "pdfPageIndex": 21,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-c1570996a338d9ba9a12",
+          "pass": true,
+          "pdfPageIndex": 20,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-d3a8a51f975ec7477e71",
+          "pass": true,
+          "pdfPageIndex": 35,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-d432b714bdad97dbd49c",
+          "pass": true,
+          "pdfPageIndex": 17,
+          "problems": []
+        },
+        {
+          "nodeId": "s3r1-boundedLocalTable-e7a10643728340f579dd",
+          "pass": true,
+          "pdfPageIndex": 20,
+          "problems": []
+        }
+      ],
+      "locatorFailureCount": 0,
+      "locatorFailures": [],
+      "nodeCount": 95,
+      "nodeIdDuplicates": 0,
+      "nodeTypes": {
+        "boundedLocalTable": 23,
+        "outerLedger": 15,
+        "page": 36,
+        "unclassifiedStructure": 21
+      },
+      "outerAcceptedCount": 1,
+      "outerFullPageAgreementCount": 22,
+      "outerFullPageMatrix": [
+        {
+          "agreement": true,
+          "pdfPageIndex": 0,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 1,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 2,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 3,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 4,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 5,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 6,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "outerLedger",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 7,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 8,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 9,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 10,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 11,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 12,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 13,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 14,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 15,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 16,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 17,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 18,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 19,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 20,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 21,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 22,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 23,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 24,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 25,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 26,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 27,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 28,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 29,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 30,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 31,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 32,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": true,
+          "pdfPageIndex": 33,
+          "reason": "no independently complete page-local header-plus-strict-row-word evidence found; retained unclassified",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "unclassifiedStructure"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 34,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        },
+        {
+          "agreement": false,
+          "pdfPageIndex": 35,
+          "reason": "complete independently reconstructed outer evidence",
+          "reviewClassification": "unclassifiedStructure",
+          "v3Classification": "outerLedger"
+        }
+      ],
+      "outerRejectedCount": 14,
+      "outerReview": [
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-5b2988ce9acf52093d04915e",
+              "s2s3-c05d97ce33d666b81ae17357",
+              "s2s3-fa71fc919bb465e0dccc7c82",
+              "s2s3-0315e761d7686908e33109ff",
+              "s2s3-7998ee8d87227d10f05ff9fa",
+              "s2s3-e51095a7c782b408eed5cb90",
+              "s2s3-05e73e9c7dda196d4bf29274",
+              "s2s3-501a4570ea218cfcfb2deab1",
+              "s2s3-462563f110069a7fe497eb60",
+              "s2s3-0d282db205f019497ac0dd53",
+              "s2s3-c3b12bc401a01e43a1bbd4c8",
+              "s2s3-dd4d8d8d1d33291b30c98a7c"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-07e1cd13a4c896c454bc",
+          "pdfPageIndex": 34,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-59ec499624e31147b7466da1",
+                "s2s3-26d8e73943d8f5f97f32c023",
+                "s2s3-13a73784806a4b3fcda30610",
+                "s2s3-44ac18f07ca950ae2a0d6383"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-c6e7ccfc9d2033a564d493ce",
+                "s2s3-431ceffdbd3599571cac0ba1",
+                "s2s3-927735ad5961c572c486f281",
+                "s2s3-84e21e4bb32249500a247bca"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-90f8b67a5c183adb92760cb7",
+              "s2s3-6637f63bfdcaf3d5f7af9ac5",
+              "s2s3-05c27bfa56af0fa1e0d985fd",
+              "s2s3-a433fc416330992f9f239011",
+              "s2s3-a923c8d03b2810ad2f645c5e",
+              "s2s3-00e2e56d3bd3bdf03107113f",
+              "s2s3-11c2d58f15bcf6d34dd984c2",
+              "s2s3-a4e4597a081c0cd38db59a3c",
+              "s2s3-62855b22ba7bae79644b11f1",
+              "s2s3-aec3bfb076bfbbcbf9df8bf0",
+              "s2s3-d4bd68d04ae090ec8c0b90f1",
+              "s2s3-55abc251b6a380fdf3b625db"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-306608918282ff1812b8",
+          "pdfPageIndex": 7,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-1c9c37cd68d25d3023a635b4",
+                "s2s3-96e33d22cfc0410354ab6352",
+                "s2s3-6e83ad99e0429493f7fbc521",
+                "s2s3-07342e242acc7461c6706553",
+                "s2s3-cf06cc76485a069c6748bf44",
+                "s2s3-c6e50bdd01392ca0f199f1ab",
+                "s2s3-8e2053d60bba6bd68b336ab5",
+                "s2s3-c18cea3db3411e9b6fc64616"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-b11fdc515a4e0676f5196a55",
+                "s2s3-06082041e456741a7b5dfa5b",
+                "s2s3-97bca142a2e5ade9701d6aa2",
+                "s2s3-59418efc91c781520551e87e",
+                "s2s3-11ef778994ca53429c2eaab0",
+                "s2s3-bed020e94db5f6a46a188b21"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-14777ea4e7446ebb6f682514",
+              "s2s3-3406921aa92cbfe066e49a2f",
+              "s2s3-e3e8f930abaf9ab54fa7442a",
+              "s2s3-3a6ad12e4a8c380bd4c7552d",
+              "s2s3-f11934cbf4933dfc7e964db8",
+              "s2s3-28ec9303d4cca196b96ae307",
+              "s2s3-02c1bdcc40f17a7cf5a1fa24",
+              "s2s3-4b6306e022dccc692ba9af5d",
+              "s2s3-d28aaf9133dd57d1bf8ab022",
+              "s2s3-5efd947504e541b161beb035",
+              "s2s3-16dacf067964e042416d339f",
+              "s2s3-b47a87313bde7e57c7b7b3d7"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-383e5212bb296e1490f4",
+          "pdfPageIndex": 24,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-5ebb04a9ae35319cf301cf2d",
+                "s2s3-00a01fcf3dc70f17c57e714e",
+                "s2s3-4991a10941b9a0eb6c6fb5ff",
+                "s2s3-9264bf721e87a85856e78be4",
+                "s2s3-927a18b9d357f6318f5dfb17",
+                "s2s3-62025507aece30496256dc19",
+                "s2s3-1e8265f934c96fe21eeb7709",
+                "s2s3-c2cf67e8f5d030a693ea7058"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-88fcca083618af3869894d07"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-34baa052e1881cf5d6630745",
+              "s2s3-f8ba8bf0f66c90a9f1e85f56",
+              "s2s3-31124ac8ebed0b1c9f81c78a",
+              "s2s3-2077c3f215b8af5802c0954e",
+              "s2s3-c74e7d90e6cc772c07188a66",
+              "s2s3-1d590e74f8ba90dc8d526480",
+              "s2s3-290383944d46b2edd9538f88",
+              "s2s3-94842cbd9517169741d8c3f5",
+              "s2s3-6cf6dca167e1ab57cadd1b4c",
+              "s2s3-b870e4bbfef0ef6e57a1b71a",
+              "s2s3-465583405b7ade7ff2fa6be6",
+              "s2s3-17693ed3f8e0ce49f4c109a7"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-5dbe76cac42840e37c30",
+          "pdfPageIndex": 13,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-69ceed3bba2dba08f9f09f1a",
+                "s2s3-cbcd9335023ceef55bba6131",
+                "s2s3-d94fe88e970af02c8133f3da",
+                "s2s3-f179dbad1e4cb4c2522ff930",
+                "s2s3-d5b1c4d3ce0ab4cc9f042021",
+                "s2s3-9cb082e4847118bfbd20b802",
+                "s2s3-dcb331e452554cb8e82a0785",
+                "s2s3-8fdd6e31028fa16960e5af21",
+                "s2s3-f60d89f8cbc1988c0617d05a"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-06cd2d93a595a9b9429768a2"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-d2dabf1f709bf6552f986677",
+              "s2s3-891cbdf469fbfe1c0fe01623",
+              "s2s3-6d09ae3b441920cb3d72b2db",
+              "s2s3-6ec7eeadcfae25cea334316c",
+              "s2s3-902ba333433223610625d4af",
+              "s2s3-19c07faa83734b9982c726b8",
+              "s2s3-dc09c8a41d3d0e2bd5a86378",
+              "s2s3-ae29ae3b75e1530aad2d80ea",
+              "s2s3-a3b9edf3d0928e3a4e4c0797",
+              "s2s3-4478ae7fff32c64df358a24e",
+              "s2s3-b9e15cb67fe93a0f7ecc71bd",
+              "s2s3-74c312a5d164bde4aa7aba80"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-6341aa3908bcd905d40a",
+          "pdfPageIndex": 8,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a54d82a25bd921b7e9f139a6",
+                "s2s3-5f47367c59116b2373e87da9",
+                "s2s3-a494915143db86939b26a853",
+                "s2s3-ff026adb87422c3a0e3e5561"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-b0ff1daca9a9ca0cd15adf59",
+                "s2s3-b0355d4ec158d1d4375f575c",
+                "s2s3-a3b83533cc4df481fac61898",
+                "s2s3-eebebd389460261b5cee5008",
+                "s2s3-ac6dae445bbc8fc74620bb05",
+                "s2s3-589fb70dfeac771fae265344",
+                "s2s3-417dc4264f77ee8c2576bf53"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-d1e953e709f7461d9070b3ed",
+              "s2s3-ec67d4eab4c884ae9eec9b4e",
+              "s2s3-1ffe6f308ea3a034e20a7f94",
+              "s2s3-db9312fb0c4ca6373fd6be2f",
+              "s2s3-afdf592ed07e71d49f600810",
+              "s2s3-62a4795c9ad8939e774741b9",
+              "s2s3-bdf7227dec934615c294470d",
+              "s2s3-811ac0e1b1fce54cc025699c",
+              "s2s3-e2c818100adbd0db695748fe",
+              "s2s3-352cfaa1719987462706f3d9",
+              "s2s3-7fe584ba31551de035ae73fd",
+              "s2s3-c16bd29314de39701fd3f69c"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-6ebc5c1e383d72f06ef5",
+          "pdfPageIndex": 30,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-61e908f43d637a5d9e857227",
+                "s2s3-d791383a209faf998c0181f9",
+                "s2s3-5ff231409f63a59256290834",
+                "s2s3-91ee13af945e7e77b46a5d6f"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-b150925b179dab14073106ef",
+                "s2s3-a078f11f092843d2111c558d",
+                "s2s3-0a54249e615eb91011aea923",
+                "s2s3-d9e89ab036116c7b69b2d08d"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-cd1398eae9ca2023fc56ba08",
+              "s2s3-ba695527e66a5d0baebdf9f8",
+              "s2s3-d48e259a8a9a2f9fe6c16801",
+              "s2s3-0ca15129e903810cfb6e1448",
+              "s2s3-76ae308d9986bbd5bff2d2ac",
+              "s2s3-b20bb953e92382dddfea8615",
+              "s2s3-3376c88a5e3a8bd037711958",
+              "s2s3-c5c40a4be967e15b8e527c0e",
+              "s2s3-9682a72dbeffe5a836183db0",
+              "s2s3-9148b48c6a36bcd83b81c5c2",
+              "s2s3-346b338ea8160ca0f542c3ce",
+              "s2s3-750e1334a0d377eea2b7cb4c"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-871da9ff06b46c48c67d",
+          "pdfPageIndex": 22,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-1de699ab1ccffe25859d0002",
+                "s2s3-0357320ea598d85fba7301dc",
+                "s2s3-388141ba52727db27f85fdc4",
+                "s2s3-945e4ccc52947d1b863b3bcc",
+                "s2s3-170a6ce3b9b15449b964fe9a",
+                "s2s3-6bff89a8783f4aa054e0c85a",
+                "s2s3-9c7963fbcb9526ef19c9fff5",
+                "s2s3-70a8d08881b89c5ab5fea8ce"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a3e64168833a33ecf1f03cea",
+                "s2s3-360fb1222cdf65dc7fe3c6b4",
+                "s2s3-c98c6061393a72b8e2953323",
+                "s2s3-f9117673d3c73b9345d5a8b9",
+                "s2s3-e212878a8179899d99d55f9c",
+                "s2s3-cb7e7090fdf11e9e9ae195e4"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-e92bf07ab6d006c6dd1e7281",
+              "s2s3-f8bbe6cead08597888fb8b6f",
+              "s2s3-f9a3d89fb858d7927d7b6759",
+              "s2s3-73f34901388ad4f0dac33636",
+              "s2s3-6c0cbb2c9be7fccc90e2422c",
+              "s2s3-5e5dcedf56a27a28eaa3de70",
+              "s2s3-6bf3d82d4f74610c172f6036",
+              "s2s3-21d1924a929668ad3cf3c523",
+              "s2s3-e5a2a3b3c701ad096100fd18",
+              "s2s3-9be0efc6c2f1b024ec38c1fb",
+              "s2s3-3aa8502697c700090d731769",
+              "s2s3-d306d389eb9789d9647a25fe"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-8ec680c7bc78548844a4",
+          "pdfPageIndex": 15,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-9d5b59c2b717d9a3102a5382"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-40ce68bb46766babe702d667"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-ed615316a5a4acdcb2fee4cf",
+              "s2s3-11c1232bdd55b3e67259e51a",
+              "s2s3-dfcb45b577b2a95fbea5bcf6",
+              "s2s3-cb15723fa691e72ea1472198",
+              "s2s3-48250cb75e1e692b21b2206d",
+              "s2s3-f04fb1959ace11a6eecd6e7f",
+              "s2s3-19c3d0009c86895bab6f6255",
+              "s2s3-6accf9807a069c05f4f9e640",
+              "s2s3-9d99c6760ab23240d4d9d304",
+              "s2s3-259084887fb5c83e9079f3a8",
+              "s2s3-ef49ce7d39a9b84e6c00f50b",
+              "s2s3-73db5d7b0c62eebacce20cdb"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-9148ce43ad13255e37c2",
+          "pdfPageIndex": 27,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-3899c217e151c4f767cdcda6"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-64f11615a39926e888b69725",
+                "s2s3-34c54a9ba3b3ed5c37c8c0d1",
+                "s2s3-fb4e2b2d79392ed821f1e79b",
+                "s2s3-c91378cbf7b910686da60c58"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-6cbb136216d871ee29774afe",
+              "s2s3-3c7745573d31b0692b0ebfc7",
+              "s2s3-c1d2241d3a1544ea4e0f3168",
+              "s2s3-81580d7c60d02b1115c2e4af",
+              "s2s3-b9db9bcae21425bc7b237376",
+              "s2s3-4751f5df33a4645675e4737b",
+              "s2s3-98fc97310d6d2217154284e2",
+              "s2s3-36adbbd9194e264b7aa396bc",
+              "s2s3-070e7c83f0c26464ba74615f",
+              "s2s3-4dbc3c86d6510b21f68afcd1",
+              "s2s3-42792b0e2cb287ca72c2d23a",
+              "s2s3-d4b2c6dcddcda887fe3db079"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-9534a69996b0a94bcbd2",
+          "pdfPageIndex": 28,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-192e9953a3bed676108c4ee6",
+                "s2s3-874c7b5a8d51c1b6202dde32",
+                "s2s3-f24125f7370a6cce12a5ff63",
+                "s2s3-e19e747d4403c2214f8c6460"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-343e3879d98d33333b1d84a0",
+                "s2s3-c731be11e3285414a9d53d20",
+                "s2s3-2d70f408a9ee2cd8b1905b16",
+                "s2s3-6d73123d0e13d7edc4727629"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-508c8216734fca24f97cdae8",
+              "s2s3-274a45c3cab11a9ca3d031e4",
+              "s2s3-2b2d495855e73d5328c9fadb",
+              "s2s3-a89e429d20141259723f553b",
+              "s2s3-ce02c4f0b201d16040c87958",
+              "s2s3-6c6c8b64e3a74636acd321ca",
+              "s2s3-9ad7a721f9d54793d33102fe",
+              "s2s3-ef63fa00fe48f28bb63eafb0",
+              "s2s3-8ad3a0421bacc6856a89e922",
+              "s2s3-508eacee6ea933e7bd225f2b",
+              "s2s3-bfc0e43ab77e781aca2a2ce1",
+              "s2s3-a627e803ed0e1e40fab25631"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-9d28dc4247e8a4bd9380",
+          "pdfPageIndex": 31,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-8e14ca1449e37773bfef0d9c",
+                "s2s3-97af2dde8d05c5a902eb4b24",
+                "s2s3-8e91598e17d59098c2a533be",
+                "s2s3-c8f5a8a099662c2d9da0dd5e"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-345fc0708ee1ee0fa8cbad4f",
+                "s2s3-5dd8f01968eff96b72aeee5d",
+                "s2s3-f717a0c3d1c3c8691136dae7",
+                "s2s3-a576524d22199c422baaf0b9",
+                "s2s3-21d90b43a84ceb2dcaac5019",
+                "s2s3-79dc16545b2ea2cc447f3823"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-93bfd3a77777eb6c94b9e03f",
+              "s2s3-e3bb094289540f8f5d79bb0f",
+              "s2s3-128f8ea872a1a822f582d2a1",
+              "s2s3-4131420b5188ca9666d6343b",
+              "s2s3-e9cfcc21480faec44a837c07",
+              "s2s3-cf0eacd74f630e3c187dfa71",
+              "s2s3-c33a2ccf903dc0ac8e139c6d",
+              "s2s3-98ac9faf7ab550de5421ef4e",
+              "s2s3-a55c968e9652597fe47c04db",
+              "s2s3-a92cf80c96bc40dfa1211f4e",
+              "s2s3-dd3e19ee20f210a41380050d",
+              "s2s3-de170a9d8fefdf31995938f6"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-d074b0f2ebdcb124862d",
+          "pdfPageIndex": 29,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-aa52fbaa4cfc62c2ce1f29db",
+                "s2s3-9bd0cb5aee7212c221822f55",
+                "s2s3-cb3eefddf49c4b5237005d21",
+                "s2s3-c552b16aa2050e7e473dffc3",
+                "s2s3-267860a289dcf81450e413c4"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-a87e9739b89b0f5b1a3e618c",
+                "s2s3-64e2d7faec2facdd19d1e07b",
+                "s2s3-1a6580b18b17be929aaa1319",
+                "s2s3-9dec06fe884ea22285971f89",
+                "s2s3-b2566b5b160ef8e4a7e223b1"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                79.852345,
+                48.00304,
+                86.796065
+              ],
+              [
+                34.1156,
+                86.796065,
+                48.00304,
+                93.739785
+              ],
+              [
+                91.4515,
+                83.324205,
+                98.39522,
+                90.267925
+              ],
+              [
+                153.94502,
+                83.324205,
+                160.88874,
+                90.267925
+              ],
+              [
+                207.0585,
+                79.852345,
+                214.00222,
+                86.796065
+              ],
+              [
+                207.0585,
+                86.796065,
+                214.00222,
+                93.739785
+              ],
+              [
+                226.15372,
+                79.852345,
+                233.09744,
+                86.796065
+              ],
+              [
+                226.15372,
+                86.796065,
+                233.09744,
+                93.739785
+              ],
+              [
+                245.24894,
+                79.852345,
+                265.76822,
+                86.796065
+              ],
+              [
+                245.24894,
+                86.796065,
+                303.9587,
+                93.739785
+              ],
+              [
+                588.3945,
+                83.324205,
+                595.33822,
+                90.267925
+              ],
+              [
+                650.88802,
+                83.324205,
+                657.83174,
+                90.267925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-585a279d5ed81c6c231a924d",
+              "s2s3-c6440c798eee23e3be2e2f46",
+              "s2s3-9bec170aa6e0310c3f35c1fb",
+              "s2s3-b880367cd97d31a1ecd604f0",
+              "s2s3-01c84bd6fe1a88884340de1d",
+              "s2s3-7c6575ccd1f9c4cd75a1f92e",
+              "s2s3-df8ef369ea3bf23374e1d715",
+              "s2s3-c5a02a6731f52d41f4bf5650",
+              "s2s3-4e2feca412f29269b08572ab",
+              "s2s3-4f7c2317690cfaa67f7724bb",
+              "s2s3-10fd289eb5082d43aca7f7f8",
+              "s2s3-46c9dcc500dfd428e795ad2f"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 14.928999999999995,
+            "verticalSpan": 13.887439999999998
+          },
+          "literalBandPass": true,
+          "nodeId": "s3r1-outerLedger-d9161b75113cb3ab3c8e",
+          "pdfPageIndex": 6,
+          "reviewClassification": "outerLedger",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-c04423072704acdfa73b9c7c",
+                "s2s3-9e6ddd7f4c2e14e1f0140ee4",
+                "s2s3-15821f5945dc3d921db1b2d1",
+                "s2s3-deb557edd23ceecff77e62cc",
+                "s2s3-7a63ac6b6c9433e1f5755af6",
+                "s2s3-a23d1fa90a97c342633341a3"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 1
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-e5db323f262a447b9163fe1a",
+                "s2s3-b3e4f4833a1dbba74190de88",
+                "s2s3-4e391bbf5f5473622e8abd8f",
+                "s2s3-90538bde2b83973be8c650b8",
+                "s2s3-8d04da92f5817aa9de1fa3cc"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-cf402cbfa95fecb3eaa1da91",
+              "s2s3-55e516f036644af8fff19f94",
+              "s2s3-6028d1f1647bde22ec99718a",
+              "s2s3-8c40ba514eedb48de1b3ebe6",
+              "s2s3-82a0b5e963228885d941bbc1",
+              "s2s3-d05da6c1a81463ed0938166d",
+              "s2s3-f8232b8781099972ec067a2b",
+              "s2s3-88d85c0ce1363ee56b5ad346",
+              "s2s3-ea7b3a65a8841c49abf28544",
+              "s2s3-052a89727cb3ea1e0845fef6",
+              "s2s3-8edd85e53526db26f7902aad",
+              "s2s3-bf5294a8535739a637a4e8b1"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.943720000000042,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-dd2ff7b0d07a3e876984",
+          "pdfPageIndex": 35,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-070710312959beaed349eac6",
+                "s2s3-ca49f59d6499ad175220e250",
+                "s2s3-5bcb6f99eb8b37f2615c5dd8",
+                "s2s3-33a9008ee87545b6bc0d7b48",
+                "s2s3-6c72770c8fd9f23cbc6a8221"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-8f5bfcfffc3ddbde13b619a1",
+                "s2s3-34163987df9c058c82c172e6"
+              ],
+              "strictHeaderRangeMatches": 2,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        },
+        {
+          "headerErrors": [
+            "header_source_lines_not_retained_in_emitted_band"
+          ],
+          "literalBand": {
+            "connected": true,
+            "lineBBoxes": [
+              [
+                34.1156,
+                31.246345,
+                48.00304,
+                38.190065
+              ],
+              [
+                34.1156,
+                38.190065,
+                48.00304,
+                45.133785
+              ],
+              [
+                91.4515,
+                34.718205,
+                98.39522,
+                41.661925
+              ],
+              [
+                153.94502,
+                34.718205,
+                160.88874,
+                41.661925
+              ],
+              [
+                207.0585,
+                31.246345,
+                214.00222,
+                38.190065
+              ],
+              [
+                207.0585,
+                38.190065,
+                214.00222,
+                45.133785
+              ],
+              [
+                226.15372,
+                31.246345,
+                233.09744,
+                38.190065
+              ],
+              [
+                226.15372,
+                38.190065,
+                233.09744,
+                45.133785
+              ],
+              [
+                245.24894,
+                31.246345,
+                265.76822,
+                38.190065
+              ],
+              [
+                245.24894,
+                38.190065,
+                303.9587,
+                45.133785
+              ],
+              [
+                588.3945,
+                34.718205,
+                595.33822,
+                41.661925
+              ],
+              [
+                650.88802,
+                34.718205,
+                657.83174,
+                41.661925
+              ]
+            ],
+            "lineObservationIds": [
+              "s2s3-04cfe8fc500076d62d9fa0bb",
+              "s2s3-a30c0d678cf61c2e785bbda2",
+              "s2s3-971089e111bc643d291e0ca9",
+              "s2s3-2aa237b19ff458434db15740",
+              "s2s3-1e00c26f31b76c39623fe9b9",
+              "s2s3-834ccde763ba4066bbf870ee",
+              "s2s3-d5ff1c1161410932f102f00d",
+              "s2s3-88a62f8bdb4db49ac789abf1",
+              "s2s3-ff29154b065f6433938a1b84",
+              "s2s3-cd0274cfbc57881eff8da9e2",
+              "s2s3-3f8b7d8999aa37c3359a09ff",
+              "s2s3-72f90f4f374abeb59a41df76"
+            ],
+            "nonChainedLocalBand": true,
+            "pageMaximumObservedLineHeight": 6.9437200000000985,
+            "verticalSpan": 13.887440000000002
+          },
+          "literalBandPass": false,
+          "nodeId": "s3r1-outerLedger-e48482a7606a47160936",
+          "pdfPageIndex": 12,
+          "reviewClassification": "unclassifiedStructure",
+          "rowResults": [
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-9c84dc09ed6725b4953b69ee",
+                "s2s3-da03460e0d592e73a3b1f809",
+                "s2s3-68b3a0ba66c597e4fac5dd07",
+                "s2s3-cd319acec9701118f73af265",
+                "s2s3-6c24f68ad9312d179311d30d"
+              ],
+              "strictHeaderRangeMatches": 3,
+              "toleranceDependentOnlyMatches": 0
+            },
+            {
+              "invalidSupportGroups": [],
+              "rowBandLineObservationIds": [
+                "s2s3-f2470a32292179dd392bae65",
+                "s2s3-b6ec818cfbedcbaa86d66225",
+                "s2s3-dde69a8ea3ea36320b56a97f",
+                "s2s3-213645507851ef85f6ec7cc2"
+              ],
+              "strictHeaderRangeMatches": 4,
+              "toleranceDependentOnlyMatches": 0
+            }
+          ],
+          "rowWordStrictPass": true
+        }
+      ],
+      "structuralStatuses": {
+        "source_observed": 36,
+        "structurally_supported": 38,
+        "unclassified": 21
+      },
+      "supportFailureCount": 0,
+      "supportFailures": []
+    }
+  ],
+  "authorityVerdicts": {
+    "kunaicho": "REPAIR_REQUIRED_BEFORE_S4",
+    "shugiin": "REPAIR_REQUIRED_BEFORE_S4"
+  },
+  "effectiveProcedureDependencyFindings": [
+    {
+      "authorityId": "kunaicho",
+      "finding": "INCOMPLETE_EFFECTIVE_PROCEDURE_PROVENANCE",
+      "importedV2HelperHashPinned": false,
+      "v3ProcedureHashPinned": true
+    },
+    {
+      "authorityId": "shugiin",
+      "finding": "INCOMPLETE_EFFECTIVE_PROCEDURE_PROVENANCE",
+      "importedV2HelperHashPinned": false,
+      "v3ProcedureHashPinned": true
+    }
+  ],
+  "globalS4Authorization": "NOT_AUTHORIZED",
+  "independence": "Does not import or invoke v1/v2/v3 executors or execution audits.",
+  "nextAuthorizedTask": "Batch-001 Wave 1 S3 Repair Execution v4",
+  "reviewBaseCommit": "3c7eb223089f84b39527a84339c53d8562d3172e",
+  "schemaVersion": 1,
+  "specSha256": "fd56e1115f791eeb2b3d7a887090b176bfe90190a49de5276843703bc1b4e9b1",
+  "specVersion": "batch-001-wave-1-s3-repair-v1"
+}

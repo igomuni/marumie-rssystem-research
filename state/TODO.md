@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S3 Repair v3 Review and S4 Authorization Gate — A01 and A02 (recommended; not started).** Independently review `s3-repaired-v3` against the frozen outer literal-band and direct row-word rules, all preserved prior evidence, direct-tuple IDs, boundaries, and A02's finalized 46-occurrence reconciliation. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
+- **Batch-001 Wave 1 S3 Repair Execution v4 — A01 and A02 (recommended; not started).** Preserve all baseline/v1/v2/v3 evidence and repair the rejected v3 outer-ledger boundary only: retain actual S2 source-line membership and overlap/touch relations for every header band, prohibit tolerance-only row/header x-range matches unless the frozen contract is separately clarified, and pin the imported v2 helper in effective-procedure provenance. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema

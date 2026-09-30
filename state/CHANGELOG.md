@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: review Batch-001 Wave 1 S3 repair v3 and gate S4
+
+- Independently reviewed `s3-repaired-v3` from immutable S2 without importing an executor or execution audit. Baseline/frozen and v1/v2 preservation, exact locators, endpoint scope, direct-tuple IDs, local/nested cluster evidence, A02's 46-occurrence reconciliation, and scratch rerun all pass.
+- Both authorities are `REPAIR_REQUIRED_BEFORE_S4`: 19/20 A01 and 14/15 A02 emitted outer ledgers do not retain every actual S2 header source line needed to reconstruct the frozen literal local-band condition. A01 page 6 additionally has a tolerance-only row/header x-range match. The v3 procedure manifest also fails to pin its imported v2 helper hash.
+- S4 remains unauthorized. Preserve v3 as rejected research evidence; next is a narrowly scoped S3 Repair Execution v4. No S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, frozen-contract mutation, canonical-parent merge, or production adaptation occurred.
+
 ### research: execute Batch-001 Wave 1 S3 repair v3
 
 - Created separate `s3-repaired-v3` outputs under the frozen `s3r1` namespace without modifying v1/v2, baseline S2/S3, profiles, protocol, spec, or sources. Every supported outer ledger now retains direct S2 row-word support and literal local-band evidence; independent execution audit reports zero outer evidence failures.
