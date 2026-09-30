@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-review-s4-gate",
+  "reviewBaseCommit": "509cc4236a410d4434a5c500cea464e73db9f787",
+  "frozenDesignCommit": "8d9867e742bfd3e1b17f57a6626b5e4ec59c1ff2",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "specSha256": "fd56e1115f791eeb2b3d7a887090b176bfe90190a49de5276843703bc1b4e9b1",
+  "executionProcedure": {"path": "fixtures/document-understanding/batch-001/s3_repaired_v1_execution.py", "sha256": "35af84dbeb709948dea937053bce77fe9688c0ea965a9ddf6c90779f9a4203ee"},
+  "reviewAuditProcedure": {"path": "evidence/document-understanding/batch-001/review-wave-1-s3-repair-s4-gate.py", "sha256": "d404c95cc0f1b5fa8ee9137a6911b31265dfeab07bc82011e965350971044c27", "independentOfExecutor": true},
+  "immutableAndFrozenContract": {"allBaselineHashesMatchFrozenSpec": true, "repairSpecChanged": false, "profilesChanged": false, "commonProtocolChanged": false, "sourceLockOrRegistryChanged": false},
+  "authorities": {
+    "kunaicho": {
+      "counts": {"nodes": 68, "edges": 67, "inferredRecords": 101, "supportedOuterLedgers": 19, "supportedNestedStructures": 1, "unclassifiedPagePartitions": 14},
+      "closure": {"nonemptySupport": 101, "supportIdsResolve": 101, "locatorGeometryMatches": 101, "locatorSourceOrderMatches": 0},
+      "independentBoundaries": {"endpointFailures": 0, "crossPageEdges": 32, "crossFileEdges": 0, "outerLocalDirectEdges": 0},
+      "ruleReconstruction": {"outerHeaderGlyphSetsAndLeftToRightGeometryPass": 19, "outerRawGlyphSequencesNotLiteralHorizontalPhrases": 19, "nestedRowsRepeatTwoXClusters": 1, "nestedRowsMatchTwoRecordedHeaderXClusters": 0},
+      "verdict": "REPAIR_REQUIRED_BEFORE_S4"
+    },
+    "shugiin": {
+      "counts": {"nodes": 96, "edges": 95, "inferredRecords": 154, "supportedOuterLedgers": 13, "supportedBoundedLocalTables": 23, "unclassifiedPagePartitions": 23},
+      "closure": {"nonemptySupport": 154, "supportIdsResolve": 154, "locatorGeometryMatches": 154, "locatorSourceOrderMatches": 0},
+      "independentBoundaries": {"endpointFailures": 0, "crossPageEdges": 35, "crossFileEdges": 0, "outerLocalDirectEdges": 0},
+      "ruleReconstruction": {"outerHeaderGlyphSetsAndLeftToRightGeometryPass": 13, "outerRawGlyphSequencesNotLiteralHorizontalPhrases": 13, "localRowsRepeatTwoXClusters": 23, "localRowsMatchTwoRecordedHeaderXClusters": 0, "sourceEmittedBoxGlyphFilterObserved": 23, "localUnitAndHeaderLiteralObserved": 23},
+      "hyakumanYenTextLines": {"immutableS2Occurrences": 46, "treatments": 46, "allTreatmentIdsResolve": true, "allTreatedAsSupportedLocalTableMembers": true},
+      "verdict": "REPAIR_REQUIRED_BEFORE_S4"
+    }
+  },
+  "implementationFidelityFindings": [
+    {"id": "locator-source-order", "status": "execution_defect", "finding": "All inferred records retain correct cited IDs and bboxes but record each locator's sourceOrder as its observation ID rather than the immutable S2 sourceOrder path."},
+    {"id": "cross-page-edges", "status": "execution_defect", "finding": "Document-to-page edges are emitted as structurally inferred with a document node pinned to page 0, yielding 32 A01 and 35 A02 cross-page endpoint pairs despite zero reported counters."},
+    {"id": "local-header-cluster-evidence", "status": "execution_defect", "finding": "The executor tests only word counts for local/nested row bands. Review independently finds row-to-row x repetition but no two recorded header x-clusters on any supported local/nested node; the required header-to-row evidence is not encoded."},
+    {"id": "edge-id-tuple", "status": "execution_defect", "finding": "Edge IDs are deterministic but use parent/child IDs rather than the frozen direct source/file/page/primitive input tuple."},
+    {"id": "box-glyph-filter", "status": "acceptable-conservative-filter", "finding": "All emitted local/nested candidates contain immutable S2 source-emitted box glyphs. The filter does not itself assert a PDF drawing/cell/frame."},
+    {"id": "a02-header-literal", "status": "acceptable-for-emitted-groups-with-limitation", "finding": "All 23 emitted A02 groups contain the raw local unit anchor and the local header literal. The literal is a conservative implementation choice, not a universal structural rule."},
+    {"id": "outer-character-multiset", "status": "documented-limitation", "finding": "Header glyph sets and left-to-right geometry are present, but all emitted raw sequences are columnar/non-literal horizontal phrases. The rule must record an explicit geometry/reading rationale rather than rely on character multiset consumption alone."}
+  ],
+  "globalS4Authorization": "NOT_AUTHORIZED",
+  "recommendedNextTask": "Batch-001 Wave 1 S3 Repair Execution v2",
+  "canonicalParentMerged": false
+}

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### research: review Batch-001 Wave 1 S3 repair and gate S4
+
+- Independently audited the `s3r1` repaired execution from immutable S2/raw evidence without importing the executor. Both A01 and A02 are `REPAIR_REQUIRED_BEFORE_S4`; S4 remains unauthorized.
+- Baseline and frozen-contract hashes pass, but every inferred record substitutes an observation ID for the required source-order locator; document-to-page inferred edges yield nonzero endpoint-derived cross-page counts; local/nested header-to-row x-cluster evidence is not encoded; and edge IDs do not use the frozen direct tuple.
+- The execution and reviewed graph remain preserved evidence. Next: separately versioned S3 Repair Execution v2; no S4--S7, GT, benchmark, OCR, CSV, MOF, Wave 2, source change, contract mutation, parent merge, or production adaptation occurred.
+
 ### research: execute Batch-001 Wave 1 S3 structural repair
 
 - Executed the frozen `s3r1` repair contract against immutable A01/A02 retained S2/raw evidence and wrote separate `s3-repaired-v1` graphs. The original experimental S3 remains byte-identical baseline evidence.

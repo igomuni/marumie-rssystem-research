@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S3 Structural Repair Review and S4 Authorization Gate — A01 and A02 (recommended; not started).** Independently review the frozen `s3r1` repair outputs against immutable S2/raw evidence and the frozen repair specification. Confirm direct evidence closure, grammar/unit boundaries, 46 A02 `百万円` text-line treatments, determinism, and baseline integrity before deciding whether S4 can be authorized. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
+- **Batch-001 Wave 1 S3 Repair Execution v2 — A01 and A02 (recommended; not started).** Preserve the reviewed `s3r1` graph and execute a separately versioned repair that restores actual source-order locators, auditable header-to-row x-cluster evidence, correct page-scope accounting, and frozen-tuple edge IDs. S4 remains unauthorized; do not begin normalization, candidate enumeration, Ground Truth, benchmark, OCR, CSV, MOF linkage, or Wave 2.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema
