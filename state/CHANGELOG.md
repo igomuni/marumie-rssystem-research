@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### research: repair and freeze Wave 1 S4 normalization contract v2
+
+- Preserved rejected v1 and froze closed `s4n2` contract/schema/vectors, metadata-only S2 shape inventory, source-record ordinal ordering, executable fixed-ID/serialization checks, and v2 design audit. V2 awaits independent review; real-data S4 remains prohibited.
+
 ### research: independently review Wave 1 S4 normalization contract
 
 - Rejected frozen S4 normalization contract v1: recursively open nested schema objects permit hidden downstream semantics and material output/state/rule/order choices remain undefined. S4 stage authorization and entry freeze v2 remain valid; real-data normalization remains prohibited.

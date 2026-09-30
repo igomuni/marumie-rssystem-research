@@ -1,0 +1,10 @@
+{
+  "artifactType":"batch-001-wave-1-s4-normalization-v2-s2-shape-inventory",
+  "authorities":{
+    "authority-01-kunaicho":{"blankPhysicalLines":0,"observationKinds":["page","textBlock","textLine","word"],"recordCount":19442,"sourceObservationsSha256":"de231770a03f11cc20f801ebe9877f937a414b5740551159680adada76039df1","sourceStates":["observed_value"],"sourceOrderShapes":{"page":["page"],"textBlock":["page","flow","block"],"textLine":["page","flow","block","line"],"word":["page","flow","block","line","word"]},"rawShapes":{"page":["width","height"],"textBlock":["engineNativeText"],"textLine":["engineNativeText"],"word":["engineNativeText"]},"uniqueObservationIds":true},
+    "authority-02-shugiin":{"blankPhysicalLines":0,"observationKinds":["page","textBlock","textLine","word"],"recordCount":17072,"sourceObservationsSha256":"8634f1ca1545b1fcc06065ba0974bfec4a77ea5a292c15e3a0d9dd954150a42f","sourceStates":["observed_value"],"sourceOrderShapes":{"page":["page"],"textBlock":["page","flow","block"],"textLine":["page","flow","block","line"],"word":["page","flow","block","line","word"]},"rawShapes":{"page":["width","height"],"textBlock":["engineNativeText"],"textLine":["engineNativeText"],"word":["engineNativeText"]},"uniqueObservationIds":true}
+  },
+  "inspectionBoundary":"metadata_only_no_lexical_normalization_no_text_content_reporting",
+  "ordinalDefinition":"zero_based_successfully_parsed_json_object_ordinal_in_exact_source_observations_jsonl_sequence",
+  "schemaVersion":1
+}

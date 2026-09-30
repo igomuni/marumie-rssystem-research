@@ -1,0 +1,11 @@
+{
+  "contractVersion":"batch-001-wave-1-s4-normalization-v2","schemaVersion":2,
+  "stableIdVectors":[
+    {"sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","fileId":"source-file","pdfPageIndex":7,"sourceObservationId":"obs-9","expected":"s4n2-7e3665f53909789761ce08e838c04da43793c566d31867f758da98788efac7ae"},
+    {"sourceSha256":"0000000000000000000000000000000000000000000000000000000000000000","fileId":"a01.pdf","pdfPageIndex":0,"sourceObservationId":"obs-0001","expected":"s4n2-6aae1bd2a7bedb6cdef8e9be10233030cabd930fd9920589ce76ceb5500bfcc9"},
+    {"sourceSha256":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","fileId":"資料.pdf","pdfPageIndex":32,"sourceObservationId":"s2s3-example","expected":"s4n2-6f068d46f94af7d43a62acc3e87443d8b7d3b9e0230692bd0f5680da6859acc8"}
+  ],
+  "lexicalVectors":[{"raw":"①","normalized":"1","rules":["s4v2_circled_number"]},{"raw":"１，２３４","normalized":"1,234","rules":["s4v2_fullwidth_digits","s4v2_fullwidth_numeric_punctuation","s4v2_numeric_lexeme"],"numeric":"1234"},{"raw":"△１，２３４","normalized":"△1,234","numeric":"-1234"},{"raw":"▲1,234","normalized":"▲1,234","numeric":"-1234"},{"raw":"1,23","normalized":"1,23","numeric":null},{"raw":"01-95","normalized":"01-95","numeric":null},{"raw":"（単位：千円）","unit":"JPY_THOUSAND"},{"raw":"百万円","unit":"JPY_MILLION"},{"raw":"Ａ","normalized":"Ａ"},{"raw":"㍑","normalized":"㍑"},{"raw":"a  b","normalized":"a  b"}],
+  "blockedWhitespaceVectors":["a\tb","a\nb","a\rb"],
+  "negativeAssertions":[{"name":"nested_semantic_field_rejected","path":"numericLexeme.ownerNodeId"},{"name":"unknown_disposition_rejected"},{"name":"unknown_rule_rejected"},{"name":"wrong_rule_order_rejected"},{"name":"source_record_ordinal_orders_jsonl","expectedBytesSha256":"554fe3992d1cb09a2dd1129908ed997865d703ced7c484d7f08a8d0626641694"},{"name":"no_unit_propagation"},{"name":"no_line_joining"},{"name":"no_global_unicode_normalization"}]
+}

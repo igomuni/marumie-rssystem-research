@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Batch-001 Wave 1 S4 Normalization Contract v2 Repair (required; not started).** Create a separately versioned repair that closes recursive schema, exact object, state/disposition, rule-ID, whitespace, and record-order defects identified in the independent v1 review. Preserve rejected v1 unchanged and do not normalize real data.
+- **Batch-001 Wave 1 S4 Normalization Contract v2 Independent Review and Execution Gate (required; not started).** Independently retest recursive schema closure, exact shapes, state matrix, rule semantics, whitespace blocks, ordinals, known IDs, and serialization before any later integration or execution entry.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type
 - Define phase manifest schema
