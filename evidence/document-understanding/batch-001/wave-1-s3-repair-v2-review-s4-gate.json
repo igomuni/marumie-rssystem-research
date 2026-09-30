@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s3-repair-v2-review-s4-gate",
+  "reviewBaseCommit": "8d8baec47b551bfb3c9077ae1dab93fffd694984",
+  "specVersion": "batch-001-wave-1-s3-repair-v1",
+  "v2Procedure": {
+    "path": "fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py",
+    "sha256": "f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5"
+  },
+  "independentReviewProcedure": {
+    "path": "evidence/document-understanding/batch-001/review-wave-1-s3-repair-v2-s4-gate.py",
+    "role": "review-only; does not import the v2 executor or execution audit"
+  },
+  "preservation": {
+    "immutableBaseline": "PASS",
+    "reviewedV1": "PASS",
+    "v2GraphUnchangedDuringReview": true,
+    "frozenSpecProfilesCommonProtocolUnchanged": true
+  },
+  "fourV1BlockerRetest": {
+    "exactLocatorSourceOrderAndBBox": {"a01Failures": 0, "a02Failures": 0, "status": "PASS"},
+    "endpointDerivedPageAndFileScope": {"endpointFailures": 0, "crossPage": 0, "crossFile": 0, "documentMembership": 0, "outerLocalDirectEdges": 0, "status": "PASS"},
+    "directHeaderToRowClusterForNestedLocal": {"a01GroupsChecked": 1, "a02GroupsChecked": 23, "failures": 0, "status": "PASS"},
+    "directTupleIds": {"a01Failures": 0, "a02Failures": 0, "collisions": 0, "edgePrimitive": "edge:contains", "status": "PASS"}
+  },
+  "authorities": [
+    {
+      "authorityId": "kunaicho",
+      "nodes": 67,
+      "edges": 34,
+      "supportedOuterLedgers": 20,
+      "supportedNestedStructures": 1,
+      "unclassified": 13,
+      "literalOuterBandFailures": 1,
+      "outerRowWordEvidenceOmissions": 20,
+      "localClusterFailures": 0,
+      "verdict": "REPAIR_REQUIRED_BEFORE_S4",
+      "blockingReason": "All supported outer-ledger nodes retain line-band IDs and derived match indices but omit the direct S2 word observations needed to reproduce repeated header x-range evidence. One literal header-band reconstruction is also not closed."
+    },
+    {
+      "authorityId": "shugiin",
+      "nodes": 95,
+      "edges": 59,
+      "supportedOuterLedgers": 15,
+      "supportedBoundedLocalTables": 23,
+      "unclassified": 21,
+      "literalOuterBandFailures": 1,
+      "outerRowWordEvidenceOmissions": 15,
+      "localClusterFailures": 0,
+      "hyakumanYen": {
+        "sourceTextLineOccurrences": 46,
+        "supportedGroupContainmentDistribution": {"zero": 0, "exactlyOne": 46, "moreThanOne": 0},
+        "sharedLocalUnitAnchors": 0,
+        "supportedTableOverlaps": 0,
+        "manifestTreatments": {"member_of_supported_boundedLocalTable": 2, "not_structurally_grouped_representation_limited": 44},
+        "anchorTreatmentMismatches": 21
+      },
+      "verdict": "REPAIR_REQUIRED_BEFORE_S4",
+      "blockingReason": "Outer-ledger row-word evidence is missing as for A01. In addition, 21 source observations used as supported-table local-unit anchors are simultaneously recorded by the reconciliation as not structurally grouped, producing a graph/manifest certainty mismatch."
+    }
+  ],
+  "representationLimitedCoherence": "GRAPH_MANIFEST_CERTAINTY_MISMATCH_REQUIRING_S3_REPAIR",
+  "deterministicScratchRerun": "PASS; core nodes, edges, and structural manifests byte-identical",
+  "globalS4Authorization": "NOT_AUTHORIZED",
+  "integrationRecommendation": "Do not integrate into canonical parent. Preserve v2 and this failed review as evidence.",
+  "nextTask": "Batch-001 Wave 1 S3 Repair Execution v3"
+}
