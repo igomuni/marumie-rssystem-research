@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "batch-001-wave-1-s4-entry-freeze",
+  "status": "FROZEN_S4_ENTRY_NOT_EXECUTED",
+  "entrySourceCommit": "2e5a619d601050ff815cdfc67fef9167f490334d",
+  "canonicalParentBeforeIntegration": "bb86311499ab2183bff12389dfe78e9308ccdb2c",
+  "integrationMethod": "fast_forward_preserving_reviewed_chain",
+  "acceptedChainCommitCount": 10,
+  "s4": {"authorization": "AUTHORIZED", "entryBoundary": "FROZEN", "execution": "NOT_STARTED", "meaning": "normalization only; retain raw values; deterministic/versioned; no external linkage, semantic candidates, hierarchy invention, or blank-to-zero conversion"},
+  "pinned": [
+    {"path":"fixtures/document-understanding/canonical-semantic-extraction/20260929_1801_Canonical_Semantic_Extraction_Protocol.md","sha256":"c2394d1fc95d8013b2aada5c85bc125d65688e58f5490b420ed41aebdc87dadb","role":"frozen common protocol"},
+    {"path":"fixtures/document-understanding/batch-001/wave-1-s3-structural-repair-spec.json","sha256":"fd56e1115f791eeb2b3d7a887090b176bfe90190a49de5276843703bc1b4e9b1","role":"frozen repair spec"},
+    {"path":"fixtures/document-understanding/batch-001/s3_repaired_v4_execution.py","sha256":"4e16cc758d272c8538731d9b18f6e40f382e90ce054b1509843bbd65ff2c996b","role":"effective procedure"},
+    {"path":"fixtures/document-understanding/batch-001/s3_repaired_v3_execution.py","sha256":"0bf74d5f5d8ff14340bd076d922925ea2764a5716077280276351c015efeb4bd","role":"effective dependency"},
+    {"path":"fixtures/document-understanding/batch-001/s3_repaired_v2_execution.py","sha256":"f682240c3f569ec472969da75a6d8740e96d97bda7f3b31a9b2d6e1bbb22b2b5","role":"effective dependency"},
+    {"path":"evidence/document-understanding/batch-001/review-wave-1-s3-repair-v4-s4-gate.py","sha256":"6f9befc07a9e344633fb0c8056102d7878eef02bb62e864aec9ffd2ce888bf00","role":"independent acceptance procedure"},
+    {"path":"evidence/document-understanding/batch-001/wave-1-s3-repair-v4-review-s4-gate.json","sha256":"ed817a7e8e920a7dd1bf96ee806f96a19e338fe2ced9f5efc07603ec2b2f2872","role":"independent acceptance verdict"},
+    {"path":"reports/document-understanding/20260930_2040_Batch001_Wave1_S3_Repair_v4_Review_and_S4_Gate.md","sha256":"fa7f5355471e6688aca78ce6355079d03c68a512f8c6e3f8520de29e1fc8e3b3","role":"independent acceptance report"}
+  ],
+  "authorities": {
+    "kunaicho":{"profile":{"path":"fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/authority-preflight-profile.json","sha256":"df9871702ec5724faa4dd8f0419211e37e8a4319e9491681023e8b92445c6c79"},"sourceSha256":"ffab15073beb2411d9396f7ca0cbb1ce33ccdf99be05e6d0d88e29366912e261","s4Graph":{"directory":"fixtures/document-understanding/batch-001/authorities/authority-01-kunaicho/s3-repaired-v4","nodes":67,"edges":34,"outerLedger":20,"unclassifiedStructure":13,"nestedStructure":1,"page":33}},
+    "shugiin":{"profile":{"path":"fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/authority-preflight-profile.json","sha256":"c71bdaa92932a86098e33230ae792f76a327d5897bcb1d965cfbd08df471600a"},"sourceSha256":"30d0dfc363a1f4f7e37b64a0059b48c2f03f13f997eb251e7ef5acaabd37c435","s4Graph":{"directory":"fixtures/document-understanding/batch-001/authorities/authority-02-shugiin/s3-repaired-v4","nodes":95,"edges":59,"outerLedger":15,"unclassifiedStructure":21,"boundedLocalTable":23,"page":36}}
+  },
+  "excludedS4Inputs":["baseline S3","s3-repaired-v1","s3-repaired-v2","s3-repaired-v3","GT","benchmark","OCR","CSV","MOF","Wave 2","production artifacts"]
+}
