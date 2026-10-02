@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Evaluation-only hierarchy reference transcribed from the MHLW FY2024 request PDF's own table of contents (pdfPageIndex 6, printed page 5) and organization list (pdfPageIndex 0). Read only by the analysis step to score observations; never passed to any engine, normalizer, or adapter, and never used to repair or select output.",
+  "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+  "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+  "transcribedFrom": [{ "pdfPageIndex": 6, "printedPage": "5" }, { "pdfPageIndex": 0 }],
+  "codeHyphenNote": "The source uses U+2011 (non-breaking hyphen) inside request codes such as 01‑95; codes below are written with ASCII '-' and the analysis compares after mapping U+2010/U+2011/U+2012/U+2013/U+2212 to '-'.",
+  "nodes": [
+    { "level": "organization", "code": "070", "name": "地方厚生局", "startsPrintedPage": "1547" },
+    { "level": "item", "parent": "070", "code": "010", "name": "地方厚生局共通費", "startsPrintedPage": "1547" },
+    { "level": "request", "parent": "070/010", "requestNo": "186", "code": "01-95", "name": "地方厚生局一般行政に必要な経費", "startsPrintedPage": "1547" },
+    { "level": "item", "parent": "070", "code": "011", "name": "地方厚生局施設費", "startsPrintedPage": "1579" },
+    { "level": "request", "parent": "070/011", "requestNo": "187", "code": "10-95", "name": "地方厚生局施設整備に必要な経費", "startsPrintedPage": "1579" },
+    { "level": "item", "parent": "070", "code": "012", "name": "保険医療機関等指導監督等実施費", "startsPrintedPage": "1581" },
+    { "level": "request", "parent": "070/012", "requestNo": "188", "code": "10-06", "name": "保険医療機関等に対する指導及び監督等に必要な経費", "startsPrintedPage": "1581" },
+    { "level": "request", "parent": "070/012", "requestNo": "189", "code": "15-95", "name": "保険医療機関等に対する指導及び監督等の推進に必要な経費", "startsPrintedPage": "1587" },
+    { "level": "organization", "code": "080", "name": "都道府県労働局", "startsPrintedPage": "1595" },
+    { "level": "item", "parent": "080", "code": "010", "name": "都道府県労働局共通費", "startsPrintedPage": "1595" },
+    { "level": "request", "parent": "080/010", "requestNo": "195", "code": "01-95", "name": "都道府県労働局一般行政に必要な経費", "startsPrintedPage": "1595" }
+  ],
+  "printedToPdfPageIndexOffset": { "value": 8, "basis": "printed detail page 1547 appears on pdfPageIndex 1554 (header label on that page)" }
+}

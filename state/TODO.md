@@ -2,6 +2,7 @@
 
 ## Next
 
+- **Budget-request engine selection follow-up (one experiment, not started).** MHLW document-level hierarchy reconstruction from 総表 + detail headers using pdf.js tokens only, scored against the TOC GT (`fixtures/document-understanding/engine-selection/mhlw-hierarchy-ground-truth.json`, evaluation only); see `reports/document-understanding/20261002_2102_Budget_Request_Engine_Selection.md` §21.9–21.10.
 - **Batch-001 Wave 1 S4 Normalization Contract v3 Repair (required; not started).** Preserve v1/v2 and repair raw/source-order kind coupling, numeric/unit tuple relationships, executable negative vectors, and rule-correspondence conformance before another review.
 - Make curated fixture generation reproducible from deterministic PDF extraction, preserving historical golden equivalence
 - Define adapter interface for extraction, per document type

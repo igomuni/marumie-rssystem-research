@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": 1,
+  "task": "budget-request document-understanding engine selection (2026-10-02)",
+  "probePages": "fixtures/document-understanding/engine-selection/probe-pages.json",
+  "hierarchyGroundTruth": "fixtures/document-understanding/engine-selection/mhlw-hierarchy-ground-truth.json (evaluation only)",
+  "rawOutputs": "derived/document-understanding/engine-selection/ (generated, not committed)",
+  "engines": {
+    "pdfjs": [
+      "4.10.38",
+      "5.4.296"
+    ],
+    "pymupdf": "1.28.2",
+    "docling": "2.130.0",
+    "doclingCore": "2.99.0"
+  },
+  "determinism": {
+    "pdfjsTwoRunsByteIdentical": true,
+    "pymupdfTwoRunsByteIdentical": true,
+    "doclingNoOcrTwoRunsByteIdentical": true,
+    "pdfjs4_10_38_vs_5_4_296_itemsIdentical": true,
+    "pdfjsNormalizedVsRawTextIdenticalOnAllProbePages": true,
+    "doclingDefaultVsNoOcrDocumentIdentical": true
+  },
+  "doclingTables": [
+    {
+      "probeId": "digital-p12-case001",
+      "tableShape": [
+        [
+          21,
+          14
+        ]
+      ],
+      "tableCells": [
+        119
+      ],
+      "texts": 2
+    },
+    {
+      "probeId": "meti-p9",
+      "tableShape": [
+        [
+          23,
+          12
+        ]
+      ],
+      "tableCells": [
+        80
+      ],
+      "texts": 2
+    },
+    {
+      "probeId": "mhlw-p1268",
+      "tableShape": [
+        [
+          2,
+          11
+        ]
+      ],
+      "tableCells": [
+        15
+      ],
+      "texts": 2
+    },
+    {
+      "probeId": "mhlw-p1555",
+      "tableShape": [
+        [
+          3,
+          12
+        ]
+      ],
+      "tableCells": [
+        30
+      ],
+      "texts": 217
+    },
+    {
+      "probeId": "mext-p876",
+      "tableShape": [
+        [
+          24,
+          10
+        ]
+      ],
+      "tableCells": [
+        127
+      ],
+      "texts": 2
+    },
+    {
+      "probeId": "mhlw-p7-toc",
+      "tableShape": [
+        [
+          2,
+          6
+        ]
+      ],
+      "tableCells": [
+        11
+      ],
+      "texts": 1
+    },
+    {
+      "probeId": "mhlw-p19-summary",
+      "tableShape": [
+        [
+          28,
+          10
+        ]
+      ],
+      "tableCells": [
+        252
+      ],
+      "texts": 1
+    },
+    {
+      "probeId": "mhlw-p1603",
+      "tableShape": [
+        [
+          2,
+          5
+        ]
+      ],
+      "tableCells": [
+        10
+      ],
+      "texts": 2
+    }
+  ],
+  "pages": {
+    "digital-p12-case001": {
+      "units": {
+        "pdfjsItems": 248,
+        "pymupdfWords": 261,
+        "pymupdfSpans": 245,
+        "doclingTexts": 2,
+        "doclingCells": 119
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1111,
+          "gotChars": 1111,
+          "matched": 1111,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1111,
+          "gotChars": 1111,
+          "matched": 1111,
+          "coverage": 1
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 10,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 25,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        },
+        "pymupdf": {
+          "triangle": 10,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 25,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        },
+        "docling": {
+          "triangle": 10,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 25,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 55,
+          "wholeInOneUnit": 6,
+          "rate": 0.109,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 55,
+          "wholeInOneUnit": 6,
+          "rate": 0.109,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 55,
+          "wholeInOneUnit": 6,
+          "rate": 0.109,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 55,
+          "wholeInOneUnit": 6,
+          "rate": 0.109,
+          "reversedGroupOrderInOneUnit": 49
+        }
+      }
+    },
+    "meti-p9": {
+      "units": {
+        "pdfjsItems": 305,
+        "pymupdfWords": 271,
+        "pymupdfSpans": 270,
+        "doclingTexts": 2,
+        "doclingCells": 80
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1052,
+          "gotChars": 1052,
+          "matched": 1052,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1052,
+          "gotChars": 1049,
+          "matched": 1049,
+          "coverage": 0.9971
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 7,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 35,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 2
+        },
+        "pymupdf": {
+          "triangle": 7,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 35,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 2
+        },
+        "docling": {
+          "triangle": 7,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 35,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 2
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 64,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 64,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 64,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 64,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 48
+        }
+      }
+    },
+    "mhlw-p1268": {
+      "units": {
+        "pdfjsItems": 449,
+        "pymupdfWords": 530,
+        "pymupdfSpans": 96,
+        "doclingTexts": 2,
+        "doclingCells": 15
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1468,
+          "gotChars": 1468,
+          "matched": 1468,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1468,
+          "gotChars": 1396,
+          "matched": 1396,
+          "coverage": 0.951
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 4,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 0,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        },
+        "pymupdf": {
+          "triangle": 4,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 0,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        },
+        "docling": {
+          "triangle": 4,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 0,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 8
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 72,
+          "wholeInOneUnit": 67,
+          "rate": 0.931,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 72,
+          "wholeInOneUnit": 68,
+          "rate": 0.944,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 72,
+          "wholeInOneUnit": 66,
+          "rate": 0.917,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 72,
+          "wholeInOneUnit": 63,
+          "rate": 0.875,
+          "reversedGroupOrderInOneUnit": 4
+        }
+      }
+    },
+    "mhlw-p1555": {
+      "units": {
+        "pdfjsItems": 371,
+        "pymupdfWords": 422,
+        "pymupdfSpans": 172,
+        "doclingTexts": 217,
+        "doclingCells": 30
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1488,
+          "gotChars": 1488,
+          "matched": 1488,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1488,
+          "gotChars": 2947,
+          "matched": 1488,
+          "coverage": 1
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 7,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 1,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 7
+        },
+        "pymupdf": {
+          "triangle": 7,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 1,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 7
+        },
+        "docling": {
+          "triangle": 14,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 2,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 14
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 65,
+          "rate": 0.663,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 65,
+          "rate": 0.663,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 65,
+          "rate": 0.663,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 67,
+          "rate": 0.684,
+          "reversedGroupOrderInOneUnit": 32
+        }
+      }
+    },
+    "mext-p876": {
+      "units": {
+        "pdfjsItems": 324,
+        "pymupdfWords": 329,
+        "pymupdfSpans": 230,
+        "doclingTexts": 2,
+        "doclingCells": 127
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 923,
+          "gotChars": 923,
+          "matched": 923,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 923,
+          "gotChars": 923,
+          "matched": 923,
+          "coverage": 1
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 1,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 12,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 39
+        },
+        "pymupdf": {
+          "triangle": 1,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 12,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 39
+        },
+        "docling": {
+          "triangle": 1,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 12,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 39
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 26,
+          "wholeInOneUnit": 16,
+          "rate": 0.615,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 26,
+          "wholeInOneUnit": 16,
+          "rate": 0.615,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 26,
+          "wholeInOneUnit": 16,
+          "rate": 0.615,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 26,
+          "wholeInOneUnit": 16,
+          "rate": 0.615,
+          "reversedGroupOrderInOneUnit": 10
+        }
+      }
+    },
+    "mhlw-p7-toc": {
+      "units": {
+        "pdfjsItems": 240,
+        "pymupdfWords": 240,
+        "pymupdfSpans": 240,
+        "doclingTexts": 1,
+        "doclingCells": 11
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1555,
+          "gotChars": 1555,
+          "matched": 1555,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1555,
+          "gotChars": 1555,
+          "matched": 1555,
+          "coverage": 1
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 0,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 33,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 0
+        },
+        "pymupdf": {
+          "triangle": 0,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 33,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 0
+        },
+        "docling": {
+          "triangle": 0,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 33,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 0
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 0,
+          "wholeInOneUnit": 0,
+          "rate": null,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 0,
+          "wholeInOneUnit": 0,
+          "rate": null,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 0,
+          "wholeInOneUnit": 0,
+          "rate": null,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 0,
+          "wholeInOneUnit": 0,
+          "rate": null,
+          "reversedGroupOrderInOneUnit": 0
+        }
+      }
+    },
+    "mhlw-p19-summary": {
+      "units": {
+        "pdfjsItems": 521,
+        "pymupdfWords": 522,
+        "pymupdfSpans": 521,
+        "doclingTexts": 1,
+        "doclingCells": 252
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1609,
+          "gotChars": 1609,
+          "matched": 1609,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1609,
+          "gotChars": 1609,
+          "matched": 1608,
+          "coverage": 0.9994
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 9,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 15,
+          "minus": 0,
+          "fullwidthHyphen": 1,
+          "fullwidthDigit": 1
+        },
+        "pymupdf": {
+          "triangle": 9,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 15,
+          "minus": 0,
+          "fullwidthHyphen": 1,
+          "fullwidthDigit": 1
+        },
+        "docling": {
+          "triangle": 9,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 16,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 1
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 98,
+          "wholeInOneUnit": 0,
+          "rate": 0,
+          "reversedGroupOrderInOneUnit": 96
+        }
+      }
+    },
+    "mhlw-p1603": {
+      "units": {
+        "pdfjsItems": 345,
+        "pymupdfWords": 319,
+        "pymupdfSpans": 313,
+        "doclingTexts": 2,
+        "doclingCells": 10
+      },
+      "charCoverageVsPyMuPDFRawdict": {
+        "pdfjs": {
+          "refChars": 1173,
+          "gotChars": 1173,
+          "matched": 1173,
+          "coverage": 1
+        },
+        "docling": {
+          "refChars": 1173,
+          "gotChars": 1173,
+          "matched": 1173,
+          "coverage": 1
+        }
+      },
+      "glyphs": {
+        "pdfjs": {
+          "triangle": 11,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 34,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 1
+        },
+        "pymupdf": {
+          "triangle": 11,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 34,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 1
+        },
+        "docling": {
+          "triangle": 11,
+          "blackTriangle": 0,
+          "nbHyphen": 0,
+          "hyphen": 0,
+          "ascii": 34,
+          "minus": 0,
+          "fullwidthHyphen": 0,
+          "fullwidthDigit": 1
+        }
+      },
+      "commaNumbersWholeInOneNativeUnit": {
+        "pdfjsItem": {
+          "refNumbers": 78,
+          "wholeInOneUnit": 1,
+          "rate": 0.013,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfWord": {
+          "refNumbers": 78,
+          "wholeInOneUnit": 1,
+          "rate": 0.013,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "pymupdfSpan": {
+          "refNumbers": 78,
+          "wholeInOneUnit": 1,
+          "rate": 0.013,
+          "reversedGroupOrderInOneUnit": 0
+        },
+        "doclingUnit": {
+          "refNumbers": 78,
+          "wholeInOneUnit": 1,
+          "rate": 0.013,
+          "reversedGroupOrderInOneUnit": 77
+        }
+      }
+    }
+  },
+  "hierarchy": {
+    "perPage": {
+      "mhlw-p1555": {
+        "pdfjs": {
+          "present": 2,
+          "codeAdjacent": 1,
+          "exclusiveUnit": 2,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "pymupdf": {
+          "present": 2,
+          "codeAdjacent": 1,
+          "exclusiveUnit": 2,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "docling": {
+          "present": 3,
+          "codeAdjacent": 3,
+          "exclusiveUnit": 3,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        }
+      },
+      "mhlw-p7-toc": {
+        "pdfjs": {
+          "present": 11,
+          "codeAdjacent": 11,
+          "exclusiveUnit": 11,
+          "tocRequestRowComplete": 5,
+          "of": 11
+        },
+        "pymupdf": {
+          "present": 11,
+          "codeAdjacent": 11,
+          "exclusiveUnit": 11,
+          "tocRequestRowComplete": 5,
+          "of": 11
+        },
+        "docling": {
+          "present": 11,
+          "codeAdjacent": 11,
+          "exclusiveUnit": 1,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        }
+      },
+      "mhlw-p19-summary": {
+        "pdfjs": {
+          "present": 4,
+          "codeAdjacent": 3,
+          "exclusiveUnit": 4,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "pymupdf": {
+          "present": 4,
+          "codeAdjacent": 3,
+          "exclusiveUnit": 4,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "docling": {
+          "present": 8,
+          "codeAdjacent": 8,
+          "exclusiveUnit": 8,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        }
+      },
+      "mhlw-p1603": {
+        "pdfjs": {
+          "present": 2,
+          "codeAdjacent": 1,
+          "exclusiveUnit": 2,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "pymupdf": {
+          "present": 2,
+          "codeAdjacent": 2,
+          "exclusiveUnit": 2,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        },
+        "docling": {
+          "present": 2,
+          "codeAdjacent": 2,
+          "exclusiveUnit": 2,
+          "tocRequestRowComplete": 0,
+          "of": 11
+        }
+      }
+    },
+    "toc": {
+      "splitX": 421,
+      "nativeOrderColumnSwitches": {
+        "pdfjs": 28,
+        "pymupdfSpans": 28,
+        "doclingTexts": 0
+      },
+      "labelStackFromGeometryRows": {
+        "pdfjs": [
+          {
+            "requestNo": "186",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "187",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "188",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "189",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "195",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          }
+        ],
+        "pymupdf": [
+          {
+            "requestNo": "186",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "187",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "188",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "189",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          },
+          {
+            "requestNo": "195",
+            "found": true,
+            "codeOk": true,
+            "parentOk": true
+          }
+        ]
+      },
+      "labelStackFromDoclingCells": [
+        {
+          "requestNo": "186",
+          "found": false,
+          "codeOk": false,
+          "parentOk": false
+        },
+        {
+          "requestNo": "187",
+          "found": false,
+          "codeOk": false,
+          "parentOk": false
+        },
+        {
+          "requestNo": "188",
+          "found": false,
+          "codeOk": false,
+          "parentOk": false
+        },
+        {
+          "requestNo": "189",
+          "found": false,
+          "codeOk": false,
+          "parentOk": false
+        },
+        {
+          "requestNo": "195",
+          "found": false,
+          "codeOk": false,
+          "parentOk": false
+        }
+      ]
+    },
+    "notes": [
+      "present/codeAdjacent for pdfjs/pymupdf are per native unit; detail/summary pages print 組織/項 names letter-spaced as one glyph run per character, so single-unit name matching under-counts while visual rows (row grouping by y) contain the full name — see report §5.",
+      "Detail pages encode level as x-indent: 組織 code x=51.8, 項 code x=58.7, 要求 code x=65.6 (要求番号 x=36.2), 費目 lines x=72.5/79.4 (p1555, p1603; PyMuPDF bbox).",
+      "marumie-rssystem PageTemplate PoC (main 2f83491) on mhlw-ippan-p1555: 4 hierarchyRelationCandidates; 070->010 (rows 4->5) observed; 010->186 (row 5->34) not observed (history table intervenes; 要求番号 printed left of 組織 code)."
+    ]
+  },
+  "glyphNotes": [
+    "pdf.js, PyMuPDF and Docling all emit ASCII - in request codes (e.g. 01-95); U+2011 previously seen in pdftotext (poppler) output is poppler-specific, not present in these three engines.",
+    "Docling maps fullwidth － to ASCII - on mhlw-p19-summary (1 occurrence); pdf.js/PyMuPDF keep －.",
+    "Docling duplicates content on mhlw-p1555 (texts and table cells overlap): △ 14 vs 7, box-drawing glyphs 753 vs 377."
+  ],
+  "performance8Pages": {
+    "pdfjs5": {
+      "wallSeconds": 0.53,
+      "maxRssMB": 216,
+      "perPageTextContentMs": [
+        2,
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    "pymupdf": {
+      "wallSeconds": 0.31,
+      "maxRssMB": 72,
+      "perPageDictMs": [
+        3.1,
+        2.7,
+        9.6,
+        5.8,
+        3.4,
+        3.7,
+        4.3,
+        3.1
+      ]
+    },
+    "doclingNoOcr": {
+      "wallSeconds": 21.3,
+      "maxRssMB": 1612,
+      "perPageSeconds": [
+        5.44,
+        4.77,
+        0.62,
+        0.71,
+        3.64,
+        0.43,
+        2.87,
+        0.47
+      ],
+      "note": "first page includes model load"
+    },
+    "doclingDefaultOcr": {
+      "maxRssMB": 3367,
+      "perPageSeconds": [
+        9.95,
+        7.79,
+        5.0,
+        4.2,
+        6.3,
+        4.12,
+        8.22,
+        3.54
+      ],
+      "note": "document output byte-identical to no-ocr on all 8 pages"
+    }
+  },
+  "numericNotes": [
+    "Source PDFs draw each comma group of an amount as its own text run (e.g. \"17,\" \"396,\" \"623\"); pdf.js items, PyMuPDF words and spans all keep that granularity, so whole-amount rate is identical across them (0-0.94 per page).",
+    "METI p9 content-stream order is right-to-left within an amount (\"916\" \"599,\" \"234,\" for 234,599,916); pdf.js raw order and PyMuPDF sort=False order are identical; x-coordinates restore order.",
+    "Docling emits comma groups reversed inside one cell/text (\"916 599, 234,\") on every page with comma amounts (reversedGroupOrderInOneUnit column) and on METI p9 merges several rows of amounts into one cell."
+  ]
+}

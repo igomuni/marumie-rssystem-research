@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### research: budget-request document-understanding engine selection
+
+- Probed pdf.js 4.10.38/5.4.296, PyMuPDF 1.28.2 (words/blocks/dict/rawdict) and Docling 2.130.0 native document model (OCR on/off) on 8 pages (case-001, marumie-rssystem 4 Golden, MHLW TOC/総表/detail hierarchy pages) with an evaluation-only TOC hierarchy GT. pdf.js = PyMuPDF in glyphs/order/granularity; Docling deterministic but reverses comma groups, collapses the TOC and fuses 組織/項/要求 on detail pages. Recommendation: keep pdf.js SourceToken/TableGeometry/LogicalRow, pause page-local interpretation layers, replace nothing; next experiment is document-level hierarchy reconstruction scored against TOC GT. Batch-001 next action unchanged.
+
 ### research: independently review Wave 1 S4 normalization contract v2
 
 - Rejected v2 despite closed nested keys and deterministic IDs/order: raw/source-order variants are not coupled to observation kind; numeric/unit object tuples remain inconsistent; negative assertions and rule correspondence are not executable conformance tests. Real S4 remains prohibited.
