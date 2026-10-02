@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### research: budget-request document-understanding engine selection
+
+- Probed pdf.js 4.10.38/5.4.296, PyMuPDF 1.28.2 (words/blocks/dict/rawdict) and Docling 2.130.0 native document model (OCR on/off) on 8 pages (case-001, marumie-rssystem 4 Golden, MHLW TOC/総表/detail hierarchy pages) with an evaluation-only TOC hierarchy GT. pdf.js = PyMuPDF in glyphs/order/granularity; Docling deterministic but reverses comma groups, collapses the TOC and fuses 組織/項/要求 on detail pages. Recommendation: keep pdf.js SourceToken/TableGeometry/LogicalRow, pause page-local interpretation layers, replace nothing; next experiment is document-level hierarchy reconstruction scored against TOC GT. `nextAction` unchanged.
+
 ### research: close Case-010 frozen baseline
 
 - **Closeout/audit only.** Verified the complete Survey → Protocol → Selection → GT → Benchmark chronology and byte identity of every frozen Case-010 artifact. The locked 1,723-page MHLW source SHA remains unchanged; Cases 001–009, the Case-006–010 Selection Freeze, scripts, source lock/registry, parser/normalizer/evaluator, OCR configuration, and production code remain unchanged.

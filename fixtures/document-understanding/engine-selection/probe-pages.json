@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Engine-selection probe page set (2026-10-02). Case configuration only (which locked source and which page). Contains no expected values. Ground truth for the MHLW hierarchy lives in mhlw-hierarchy-ground-truth.json and is read only by the analysis/evaluation step.",
+  "pages": [
+    {
+      "probeId": "digital-p12-case001",
+      "role": "research case-001 target page (Digital Agency; frozen benchmark 8/8/9)",
+      "sourceId": "digital-r6-request-table-01",
+      "sourceSha256": "b77f25b26b5caf82b0b6617fb1af9b3bba9df059a8bf9a8ede63de8d1a8cfe89",
+      "pdfPageIndex": 11
+    },
+    {
+      "probeId": "meti-p9",
+      "role": "golden-normal (marumie-rssystem meti-ippan-p9; same page as research case-002)",
+      "sourceId": "meti-fy2024-general-account-request",
+      "sourceSha256": "ba64c25df327161a33c293374a7255c203cc9a527130ece848574badefbf909a",
+      "pdfPageIndex": 8
+    },
+    {
+      "probeId": "mhlw-p1268",
+      "role": "golden-moderate (marumie-rssystem mhlw-ippan-p1268)",
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "pdfPageIndex": 1267
+    },
+    {
+      "probeId": "mhlw-p1555",
+      "role": "golden-extreme (marumie-rssystem mhlw-ippan-p1555); also MHLW hierarchy detail page for org 070",
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "pdfPageIndex": 1554
+    },
+    {
+      "probeId": "mext-p876",
+      "role": "golden-structured-remark (marumie-rssystem mext-detail-p876)",
+      "sourceId": "mext-fy2024-general-account-expenditure-request-detail",
+      "sourceSha256": "6df221dfd22c48e0f32dd59bcf2dbcbaad19720083be43005ce700b984a6bf71",
+      "pdfPageIndex": 875
+    },
+    {
+      "probeId": "mhlw-p7-toc",
+      "role": "MHLW hierarchy: table of contents (two-column 目次 with （組織）/（項）/request rows)",
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "pdfPageIndex": 6
+    },
+    {
+      "probeId": "mhlw-p19-summary",
+      "role": "MHLW hierarchy: 総表 page containing org 070 / items 010-020 / requests 186-192",
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "pdfPageIndex": 18
+    },
+    {
+      "probeId": "mhlw-p1603",
+      "role": "MHLW hierarchy: detail page for org 080 / item 010 / request 195",
+      "sourceId": "mhlw-fy2024-general-account-expenditure-request-summary-detail",
+      "sourceSha256": "09d26048b20d1b1dac7aab236ab6da452e482a12f4d97a8f6c28ec7c420eb192",
+      "pdfPageIndex": 1602
+    }
+  ]
+}
