@@ -15,7 +15,9 @@ On these born-digital ledgers, pdf.js and PyMuPDF return **the same glyphs, in t
 ## 21.1 Current state
 
 - **marumie-rssystem (main `2f83491`)**: Pipeline V2 extraction PoC on pdfjs-dist 5.4.296 (`disableNormalization: true`). Layers: SourceToken → TableGeometry → LogicalRow → SpatialRegion → RegionRelation → SemanticRecordCandidate → RecordAnchor → PageTemplateObservation (#355–#362). All are evidence-only observations on 4 Golden pages. None is scored against a ground truth.
-- **marumie-rssystem-research**: benchmark harness with pdfjs-baseline (4.10.38), pymupdf-baseline (1.28.2, flat `get_text("text")`) and docling (2.130.0) adapters. There are 10 frozen cases scored by an 11-check evaluator. The research track was reframed to a canonical node/edge model (Batch-001; current next action is S4 Normalization Contract v3 Repair). This task does not touch it.
+- **marumie-rssystem-research**: benchmark harness with pdfjs-baseline (4.10.38), pymupdf-baseline (1.28.2, flat `get_text("text")`) and docling (2.130.0) adapters. There are 10 frozen cases scored by an 11-check evaluator. This evaluation does not depend on, and is not part of, any other research track.
+  - Background only: when it started, a separate research branch (Batch-001) was in progress. It is not merged into `main`, and this report neither relies on it nor changes it.
+  - The next research question comes from this evaluation alone: document-level hierarchy / cross-page context reconstruction (§21.9–21.10).
 
 ## 21.2 Problem definition (from the real PDFs)
 
